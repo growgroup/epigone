@@ -7,27 +7,27 @@ var gulp = require('gulp'),
 // Styles
 gulp.task('styles', function() {
   return gulp.src('assets/scss/main.scss')
-	.pipe(plugins.rubySass({ style: 'expanded', compass: true }))
+	.pipe(plugins.rubySass({ style: 'expanded', compass: true , trace: true }))
 	.pipe(plugins.autoprefixer('last 2 versions', 'ie 9', 'ios 6', 'android 4'))
 	.pipe(gulp.dest('assets/css'))
 	.pipe(plugins.minifyCss({ keepSpecialComments: 1 }))
+	.pipe(plugins.rename({ suffix: '.min' }))
 	.pipe(plugins.livereload(server))
-	.pipe(gulp.dest('./'))
+	.pipe(gulp.dest('assets/css'))
 	.pipe(plugins.notify({ message: 'Styles task complete' }));
 });
 
 // Gulp wp rev
 var rev = require("gulp-wp-rev");
-
-gulp.task('rev', function () {
-  gulp.src('inc/script.php')
+	gulp.task('rev', function () {
+	  gulp.src('inc/script.php')
     .pipe(rev({
-        css: "assets/css/main.min.css",
-        cssHandle: "epigone_main",
-        js: "assets/js/scripts.min.js",
-        jsHandle: "epigone_scripts"
-    }))
-    .pipe(gulp.dest('lib'));
+      css: "assets/css/main.min.css",
+      cssHandle: "epigone_main",
+      js: "assets/js/scripts.min.js",
+      jsHandle: "epigone_scripts"
+	  }))
+	    .pipe(gulp.dest('lib'));
 });
 
 // Vendor Plugin Scripts
@@ -44,7 +44,7 @@ gulp.task('plugins', function() {
 
 // Site Scripts
 gulp.task('scripts', function() {
-  return gulp.src(['assets/js/_*.js', '!assets/js/source/scripts.js'])
+  return gulp.src(['assets/js/_*.js', '!assets/js/scripts.js'])
 	.pipe(plugins.jshint('.jshintrc'))
 	.pipe(plugins.jshint.reporter('default'))
 	.pipe(plugins.concat('scripts.js'))
@@ -86,8 +86,6 @@ gulp.task('watch', function() {
   });
 
 });
-
-
 
 // Default task
 gulp.task('default', ['styles', 'plugins', 'scripts', 'images', 'watch', 'rev']);

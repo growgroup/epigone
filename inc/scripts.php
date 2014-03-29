@@ -5,6 +5,7 @@
 
 function epigone_script() {
   wp_enqueue_style('epigone_main', get_template_directory_uri() . '/assets/css/main.min.css', false, '99972085bc30c435929f5af3cf81d064');
+  wp_register_script('epigone_scripts', get_template_directory_uri() . '/assets/js/scripts.min.js', array(), '632995d66dba190b04e58c7bbf9d6222', true);
 
   if (!is_admin() && current_theme_supports('jquery-cdn')) {
     wp_deregister_script('jquery');
@@ -15,8 +16,6 @@ function epigone_script() {
   if (is_single() && comments_open() && get_option('thread_comments')) {
     wp_enqueue_script('comment-reply');
   }
-
-  wp_register_script('epigone_script', get_template_directory_uri() . '/assets/js/scripts.min.js', array(), '632995d66dba190b04e58c7bbf9d6222', true);
 
   wp_enqueue_script('jquery');
   wp_enqueue_script('epigone_script');
