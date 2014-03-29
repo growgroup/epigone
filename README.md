@@ -15,7 +15,7 @@ _s をベースとした、WordPressテーマです。
 
 # Getting Started
 
-* 1. テーマのインストール
+### 1. テーマのインストール
 
 テーマディレクトリ ( wp-content/themes/ ) に移動してgit clone してください。
 
@@ -23,13 +23,13 @@ _s をベースとした、WordPressテーマです。
 
 または、[zipファイル](https://github.com/1shiharaT/epigone/archive/master.zip)をダウンロードして、テーマをインストールしてください。
 
-* 2. npm パッケージのインストール
+### 2. npm パッケージのインストール
 
 package.json ファイルのある階層で下記のコマンドを実行します。
 
 	$ npm install
 
-* 3. gulp の起動
+### 3. gulp の起動
 
 	$ gulp watch
 
