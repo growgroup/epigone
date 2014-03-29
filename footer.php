@@ -17,7 +17,7 @@
 			<?php printf( __( 'Theme: %1$s by %2$s.', 'epigone' ), 'epigone', '<a href="http://underscores.me/" rel="designer">Underscores.me</a>' ); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
-</div><!-- #page -->
+</div>
 
 <?php wp_footer(); ?>
 
