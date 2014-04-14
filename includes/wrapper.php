@@ -1,21 +1,44 @@
 <?php
+/**
+ * wrapper.php
+ *
+ * http://scribu.net/wordpress/theme-wrappers.html
+ */
 
-// http://scribu.net/wordpress/theme-wrappers.html
 
-function Epigone_template_path() {
+
+/**
+ * epigone_template_path
+ *
+ * @return template path
+ * @since 0.0.1
+ */
+function epigone_template_path() {
 	return Epigone_Wrapping::$main_template;
 }
 
-function Epigone_template_base() {
+/**
+ * epigone_template_base
+ *
+ * @return template path
+ * @since 0.0.1
+ */
+
+function epigone_template_base() {
 	return Epigone_Wrapping::$base;
 }
 
-class Epigone_Wrapping {
+/**
+ * class Epigone_Wrapping
+ *
+ */
 
+class Epigone_Wrapping {
 	/**
 	 * Stores the full path to the main template file
 	 */
 	static $main_template;
+
 
 	/**
 	 * Stores the base name of the template file; e.g. 'page' for 'page.php' etc.

@@ -11,6 +11,7 @@ _s をベースとした、WordPressテーマです。
 # Require
 
 * node.js
+* gulp.js
 * sass
 
 # Getting Started

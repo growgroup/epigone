@@ -33,21 +33,19 @@
 				</a>
 			</div>
 
-					<?php
-							wp_nav_menu( array(
-									'menu'              => 'primary',
-									'theme_location'    => 'primary',
-									'depth'             => 2,
-									'container'         => 'div',
-									'container_class'   => 'collapse navbar-collapse',
-									'container_id'      => 'header-navbar-collapse',
-									'menu_class'        => 'nav navbar-nav',
-									'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-									'walker'            => new wp_bootstrap_navwalker())
-							);
-					?>
+			<?php
+				wp_nav_menu( array(
+					'menu'              => 'primary',
+					'theme_location'    => 'primary',
+					'depth'             => 2,
+					'container'         => 'div',
+					'container_class'   => 'collapse navbar-collapse',
+					'container_id'      => 'header-navbar-collapse',
+					'menu_class'        => 'nav navbar-nav',
+					'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+					'walker'            => new wp_bootstrap_navwalker())
+				);
+			?>
 			</div>
 	</nav>
 </header>
-
-<div class="wrapper container">
