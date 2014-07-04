@@ -1,25 +1,29 @@
 <?php
 /**
- * base.php
- *
- * @description  すべてを包括するテンプレート
- *
+ * base theme template
+ * =====================================================
+ * @package  epigone
+ * @license  GPLv2 or later
+ * =====================================================
  */
 
-get_header();
+get_template_part( 'modules/head' );
+get_template_part( 'modules/header' );
 
-do_action('get_header'); ?>
+do_action( 'get_header' ); ?>
 
-<?php dynamic_sidebar( 'header-primary' ) ?>
+<?php
+dynamic_sidebar( 'header-primary' ); ?>
 
 <div class="wrapper container">
 
-<?php load_template( epigone_template_path() ); ?>
+<?php
+load_template( epigone_template_path() ); ?>
 
 </div>
 
 <?php
 
-do_action('get_footer');
+do_action( 'get_footer' );
 
-get_footer();
+get_template_part( 'modules/footer' );

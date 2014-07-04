@@ -1,11 +1,13 @@
 <?php
 /**
  * The template for displaying Search Results pages.
- *
- * @package epigone
+ * =====================================================
+ * @package  epigone
+ * @license  GPLv2 or later
+ * @see http://codex.wordpress.org/Template_Hierarchy
+ * =====================================================
  */
-
-get_header(); ?>
+?>
 
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
@@ -34,5 +36,3 @@ get_header(); ?>
 		</main><!-- #main -->
 	</section><!-- #primary -->
 
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>

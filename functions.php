@@ -1,15 +1,27 @@
 <?php
 /**
- * epigone functions and definitions
- *
- * @package epigone
+ * function for theme.
+ * =====================================================
+ * @package  epigone
+ * @license  GPLv2 or later
+ * @see http://scribu.net/wordpress/theme-wrappers.html
+ * =====================================================
  */
 
-require get_template_directory() . '/includes/template-tags.php';
-require get_template_directory() . '/includes/extras.php';
-require get_template_directory() . '/includes/customizer.php';
-require get_template_directory() . '/includes/jetpack.php';
-require get_template_directory() . '/includes/scripts.php';
-require get_template_directory() . '/includes/wp_bootstrap_navwalker.php';
-require get_template_directory() . '/includes/wrapper.php';
-require get_template_directory() . '/includes/widget-setting.php';
+
+/**
+ * define site stage.
+ * true : browser-sync script tag embed.
+ */
+define( 'EPIGONE_DEVELOPMODE', true );
+
+
+require get_template_directory() . '/inc/setup.php';
+require get_template_directory() . '/inc/template-tags.php';
+require get_template_directory() . '/inc/extras.php';
+require get_template_directory() . '/inc/customizer.php';
+require get_template_directory() . '/inc/jetpack.php';
+require get_template_directory() . '/inc/scripts.php';
+require get_template_directory() . '/inc/sidebar.php';
+require get_template_directory() . '/classes/class-wrapper.php';
+require get_template_directory() . '/classes/class-wp-bootstrap-navwalker.php';

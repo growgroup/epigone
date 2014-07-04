@@ -46,7 +46,7 @@ function epigone_wp_title( $title, $sep ) {
 	if ( is_feed() ) {
 		return $title;
 	}
-	
+
 	global $page, $paged;
 
 	// Add the blog name
@@ -79,6 +79,8 @@ add_filter( 'wp_title', 'epigone_wp_title', 10, 2 );
  * @global WP_Query $wp_query WordPress Query object.
  * @return void
  */
+add_action( 'wp', 'epigone_setup_author' );
+
 function epigone_setup_author() {
 	global $wp_query;
 
@@ -86,4 +88,3 @@ function epigone_setup_author() {
 		$GLOBALS['authordata'] = get_userdata( $wp_query->post->post_author );
 	}
 }
-add_action( 'wp', 'epigone_setup_author' );

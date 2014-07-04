@@ -1,6 +1,10 @@
 <?php
 /**
- * @package epigone
+ * single post content template
+ * =====================================================
+ * @package  epigone
+ * @license  GPLv2 or later
+ * =====================================================
  */
 ?>
 

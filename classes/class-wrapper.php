@@ -1,10 +1,15 @@
 <?php
 /**
- * wrapper.php
- *
- * http://scribu.net/wordpress/theme-wrappers.html
+ * theme wrapper
+ * =====================================================
+ * @package  epigone
+ * @license  GPLv2 or later
+ * @see http://scribu.net/wordpress/theme-wrappers.html
+ * =====================================================
  */
 
+
+add_filter( 'template_include', array( 'Epigone_Wrapping', 'wrap' ), 99 );
 
 
 /**
@@ -61,4 +66,3 @@ class Epigone_Wrapping {
 	}
 }
 
-add_filter( 'template_include', array( 'Epigone_Wrapping', 'wrap' ), 99 );

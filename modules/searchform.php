@@ -1,3 +1,13 @@
+<?php
+/**
+ * search form module
+ * =====================================================
+ * @package  epigone
+ * @license  GPLv2 or later
+ * =====================================================
+ */
+?>
+
 <form role="form" action="<?php echo site_url('/'); ?>" id="searchform" method="get">
     <label for="s" class="sr-only">検索</label>
     <div class="input-group">

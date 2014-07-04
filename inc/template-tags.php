@@ -1,10 +1,10 @@
 <?php
 /**
  * Custom template tags for this theme.
- *
- * Eventually, some of the functionality here could be replaced by core features.
- *
- * @package epigone
+ * =====================================================
+ * @package  epigone
+ * @license  GPLv2 or later
+ * =====================================================
  */
 
 if ( ! function_exists( 'epigone_paging_nav' ) ) :
@@ -104,7 +104,7 @@ function epigone_categorized_blog() {
 		$all_the_cool_cats = get_categories( array(
 			'fields'     => 'ids',
 			'hide_empty' => 1,
-			
+
 			// We only need to know if there is more than one category.
 			'number'     => 2,
 		) );
@@ -127,9 +127,11 @@ function epigone_categorized_blog() {
 /**
  * Flush out the transients used in epigone_categorized_blog.
  */
+add_action( 'edit_category', 'epigone_category_transient_flusher' );
+add_action( 'save_post',     'epigone_category_transient_flusher' );
+
 function epigone_category_transient_flusher() {
 	// Like, beat it. Dig?
 	delete_transient( 'all_the_cool_cats' );
 }
-add_action( 'edit_category', 'epigone_category_transient_flusher' );
-add_action( 'save_post',     'epigone_category_transient_flusher' );
+

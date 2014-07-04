@@ -1,10 +1,10 @@
 <?php
 /**
- * The template part for displaying a message that posts cannot be found.
- *
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
- *
- * @package epigone
+ * 404 content template
+ * =====================================================
+ * @package  epigone
+ * @license  GPLv2 or later
+ * =====================================================
  */
 ?>
 

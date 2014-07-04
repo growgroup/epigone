@@ -1,11 +1,12 @@
 <?php
 /**
- * The template for displaying 404 pages (Not Found).
- *
- * @package epigone
+ * 404 template
+ * =====================================================
+ * @package  epigone
+ * @license  GPLv2 or later
+ * =====================================================
  */
-
-get_header(); ?>
+?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
