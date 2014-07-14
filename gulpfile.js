@@ -11,7 +11,7 @@ gulp.task('browserSync', function() {
   browserSync.init(null, {
     notify: true,
     proxy: {
-      host: "your-themes.dev", // replace your domain
+      host: "your-domain.dev", // replace your domain
       // port: 3333
     },
     ghostMode: {
