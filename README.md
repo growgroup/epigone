@@ -32,24 +32,24 @@ package.json ファイルのある階層で下記のコマンドを実行しま�
 
 ### 3. gulp の起動
 
-1. gulpfile.js の BrowserSync の設定を変更
+1.gulpfile.js の BrowserSync の設定を変更
 
 	// browser sync
 	gulp.task('browserSync', function() {
-	  browserSync.init(null, {
-	    notify: true,
-	    proxy: {
-	      host: "your-domain.dev", // ドメインを変更
-	      // port: 3333
-	    },
-	    // 好みによってghostMode の設定を変更してください。
-	    ghostMode: {
-	      clicks: true,
-	      location: true,
-	      forms: true,
-	      scroll: false
-	    }
-	  });
+		browserSync.init(null, {
+			notify: true,
+			proxy: {
+				host: "your-domain.dev", // ドメインを変更
+				// port: 3333
+			},
+			// 好みによってghostMode の設定を変更してください。
+			ghostMode: {
+				clicks: true,
+				location: true,
+				forms: true,
+				scroll: false
+			}
+		});
 	});
 
 2. ターミナル から Gulp を起動
