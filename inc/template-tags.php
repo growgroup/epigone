@@ -8,6 +8,7 @@
  */
 
 if ( ! function_exists( 'epigone_paging_nav' ) ) :
+
 /**
  * Display navigation to next/previous set of posts when applicable.
  *

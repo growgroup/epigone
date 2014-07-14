@@ -1,0 +1,64 @@
+/*------------------------------------*\
+    $LAYOUT
+\*------------------------------------*/
+
+/* Layout Container */
+.lc {
+	max-width: $max-width;
+	margin: 0 auto;
+	padding: $pad-half;
+}
+
+/*------------------------------------*\
+    $TEMPLATES
+\*------------------------------------*/
+
+/* Two Column Layout */
+.l-two-col {
+	@extend .cf;
+
+	.l-main {
+		@media all and (min-width: $bp-large) {
+			float: left;
+			width: 70%;
+			padding-right: $pad;
+		}
+	}
+
+	.l-sidebar {
+		@media all and (max-width: $bp-large) {
+			clear: both;
+		}
+
+		@media all and (min-width: $bp-large) {
+			float: left;
+			width: 30%;
+			padding: 0 0 0 $pad;
+		}
+	}
+}
+
+
+/*------------------------------------*\
+    $GRIDS
+\*------------------------------------*/
+
+$total_columns    : 12;
+$total_width      : 960px;
+$gutter_width     : 1%;
+$container_margin : 'auto';
+
+$class_container : 'row';
+$class_column    : 'col';
+$class_push      : 'push';
+
+/* Grid Container */
+.g {
+	overflow: hidden;
+	margin: 0 (-$pad-half);
+}
+
+.container{
+	@include container();
+
+}

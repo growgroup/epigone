@@ -13,7 +13,7 @@
 		<div class="container">
 			<div class="site-info">
 
-				<span class="sep"> | </span>
+				<span class="sep"> copyright © <?php echo get_the_date( 'Y' ); ?> | <?php bloginfo( 'name' ); ?></span>
 
 			</div>
 		</div>

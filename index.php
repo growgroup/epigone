@@ -7,22 +7,18 @@
  * @see http://codex.wordpress.org/Template_Hierarchy
  * =====================================================
  */
-?>
 
+if ( have_posts() ) :
+	while ( have_posts() ) : the_post();
 
-<?php if ( have_posts() ) : ?>
-	<?php while ( have_posts() ) : the_post(); ?>
-		<?php
-			get_template_part( 'content', get_post_format() );
-		?>
-	<?php endwhile; ?>
+		get_template_part( 'templates/content', get_post_format() );
 
-	<?php epigone_paging_nav(); ?>
+	endwhile;
 
-<?php else : ?>
+	epigone_paging_nav();
 
-	<?php get_template_part( 'content', 'none' ); ?>
+else :
 
-<?php endif; ?>
+	get_template_part( 'templates/content', 'none' );
 
-
+endif;

@@ -1,32 +1,32 @@
 'use strict';
 
-// Load plugins
+// load plugins
 var gulp = require('gulp');
 var plugins = require('gulp-load-plugins')({ camelize: true });
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
-var rev = require('gulp-wp-rev');
 
-// Browser Sync
+// browser sync
 gulp.task('browserSync', function() {
-    browserSync.init(null, {
-        notify: true,
-        proxy: {
-            host: "easy-theme.dev", // replace your domain
-            // port: 3333
-        },
-        ghostMode: {
-          clicks: true,
-          location: true,
-          forms: true,
-          scroll: false
-        }
-    });
+  browserSync.init(null, {
+    notify: true,
+    proxy: {
+      host: "your-themes.dev", // replace your domain
+      // port: 3333
+    },
+    ghostMode: {
+      clicks: true,
+      location: true,
+      forms: true,
+      scroll: false
+    }
+  });
 });
 
-// Styles
+// styles
 gulp.task('styles', function() {
   return gulp.src('assets/scss/main.scss')
+  .pipe(plugins.plumber())
   .pipe(plugins.rubySass({ style: 'expanded', compass: true , trace: true }))
   .pipe(plugins.autoprefixer('last 2 versions', 'ie 9', 'ios 6', 'android 4'))
   .pipe(gulp.dest('assets/css'))
@@ -37,10 +37,10 @@ gulp.task('styles', function() {
   .pipe(plugins.notify({ message: 'Styles task complete' }));
 });
 
-// Gulp wp rev
+// assets version
 gulp.task('rev', function () {
   gulp.src('inc/script.php')
-  .pipe(rev({
+  .pipe(plugins.rev({
     css: 'assets/css/main.min.css',
     cssHandle: "epigone_main",
     js: 'assets/js/scripts.min.js',
@@ -52,6 +52,7 @@ gulp.task('rev', function () {
 // Vendor Plugin Scripts
 gulp.task('plugins', function() {
   return gulp.src(['assets/js/_*.js', 'assets/js/bootstrap/*.js'])
+  .pipe(plugins.plumber())
   .pipe(plugins.concat('scripts.js'))
   .pipe(gulp.dest('assets/js/'))
   .pipe(plugins.rename({ suffix: '.min' }))
@@ -61,9 +62,10 @@ gulp.task('plugins', function() {
   .pipe(reload( {stream:true} ));
 });
 
-// Site Scripts
+// task "javascript"
 gulp.task('scripts', function() {
   return gulp.src(['assets/js/_*.js', '!assets/js/scripts.js'])
+  .pipe(plugins.plumber())
   .pipe(plugins.jshint('.jshintrc'))
   .pipe(plugins.jshint.reporter('default'))
   .pipe(plugins.concat('scripts.js'))
@@ -75,17 +77,23 @@ gulp.task('scripts', function() {
   .pipe(reload( {stream:true} ));
 });
 
-// Images
+// task "images"
 gulp.task('images', function() {
   return gulp.src('assets/images/**/*')
+  .pipe(plugins.plumber())
   .pipe(plugins.cache(plugins.imagemin({ optimizationLevel: 7, progressive: true, interlaced: true })))
-  .pipe(plugins.livereload(server))
   .pipe(gulp.dest('assets/images'))
   .pipe(plugins.notify({ message: 'Images task complete' }))
   .pipe(reload( {stream:true} ));
 });
 
-// Watch
+// task "php"
+gulp.task('php', function(){
+  return gulp.src('./**/*.php')
+  .pipe(reload({stream:true}));
+});
+
+// task "watch"
 gulp.task( 'watch',['browserSync'], function() {
 
   // Watch .scss files
@@ -97,6 +105,8 @@ gulp.task( 'watch',['browserSync'], function() {
   // Watch image files
   gulp.watch('assets/images/**/*', ['images']);
 
+  // watch php .php
+  gulp.watch('./**/*.php', ['php']);
 
 });
 

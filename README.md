@@ -5,8 +5,6 @@ _s をベースとした、WordPressテーマです。
 # Featured
 
 * Gulp
-* Bower
-* Bootstrap sass (offcial)
 
 # Require
 
@@ -32,9 +30,9 @@ package.json ファイルのある階層で下記のコマンドを実行しま�
 
 ### 3. gulp の起動
 
-	$ gulp watch 
+	$ gulp watch
 
-上記でgulpが起動し、assets/js フォルダ内のjsファイル, assets/scss内のscssファイルを自動でコンパイルしてくれます。
+上記でgulpが起動し、assets/js フォルダ内のjsファイル, assets/scss内のscssファイルを自動でコンパイルします。
 
 ### 修正点続々
 

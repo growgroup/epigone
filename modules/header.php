@@ -10,16 +10,12 @@
 <header id="masthead" class="site-header" role="banner">
 	<nav class="navbar navbar-default" role="navigation">
 		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="<?php echo home_url(); ?>">
-					<?php bloginfo('name'); ?>
-				</a>
+			<div class="navbar-header" role="main">
+				<h1>
+					<a class="navbar-brand" href="<?php echo home_url(); ?>">
+						<?php bloginfo('name'); ?>
+					</a>
+				</h1>
 			</div>
 
 			<?php
@@ -31,8 +27,8 @@
 					'container_class'   => 'collapse navbar-collapse',
 					'container_id'      => 'header-navbar-collapse',
 					'menu_class'        => 'nav navbar-nav',
-					'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-					'walker'            => new wp_bootstrap_navwalker())
+					'fallback_cb'       => 'WP_Bootstrap_Nav_Walker::fallback',
+					'walker'            => new WP_Bootstrap_Nav_Walker())
 				);
 			?>
 			</div>
