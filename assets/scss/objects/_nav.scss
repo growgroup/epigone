@@ -2,11 +2,94 @@
     $NAVIGATION
 \*------------------------------------*/
 
+.navbar {
+	text-align: center;
+	.navbar-collapse{
+		> ul {
+			list-style: none;
+			padding: 0px;
+			margin: 0px;
+			font-weight: bold;
+			> li {
+				display: inline-block;
+				position: relative;
+				&.current-menu-item{
+					a{
+						background: $nav_active_background;
+					}
+				}
+				> a {
+					display: inline-block;
+					text-decoration: none;
+					color: #444;
+					transition: 0.4s ease background;
+					padding: 15px 20px;
+					border-radius: 2px;
+					background-color: $nav_normal_background;
+					vertical-align: top;
+					&:hover {
+						background-color: $nav_hover_background;
+					}
+					&:active {
+						background: $nav_active_background;
+						@include box-shadow( inset rgba( 0,0,0,0.1 ) 0px 2px 2px );
+					}
+				}
+				.dropdown-menu {
+					opacity: 0;
+					display: none;
+					position: absolute;
+					background-color: $nav_dropdown_background;
+					z-index: 1000;
+					// top: 0px;
+					> li {
+						display: block;
+						float: none;
+						> a {
+							display: inline-block;
+						}
+					}
+				}
+				&:hover{
+					.dropdown-menu {
+						opacity: 1;
+						display: block;
+						background-color: $nav_dropdown_background_hover;
+						@include box-shadow( rgba( 0,0,0,0.1 ) 0px 2px 2px);
+						> li {
+							display: block;
+							float: none;
+							> a {
+								display: block;
+								&:hover{
+									background: #FFF;
+								}
+								&:active {
+									@include box-shadow( inset rgba( 0,0,0,0.1 ) 0px 2px 2px );
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+@media all and (min-width:640px){
+
+	.nav { float: right; padding: 10px 0 0 0; }
+	.nav ul li a { padding: 5px 10px; }
+
+}
+
+
 .nav {
 	clear: both;
-	overflow: hidden;
+	display: inline-block;
 	max-height: 0;
-	
+
 	a {
 		display: block;
 		padding: $pad;
@@ -29,7 +112,7 @@
 		a {
 			border: 0;
 		}
-		
+
 	}
 }
 

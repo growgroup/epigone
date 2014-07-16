@@ -8,11 +8,11 @@ var reload = browserSync.reload;
 
 // browser sync
 gulp.task('browserSync', function() {
-  browserSync.init(null, {
+  browserSync.init( null, {
     notify: true,
     proxy: {
-      host: "your-domain.dev", // replace your domain
-      // port: 3333
+      host: "grow-site-create.com", // replace your domain
+      // port: 3000
     },
     ghostMode: {
       clicks: true,
@@ -94,7 +94,7 @@ gulp.task('php', function(){
 });
 
 // task "watch"
-gulp.task( 'watch',['browserSync'], function() {
+gulp.task( 'watch', ['browserSync'], function() {
 
   // Watch .scss files
   gulp.watch('assets/scss/**/*.scss', ['styles']);

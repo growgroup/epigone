@@ -28,7 +28,7 @@ $font-size-med     : 1em;
 $font-size-med-2   : 1.0625em;
 $font-size-large   : 1.4375em;
 
-$line-height-base : 1.7em;
+$line-height-base : 2em;
 
 // Layout
 $max-width         : 72em;
@@ -70,3 +70,12 @@ $container_margin : 'auto';
 $class_container : 'row';
 $class_column    : 'col';
 $class_push      : 'push';
+
+
+// navbar
+
+$nav_normal_background: #F5F5F5;
+$nav_hover_background: #e8e8e8;
+$nav_active_background: #CCCCCC;
+$nav_dropdown_background: #FFFFFF;
+$nav_dropdown_background_hover: #CCCCCC;

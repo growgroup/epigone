@@ -4,9 +4,9 @@
 
 /* Layout Container */
 .lc {
-	max-width: $max-width;
+	// max-width: $max-width;
 	margin: 0 auto;
-	padding: $pad-half;
+	// padding: $pad-half;
 }
 
 /*------------------------------------*\
@@ -43,22 +43,35 @@
     $GRIDS
 \*------------------------------------*/
 
-$total_columns    : 12;
-$total_width      : 960px;
-$gutter_width     : 1%;
-$container_margin : 'auto';
-
-$class_container : 'row';
-$class_column    : 'col';
-$class_push      : 'push';
-
 /* Grid Container */
 .g {
 	overflow: hidden;
 	margin: 0 (-$pad-half);
 }
 
+
+
+$total_columns    : 12;
+$total_width      : 70em;
+$gutter_width     : 1em;
+$container_margin : auto;
+
+$class_container : 'row';
+$class_column    : 'col';
+$class_push      : 'push';
+
 .container{
 	@include container();
-
+	@include clearfix();
 }
+
+.layout{
+	.layout__main{
+		@include column(9);
+	}
+	.layout__sidebar{
+		@include column(3);
+		@include push(9);
+	}
+}
+

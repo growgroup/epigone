@@ -4,10 +4,10 @@
 .footer {
 	clear: both;
 	overflow: hidden;
-	background: $gray-dark-2;
+	background: $gray-dark;
 	color: $white;
-	line-height: 1.2;
-
+	line-height: 3em;
+	margin-top: 3em;
 	a {
 		color: $gray-light;
 	}

@@ -103,10 +103,20 @@ $class_push:		'push';		//				//
 /**
  * Clearfix
  */
-@mixin clearfix(){
-	overflow: hidden;
-	*zoom: 1;
+@mixin clearfix {
+  zoom: 1;
+  &:before,
+  &:after {
+    display: block;
+    height: 0;
+    visibility: hidden;
+    content: "\0020";
+  }
+  &:after {
+    clear: both;
+  }
 }
+
 
 /**
  * Legacy Clearfix
@@ -129,8 +139,8 @@ $class_push:		'push';		//				//
  */
 @mixin container(){
 	width: container_width();
-	// margin: 0 $container_margin;
-	margin: 0 auto;
+	margin: 0 $container_margin;
+	// margin: 0 auto;
 }
 
 /**

@@ -12,15 +12,26 @@ get_template_part( 'modules/header' );
 
 do_action( 'get_header' ); ?>
 
-<?php
-dynamic_sidebar( 'header-primary' ); ?>
+		<?php
+		dynamic_sidebar( 'header-primary' ); ?>
 
-<div class="wrapper container">
+		<section class="layout wrapper container">
 
-<?php
-load_template( epigone_template_path() ); ?>
+			<main class="main layout__main">
 
-</div>
+			<?php
+			// Get main template
+			load_template( epigone_template_path() ); ?>
+
+			</main>
+
+			<aside class="sidebar layout__sidebar">
+				<?php
+				// Get sidebar
+				get_template_part( 'modules/sidebar' ); ?>
+
+			</aside>
+		</section>
 
 <?php
 

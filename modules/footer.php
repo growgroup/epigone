@@ -9,9 +9,9 @@
 ?>
 
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
+	<footer id="colophon" class="footer" role="contentinfo">
 		<div class="container">
-			<div class="site-info">
+			<div class="footer--copyright site-info">
 
 				<span class="sep"> copyright © <?php echo get_the_date( 'Y' ); ?> | <?php bloginfo( 'name' ); ?></span>
 
