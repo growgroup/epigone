@@ -11,14 +11,14 @@ gulp.task('browserSync', function() {
   browserSync.init( null, {
     notify: true,
     proxy: {
-      host: "grow-site-create.com", // replace your domain
-      // port: 3000
+      host: "your-domain.com", // replace your domain
+      //port: 3000
     },
     ghostMode: {
       clicks: true,
       location: true,
       forms: true,
-      scroll: false
+      scroll: true
     }
   });
 });
@@ -35,18 +35,6 @@ gulp.task('styles', function() {
   .pipe(gulp.dest('assets/css'))
   .pipe(reload({stream:true}))
   .pipe(plugins.notify({ message: 'Styles task complete' }));
-});
-
-// assets version
-gulp.task('rev', function () {
-  gulp.src('inc/script.php')
-  .pipe(plugins.rev({
-    css: 'assets/css/main.min.css',
-    cssHandle: "epigone_main",
-    js: 'assets/js/scripts.min.js',
-    jsHandle: "epigone_scripts"
-  }))
-  .pipe(gulp.dest('inc'));
 });
 
 // Vendor Plugin Scripts
@@ -91,6 +79,18 @@ gulp.task('images', function() {
 gulp.task('php', function(){
   return gulp.src('./**/*.php')
   .pipe(reload({stream:true}));
+});
+
+// assets version
+gulp.task('rev', function () {
+  gulp.src('inc/script.php')
+  .pipe(plugins.rev({
+    css: 'assets/css/main.min.css',
+    cssHandle: "epigone_main",
+    js: 'assets/js/scripts.min.js',
+    jsHandle: "epigone_scripts"
+  }))
+  .pipe(gulp.dest('inc'));
 });
 
 // task "watch"

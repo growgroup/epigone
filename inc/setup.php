@@ -53,7 +53,7 @@ function epigone_print_browser_sync(){
 
 		$output = <<<EOF
 <script type='text/javascript'>//<![CDATA[
-document.write("<script async src='//HOST:3000/browser-sync-client.1.1.2.js'><\/script>".replace(/HOST/g, location.hostname));
+document.write("<script async src='//HOST:3000/browser-sync-client.1.2.1.js'><\/script>".replace(/HOST/g, location.hostname));
 //]]></script>
 EOF;
 		echo $output;
@@ -96,13 +96,13 @@ if ( ! function_exists( 'epigone_setup' ) ) {
 
 		load_theme_textdomain( 'epigone', get_template_directory() . '/languages' );
 
-		// suport auto feed
+		// support auto feed
 		add_theme_support( 'automatic-feed-links' );
 
-		// suport thumnail
+		// support eye-catch image
 		add_theme_support( 'post-thumbnails' );
 
-		// suport menus
+		// support menus
 		add_theme_support( 'menus' );
 
 		// Enable support for HTML5 markup.
@@ -114,3 +114,18 @@ if ( ! function_exists( 'epigone_setup' ) ) {
 	}
 
 }
+
+/**
+ * Change Search form template
+ */
+add_filter( 'get_search_form', 'epinoge_search_form' );
+
+function epinoge_search_form( $form ) {
+
+	ob_start();
+	get_template_part( 'modules/searchform' );
+	$form = ob_get_clean();
+	return $form;
+
+}
+

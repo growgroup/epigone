@@ -79,8 +79,13 @@
 
 @media all and (min-width:640px){
 
-	.nav { float: right; padding: 10px 0 0 0; }
-	.nav ul li a { padding: 5px 10px; }
+	.nav {
+		padding: 10px 0 0 0;
+	}
+
+	.nav ul li a {
+		padding: 5px 10px;
+	}
 
 }
 
@@ -102,7 +107,6 @@
 
 	@media all and (min-width: $bp-med) {
 		max-height: none;
-		float: right;
 		clear: none;
 
 		li {
@@ -132,4 +136,13 @@
 	a {
 		padding: $pad;
 	}
+}
+
+// Post Navigation
+
+.navigation{
+	.navigation--title{
+		font-size: 1.4em;
+	}
+
 }

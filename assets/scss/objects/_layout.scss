@@ -2,6 +2,16 @@
     $LAYOUT
 \*------------------------------------*/
 
+$total_columns    : 12;
+$total_width      : 70em;
+$gutter_width     : 1em;
+$container_margin : auto;
+
+$class_container : 'row';
+$class_column    : 'col';
+$class_push      : 'push';
+
+
 /* Layout Container */
 .lc {
 	// max-width: $max-width;
@@ -12,6 +22,11 @@
 /*------------------------------------*\
     $TEMPLATES
 \*------------------------------------*/
+
+.container{
+	@include container();
+	@include clearfix();
+}
 
 /* Two Column Layout */
 .l-two-col {
@@ -48,30 +63,3 @@
 	overflow: hidden;
 	margin: 0 (-$pad-half);
 }
-
-
-
-$total_columns    : 12;
-$total_width      : 70em;
-$gutter_width     : 1em;
-$container_margin : auto;
-
-$class_container : 'row';
-$class_column    : 'col';
-$class_push      : 'push';
-
-.container{
-	@include container();
-	@include clearfix();
-}
-
-.layout{
-	.layout__main{
-		@include column(9);
-	}
-	.layout__sidebar{
-		@include column(3);
-		@include push(9);
-	}
-}
-

@@ -32,7 +32,12 @@
 	}
 }
 
+.footer--copyright{
+	text-align: center;
+}
+
 .copyright {
+	text-align: center;
 	@media all and (min-width: $bp-med) {
 		float: right;
 	}

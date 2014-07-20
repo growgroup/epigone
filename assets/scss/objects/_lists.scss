@@ -9,7 +9,7 @@
 	li {
 		margin: 0 0.4rem $space 0;
 	}
-	
+
 	a {
 		font-size: 1.6em;
 	}
@@ -39,6 +39,30 @@
 	li {
 		margin-bottom: $space;
 	}
+}
+
+.entry-content {
+
+	ul {
+		list-style-type: disc;
+		list-style-position: inside;
+		padding-left: $space;
+		margin-bottom: $space;
+		li {
+			margin-bottom: $space;
+		}
+	}
+
+	ol{
+		list-style-type: decimal;
+		list-style-position: inside;
+		padding-left: $space;
+		margin-bottom: $space;
+		li{
+			margin-bottom: $space;
+		}
+	}
+
 }
 
 /* Bullet List */

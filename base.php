@@ -10,28 +10,29 @@
 get_template_part( 'modules/head' );
 get_template_part( 'modules/header' );
 
-do_action( 'get_header' ); ?>
+do_action( 'get_header' );
+
+get_template_part( 'modules/navbar' );
+
+dynamic_sidebar( 'header-primary' ); ?>
+
+	<section class="l-two-col layout container wrapper">
+
+		<main class="l-main layout__main" role="main">
 
 		<?php
-		dynamic_sidebar( 'header-primary' ); ?>
+		// Get main template
+		load_template( epigone_template_path() ); ?>
 
-		<section class="layout wrapper container">
+		</main>
 
-			<main class="main layout__main">
-
+		<aside class="l-sidebar layout__sidebar" role="aside">
 			<?php
-			// Get main template
-			load_template( epigone_template_path() ); ?>
+			// Get sidebar
+			get_template_part( 'modules/sidebar' ); ?>
 
-			</main>
-
-			<aside class="sidebar layout__sidebar">
-				<?php
-				// Get sidebar
-				get_template_part( 'modules/sidebar' ); ?>
-
-			</aside>
-		</section>
+		</aside>
+	</section>
 
 <?php
 

@@ -481,6 +481,21 @@ td {
 /*------------------------------------*\
     $TEMPLATES
 \*------------------------------------*/
+.container {
+  width: 70em;
+  margin: 0 auto;
+  zoom: 1;
+}
+.container:before, .container:after {
+  display: block;
+  height: 0;
+  visibility: hidden;
+  content: "\0020";
+}
+.container:after {
+  clear: both;
+}
+
 /* Two Column Layout */
 @media all and (min-width: 49em) {
   .l-two-col .l-main {
@@ -509,33 +524,6 @@ td {
 .g {
   overflow: hidden;
   margin: 0 -0.5em;
-}
-
-.container {
-  width: 70em;
-  margin: 0 auto;
-  zoom: 1;
-}
-.container:before, .container:after {
-  display: block;
-  height: 0;
-  visibility: hidden;
-  content: "\0020";
-}
-.container:after {
-  clear: both;
-}
-
-.layout .layout__main {
-  float: left;
-  margin-right: -100%;
-  width: 52.25em;
-}
-.layout .layout__sidebar {
-  float: left;
-  margin-right: -100%;
-  width: 16.75em;
-  margin-left: 53.25em;
 }
 
 /*------------------------------------*\
@@ -659,7 +647,6 @@ td {
 
 @media all and (min-width: 640px) {
   .nav {
-    float: right;
     padding: 10px 0 0 0;
   }
 
@@ -683,7 +670,6 @@ td {
 @media all and (min-width: 46.8em) {
   .nav {
     max-height: none;
-    float: right;
     clear: none;
   }
   .nav li {
@@ -706,6 +692,10 @@ td {
 }
 .pagination a {
   padding: 1em;
+}
+
+.navigation .navigation--title {
+  font-size: 1.4em;
 }
 
 /*------------------------------------*\
@@ -748,6 +738,13 @@ td {
   padding: 1em;
 }
 
+.footer--copyright {
+  text-align: center;
+}
+
+.copyright {
+  text-align: center;
+}
 @media all and (min-width: 46.8em) {
   .copyright {
     float: right;
@@ -1122,6 +1119,25 @@ td {
   margin-bottom: 1em;
 }
 
+.entry-content ul {
+  list-style-type: disc;
+  list-style-position: inside;
+  padding-left: 1em;
+  margin-bottom: 1em;
+}
+.entry-content ul li {
+  margin-bottom: 1em;
+}
+.entry-content ol {
+  list-style-type: decimal;
+  list-style-position: inside;
+  padding-left: 1em;
+  margin-bottom: 1em;
+}
+.entry-content ol li {
+  margin-bottom: 1em;
+}
+
 /* Bullet List */
 .bullet-list {
   list-style: square;
@@ -1306,6 +1322,14 @@ td {
 
 .comment-text {
   margin-left: 9em;
+}
+
+.comments--title {
+  font-size: 1.4em;
+}
+
+.comment-reply-title {
+  font-size: 1.4em;
 }
 
 /*------------------------------------*\

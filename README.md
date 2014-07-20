@@ -1,10 +1,11 @@
 epigone
 ===
-_s をベースとした、WordPressテーマです。
+A simple WordPress boilerplate theme.
 
 # Featured
 
 * Gulp
+* Bower
 * BrowserSync
 * Profound Grid
 
@@ -16,33 +17,32 @@ _s をベースとした、WordPressテーマです。
 
 # Getting Started
 
-### 1. テーマのインストール
+### 1. Install
 
-テーマディレクトリ ( wp-content/themes/ ) に移動してgit clone してください。
+Go to the theme directory and type this command.
 
 	$ git clone https://github.com/1shiharaT/epigone.git epigone
 
-または、[zipファイル](https://github.com/1shiharaT/epigone/archive/master.zip) をダウンロードして、テーマをインストールしてください。
+or [download](https://github.com/roots/roots/archive/master.zip) it and then rename the directory to the name of your theme or website.
 
-### 2. npm パッケージのインストール
+### 2. npm install
 
-package.json ファイルのある階層で下記のコマンドを実行します。
+Navigate to the theme directory & then run from the command line:
 
 	$ npm install
 
-### 3. gulp の起動
+### 3. Setting gulpfile.js
 
-1.gulpfile.js の BrowserSync の設定を変更
+1. change BrowserSync settings.
 
 	// browser sync
 	gulp.task('browserSync', function() {
 		browserSync.init(null, {
 			notify: true,
 			proxy: {
-				host: "your-domain.dev", // ドメインを変更
+				host: "your-domain.dev", // replace
 				// port: 3333
 			},
-			// 好みによってghostMode の設定を変更してください。
 			ghostMode: {
 				clicks: true,
 				location: true,
@@ -52,10 +52,14 @@ package.json ファイルのある階層で下記のコマンドを実行しま�
 		});
 	});
 
-2. ターミナル から Gulp を起動
+2. 1 line added to wp-config.php
+
+define( 'EPIGONE_DEVELOPMODE', true );
+
+
+3. Starting the Gulp.
 
 	$ gulp watch
 
-上記でgulpが起動し、assets/js フォルダ内のjsファイル, assets/scss 内の scss ファイルを自動でコンパイルします。
 
 

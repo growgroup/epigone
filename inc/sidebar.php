@@ -1,6 +1,6 @@
 <?php
 /**
- * register sidebar
+ * register sidebar area
  * =====================================================
  * @package  epigone
  * @license  GPLv2 or later
@@ -47,6 +47,7 @@ function epigone_custom_sidebar() {
 		'before_title'  => '<h3 class="widget__title">',
 		'after_title'   => '</h3>',
 	) );
+
 }
 
 
