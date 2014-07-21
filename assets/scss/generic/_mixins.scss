@@ -50,14 +50,7 @@
 // Defaults (feel free to override)
 ////////////////////////////////////////////////////////////////////////////////
 
-$total_columns: 	12;			// 				//
-$total_width:		960px; 		// px|100% 		// px	= fixed, 100% = fluid
-$gutter_width:  1%;
-$container_margin: 'auto';
 
-$class_container:	'row';		//				//
-$class_column:		'col';		//				//
-$class_push:		'push';		//				//
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -139,6 +132,7 @@ $class_push:		'push';		//				//
  */
 @mixin container(){
 	width: container_width();
+	max-width: $container_max_width;
 	margin: 0 $container_margin;
 	// margin: 0 auto;
 }

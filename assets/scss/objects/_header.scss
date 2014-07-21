@@ -14,6 +14,13 @@
 	@media all and (min-width: $bp-med) {
 		// max-width: 9rem;
 	}
+
+	@media (max-width: $bp-small-3) {
+		font-size: 2em;
+		padding-left: 0.2rem;
+		padding-right: 0.2rem;
+	}
+
 }
 
 .nav-toggle {
@@ -32,6 +39,7 @@
 		padding-left: 0.2rem;
 		padding-right: 0.2rem;
 	}
+
 }
 
 .search-form {

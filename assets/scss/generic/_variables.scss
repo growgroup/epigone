@@ -79,3 +79,15 @@ $nav_hover_background: #e8e8e8;
 $nav_active_background: #CCCCCC;
 $nav_dropdown_background: #FFFFFF;
 $nav_dropdown_background_hover: #CCCCCC;
+
+$total_columns: 	12;			// 				//
+$total_width:		100%; 		// px|100% 		// px	= fixed, 100% = fluid
+$gutter_width:  1%;
+
+$container_max_width: 1200px;
+$container_margin: 'auto';
+
+$class_container:	'row';		//				//
+$class_column:		'col';		//				//
+$class_push:		'push';		//				//
+
