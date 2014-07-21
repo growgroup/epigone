@@ -2,6 +2,10 @@ epigone
 ===
 A simple WordPress boilerplate theme.
 
+
+![](http://f.cl.ly/items/2Q0x0I160F022n1q2x2i/screenshot.png)
+
+
 # Featured
 
 * Gulp
@@ -33,7 +37,7 @@ Navigate to the theme directory & then run from the command line:
 
 ### 3. Setting gulpfile.js
 
-1. change BrowserSync settings.
+1.change BrowserSync settings.
 
 	// browser sync
 	gulp.task('browserSync', function() {
@@ -52,12 +56,12 @@ Navigate to the theme directory & then run from the command line:
 		});
 	});
 
-2. 1 line added to wp-config.php
+2.1 line added to wp-config.php
 
-define( 'EPIGONE_DEVELOPMODE', true );
+	define( 'EPIGONE_DEVELOPMODE', true );
 
 
-3. Starting the Gulp.
+3.Starting the Gulp.
 
 	$ gulp watch
 
