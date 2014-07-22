@@ -27,7 +27,7 @@ Go to the theme directory and type this command.
 
 	$ git clone https://github.com/1shiharaT/epigone.git epigone
 
-or [download](https://github.com/roots/roots/archive/master.zip) it and then rename the directory to the name of your theme or website.
+or [download](https://github.com/1shiharaT/epigone/archive/master.zip) it and then rename the directory to the name of your theme or website.
 
 ### 2. npm install
 
