@@ -58,12 +58,17 @@ Navigate to the theme directory & then run from the command line:
 
 2.1 line added to wp-config.php
 
-	define( 'EPIGONE_DEVELOPMODE', true );
+	define( 'BROWSERSYNC_MODE', true );
 
 
 3.Starting the Gulp.
 
 	$ gulp watch
+
+## Use your projects
+
+If you want to use in your project :
+[generator-epigone](https://github.com/1shiharaT/generator-epigone)
 
 
 

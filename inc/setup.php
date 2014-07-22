@@ -48,8 +48,8 @@ add_action( 'wp_footer', 'epigone_print_browser_sync', 99 );
 function epigone_print_browser_sync(){
 
 	$output = '';
-	if ( defined( 'EPIGONE_DEVELOPMODE' )
-			 && true === EPIGONE_DEVELOPMODE ) {
+	if ( defined( 'BROWSERSYNC_MODE' )
+			 && true === BROWSERSYNC_MODE ) {
 
 		$output = <<<EOF
 <script type='text/javascript'>//<![CDATA[
