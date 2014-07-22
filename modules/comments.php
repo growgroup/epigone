@@ -41,7 +41,7 @@ if ( post_password_required() ) {
 		endif; // check for comment navigation
 
 		wp_list_comments( array(
-			'walker' => new Epigone_Comment,
+			'walker' => new Extend_Epigone_Comment,
 			'style'      => 'ul',
 			'callback' => null,
 			'end-callback' => null,
