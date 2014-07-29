@@ -9,10 +9,10 @@
 ?>
 
 		<header id="masthead" class="header" role="banner">
-			<h1 class="logo">
+			<p class="header--description text-center"><?php bloginfo( 'description' ) ?></p>
+			<h1 class="header--logo">
 				<a href="<?php echo home_url(); ?>">
 					<?php bloginfo( 'name' ); ?>
-
 				</a>
 			</h1>
 		</header>
