@@ -1,46 +1,49 @@
 <!DOCTYPE html>
 <html>
-
   <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Epigone : WordPress Theme Boilerplate." />
-
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Epigone</title>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Epigone by 1shiharaT</title>
   </head>
 
   <body>
+    <div id="container">
+      <div class="inner">
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/1shiharaT/epigone">View on GitHub</a>
-
-          <h1 id="project_title">Epigone</h1>
-          <h2 id="project_tagline">WordPress Theme Boilerplate.</h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/1shiharaT/epigone/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/1shiharaT/epigone/tarball/master">Download this project as a tar.gz file</a>
-            </section>
+        <header>
+          <h1>Epigone</h1>
+          <h2>WordPress Theme Boilerplate.</h2>
         </header>
-    </div>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h1>
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/1shiharaT/epigone/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/1shiharaT/epigone/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/1shiharaT/epigone" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h1>
 <a name="epigone" class="anchor" href="#epigone"><span class="octicon octicon-link"></span></a>epigone</h1>
 
-<p>_s をベースとした、WordPressテーマです。</p>
+<p>A simple WordPress boilerplate theme.</p>
+
+<p><img src="http://f.cl.ly/items/2Q0x0I160F022n1q2x2i/screenshot.png" alt=""></p>
 
 <h1>
 <a name="featured" class="anchor" href="#featured"><span class="octicon octicon-link"></span></a>Featured</h1>
 
 <ul>
 <li>Gulp</li>
+<li>Bower</li>
 <li>BrowserSync</li>
 <li>Profound Grid</li>
 </ul><h1>
@@ -54,37 +57,36 @@
 <a name="getting-started" class="anchor" href="#getting-started"><span class="octicon octicon-link"></span></a>Getting Started</h1>
 
 <h3>
-<a name="1-%E3%83%86%E3%83%BC%E3%83%9E%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB" class="anchor" href="#1-%E3%83%86%E3%83%BC%E3%83%9E%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB"><span class="octicon octicon-link"></span></a>1. テーマのインストール</h3>
+<a name="1-install" class="anchor" href="#1-install"><span class="octicon octicon-link"></span></a>1. Install</h3>
 
-<p>テーマディレクトリ ( wp-content/themes/ ) に移動してgit clone してください。</p>
+<p>Go to the theme directory and type this command.</p>
 
 <pre><code>$ git clone https://github.com/1shiharaT/epigone.git epigone
 </code></pre>
 
-<p>または、<a href="https://github.com/1shiharaT/epigone/archive/master.zip">zipファイル</a> をダウンロードして、テーマをインストールしてください。</p>
+<p>or <a href="https://github.com/1shiharaT/epigone/archive/master.zip">download</a> it and then rename the directory to the name of your theme or website.</p>
 
 <h3>
-<a name="2-npm-%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB" class="anchor" href="#2-npm-%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB"><span class="octicon octicon-link"></span></a>2. npm パッケージのインストール</h3>
+<a name="2-npm-install" class="anchor" href="#2-npm-install"><span class="octicon octicon-link"></span></a>2. npm install</h3>
 
-<p>package.json ファイルのある階層で下記のコマンドを実行します。</p>
+<p>Navigate to the theme directory &amp; then run from the command line:</p>
 
 <pre><code>$ npm install
 </code></pre>
 
 <h3>
-<a name="3-gulp-%E3%81%AE%E8%B5%B7%E5%8B%95" class="anchor" href="#3-gulp-%E3%81%AE%E8%B5%B7%E5%8B%95"><span class="octicon octicon-link"></span></a>3. gulp の起動</h3>
+<a name="3-setting-gulpfilejs" class="anchor" href="#3-setting-gulpfilejs"><span class="octicon octicon-link"></span></a>3. Setting gulpfile.js</h3>
 
-<p>1.gulpfile.js の BrowserSync の設定を変更</p>
+<p>1.change BrowserSync settings.</p>
 
 <pre><code>// browser sync
 gulp.task('browserSync', function() {
     browserSync.init(null, {
         notify: true,
         proxy: {
-            host: "your-domain.dev", // ドメインを変更
+            host: "your-domain.dev", // replace
             // port: 3333
         },
-        // 好みによってghostMode の設定を変更してください。
         ghostMode: {
             clicks: true,
             location: true,
@@ -95,30 +97,40 @@ gulp.task('browserSync', function() {
 });
 </code></pre>
 
-<ol>
-<li>
-<p>ターミナル から Gulp を起動</p>
+<p>2.1 line added to wp-config.php</p>
 
-<p>$ gulp watch</p>
-</li>
-</ol><p>上記でgulpが起動し、assets/js フォルダ内のjsファイル, assets/scss 内の scss ファイルを自動でコンパイルします。</p>
+<pre><code>define( 'BROWSERSYNC_MODE', true );
+</code></pre>
 
-<h1>
-<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>LICENSE</h1>
+<p>3.Starting the Gulp.</p>
 
-<p>GPL v2 or later</p>
-      </section>
+<pre><code>$ gulp watch
+</code></pre>
+
+<h2>
+<a name="use-your-projects" class="anchor" href="#use-your-projects"><span class="octicon octicon-link"></span></a>Use your projects</h2>
+
+<p>If you want to use in your project :
+<a href="https://github.com/1shiharaT/generator-epigone">generator-epigone</a></p>
+        </section>
+
+        <footer>
+          Epigone is maintained by <a href="https://github.com/1shiharaT">1shiharaT</a><br>
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+                  <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-53319306-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+      </div>
     </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Epigone maintained by <a href="https://github.com/1shiharaT">1shiharaT</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-    
-
   </body>
 </html>
