@@ -14,7 +14,7 @@
 
 if ( ! function_exists( 'epigone_setup' ) ) {
 
-	add_action( 'after_setup_theme', 'epigone_setup' );
+	add_action( 'after_setup_theme', 'epigone_setup', 0 );
 
 	function epigone_setup(){
 
