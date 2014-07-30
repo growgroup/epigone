@@ -8,6 +8,39 @@
  */
 
 /**
+ * set theme support.
+ * @return void
+ */
+
+if ( ! function_exists( 'epigone_setup' ) ) {
+
+	add_action( 'after_setup_theme', 'epigone_setup' );
+
+	function epigone_setup(){
+
+		load_theme_textdomain( 'epigone', get_template_directory() . '/languages' );
+
+		// support auto feed
+		add_theme_support( 'automatic-feed-links' );
+
+		// support eye-catch image
+		add_theme_support( 'post-thumbnails' );
+
+		// support menus
+		add_theme_support( 'menus' );
+
+		// Enable support for HTML5 markup.
+		add_theme_support( 'html5', array( 'comment-list', 'search-form', 'comment-form', 'gallery' ) );
+
+		// registration header navigation
+		register_nav_menus( array( 'primary' => __( 'Header Primary Navigation', 'growcreater' ) ) );
+
+	}
+
+}
+
+
+/**
  * wp_head clean up
  *
  * @return void
@@ -83,37 +116,6 @@ function epigone_get_avatar( $avatar, $type ){
 
 }
 
-/**
- * set theme support.
- * @return void
- */
-
-if ( ! function_exists( 'epigone_setup' ) ) {
-
-	add_action( 'after_setup_theme', 'epigone_setup' );
-
-	function epigone_setup(){
-
-		load_theme_textdomain( 'epigone', get_template_directory() . '/languages' );
-
-		// support auto feed
-		add_theme_support( 'automatic-feed-links' );
-
-		// support eye-catch image
-		add_theme_support( 'post-thumbnails' );
-
-		// support menus
-		add_theme_support( 'menus' );
-
-		// Enable support for HTML5 markup.
-		add_theme_support( 'html5', array( 'comment-list', 'search-form', 'comment-form', 'gallery' ) );
-
-		// registration header navigation
-		register_nav_menus( array( 'primary' => __( 'Header Primary Navigation', 'growcreater' ) ) );
-
-	}
-
-}
 
 /**
  * Change Search form template

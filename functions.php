@@ -9,10 +9,4 @@
  */
 
 
-/**
- * define site stage.
- * true : browser-sync script tag embed.
- */
-// define( 'BROWSERSYNC_MODE', true );
-
 require get_template_directory() . '/inc/init.php';
