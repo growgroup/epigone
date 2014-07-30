@@ -78,19 +78,19 @@ class Helper_Custom_Post_Type
 		$labels = array_merge(
 
 			array(
-				'name'               => _x( $plural, 'post type general name' ),
-				'singular_name'      => _x( $name, 'post type singular name' ),
-				'add_new'            => _x( 'Add New', strtolower( $name ) ),
-				'add_new_item'       => __( 'Add New ' . $name ),
-				'edit_item'          => __( 'Edit ' . $name ),
-				'new_item'           => __( 'New ' . $name ),
-				'all_items'          => __( 'All ' . $plural ),
-				'view_item'          => __( 'View ' . $name ),
-				'search_items'       => __( 'Search ' . $plural ),
-				'not_found'          => __( 'No ' . strtolower( $plural ) . ' found' ),
-				'not_found_in_trash' => __( 'No ' . strtolower( $plural ) . ' found in Trash' ),
+				'name'               => sprintf( __( '%s', 'epigone' ), $plural ),
+				'singular_name'      => sprintf( __( '%s', 'epigone' ), $name ),
+				'add_new'            => sprintf( __( 'Add New %s', 'epigone' ), strtolower( $name ) ),
+				'add_new_item'       => sprintf( __( 'Add New %s', 'epigone' ), $name ),
+				'edit_item'          => sprintf( __( 'Edit %s', 'epigone' ), $name ),
+				'new_item'           => sprintf( __( 'New %s', 'epigone' ), $name ),
+				'all_items'          => sprintf( __( 'All %s', 'epigone' ), $plural ),
+				'view_item'          => sprintf( __( 'View %s', 'epigone' ), $name ),
+				'search_items'       => sprintf( __( 'Search %s', 'epigone' ), $plural ),
+				'not_found'          => sprintf( __( 'No %s found', 'epigone' ), strtolower( $plural ) ),
+				'not_found_in_trash' => sprintf( __( 'No %s found in Trash', 'epigone' ), strtolower( $plural ) ),
 				'parent_item_colon'  => '',
-				'menu_name'          => $plural,
+				'menu_name'          => sprintf( __( '%s', 'epigone' ), $plural ),
 			),
 
 			// Given labels
@@ -99,19 +99,17 @@ class Helper_Custom_Post_Type
 		);
 
 
-		$supports = apply_filters( $name . '_post_type_supports', array( 'title', 'editor', 'thumbnail' ) );
-
 		// Same principle as the labels. We set some default and overwite them with the given arguments.
 		$args = array_merge(
 
 			array(
-				'label'         => $plural,
-				'labels'        => $labels,
-				'public'        => true,
-				'show_ui'         => true,
-				'supports'        => $supports,
-				'show_in_nav_menus'   => true,
-				'_builtin'        => false,
+				'label'             => $plural,
+				'labels'            => $labels,
+				'public'            => true,
+				'show_ui'           => true,
+				'supports'          => array( 'title', 'editor', 'thumbnail' ),
+				'show_in_nav_menus' => true,
+				'_builtin'          => false,
 			),
 
 			// Given args
@@ -156,14 +154,14 @@ class Helper_Custom_Post_Type
 							'name'              => _x( $plural, 'taxonomy general name' ),
 							'singular_name'     => _x( $name, 'taxonomy singular name' ),
 							'search_items'      => __( 'Search ' . $plural ),
-							'all_items'         => __( 'All ' . $plural ),
-							'parent_item'       => __( 'Parent ' . $name ),
-							'parent_item_colon' => __( 'Parent ' . $name . ':' ),
-							'edit_item'         => __( 'Edit ' . $name ),
-							'update_item'       => __( 'Update ' . $name ),
-							'add_new_item'      => __( 'Add New ' . $name ),
-							'new_item_name'     => __( 'New ' . $name . ' Name' ),
-							'menu_name'         => __( $name ),
+							'all_items'         => sprintf( __( 'All %s', 'epigone' ), $name ),
+							'parent_item'       => sprintf( __( 'Parent %s', 'epigone' ), $name ),
+							'parent_item_colon' => sprintf( __( 'Parent: %s', 'epigone' ), $name ),
+							'edit_item'         => sprintf( __( 'Edit: %s', 'epigone' ), $name ),
+							'update_item'       => sprintf( __( 'Update %s', 'epigone' ), $name ),
+							'add_new_item'      => sprintf( __( 'Add new %s', 'epigone' ), $name ),
+							'new_item_name'     => sprintf( __( 'New %s Name', 'epigone' ), $name ),
+							'menu_name'         => sprintf( __( '%s', 'epigone' ), $name ),
 							),
 
 					// Given labels
