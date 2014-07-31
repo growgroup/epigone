@@ -31,7 +31,7 @@ function epigone_script() {
 	}
 
 	wp_enqueue_script( 'jquery' );
-	wp_enqueue_script( 'epigone_script' );
+	wp_enqueue_script( 'epigone_scripts' );
 }
 
 /**
