@@ -90,6 +90,10 @@ header, footer, nav, section, article, hgroup, figure {
   display: block;
 }
 
+body {
+  background: #000;
+}
+
 /*------------------------------------*\
     $GLOBAL ELEMENTS
 \*------------------------------------*/
@@ -467,6 +471,10 @@ td {
 .animate-move > .demo-shape {
   -webkit-transition: all 0.8s ease-in-out;
   transition: all 0.8s ease-in-out;
+}
+
+body {
+  background: #F8F8F8;
 }
 
 /*------------------------------------*\

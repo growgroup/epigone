@@ -33,7 +33,10 @@ if ( ! function_exists( 'epigone_setup' ) ) {
 		add_theme_support( 'html5', array( 'comment-list', 'search-form', 'comment-form', 'gallery' ) );
 
 		// registration header navigation
-		register_nav_menus( array( 'primary' => __( 'Header Primary Navigation', 'growcreater' ) ) );
+		register_nav_menus( array( 'primary' => __( 'Header Primary Navigation', 'epigone' ) ) );
+
+		// Set editor-style
+		add_editor_style( 'assets/css/editor-style.css' );
 
 	}
 
@@ -86,7 +89,7 @@ function epigone_print_browser_sync(){
 
 		$output = <<<EOF
 <script type='text/javascript'>//<![CDATA[
-document.write("<script async src='//HOST:3000/browser-sync-client.1.3.0.js'><\/script>".replace(/HOST/g, location.hostname));
+document.write("<script async src='//HOST:3000/browser-sync-client.1.3.5.js'><\/script>".replace(/HOST/g, location.hostname));
 //]]></script>
 EOF;
 		echo $output;
