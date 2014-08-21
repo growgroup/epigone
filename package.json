@@ -1,6 +1,6 @@
 {
   "name": "epigone",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/1shiharaT/epigone.git"
@@ -39,6 +39,7 @@
   },
   "scripts": {
     "setup": "npm install -g bower",
-    "start": "node node_modules/bower/bin/bower install && gulp watch"
+    "start": "node node_modules/bower/bin/bower install && gulp watch",
+    "install-bitters" : "bitters install"
   }
 }

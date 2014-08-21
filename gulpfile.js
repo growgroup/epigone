@@ -114,5 +114,11 @@ gulp.task( 'watch', ['browserSync'], function() {
 
 });
 
+// Run PageSpeed Insights
+gulp.task('pagespeed', psi.bind(null, {
+	url: 'http://your-domain.dev',
+	strategy: 'mobile'
+}));
+
 // Default task
 gulp.task( 'default', ['styles', 'plugins', 'scripts', 'images', 'rev'] );

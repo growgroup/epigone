@@ -1,9 +1,10 @@
 <?php
 /**
- * register sidebar area
+ * Register sidebar area
  * =====================================================
  * @package  epigone
  * @license  GPLv2 or later
+ * @since 1.0.0
  * =====================================================
  */
 
@@ -24,6 +25,15 @@ function epigone_custom_sidebar() {
 	register_sidebar( array(
 		'name'          => __( 'Header Primary Area', 'epigone' ),
 		'id'            => 'header-primary',
+		'before_widget' => '<section class="widget widget-header %1$s %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Main Visual', 'epigone' ),
+		'id'            => 'main-visual',
 		'before_widget' => '<section class="widget widget-header %1$s %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h3 class="widget-title">',

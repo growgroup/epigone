@@ -5,7 +5,7 @@
   "authors": [
     "1shiharaT"
   ],
-  "license": "GPL",
+  "license": "GPL v2",
   "private": true,
   "ignore": [
     "**/.*",
@@ -13,6 +13,7 @@
     "assets/components"
   ],
   "dependencies": {
-    "jquery": "~2.1.0"
+    "jquery": "~2.1.0",
+
   }
 }
