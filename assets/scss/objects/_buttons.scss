@@ -10,7 +10,7 @@
 	padding: $pad;
 	border: 0;
 	text-align: center;
-	
+
 	&:hover, &:focus {
 		background: $gray;
 		color: $white;
@@ -34,7 +34,6 @@
 	font-weight: normal;
 }
 
-
-.text-btn {
+.btn-text {
 	font-style: italic;
 }

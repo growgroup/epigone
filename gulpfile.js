@@ -5,6 +5,8 @@ var gulp = require('gulp');
 var plugins = require('gulp-load-plugins')({ camelize: true });
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
+var psi = require('psi');
+var neat = require('node-neat').includePaths;
 
 // browser sync
 gulp.task('browserSync', function() {
@@ -26,8 +28,10 @@ gulp.task('browserSync', function() {
 // styles
 gulp.task('styles', function() {
   return gulp.src('assets/scss/main.scss')
+	.pipe(plugins.sass({
+		includePaths: ['styles'].concat(neat)
+	}))
   .pipe(plugins.plumber())
-  .pipe(plugins.rubySass({ style: 'expanded', compass: true , trace: true }))
   .pipe(plugins.autoprefixer('last 2 versions', 'ie 9', 'ios 6', 'android 4'))
   .pipe(gulp.dest('assets/css'))
   .pipe(plugins.cssshrink())
@@ -41,16 +45,16 @@ gulp.task('styles', function() {
 gulp.task('plugins', function() {
   return gulp.src(['assets/js/_*.js', 'assets/js/bootstrap/*.js'])
   .pipe(plugins.plumber())
-  .pipe(plugins.concat('scripts.js'))
+  .pipe(plugins.concat('plugins.js'))
   .pipe(gulp.dest('assets/js/'))
   .pipe(plugins.rename({ suffix: '.min' }))
   .pipe(plugins.uglify())
   .pipe(gulp.dest('assets/js'))
-  .pipe(plugins.notify({ message: 'Scripts task complete' }))
+  .pipe(plugins.notify({ message: 'Plugins task complete' }))
   .pipe(reload( {stream:true} ));
 });
 
-// task "javascript"
+// task "scripts"
 gulp.task('scripts', function() {
   return gulp.src(['assets/js/_*.js', '!assets/js/scripts.js'])
   .pipe(plugins.plumber())
@@ -71,7 +75,7 @@ gulp.task('images', function() {
   .pipe(plugins.plumber())
   .pipe(plugins.cache(plugins.imagemin({ optimizationLevel: 7, progressive: true, interlaced: true })))
   .pipe(gulp.dest('assets/images'))
-  .pipe(plugins.notify({ message: 'Images task complete' }))
+  .pipe(plugins.notify({ message: 'Images task complete.' }))
   .pipe(reload( {stream:true} ));
 });
 
@@ -111,4 +115,4 @@ gulp.task( 'watch', ['browserSync'], function() {
 });
 
 // Default task
-gulp.task( 'default', ['styles', 'plugins', 'scripts', 'images', 'watch', 'rev'] );
+gulp.task( 'default', ['styles', 'plugins', 'scripts', 'images', 'rev'] );

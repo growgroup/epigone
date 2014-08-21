@@ -1,10 +1,16 @@
-// main.scss
-@import "compass";
-
 /*------------------------------------*\
     $TABLE OF CONTENTS
     based generally on Harry Roberts excellent CSS Guidelines https://github.com/csswizardry/CSS-Guidelines
 \*------------------------------------*/
+
+/*------------------------------------*\
+    $IMPORT Borbon & neat
+    Document of bourbon : http://bourbon.io/docs/
+    Document of neat : http://neat.bourbon.io/docs/
+\*------------------------------------*/
+@import "bourbon";
+@import "neat";
+
 /**
  * VARIABLES..............................Declarations of Sass variables
  * .....Colors
@@ -25,7 +31,7 @@
  * MEDIA------------------------------
  * LAYOUT------------------------------
  * NAVIGATION------------------------------
- * TOC To Be Continued
+ * WORDPRESS.............................Set Default WordPress styles.
  */
 
 @import "generic/variables";

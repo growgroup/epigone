@@ -61,17 +61,6 @@ $bp-xl      : 73em;
 $bp-xxl     : 89em;
 $bp-xxxl    : 93em;
 
-// Grid
-$total_columns    : 12;
-$total_width      : 960px;
-$gutter_width     : 1em;
-$container_margin : 'auto';
-
-$class_container : 'row';
-$class_column    : 'col';
-$class_push      : 'push';
-
-
 // navbar
 
 $nav_normal_background: #F5F5F5;
@@ -80,14 +69,15 @@ $nav_active_background: #CCCCCC;
 $nav_dropdown_background: #FFFFFF;
 $nav_dropdown_background_hover: #CCCCCC;
 
-$total_columns: 	12;			// 				//
-$total_width:		100%; 		// px|100% 		// px	= fixed, 100% = fluid
-$gutter_width:  1%;
-
-$container_max_width: 1200px;
-$container_margin: 'auto';
-
-$class_container:	'row';		//				//
-$class_column:		'col';		//				//
-$class_push:		'push';		//				//
-
+// Grid
+$border-box-sizing: true;
+$column: golden-ratio(1em, 3);
+$default-feature: min-width;
+$default-layout-direction: LTR;
+$grid-columns: 12;
+$gutter: golden-ratio(1em, 1);
+$max-width: em(1088);
+$visual-grid-color: #eee;
+$visual-grid-index: back;
+$visual-grid-opacity: 0.4;
+$visual-grid: false;

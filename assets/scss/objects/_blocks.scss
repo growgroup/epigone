@@ -1,4 +1,6 @@
-/* Generic Placeholder Brick: REMOVE FOR PRODUCTION */
+/*------------------------------------*\
+    $BLOCK
+\*------------------------------------*/
 .brick {
 	background: #dcdddc;
 	padding: $pad-double;
@@ -20,7 +22,13 @@
 	line-height: 1.2;
 }
 
-/* Hero Block */
+/**
+  * @name Block-Hero
+  * @description Style for the block-hero class
+  * @markup
+  *   <div class="block-hero">markup</div>
+  */
+
 .block-hero {
 	margin-bottom: $space-half;
 
@@ -46,6 +54,16 @@
 }
 
 /* Block Thumbnail with Headline */
+
+/**
+  * @name Block-Thumb
+  * @description Block Thumbnail with Headline
+  * @markup
+  *   <div class="block-thumb">
+  *     <div class="b-inner">markup</div>
+  *   </div>
+  */
+
 .block-thumb {
 	display: table;
 	width: 100%;

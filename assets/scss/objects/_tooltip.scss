@@ -1,3 +1,14 @@
+/*------------------------------------*\
+    $TOOLTIPS
+\*------------------------------------*/
+/**
+  * @name Tooltip-Container
+  * @description Style for the tooltip-container class
+  * @state :hover - hover state
+  * @markup
+  *   <div class="tooltip-container">markup</div>
+  */
+
 .tooltip-container {
 	display: inline-block;
 	position: relative;

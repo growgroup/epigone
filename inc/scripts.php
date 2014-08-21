@@ -7,13 +7,18 @@
  * =====================================================
  */
 
-add_action( 'wp_enqueue_scripts', 'epigone_script', 100 );
+add_action( 'wp_enqueue_scripts', 'epigone_scripts', 100 );
 
-function epigone_script() {
+function epigone_scripts() {
 	/**
 	 * theme main stylesheet
 	 */
 	wp_enqueue_style( 'epigone_main', get_template_directory_uri() . '/assets/css/main.min.css', false, '99972085bc30c435929f5af3cf81d064' );
+
+	/**
+	 * vendor plugins javascript
+	 */
+	wp_register_script( 'epigone_plugins', get_template_directory_uri() . '/assets/js/plugins.min.js', array(), '632995d66dba190b04e58c7bbf9d6222', true );
 
 	/**
 	 * theme main javascript.
@@ -31,6 +36,7 @@ function epigone_script() {
 	}
 
 	wp_enqueue_script( 'jquery' );
+	wp_enqueue_script( 'epigone_plugins' );
 	wp_enqueue_script( 'epigone_scripts' );
 }
 

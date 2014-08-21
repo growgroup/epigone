@@ -1,27 +1,28 @@
-/* Headings */
-/*Further Reading: http:/csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/ */
+/*------------------------------------*\
+    $HEADINGS
+\*------------------------------------*/
 h1, .alpha   {
-	font-size: 4em;
+	font-size: 2em;
 	line-height: $line-height-base;
 }
 
 h2, .beta    {
-	font-size: 3.4em;
+	font-size: 1.8em;
 	line-height: $line-height-base;
 }
 
 h3, .gamma   {
-	font-size: 2.6em;
+	font-size: 1.6em;
 	line-height: $line-height-base;
 }
 
 h4, .delta   {
-	font-size: 2.2em;
+	font-size: 1.4em;
 	line-height: $line-height-base;
 }
 
 h5, .epsilon {
-	font-size: 1.8em;
+	font-size: 1.2em;
 	line-height: $line-height-base;
 }
 
@@ -29,7 +30,13 @@ h6, .zeta    {
 	line-height: $line-height-base;
 }
 
-/* Subheadings */
+/**
+  * @name Subheading
+  * @description Style for the subheading class
+  * @markup
+  *   <div class="subheading">epigone</div>
+  */
+
 .subheading {
 	font-family: $font-secondary;
 	font-weight: normal;

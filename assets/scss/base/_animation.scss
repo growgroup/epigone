@@ -1,3 +1,7 @@
+/*------------------------------------*\
+    $ANIMATION
+\*------------------------------------*/
+
 .animate-fade {
 	@include transition(opacity, 0.3s, ease-out);
 
@@ -10,7 +14,4 @@
 	> .demo-shape {
 		@include transition(all, 0.8s, ease-in-out);
 	}
-}
-body{
-	background: #F8F8F8;
 }

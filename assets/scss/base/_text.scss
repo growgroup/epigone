@@ -1,10 +1,18 @@
-/* Text-Related Elements */
+/*------------------------------------*\
+    $TEXT
+\*------------------------------------*/
 p {
 	margin-bottom: $space;
 	line-height: $line-height-base;
 }
 
-/* Blockquote */
+/**
+  * @name Blockquote
+  * @description Style for the blockquote element
+  * @markup
+  *   <blockquote>Markup</blockquote>
+  */
+
 blockquote {
     font-style:italic;
     border-left: 1px solid $gray;
@@ -13,13 +21,26 @@ blockquote {
 	margin-bottom: $space;
 }
 
-/* Horizontal Rule */
+/**
+  * @name Hr
+  * @description Style for the hr element
+  * @markup
+  *   <hr>Markup</hr>
+  */
+
 hr {
 	border: 0;
     height: 2px;
     background: $gray-light-2;
     margin: $space-double 0;
 }
+
+/**
+  * @name Abbr
+  * @description Style for the abbr element
+  * @markup
+  *   <abbr>Markup</abbr>
+  */
 
 abbr {
     border-bottom: 1px dotted $gray;

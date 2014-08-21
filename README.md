@@ -8,16 +8,16 @@ A simple WordPress boilerplate theme.
 
 # Featured
 
-* Gulp
-* Bower
-* BrowserSync
-* Profound Grid
+* [Gulp](http://gulpjs.com/)
+* [Bower](http://bower.io/)
+* [BrowserSync](http://www.browsersync.io/)
+* [Bourbon](http://bourbon.io/)
+* [neat](http://neat.bourbon.io/)
 
 # Require
 
 * node.js
-* gulp.js
-* Sass >= 3.2.5
+* Sass >= 3.2.19
 
 # Getting Started
 
