@@ -202,7 +202,7 @@ class WP_Bootstrap_Nav_Walker extends Walker_Nav_Menu {
 				$fb_output .= ' class="' . $menu_class . '"';
 
 			$fb_output .= '>';
-			$fb_output .= '<li><a href="' . admin_url( 'nav-menus.php' ) . '">Add a menu</a></li>';
+			$fb_output .= '<li><a href="' . admin_url( 'nav-menus.php' ) . '">' . __( 'Add a menu', 'epigone' ) . '</a></li>';
 			$fb_output .= '</ul>';
 
 			if ( $container )
