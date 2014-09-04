@@ -143,12 +143,17 @@ header, footer, nav, section, article, hgroup, figure {
 .font-secondary {
   font-family: Georgia, Times, "Times New Roman", serif; }
 
+/*------------------------------------*\
+    $MAIN
+\*------------------------------------*/
 body {
   background: #fff;
   font: 100%/1.5 'HelveticaNeue', 'Helvetica', 'Arial', sans-serif;
   line-height: 2em;
   -webkit-text-size-adjust: 100%;
-  color: #333; }
+  color: #333;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased; }
 
 /* Links */
 a {
@@ -458,16 +463,31 @@ td {
 /*------------------------------------*\
     $PAGE STRUCTURE
 \*------------------------------------*/
+/*------------------------------------*\
+    $HEADER
+\*------------------------------------*/
 .header {
   background: #fff;
   padding: 0;
   padding-bottom: 1em;
   margin-bottom: 1em; }
 
+/**
+  * @name Header Description
+  * @description Style for the header--description class
+  * @markup
+  *   <div class="header--description">markup</div>
+  */
 .header--description {
   margin-bottom: 0;
   line-height: 3em; }
 
+/**
+  * @name Header--Logo
+  * @description Style for the header--logo class
+  * @markup
+  *   <div class="header--logo">markup</div>
+  */
 .header--logo {
   text-align: center;
   font-size: 5em; }
@@ -478,6 +498,12 @@ td {
       padding-left: 0.2rem;
       padding-right: 0.2rem; } }
 
+/**
+  * @name Nav-Toggle
+  * @description Style for the nav-toggle class
+  * @markup
+  *   <div class="nav-toggle">markup</div>
+  */
 .nav-toggle {
   float: right;
   display: block;
@@ -493,6 +519,12 @@ td {
       padding-left: 0.2rem;
       padding-right: 0.2rem; } }
 
+/**
+  * @name Header SearchForm
+  * @description Style for the search-form class
+  * @markup
+  *   <div class="search-form">markup</div>
+  */
 .search-form {
   overflow: hidden;
   max-height: 0; }
@@ -597,6 +629,9 @@ td {
 .navigation .navigation--title {
   font-size: 1.4em; }
 
+.breadcrumbs li {
+  display: inline; }
+
 /*------------------------------------*\
     $MAIN CONTENT AREA
 \*------------------------------------*/
@@ -644,10 +679,22 @@ td {
 /*------------------------------------*\
     $TEXT
 \*------------------------------------*/
+/**
+  * @name Intro
+  * @description Style for the intro class
+  * @markup
+  *   <span class="intro">markup</span>
+  */
 .intro {
   font-size: 1.0625em;
   font-weight: bold; }
 
+/**
+  * @name Pullquote
+  * @description Style for the pullquote class
+  * @markup
+  *   <span class="pullquote">markup</span>
+  */
 .pullquote {
   font-family: Georgia, Times, "Times New Roman", serif;
   font-size: 1.4375em; }
@@ -670,6 +717,9 @@ td {
 
 /*------------------------------------*\
     $COMPONENTS
+\*------------------------------------*/
+/*------------------------------------*\
+    $ICON
 \*------------------------------------*/
 /* Icon Font */
 @font-face {
@@ -999,9 +1049,25 @@ td {
   .tooltip-container:hover .tooltip {
     display: block; }
 
+/**
+  * @name Tooltip-Link
+  * @description Style for the tooltip-link class
+  * @markup
+  *   <div class="tooltip-link">markup</div>
+  */
 .tooltip-link {
   background: #f9f9f9; }
 
+/**
+  * @name Tooltip
+  * @description Style for the tooltip class
+  * @state :hover - hover state
+  * @markup
+  *   <div class="tooltip">
+  *     <h2>title</h2>
+  *     markup
+  *   </div>
+  */
 .tooltip {
   display: none;
   position: absolute;

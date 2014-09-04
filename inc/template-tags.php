@@ -129,10 +129,34 @@ function epigone_categorized_blog() {
 /**
  * Flush out the transients used in epigone_categorized_blog.
  */
+function epigone_category_transient_flusher() {
+	delete_transient( 'all_the_cool_cats' );
+}
+
 add_action( 'edit_category', 'epigone_category_transient_flusher' );
 add_action( 'save_post',     'epigone_category_transient_flusher' );
 
-function epigone_category_transient_flusher() {
-	// Like, beat it. Dig?
-	delete_transient( 'all_the_cool_cats' );
+
+/**
+ * breadcrumbs output
+ * @see classes/class-breadcrumbs.php
+ * @return void
+ */
+function epigone_breadcrumb() {
+
+	$templates = array(
+		'before' => '<nav class="breadcrumbs"><ul>',
+		'after' => '</ul></nav>',
+		'standard' => '<li itemscope itemtype="http://data-vocabulary.org/Breadcrumb">%s</li>',
+		'current' => '<li class="current">%s</li>',
+		'link' => '<a href="%s" itemprop="url"><span itemprop="title">%s</span></a>',
+	);
+
+	$options = array(
+		'show_htfpt' => true,
+	);
+
+	// init
+	$breadcrumb = new Epigone_Breadcrumbs( $templates, $options );
+
 }

@@ -1,3 +1,6 @@
+/*------------------------------------*\
+    $HEADER
+\*------------------------------------*/
 .header {
 	background: $white;
 	padding: 0;
@@ -7,10 +10,23 @@
 	@extend .lc;
 }
 
+/**
+  * @name Header Description
+  * @description Style for the header--description class
+  * @markup
+  *   <div class="header--description">markup</div>
+  */
 .header--description {
 	margin-bottom: 0;
 	line-height: 3em;
 }
+
+/**
+  * @name Header--Logo
+  * @description Style for the header--logo class
+  * @markup
+  *   <div class="header--logo">markup</div>
+  */
 .header--logo {
 	text-align: center;
 	font-size: 5em;
@@ -25,6 +41,12 @@
 	}
 }
 
+/**
+  * @name Nav-Toggle
+  * @description Style for the nav-toggle class
+  * @markup
+  *   <div class="nav-toggle">markup</div>
+  */
 .nav-toggle {
 	float: right;
 	display: block;
@@ -44,6 +66,12 @@
 
 }
 
+/**
+  * @name Header SearchForm
+  * @description Style for the search-form class
+  * @markup
+  *   <div class="search-form">markup</div>
+  */
 .search-form {
 	overflow: hidden;
 	max-height: 0;

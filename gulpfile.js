@@ -28,10 +28,10 @@ gulp.task('browserSync', function() {
 // styles
 gulp.task('styles', function() {
   return gulp.src('assets/scss/main.scss')
+  .pipe(plugins.plumber())
 	.pipe(plugins.sass({
 		includePaths: ['styles'].concat(neat)
 	}))
-  .pipe(plugins.plumber())
   .pipe(plugins.autoprefixer('last 2 versions', 'ie 9', 'ios 6', 'android 4'))
   .pipe(gulp.dest('assets/css'))
   .pipe(plugins.cssshrink())

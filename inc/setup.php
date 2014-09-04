@@ -22,6 +22,9 @@ if ( ! function_exists( 'epigone_setup' ) ) {
 		// Supports automatic feed.
 		add_theme_support( 'automatic-feed-links' );
 
+		// Supports for Breadcrumbs.
+		add_theme_support( 'epigone-breadcrumbs' );
+
 		// Support for eye-catching image.
 		add_theme_support( 'post-thumbnails' );
 
@@ -133,3 +136,16 @@ function epinoge_search_form( $form ) {
 
 }
 
+/**
+ * include breadcrumbs
+ * @return void
+ */
+function epigone_include_breadcrumbs(){
+
+	if ( current_theme_supports( 'epigone-breadcrumbs' ) ) {
+		get_template_part( 'modules/breadcrumbs' );
+	}
+
+}
+
+add_action( 'get_main_template', 'epigone_include_breadcrumbs' );

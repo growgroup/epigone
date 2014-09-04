@@ -1,12 +1,23 @@
 /*------------------------------------*\
     $TEXT
 \*------------------------------------*/
+/**
+  * @name Intro
+  * @description Style for the intro class
+  * @markup
+  *   <span class="intro">markup</span>
+  */
 .intro {
 	font-size: $font-size-med-2;
 	font-weight: bold;
 }
 
-//Pullquote
+/**
+  * @name Pullquote
+  * @description Style for the pullquote class
+  * @markup
+  *   <span class="pullquote">markup</span>
+  */
 .pullquote {
 	font-family: $font-secondary;
 	font-size: $font-size-large;

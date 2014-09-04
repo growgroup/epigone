@@ -11,7 +11,7 @@
 // Example
 //
 // # Create Custom Post Type
-// $project = new Helper_Custom_Post_Type( 'Project' );
+// $project = new Epigone_Helper_Custom_Post_Type( 'Project' );
 //
 // # Create Taxonomy
 // $project->add_taxonomy( 'freelance' );

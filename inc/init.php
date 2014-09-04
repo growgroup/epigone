@@ -18,6 +18,7 @@ $include_files = array(
 	array( 'inc/sidebar.php' ),
 	array( 'inc/comment.php' ),
 	array( 'classes/class-theme-wrapper.php' ),
+	array( 'classes/class-breadcrumbs.php' ),
 	array( 'classes/class-wp-bootstrap-navwalker.php' ),
 	array( 'classes/class-extend-walker-comment.php' ),
 	array( 'classes/class-helper-post-type.php' ),
