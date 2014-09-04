@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: epigone1.0\n"
-"POT-Creation-Date: 2014-09-04 19:51+0900\n"
-"PO-Revision-Date: 2014-09-04 19:53+0900\n"
+"POT-Creation-Date: 2014-09-04 20:10+0900\n"
+"PO-Revision-Date: 2014-09-04 20:13+0900\n"
 "Last-Translator: ishihara <ishihara@grow-group.jp>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -50,7 +50,7 @@ msgstr "月: %s"
 
 #: ../archive.php:29
 msgid "F Y"
-msgstr ""
+msgstr "F Y"
 
 #: ../archive.php:32
 #, php-format
@@ -59,7 +59,7 @@ msgstr "年: %s"
 
 #: ../archive.php:32
 msgid "Y"
-msgstr ""
+msgstr "Y"
 
 #: ../archive.php:35
 msgid "Asides"
@@ -111,19 +111,19 @@ msgid "Home"
 msgstr "ホーム"
 
 #: ../classes/class-breadcrumbs.php:86
-#, fuzzy, php-format
+#, php-format
 msgid "Search Result for <em>%s</em>"
-msgstr "%s の検索結果"
+msgstr "%s の 検索結果"
 
 #: ../classes/class-breadcrumbs.php:87
-#, fuzzy, php-format
+#, php-format
 msgid "%s Search results for <em>%s</em>"
-msgstr "%s の検索結果"
+msgstr "%s : %s の検索結果"
 
 #: ../classes/class-breadcrumbs.php:89
-#, fuzzy, php-format
+#, php-format
 msgid "page %d"
-msgstr "ページ %s"
+msgstr "ページ %d"
 
 #: ../classes/class-breadcrumbs.php:90
 msgid "Error: Page not found"
@@ -134,15 +134,14 @@ msgid "Comments"
 msgstr "コメント"
 
 #: ../classes/class-extend-walker-comment.php:70
-#, fuzzy
 msgid "(Edit)"
-msgstr "編集"
+msgstr "(編集)"
 
 #: ../classes/class-post-type.php:81 ../classes/class-post-type.php:82
 #: ../classes/class-post-type.php:93 ../classes/class-post-type.php:164
 #, php-format
 msgid "%s"
-msgstr ""
+msgstr "%s"
 
 #: ../classes/class-post-type.php:83 ../classes/class-post-type.php:84
 #, php-format
@@ -293,11 +292,11 @@ msgstr "投稿ナビゲーション"
 
 #: ../inc/template-tags.php:61
 msgid "<span class=\"meta-nav\">&larr;</span> %title"
-msgstr ""
+msgstr "<span class=\"meta-nav\">&larr;</span> %title"
 
 #: ../inc/template-tags.php:62
 msgid "%title <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
+msgstr "%title <span class=\"meta-nav\">&rarr;</span>"
 
 #: ../inc/template-tags.php:87
 #, php-format
@@ -374,6 +373,8 @@ msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
+"あなたが探しているものを見つけることができませんでした。下の検索フォームから"
+"別の単語でお探し下さい。"
 
 #: ../templates/content-page.php:22 ../templates/content-single.php:25
 #: ../templates/content.php:32
@@ -388,7 +389,7 @@ msgstr "編集"
 #: ../templates/content-single.php:34 ../templates/content-single.php:37
 #: ../templates/content.php:43 ../templates/content.php:53
 msgid ", "
-msgstr ""
+msgstr ","
 
 #: ../templates/content-single.php:42
 #, php-format
@@ -419,6 +420,8 @@ msgid ""
 "This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark"
 "\">permalink</a>."
 msgstr ""
+"この投稿は %1$sに投稿されました。ブックマークは <a href=\"%3$s\" rel="
+"\"bookmark\">こちら</a>から。"
 
 #: ../templates/content.php:29
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
