@@ -1,6 +1,6 @@
 <?php
 /**
- * theme setup script
+ * Setup script for this theme
  * =====================================================
  * @package  epigone
  * @license  GPLv2 or later
@@ -9,25 +9,23 @@
  */
 
 /**
- * set theme support.
+ * Setup support for theme.
  * @return void
  */
 
 if ( ! function_exists( 'epigone_setup' ) ) {
 
-	add_action( 'after_setup_theme', 'epigone_setup', 0 );
-
 	function epigone_setup(){
 
 		load_theme_textdomain( 'epigone', get_template_directory() . '/languages' );
 
-		// support auto feed
+		// Supports automatic feed.
 		add_theme_support( 'automatic-feed-links' );
 
-		// support eye-catch image
+		// Support for eye-catching image.
 		add_theme_support( 'post-thumbnails' );
 
-		// support menus
+		// support for menus
 		add_theme_support( 'menus' );
 
 		// Enable support for HTML5 markup.
@@ -36,22 +34,19 @@ if ( ! function_exists( 'epigone_setup' ) ) {
 		// registration header navigation
 		register_nav_menus( array( 'primary' => __( 'Header Primary Navigation', 'epigone' ) ) );
 
-		// Set editor-style
+		// editor-style
 		add_editor_style( 'assets/css/editor-style.css' );
 
 	}
 
+	add_action( 'after_setup_theme', 'epigone_setup' );
+
 }
 
-
 /**
- * wp_head clean up
- *
- * @return void
+ * Clean up head
  *
  */
-add_filter( 'the_generator', '__return_false' );
-add_filter( 'wp_head', 'epigone_head_cleanup', 10 );
 
 function epigone_head_cleanup(){
 
@@ -73,6 +68,10 @@ function epigone_head_cleanup(){
 	);
 }
 
+/**
+ * wp_head にフック
+ */
+add_filter( 'wp_head', 'epigone_head_cleanup', 10 );
 
 /**
  * Print browserSync client script tag.
@@ -94,22 +93,19 @@ document.write("<script async src='//HOST:3000/browser-sync-client.1.3.5.js'><\/
 //]]></script>
 EOF;
 		echo $output;
-
 	}
 
 }
 
-
 /**
- * get avater
- * @param  [type] $avatar
- * @param  [type] $type
+ * Get an avatar
+ * @param  string $avatar
+ * @param  string $type
  * @return string
  */
 
-add_filter( 'get_avatar', 'epigone_get_avatar', 10, 2 );
-
 function epigone_get_avatar( $avatar, $type ){
+
 	if ( ! is_object( $type ) ) {
 		return $avatar;
 	}
@@ -119,6 +115,8 @@ function epigone_get_avatar( $avatar, $type ){
 	return $avatar;
 
 }
+// filter hook for "get_avater"
+add_filter( 'get_avatar', 'epigone_get_avatar', 10, 2 );
 
 
 /**

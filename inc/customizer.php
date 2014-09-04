@@ -3,6 +3,7 @@
  * epigone Theme Customizer
  *
  * @package epigone
+ * @since 1.0.0
  */
 
 /**

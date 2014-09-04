@@ -65,6 +65,7 @@ function epigone_wp_title( $title, $sep ) {
 
 	return $title;
 }
+
 add_filter( 'wp_title', 'epigone_wp_title', 10, 2 );
 
 /**

@@ -17,6 +17,7 @@ A simple WordPress boilerplate theme.
 # Require
 
 * node.js
+* npm >= 1.4.3
 * Sass >= 3.2.19
 
 # Getting Started
