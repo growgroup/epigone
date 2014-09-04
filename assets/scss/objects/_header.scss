@@ -16,7 +16,7 @@
   * @markup
   *   <div class="header--description">markup</div>
   */
-.header--description {
+.header-description {
 	margin-bottom: 0;
 	line-height: 3em;
 }
@@ -27,7 +27,7 @@
   * @markup
   *   <div class="header--logo">markup</div>
   */
-.header--logo {
+.header-logo {
 	text-align: center;
 	font-size: 5em;
 	@media all and (min-width: $bp-med) {

@@ -40,31 +40,31 @@ function epigone_paging_nav() {
 endif;
 
 if ( ! function_exists( 'epigone_post_nav' ) ) :
-/**
- * Display navigation to next/previous post when applicable.
- *
- * @return void
- */
-function epigone_post_nav() {
-	// Don't print empty markup if there's nowhere to navigate.
-	$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
-	$next     = get_adjacent_post( false, '', false );
+	/**
+	 * Display navigation to next/previous post when applicable.
+	 *
+	 * @return void
+	 */
+	function epigone_post_nav() {
+		// Don't print empty markup if there's nowhere to navigate.
+		$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
+		$next     = get_adjacent_post( false, '', false );
 
-	if ( ! $next && ! $previous ) {
-		return;
+		if ( ! $next && ! $previous ) {
+			return;
+		}
+		?>
+		<nav class="navigation post-navigation" role="navigation">
+			<h1 class="screen-reader-text navigation--title"><?php _e( 'Post navigation', 'epigone' ); ?></h1>
+			<div class="nav-links">
+				<?php
+					previous_post_link( '<div class="nav-previous">%link</div>', _x( '<span class="meta-nav">&larr;</span> %title', 'Previous post link', 'epigone' ) );
+					next_post_link(     '<div class="nav-next">%link</div>',     _x( '%title <span class="meta-nav">&rarr;</span>', 'Next post link',     'epigone' ) );
+				?>
+			</div><!-- .nav-links -->
+		</nav><!-- .navigation -->
+		<?php
 	}
-	?>
-	<nav class="navigation post-navigation" role="navigation">
-		<h1 class="screen-reader-text navigation--title"><?php _e( 'Post navigation', 'epigone' ); ?></h1>
-		<div class="nav-links">
-			<?php
-				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<span class="meta-nav">&larr;</span> %title', 'Previous post link', 'epigone' ) );
-				next_post_link(     '<div class="nav-next">%link</div>',     _x( '%title <span class="meta-nav">&rarr;</span>', 'Next post link',     'epigone' ) );
-			?>
-		</div><!-- .nav-links -->
-	</nav><!-- .navigation -->
-	<?php
-}
 endif;
 
 if ( ! function_exists( 'epigone_posted_on' ) ) :

@@ -8,6 +8,5 @@
 
 /**
  * @see inc/template-tags.php
- *
  */
 epigone_breadcrumb();

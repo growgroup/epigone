@@ -10,8 +10,8 @@
 ?>
 
 		<header id="masthead" class="header" role="banner">
-			<p class="header--description text-center"><?php bloginfo( 'description' ) ?></p>
-			<h1 class="header--logo">
+			<p class="header-description text-center"><?php bloginfo( 'description' ) ?></p>
+			<h1 class="header-logo">
 				<a href="<?php echo home_url(); ?>">
 					<?php bloginfo( 'name' ); ?>
 				</a>

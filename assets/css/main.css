@@ -478,7 +478,7 @@ td {
   * @markup
   *   <div class="header--description">markup</div>
   */
-.header--description {
+.header-description {
   margin-bottom: 0;
   line-height: 3em; }
 
@@ -488,12 +488,12 @@ td {
   * @markup
   *   <div class="header--logo">markup</div>
   */
-.header--logo {
+.header-logo {
   text-align: center;
   font-size: 5em; }
   @media all and (min-width: 46.8em) { }
   @media (max-width: 39.8em) {
-    .header--logo {
+    .header-logo {
       font-size: 2em;
       padding-left: 0.2rem;
       padding-right: 0.2rem; } }
@@ -1180,6 +1180,9 @@ td {
     .social-share a:hover {
       background: #808080; }
 
+/*------------------------------------*\
+    $COMMENT
+\*------------------------------------*/
 .comments li {
   margin-bottom: 1em; }
 
