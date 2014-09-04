@@ -160,3 +160,34 @@ function epigone_breadcrumb() {
 	$breadcrumb = new Epigone_Breadcrumbs( $templates, $options );
 
 }
+
+/**
+ * For function for outputting pagination
+ * @param boolean $output
+ * @return void
+ */
+function epigone_pagination( $output = true ){
+
+	global $wp_query, $wp_rewrite;
+	$base = trailingslashit( get_pagenum_link( 1 ) ) . '%_%';
+	$format = ( $wp_rewrite->using_permalinks() ) ? 'page/%#%' : '?paged=%#%';
+	$args = array(
+		'base' => $base,
+		'format' => $format,
+		'current' => max( 1, get_query_var( 'paged' ) ),
+		'total' => $wp_query->max_num_pages,
+		'prev_next' => true,
+		'prev_text' => '&larr;' . __( 'Previous','epigone' ),
+		'next_text' => __( 'Next','epigone' ) . '&rarr;',
+	);
+
+	$pagination = paginate_links( $args );
+
+	if ( $output ) {
+		echo wp_kses_post( $pagination );
+		return false;
+	}
+
+	return $pagination;
+
+}

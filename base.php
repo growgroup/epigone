@@ -23,13 +23,14 @@ dynamic_sidebar( 'header-primary' ); ?>
 		<main class="l-main layout__main" role="main">
 
 		<?php
-		/**
-		 * Action Hook
-		 */
-		do_action( 'get_main_template' );
-		// Get main template
+		// Action hook before loading the main template.
+		do_action( 'get_main_template_before' );
+
 		load_template( epigone_template_path() ); ?>
 
+		<?php
+		// Action hook after loading the main template
+		do_action( 'get_main_template_after' ); ?>
 		</main>
 
 		<aside class="l-sidebar layout__sidebar" role="aside">

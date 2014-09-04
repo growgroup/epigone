@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: epigone1.0\n"
-"POT-Creation-Date: 2014-07-30 13:32+0900\n"
-"PO-Revision-Date: 2014-07-30 13:38+0900\n"
+"POT-Creation-Date: 2014-09-04 19:51+0900\n"
+"PO-Revision-Date: 2014-09-04 19:53+0900\n"
 "Last-Translator: ishihara <ishihara@grow-group.jp>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -14,207 +14,235 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../404.php:13
+#: ../404.php:14
 msgid "Oops! That page can&rsquo;t be found."
 msgstr "おっと、お探しのページは見つかりませんでした。"
 
-#: ../404.php:17
+#: ../404.php:18
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
 msgstr "何も見つかりませんでした。以下のリンク、または検索してみてください。"
 
-#: ../404.php:25
+#: ../404.php:26
 msgid "Most Used Categories"
 msgstr "最も使用しているカテゴリー"
 
-#: ../404.php:41
+#: ../404.php:42
 #, php-format
 msgid "Try looking in the monthly archives. %1$s"
 msgstr "月別アーカイブで探してみてください。 %1$s"
 
-#: ../archive.php:22
+#: ../archive.php:23
 #, php-format
 msgid "Author: %s"
 msgstr "著者: %s"
 
-#: ../archive.php:25
+#: ../archive.php:26
 #, php-format
 msgid "Day: %s"
 msgstr "日付: %s"
 
-#: ../archive.php:28
+#: ../archive.php:29
 #, php-format
 msgid "Month: %s"
 msgstr "月: %s"
 
-#: ../archive.php:28
+#: ../archive.php:29
 msgid "F Y"
 msgstr ""
 
-#: ../archive.php:31
+#: ../archive.php:32
 #, php-format
 msgid "Year: %s"
 msgstr "年: %s"
 
-#: ../archive.php:31
+#: ../archive.php:32
 msgid "Y"
 msgstr ""
 
-#: ../archive.php:34
+#: ../archive.php:35
 msgid "Asides"
 msgstr "アサイド"
 
-#: ../archive.php:37
+#: ../archive.php:38
 msgid "Galleries"
 msgstr "ギャラリー"
 
-#: ../archive.php:40
+#: ../archive.php:41
 msgid "Images"
 msgstr "画像"
 
-#: ../archive.php:43
+#: ../archive.php:44
 msgid "Videos"
 msgstr "動画"
 
-#: ../archive.php:46
+#: ../archive.php:47
 msgid "Quotes"
 msgstr "引用"
 
-#: ../archive.php:49
+#: ../archive.php:50
 msgid "Links"
 msgstr "リンク"
 
-#: ../archive.php:52
+#: ../archive.php:53
 msgid "Statuses"
 msgstr "ステータス"
 
-#: ../archive.php:55
+#: ../archive.php:56
 msgid "Audios"
 msgstr "オーディオ"
 
-#: ../archive.php:58
+#: ../archive.php:59
 msgid "Chats"
 msgstr "チャット"
 
-#: ../archive.php:61 ../modules/sidebar.php:19
+#: ../archive.php:62 ../modules/sidebar.php:20
 msgid "Archives"
 msgstr "アーカイブ"
 
-#: ../search.php:14
+#: ../search.php:15
 #, php-format
 msgid "Search Results for: %s"
 msgstr "%s の検索結果"
 
-#: ../classes/class-extend-walker-comment.php:22
+#: ../classes/class-breadcrumbs.php:84
+msgid "Home"
+msgstr "ホーム"
+
+#: ../classes/class-breadcrumbs.php:86
+#, fuzzy, php-format
+msgid "Search Result for <em>%s</em>"
+msgstr "%s の検索結果"
+
+#: ../classes/class-breadcrumbs.php:87
+#, fuzzy, php-format
+msgid "%s Search results for <em>%s</em>"
+msgstr "%s の検索結果"
+
+#: ../classes/class-breadcrumbs.php:89
+#, fuzzy, php-format
+msgid "page %d"
+msgstr "ページ %s"
+
+#: ../classes/class-breadcrumbs.php:90
+msgid "Error: Page not found"
+msgstr "エラー : ページが見つかりませんでした。"
+
+#: ../classes/class-extend-walker-comment.php:21
 msgid "Comments"
 msgstr "コメント"
 
-#: ../classes/class-helper-post-type.php:81
-#: ../classes/class-helper-post-type.php:82
-#: ../classes/class-helper-post-type.php:93
-#: ../classes/class-helper-post-type.php:164
+#: ../classes/class-extend-walker-comment.php:70
+#, fuzzy
+msgid "(Edit)"
+msgstr "編集"
+
+#: ../classes/class-post-type.php:81 ../classes/class-post-type.php:82
+#: ../classes/class-post-type.php:93 ../classes/class-post-type.php:164
 #, php-format
 msgid "%s"
 msgstr ""
 
-#: ../classes/class-helper-post-type.php:83
-#: ../classes/class-helper-post-type.php:84
+#: ../classes/class-post-type.php:83 ../classes/class-post-type.php:84
 #, php-format
 msgid "Add New %s"
 msgstr "%sを新しく追加"
 
-#: ../classes/class-helper-post-type.php:85
+#: ../classes/class-post-type.php:85
 #, php-format
 msgid "Edit %s"
 msgstr "%sを編集"
 
-#: ../classes/class-helper-post-type.php:86
+#: ../classes/class-post-type.php:86
 #, php-format
 msgid "New %s"
 msgstr "新しい %s"
 
-#: ../classes/class-helper-post-type.php:87
-#: ../classes/class-helper-post-type.php:157
+#: ../classes/class-post-type.php:87 ../classes/class-post-type.php:157
 #, php-format
 msgid "All %s"
 msgstr "すべての%s"
 
-#: ../classes/class-helper-post-type.php:88
+#: ../classes/class-post-type.php:88
 #, php-format
 msgid "View %s"
 msgstr "%sを見る"
 
-#: ../classes/class-helper-post-type.php:89
+#: ../classes/class-post-type.php:89
 #, php-format
 msgid "Search %s"
 msgstr "%sを検索"
 
-#: ../classes/class-helper-post-type.php:90
+#: ../classes/class-post-type.php:90
 #, php-format
 msgid "No %s found"
 msgstr "%sが見つかりませんでした。"
 
-#: ../classes/class-helper-post-type.php:91
+#: ../classes/class-post-type.php:91
 #, php-format
 msgid "No %s found in Trash"
 msgstr "%sがゴミ箱の中に見つかりませんでした。"
 
-#: ../classes/class-helper-post-type.php:156
+#: ../classes/class-post-type.php:156
 msgid "Search "
 msgstr "検索"
 
-#: ../classes/class-helper-post-type.php:158
+#: ../classes/class-post-type.php:158
 #, php-format
 msgid "Parent %s"
 msgstr "親 %s"
 
-#: ../classes/class-helper-post-type.php:159
+#: ../classes/class-post-type.php:159
 #, php-format
 msgid "Parent: %s"
 msgstr "親 : %s"
 
-#: ../classes/class-helper-post-type.php:160
+#: ../classes/class-post-type.php:160
 #, php-format
 msgid "Edit: %s"
 msgstr "編集: %s"
 
-#: ../classes/class-helper-post-type.php:161
+#: ../classes/class-post-type.php:161
 #, php-format
 msgid "Update %s"
 msgstr "%sを更新"
 
-#: ../classes/class-helper-post-type.php:162
+#: ../classes/class-post-type.php:162
 #, php-format
 msgid "Add new %s"
 msgstr "新しい%sを追加"
 
-#: ../classes/class-helper-post-type.php:163
+#: ../classes/class-post-type.php:163
 #, php-format
 msgid "New %s Name"
 msgstr "新しい %s の名称"
 
-#: ../inc/comment.php:38
+#: ../classes/class-wp-bootstrap-navwalker.php:205
+msgid "Add a menu"
+msgstr "メニューに追加"
+
+#: ../inc/comment.php:39
 msgid "Post a new comment"
 msgstr "新しいコメントを投稿"
 
-#: ../inc/comment.php:39
+#: ../inc/comment.php:40
 msgid "Your email address will not be published. Required fields are marked"
 msgstr "あなたのメールアドレスは公開されません。"
 
-#: ../inc/comment.php:59
+#: ../inc/comment.php:60
 msgid "Your Name (required)"
 msgstr "あなたのお名前 ( 必須 )"
 
-#: ../inc/comment.php:60
+#: ../inc/comment.php:61
 msgid "Email Address (required)"
 msgstr "メールアドレス ( 必須 )"
 
-#: ../inc/comment.php:61
+#: ../inc/comment.php:62
 msgid "Website (url)"
 msgstr "Webサイト (url)"
 
-#: ../inc/comment.php:77
+#: ../inc/comment.php:78
 msgid "Comment"
 msgstr "コメント"
 
@@ -223,51 +251,55 @@ msgstr "コメント"
 msgid "Page %s"
 msgstr "ページ %s"
 
-#: ../inc/setup.php:123
+#: ../inc/setup.php:41
 msgid "Header Primary Navigation"
 msgstr "ヘッダープライマリーナビゲーション"
 
-#: ../inc/sidebar.php:16
+#: ../inc/sidebar.php:17
 msgid "Sidebar Primary"
 msgstr "サイドバー"
 
-#: ../inc/sidebar.php:25
+#: ../inc/sidebar.php:26
 msgid "Header Primary Area"
 msgstr "ヘッダー"
 
-#: ../inc/sidebar.php:34
+#: ../inc/sidebar.php:35
+msgid "Main Visual"
+msgstr "メインビジュアル"
+
+#: ../inc/sidebar.php:44
 msgid "Above Contents"
 msgstr "コンテンツ上部"
 
-#: ../inc/sidebar.php:43
+#: ../inc/sidebar.php:53
 msgid "Footer Primary"
 msgstr "フッター"
 
-#: ../inc/template-tags.php:24
+#: ../inc/template-tags.php:25
 msgid "Posts navigation"
 msgstr "投稿ナビゲーション"
 
-#: ../inc/template-tags.php:28
+#: ../inc/template-tags.php:29
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr "<span class=\"meta-nav\">&larr;</span> 古い投稿へ"
 
-#: ../inc/template-tags.php:32
+#: ../inc/template-tags.php:33
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr "新しい投稿へ <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../inc/template-tags.php:57
+#: ../inc/template-tags.php:58
 msgid "Post navigation"
 msgstr "投稿ナビゲーション"
 
-#: ../inc/template-tags.php:60
+#: ../inc/template-tags.php:61
 msgid "<span class=\"meta-nav\">&larr;</span> %title"
 msgstr ""
 
-#: ../inc/template-tags.php:61
+#: ../inc/template-tags.php:62
 msgid "%title <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: ../inc/template-tags.php:86
+#: ../inc/template-tags.php:87
 #, php-format
 msgid ""
 "<span class=\"posted-on\">Posted on %1$s</span><span class=\"byline\"> by "
@@ -275,6 +307,14 @@ msgid ""
 msgstr ""
 "<span class=\"posted-on\">投稿日 :  %1$s</span><span class=\"byline\"> 投稿"
 "者 : %2$s</span>"
+
+#: ../inc/template-tags.php:180
+msgid "Previous"
+msgstr "前へ"
+
+#: ../inc/template-tags.php:181
+msgid "Next"
+msgstr "次へ"
 
 #: ../modules/comments.php:28
 #, php-format
@@ -297,23 +337,23 @@ msgstr "新しいコメント &rarr;"
 msgid "Comments are closed."
 msgstr "コメントは受け付けていません。"
 
-#: ../modules/searchform.php:12 ../modules/searchform.php:14
+#: ../modules/searchform.php:13 ../modules/searchform.php:15
 msgid "Search"
 msgstr "検索"
 
-#: ../modules/searchform.php:16
+#: ../modules/searchform.php:17
 msgid "Submit"
 msgstr "送信"
 
-#: ../modules/sidebar.php:26
+#: ../modules/sidebar.php:27
 msgid "Meta"
 msgstr "メタ"
 
-#: ../templates/content-none.php:13
+#: ../templates/content-none.php:14
 msgid "Nothing Found"
 msgstr "見つかりませんでした。"
 
-#: ../templates/content-none.php:19
+#: ../templates/content-none.php:20
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
@@ -321,7 +361,7 @@ msgstr ""
 "あなたの最初の投稿を公開する準備はできましたか？<a href=\"%1$s\">最初の投稿を"
 "書く。</a>"
 
-#: ../templates/content-none.php:23
+#: ../templates/content-none.php:24
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
@@ -329,28 +369,28 @@ msgstr ""
 "申し訳ありません。キーワードと一致するコンテンツが見つかりませんでした。他の"
 "キーワードで、もう一度やり直してください。"
 
-#: ../templates/content-none.php:28
+#: ../templates/content-none.php:29
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
 
-#: ../templates/content-page.php:20 ../templates/content-single.php:24
-#: ../templates/content.php:31
+#: ../templates/content-page.php:22 ../templates/content-single.php:25
+#: ../templates/content.php:32
 msgid "Pages:"
 msgstr "ページ : "
 
-#: ../templates/content-page.php:25 ../templates/content-single.php:64
-#: ../templates/content.php:65
+#: ../templates/content-page.php:29 ../templates/content-single.php:65
+#: ../templates/content.php:66
 msgid "Edit"
 msgstr "編集"
 
-#: ../templates/content-single.php:33 ../templates/content-single.php:36
-#: ../templates/content.php:42 ../templates/content.php:52
+#: ../templates/content-single.php:34 ../templates/content-single.php:37
+#: ../templates/content.php:43 ../templates/content.php:53
 msgid ", "
 msgstr ""
 
-#: ../templates/content-single.php:41
+#: ../templates/content-single.php:42
 #, php-format
 msgid ""
 "This entry was tagged %2$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark"
@@ -359,12 +399,12 @@ msgstr ""
 "このエントリーは%2$sにタグ付けされています。ブックマークは<a href=\"%3$s\" "
 "rel=\"bookmark\">こちら</a>"
 
-#: ../templates/content-single.php:43
+#: ../templates/content-single.php:44
 #, php-format
 msgid "Bookmark the <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
 msgstr "ブックマークは<a href=\"%3$s\" rel=\"bookmark\">こちら</a>"
 
-#: ../templates/content-single.php:49
+#: ../templates/content-single.php:50
 #, php-format
 msgid ""
 "This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" "
@@ -373,36 +413,36 @@ msgstr ""
 "このエントリーは%1$sによって投稿され、%2$sにタグ付けされています。ブックマー"
 "クは<a href=\"%3$s\" rel=\"bookmark\">こちら</a>"
 
-#: ../templates/content-single.php:51
+#: ../templates/content-single.php:52
 #, php-format
 msgid ""
 "This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark"
 "\">permalink</a>."
 msgstr ""
 
-#: ../templates/content.php:28
+#: ../templates/content.php:29
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr "続きを読む <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../templates/content.php:46
+#: ../templates/content.php:47
 #, php-format
 msgid "Posted in %1$s"
 msgstr "%1$s への投稿"
 
-#: ../templates/content.php:56
+#: ../templates/content.php:57
 #, php-format
 msgid "Tagged %1$s"
 msgstr "タグ : %1$s"
 
-#: ../templates/content.php:62
+#: ../templates/content.php:63
 msgid "Leave a comment"
 msgstr "コメントを残す"
 
-#: ../templates/content.php:62
+#: ../templates/content.php:63
 msgid "1 Comment"
 msgstr "1つのコメント"
 
-#: ../templates/content.php:62
+#: ../templates/content.php:63
 msgid "% Comments"
 msgstr "% コメント"
 

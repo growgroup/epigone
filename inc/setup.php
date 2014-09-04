@@ -25,6 +25,9 @@ if ( ! function_exists( 'epigone_setup' ) ) {
 		// Supports for Breadcrumbs.
 		add_theme_support( 'epigone-breadcrumbs' );
 
+		// Supports for pagination.
+		add_theme_support( 'epigone-pagination' );
+
 		// Support for eye-catching image.
 		add_theme_support( 'post-thumbnails' );
 
@@ -137,7 +140,7 @@ function epinoge_search_form( $form ) {
 }
 
 /**
- * include breadcrumbs
+ * Function to include the breadcrumb navigation
  * @return void
  */
 function epigone_include_breadcrumbs(){
@@ -148,4 +151,18 @@ function epigone_include_breadcrumbs(){
 
 }
 
-add_action( 'get_main_template', 'epigone_include_breadcrumbs' );
+add_action( 'get_main_template_before', 'epigone_include_breadcrumbs' );
+
+/**
+ * Function to include the pagination.
+ * @return void
+ */
+function epigone_include_pagination(){
+
+	if ( current_theme_supports( 'epigone-pagination' ) ) {
+		get_template_part( 'modules/pagination' );
+	}
+
+}
+
+add_action( 'get_main_template_after', 'epigone_include_pagination' );

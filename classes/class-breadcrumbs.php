@@ -1,6 +1,6 @@
 <?php
 /**
- * Extend comment form
+ * class Breadcrumbs
  * =====================================================
  * @package  epigone
  * @license  GPLv2 or later
