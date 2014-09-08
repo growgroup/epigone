@@ -31,6 +31,7 @@ gulp.task('styles', function() {
   .pipe(plugins.plumber())
 	.pipe(plugins.sass({
 		includePaths: ['styles'].concat(neat)
+		// sourceComments: 'map'
 	}))
   .pipe(plugins.autoprefixer('last 2 versions', 'ie 9', 'ios 6', 'android 4'))
   .pipe(gulp.dest('assets/css'))
@@ -43,7 +44,7 @@ gulp.task('styles', function() {
 
 // Vendor Plugin Scripts
 gulp.task('plugins', function() {
-  return gulp.src(['assets/js/_*.js', 'assets/js/bootstrap/*.js'])
+  return gulp.src(['assets/js/bootstrap/*.js','!assets/js/plugins.js'])
   .pipe(plugins.plumber())
   .pipe(plugins.concat('plugins.js'))
   .pipe(gulp.dest('assets/js/'))

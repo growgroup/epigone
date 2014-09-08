@@ -57,3 +57,30 @@
     $GRIDS
 \*------------------------------------*/
 
+// replace map keys with whatever you want
+// creats classes as .grid-$keyname-$col
+$breakpoint-sizes: xs, sm, md, lg;
+$breakpoint-widths: 480px, 768px, 992px, 1200px;
+$grid-columns: 12;
+
+// media query mixin
+@mixin mq($search) {
+    @media (min-width: map-get($breakpoint-widths, $search)){
+      @content
+    }
+}
+
+@mixin build-grid(){
+  @each $name in $breakpoint-sizes {
+    @for $n from 1 through 4 {
+	    @media (min-width: nth($breakpoint-widths, $n) ){
+	      @for $i from 1 through $grid-columns {
+	        .grid-#{$name}-#{$i} { @include span-columns($i); }
+	      }
+	    }
+	  }
+  }
+}
+
+// build grid classes
+@include build-grid();
