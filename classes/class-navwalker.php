@@ -1,24 +1,16 @@
 <?php
 /**
- * Bootstrap Nav bar
+ * Navigation Walker
  * =====================================================
  * @package  epigone
  * @license  GPLv2 or later
  * @since 1.0.0
+ * Original Author: Edward McIntyre - @twittem
+ * GitHub URI: https://github.com/twittem/wp-bootstrap-navwalker
  * =====================================================
  */
 
-/**
- * Class Name: WP_Bootstrap_Nav_Walker
- * GitHub URI: https://github.com/twittem/wp-bootstrap-navwalker
- * Description: A custom WordPress nav walker class to implement the Bootstrap 3 navigation style in a custom theme using the WordPress built in menu manager.
- * Version: 2.0.4
- * Author: Edward McIntyre - @twittem
- * License: GPL-2.0+
- * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
- */
-
-class WP_Bootstrap_Nav_Walker extends Walker_Nav_Menu {
+class Epigone_Nav_Walker extends Walker_Nav_Menu {
 
 	/**
 	 * @see Walker::start_lvl()

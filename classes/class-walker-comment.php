@@ -8,7 +8,7 @@
  * =====================================================
  */
 
-class Extend_Epigone_Comment extends Walker_Comment {
+class Epigone_Walker_Comment extends Walker_Comment {
 
 	var $tree_type = 'comment';
 	var $db_fields = array(
