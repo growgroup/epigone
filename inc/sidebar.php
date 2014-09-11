@@ -18,7 +18,7 @@ function epigone_custom_sidebar() {
 		'id'            => 'sidebar-primary',
 		'before_widget' => '<section class="widget widget-sidebar %1$s %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h3 class="widget__title">',
+		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
 	) );
 
@@ -45,7 +45,7 @@ function epigone_custom_sidebar() {
 		'id'            => 'content-primary',
 		'before_widget' => '<section class="widget widget-content %1$s %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h3 class="widget__title">',
+		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
 	) );
 
@@ -54,7 +54,7 @@ function epigone_custom_sidebar() {
 		'id'            => 'footer-primary',
 		'before_widget' => '<section class="widget widget-footer %1$s %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h3 class="widget__title">',
+		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
 	) );
 
