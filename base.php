@@ -20,7 +20,7 @@ dynamic_sidebar( 'header-primary' ); ?>
 
 	<section class="l-two-col layout container wrapper">
 
-		<main class="l-main layout__main" role="main">
+		<main class="l-main main" role="main">
 
 		<?php
 		// Action hook before loading the main template.
@@ -33,7 +33,7 @@ dynamic_sidebar( 'header-primary' ); ?>
 		do_action( 'get_main_template_after' ); ?>
 		</main>
 
-		<aside class="l-sidebar layout__sidebar" role="aside">
+		<aside class="l-sidebar sidebar" role="aside">
 			<?php
 		/**
 		 * Action Hook
