@@ -169,6 +169,7 @@ function epigone_breadcrumb() {
 function epigone_pagination( $output = true ){
 
 	global $wp_query, $wp_rewrite;
+
 	$base = trailingslashit( get_pagenum_link( 1 ) ) . '%_%';
 	$format = ( $wp_rewrite->using_permalinks() ) ? 'page/%#%' : '?paged=%#%';
 	$args = array(
@@ -181,10 +182,12 @@ function epigone_pagination( $output = true ){
 		'next_text' => __( 'Next','epigone' ) . '&rarr;',
 	);
 
+	$before = apply_filters( 'epigone_paginavi_before', '<nav class="pagination primary-links">' );
 	$pagination = paginate_links( $args );
+	$after = apply_filters( 'epigone_paginavi_after', '</nav>' );
 
-	if ( $output ) {
-		echo wp_kses_post( $pagination );
+	if ( $output && $pagination ) {
+		echo $before . wp_kses_post( $pagination ) . $after;
 		return false;
 	}
 

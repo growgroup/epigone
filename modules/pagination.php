@@ -7,7 +7,5 @@
  * @since 1.0.0
  * =====================================================
  */
-?>
-<div class="pagination primary-links">
-	<?php epigone_pagination() ;?>
-</div>
+
+epigone_pagination();
