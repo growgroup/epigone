@@ -8,7 +8,7 @@
  * =====================================================
  */
 ?>
-	<nav class="navbar navbar--default" role="navigation">
+	<nav class="navbar navbar-default" role="navigation">
 		<div class="container">
 
 			<?php
