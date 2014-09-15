@@ -3,7 +3,7 @@ epigone
 A simple WordPress boilerplate theme.
 
 
-![](http://f.cl.ly/items/2Q0x0I160F022n1q2x2i/screenshot.png)
+![](https://raw.githubusercontent.com/1shiharaT/epigone/master/screenshot.png)
 
 
 # Featured
@@ -36,7 +36,16 @@ Navigate to the theme directory & then run from the command line:
 
 	$ npm install
 
-### 3. Setting gulpfile.js
+### 3. bower package install
+
+you need to install the package using the bower.
+
+	$ bower install
+
+* [RESPONSIVE NAV](http://responsive-nav.com/)
+* [Font Awesome](http://fortawesome.github.io/Font-Awesome/)
+
+### 4. Setting gulpfile.js
 
 1.change BrowserSync settings.
 
