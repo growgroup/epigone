@@ -11,6 +11,7 @@
 class Epigone_Walker_Comment extends Walker_Comment {
 
 	var $tree_type = 'comment';
+
 	var $db_fields = array(
 		'parent' => 'comment_parent',
 		'id' => 'comment_ID',
@@ -18,15 +19,15 @@ class Epigone_Walker_Comment extends Walker_Comment {
 
 	public function __construct() {
 
-		echo '<h3 id="comments-title" class="comments--title">' . __( 'Comments', 'epigone' ) . '</h3>';
-		echo '<ul id="comment-list" class="comments--list">';
+		echo '<h3 id="comments-title" class="comments-title">' . __( 'Comments', 'epigone' ) . '</h3>';
+		echo '<ul id="comment-list" class="comments-list">';
 
 	}
 
 	public function start_lvl( &$output, $depth = 0, $args = array() ) {
 
 		$GLOBALS['comment_depth'] = $depth + 1;
-		echo '<ul class="children comments--list">';
+		echo '<ul class="children comments-list">';
 
 	}
 
@@ -46,14 +47,14 @@ class Epigone_Walker_Comment extends Walker_Comment {
 		$comment_ID = get_comment_ID(); ?>
 
 		<li <?php comment_class( $parent_class ); ?> id="comment-<?php echo esc_attr( $comment_ID ); ?>">
-			<div id="comment-body-<?php echo esc_attr( $comment_ID ); ?>" class="comments--body">
+			<div id="comment-body-<?php echo esc_attr( $comment_ID ); ?>" class="comments-body">
 
 				<div class="comment-author vcard author">
 					<?php echo wp_kses_post( ( $args['avatar_size'] !== 0 ? get_avatar( $comment, $args['avatar_size'] ) : '' ) ); ?>
 					<cite class="comment author-name"><?php echo get_comment_author_link(); ?></cite>
 				</div><!-- /.comment-author -->
 
-				<div id="comment-content-<?php comment_ID(); ?>" class="comments--content">
+				<div id="comment-content-<?php comment_ID(); ?>" class="comments-content">
 					<?php
 		if ( ! $comment->comment_approved ) : ?>
 					<em class="comment-awaiting-moderation">Your comment is awaiting moderation.</em>

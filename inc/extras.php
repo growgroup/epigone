@@ -31,6 +31,8 @@ function epigone_body_classes( $classes ) {
 		$classes[] = 'group-blog';
 	}
 
+	$classes[] = get_stylesheet();
+
 	return $classes;
 }
 add_filter( 'body_class', 'epigone_body_classes' );
