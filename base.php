@@ -10,7 +10,7 @@
 
 get_template_part( 'modules/head' );
 
-get_template_part( 'modules/header' );
+get_template_part( 'modules/header-minimal' );
 
 do_action( 'get_header' );
 

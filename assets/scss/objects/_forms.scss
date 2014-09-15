@@ -1,0 +1,20 @@
+.widget_search{
+	.input-group{
+		@extend .cf;
+		.form-control{
+			@include span-columns( 8.2 );
+			margin-right: 0;
+			border-color: $primary-color;
+			padding: 0.87em;
+		}
+		.input-group-btn{
+			margin-left: 0;
+
+			.btn{
+				margin: 0;
+				@include span-columns( 4 );
+				@include omega();
+			}
+		}
+	}
+}

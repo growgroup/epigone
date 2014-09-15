@@ -34,6 +34,9 @@ if ( ! function_exists( 'epigone_setup' ) ) {
 		// support for menus
 		add_theme_support( 'menus' );
 
+		// supports for responsive navigation
+		add_theme_support( 'responsive-nav' );
+
 		// Enable support for HTML5 markup.
 		add_theme_support( 'html5', array( 'comment-list', 'search-form', 'comment-form', 'gallery' ) );
 
@@ -74,9 +77,6 @@ function epigone_head_cleanup(){
 	);
 }
 
-/**
- * wp_head にフック
- */
 add_filter( 'wp_head', 'epigone_head_cleanup', 10 );
 
 /**

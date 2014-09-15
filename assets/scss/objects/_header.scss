@@ -1,6 +1,14 @@
 /*------------------------------------*\
-    $HEADER
+		$HEADER
 \*------------------------------------*/
+/**
+	* @name Header
+	* @description Style for the header class
+	* @state .header-minimal - header-minimal state
+	* @markup
+	*   <div class="header">markup</div>
+	*/
+
 .header {
 	background: $white;
 	padding: 0;
@@ -10,25 +18,63 @@
 }
 
 /**
-  * @name Header Description
-  * @description Style for the header--description class
-  * @markup
-  *   <div class="header--description">markup</div>
-  */
+	* @name Header-Minimal
+	* @description Style for the header-minimal class
+	* @markup
+	*   <div class="header-minimal">markup</div>
+	*/
+.header-minimal{
+	margin-bottom: 2.6em;
+	padding-bottom: 1.7em;
+	background: $gray-light-2;
+	.header-description {
+		text-align: left;
+		background: $header-description-bg;
+		margin-bottom: 1.7em;
+		box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+		p{
+			line-height: 2.2em;
+			margin-bottom: 0;
+			color: $header-description-color;
+		}
+	}
+	.header-logo{
+		text-align: left;
+		font-size: 3.1em;
+		font-weight: 100;
+		line-height: 1.7em;
+		@include span-columns( 3.8 );
+		a{
+			color: $primary-color;
+		}
+	}
+	.header-banner{
+		text-align: right;
+		@include span-columns( 8.2 );
+		@include omega();
+	}
+}
+
+/**
+	* @name Header Description
+	* @description Style for the header--description class
+	* @markup
+	*   <div class="header--description">markup</div>
+	*/
 .header-description {
 	margin-bottom: 0;
 	line-height: 3em;
 }
 
 /**
-  * @name Header--Logo
-  * @description Style for the header--logo class
-  * @markup
-  *   <div class="header--logo">markup</div>
-  */
+	* @name Header--Logo
+	* @description Style for the header--logo class
+	* @markup
+	*   <div class="header--logo">markup</div>
+	*/
 .header-logo {
 	text-align: center;
-	font-size: 5em;
+	font-size: 4em;
 	@media all and (min-width: $bp-med) {
 		// max-width: 9rem;
 	}
@@ -41,11 +87,11 @@
 }
 
 /**
-  * @name Nav-Toggle
-  * @description Style for the nav-toggle class
-  * @markup
-  *   <div class="nav-toggle">markup</div>
-  */
+	* @name Nav-Toggle
+	* @description Style for the nav-toggle class
+	* @markup
+	*   <div class="nav-toggle">markup</div>
+	*/
 .nav-toggle {
 	float: right;
 	display: block;
@@ -66,11 +112,11 @@
 }
 
 /**
-  * @name Header SearchForm
-  * @description Style for the search-form class
-  * @markup
-  *   <div class="search-form">markup</div>
-  */
+	* @name Header SearchForm
+	* @description Style for the search-form class
+	* @markup
+	*   <div class="search-form">markup</div>
+	*/
 .search-form {
 	overflow: hidden;
 	max-height: 0;

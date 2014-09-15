@@ -42,6 +42,24 @@ h6, .zeta    {
 	font-weight: normal;
 }
 
-.widget__title{
-	font-size: 1.8em;
+.widget-title{
+	line-height: 2.2em;
+	font-size: 1.1em;
+	letter-spacing: 1px;
+	padding-left: 0.7em;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	color: $white;
+	background: $secondary-color;
+	&:before{
+		@extend .fa;
+		@extend .fa-dot-circle-o;
+		margin-right: 0.4em;
+	}
+}
+.entry-title{
+	color: $primary-color;
+	a{
+		color: $primary-color;
+	}
 }

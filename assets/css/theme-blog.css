@@ -1,0 +1,362 @@
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:300italic,300");
+/*------------------------------------*\
+		$THEME BLOG
+\*------------------------------------*/
+/*------------------------------------*\
+    0. SETTINGS
+\*------------------------------------*/
+/*------------------------------------*\
+    1. THEME STYLE
+    $theme_name is this theme slug.
+\*------------------------------------*/
+.epigone {
+  /**
+		* @name Header-Minimal
+		* @description Style for the header-minimal class
+		* @markup
+		*   <div class="header-minimal">
+		*     <div class="header-description"></div>
+		*     <div class="header-logo"></div>
+		*     <div class="header-banner"></div>
+		*   </div>
+		*/
+  /**
+		* @name navbar
+		* @description Style for the navbar class
+		* @markup
+		*   <div class="navbar">markup</div>
+		*/
+  /**
+	  * @name Hentry - archive post list
+	  * @description Style for the hentry class
+	  * @markup
+	  *   <div class="hentry">markup</div>
+	  */
+  /*------------------------------------*\
+	    $HEADER
+	\*------------------------------------*/
+  /**
+		* @name Entry-Header
+		* @description Style for the entry-header class
+		* @markup
+		*   <div class="entry-header">markup</div>
+		*/
+  /*------------------------------------*\
+			$ENTRY COMMENT
+	\*------------------------------------*/
+  /**
+		* @name Entry-Content
+		* @description Style for the entry-content class
+		* @markup
+		*   <div class="entry-content">markup</div>
+		*/
+  /*------------------------------------*\
+	    $COMMENTS
+	\*------------------------------------*/
+  /**
+		* @name Reply Title
+		* @description Style for the reply-title id
+		* @state :before - before state
+		* @markup
+		*   <h1 id="reply-title">markup</h1>
+		*/
+  /**
+		* @name Nav-Links
+		* @description Style for the nav-links class
+		* @markup
+		*   <div class="nav-links">
+		*     <div>
+		*       <a href="">markup</a>
+		*     </div>
+		*   </div>
+		*/
+  /**
+		* @name Button, Input
+		* @description Style for the button, input class
+		* @markup
+		*   <div class="button, input type="submit"">markup</div>
+		*/
+  /**
+		* @name @Media Screen And (Max-Width: 640Px)
+		* @description Style for the @media screen and (max-width: 640px) element
+		*/ }
+  .epigone [role=main] {
+    padding: 0.5em 2em 2em 0em;
+    overflow: hidden; }
+  .epigone a {
+    -webkit-transition: all ease-in 0.1s;
+    transition: all ease-in 0.1s; }
+  .epigone .header-minimal {
+    padding: 2em 0;
+    background-color: #a6cd99;
+    background-image: url("../images/header-bg.png");
+    background-position: 0em 15em;
+    background-size: 100% auto;
+    color: #fff;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0; }
+    .epigone .header-minimal .header-description {
+      background: rgba(33, 117, 155, 0.37);
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05); }
+    .epigone .header-minimal .header-logo {
+      text-align: left;
+      font-size: 3.1em;
+      font-weight: 100;
+      line-height: 1.7em;
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 60.0556%;
+      font-family: 'Open Sans';
+      font-weight: 100; }
+      .epigone .header-minimal .header-logo a {
+        color: #FFF;
+        text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1); }
+    .epigone .header-minimal .header-banner {
+      text-align: right;
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 37.58674%;
+      margin-right: 0; }
+  .epigone .navbar {
+    margin-top: 2em; }
+    .epigone .navbar a {
+      font-weight: 100;
+      font-family: 'Open Sans';
+      margin-bottom: 1em; }
+  .epigone .hentry {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    border: 1px solid #e8e8e8;
+    padding: 1em 1.6em 1em 2em;
+    height: 100%;
+    position: relative; }
+    .epigone .hentry.post:before {
+      content: '';
+      display: inline-block;
+      width: 0.4em;
+      height: 100%;
+      background: #21759b;
+      position: absolute;
+      left: -1px;
+      top: -1px; }
+  .epigone figure.swipe {
+    display: block;
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 1em; }
+    .epigone figure.swipe iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none; }
+  .epigone .page-header {
+    margin-top: 1em;
+    margin-bottom: 0.7em; }
+    .epigone .page-header .page-title {
+      color: #d1a324; }
+  .epigone .entry-header h1 {
+    font-size: 1.7em;
+    margin-bottom: 0.7em;
+    line-height: 1.2em; }
+    .epigone .entry-header h1:before {
+      display: inline-block;
+      font: normal normal normal 14px/1 FontAwesome;
+      font-size: inherit;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      content: "\f192";
+      margin-right: 1.2em; }
+  .epigone .entry-meta {
+    background: #185671;
+    padding: 0.2em 1em;
+    color: #FFF;
+    margin-bottom: 1em; }
+    .epigone .entry-meta a {
+      color: #FFF; }
+    .epigone .entry-meta .byline {
+      font-style: normal;
+      font-size: 1em; }
+  .epigone .entry-content {
+    /**
+		 * Headings for post content style
+		 */ }
+    .epigone .entry-content h1 {
+      font-size: 1.4em;
+      border-left: 3px solid #e8e8e8;
+      padding-left: 0.5em;
+      line-height: 1.4em;
+      margin: 1em 0 1em; }
+      .epigone .entry-content h1:before {
+        content: " ";
+        display: inline-block;
+        width: 15px;
+        height: 15px; }
+    .epigone .entry-content h2 {
+      border-bottom: 1px solid #e8e8e8;
+      margin-bottom: 1em; }
+    .epigone .entry-content h3 {
+      margin-bottom: 1em; }
+    .epigone .entry-content h4 {
+      margin-bottom: 1em; }
+    .epigone .entry-content h5 {
+      margin-bottom: 1em; }
+    .epigone .entry-content h6 {
+      margin-bottom: 1em; }
+    .epigone .entry-content a {
+      text-decoration: underline;
+      color: #21759b;
+      font-weight: bold; }
+    .epigone .entry-content ul li {
+      margin-bottom: 5px; }
+    .epigone .entry-content .footer {
+      background-color: #0f3647;
+      color: #FFF; }
+  .epigone .comments {
+    padding: 1em;
+    background: #efd99f; }
+  .epigone .comments-title {
+    font-size: 0.8em;
+    color: #d1a324;
+    margin-top: 0em;
+    margin-bottom: 2em;
+    line-height: 1em; }
+  .epigone .comment-title {
+    font-size: 1.3em;
+    background: #d1a324;
+    color: #FFF;
+    padding-left: 1em;
+    margin-bottom: 1em; }
+  .epigone .comments-list .comment {
+    background: #FFF;
+    padding: 1em; }
+  .epigone .comment-author cite {
+    font-style: normal; }
+    .epigone .comment-author cite:before {
+      content: "\f0e6";
+      display: inline-block;
+      font: normal normal normal 14px/1 FontAwesome;
+      font-size: inherit;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      margin-right: 0.7em; }
+  .epigone .comments-content {
+    font-size: 0.8em; }
+  .epigone #reply-title {
+    font-size: 1.4em;
+    border-left: 3px solid #e8e8e8;
+    padding-left: 0.5em;
+    line-height: 1.4em;
+    margin: 1em 0 1em; }
+    .epigone #reply-title:before {
+      content: " ";
+      display: inline-block;
+      width: 15px;
+      height: 15px; }
+  .epigone .screen-reader-text {
+    display: none; }
+  .epigone .nav-links {
+    margin-bottom: 1em;
+    overflow: hidden; }
+    .epigone .nav-links div {
+      border: 1px solid #21759b;
+      border-radius: 50px;
+      text-align: center;
+      display: inline-block;
+      padding: 0.2em 1em 0.3em 1em; }
+      .epigone .nav-links div:hover {
+        background-color: #21759b; }
+        .epigone .nav-links div:hover a {
+          color: #FFF; }
+      .epigone .nav-links div a {
+        color: #0f3647;
+        font-weight: bold; }
+    .epigone .nav-links .nav-next {
+      float: right; }
+    .epigone .nav-links .nav-previous {
+      float: left; }
+  .epigone .button, .epigone input[type="submit"] {
+    color: #FFF;
+    background: #21759b;
+    border-radius: 30px;
+    border: 1px solid #0f3647; }
+  @media screen and (max-width: 640px) {
+    .epigone {
+      /**
+		  * @name Header-Minimal
+		  * @description Style for the header-minimal class
+		  * @markup
+		  *   <div class="header-minimal">markup</div>
+		  */ }
+      .epigone [role=main] {
+        padding: 0.5em;
+        overflow: hidden; }
+      .epigone .entry-header .entry-title {
+        margin-top: 0;
+        line-height: 1.7em; }
+      .epigone .entry-meta {
+        font-size: 0.8em;
+        line-height: 1.7em;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em; }
+        .epigone .entry-meta .posted-on {
+          display: block; }
+      .epigone .header-minimal {
+        background-size: auto 100%;
+        background-position: top; }
+        .epigone .header-minimal .header-logo {
+          font-size: 2em;
+          padding: 0.5em;
+          width: 100%;
+          margin-right: 0px; }
+        .epigone .header-minimal .header-banner {
+          padding: 0.5em;
+          font-size: 0.8em;
+          width: 100%;
+          margin-right: 0px; }
+        .epigone .header-minimal .header-description {
+          padding: 0.5em; }
+      .epigone .navbar {
+        position: fixed;
+        top: 10px;
+        width: 100%;
+        z-index: 100; }
+      .epigone .navbar-symbol {
+        display: none; }
+      .epigone .nav-toggle {
+        background: #21759b;
+        color: #FFF;
+        font-size: 0.9em;
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        border-left: none; }
+        .epigone .nav-toggle:hover {
+          cursor: pointer; }
+      .epigone .hentry {
+        padding-left: 10px;
+        padding-right: 10px; }
+        .epigone .hentry.post:before {
+          content: '';
+          display: block;
+          width: 100%;
+          height: 5px;
+          background: #21759b;
+          position: absolute; }
+      .epigone .navbar-nav a {
+        border-radius: 0px;
+        width: 100%;
+        border-top: none;
+        border-bottom: none; }
+      .epigone a img.alignnone {
+        margin-right: 0px; }
+      .epigone .entry-header h1 {
+        margin-top: 1em;
+        font-size: 1.2em; } }

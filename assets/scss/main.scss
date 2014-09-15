@@ -12,6 +12,11 @@
 @import "bourbon";
 @import "neat";
 
+
+// Font Awesome
+$fa-font-path: "../components/font-awesome/fonts";
+@import "../components/font-awesome/scss/font-awesome";
+
 /**
  * VARIABLES..............................Declarations of Sass variables
  * .....Colors
@@ -84,10 +89,12 @@
 @import "objects/blocks";
 @import "objects/lists";
 @import "objects/tooltip";
+@import "objects/forms";
 @import "objects/accordion";
 @import "objects/tabs";
 @import "objects/sections";
 @import "objects/article";
 @import "objects/comments";
 @import "objects/messaging";
+@import "objects/gallery";
 @import "objects/wordpress";

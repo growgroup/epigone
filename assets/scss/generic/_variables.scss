@@ -1,6 +1,9 @@
 /*------------------------------------*\
     $VARIABLES
 \*------------------------------------*/
+@import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700");
+$primary-color: #21759b;
+$secondary-color: #D1A324;
 
 // Colors
 $gray         : #808080;
@@ -29,6 +32,7 @@ $font-size-med-2   : 1.0625em;
 $font-size-large   : 1.4375em;
 
 $line-height-base : 2em;
+
 
 // Layout
 $max-width         : 72em;
@@ -61,13 +65,28 @@ $bp-xl      : 73em;
 $bp-xxl     : 89em;
 $bp-xxxl    : 93em;
 
-// navbar
+// Header
 
-$nav_normal_background: #F5F5F5;
-$nav_hover_background: #e8e8e8;
-$nav_active_background: #CCCCCC;
+$header-description-bg : $primary-color;
+$header-description-color : $white;
+
+// navbar
+$nav_normal_background: $primary-color;
+$nav_hover_background: lighten( $primary-color, 20 );
+$nav_active_background: lighten( $primary-color, 10 );
 $nav_dropdown_background: #FFFFFF;
 $nav_dropdown_background_hover: #CCCCCC;
+
+$nav_normal_color: $white;
+$nav_hover_color: $white;
+$nav_active_color: $white;
+
+$nav_border_radius: 0.2em;
+
+// Footer
+
+$footer-bg: $primary-color;
+
 
 // Grid
 $border-box-sizing: true;

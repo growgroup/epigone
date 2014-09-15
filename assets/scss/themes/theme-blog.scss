@@ -1,0 +1,530 @@
+/*------------------------------------*\
+		$THEME BLOG
+\*------------------------------------*/
+
+
+/*------------------------------------*\
+    0. SETTINGS
+\*------------------------------------*/
+
+$theme_name: 'epigone';
+
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:300italic,300");
+
+$primary-color: #21759b;
+$secondary-color: #d1a324;
+$gray: #e8e8e8;
+
+/*------------------------------------*\
+    1. THEME STYLE
+    $theme_name is this theme slug.
+\*------------------------------------*/
+
+.#{$theme_name}{
+
+	[role=main] {
+		padding: .5em 2em 2em 0em;
+		overflow: hidden;
+	}
+
+	a{
+		-webkit-transition: all ease-in .1s;
+			 -moz-transition: all ease-in .1s;
+				-ms-transition: all ease-in .1s;
+				 -o-transition: all ease-in .1s;
+						transition: all ease-in .1s;
+	}
+
+	/**
+		* @name Header-Minimal
+		* @description Style for the header-minimal class
+		* @markup
+		*   <div class="header-minimal">
+		*     <div class="header-description"></div>
+		*     <div class="header-logo"></div>
+		*     <div class="header-banner"></div>
+		*   </div>
+		*/
+
+	.header-minimal {
+		padding: 2em 0;
+		background-color: #a6cd99;
+		background-image: url("../images/header-bg.png");
+		background-position: 0em 15em;
+		background-size: 100% auto;
+		color: #fff;
+		box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+		margin-bottom: 0;
+
+		.header-description {
+			background: rgba(33, 117, 155, 0.37);
+			box-shadow: 0 1px 1px rgba(0,0,0,.05);
+		}
+
+		.header-logo {
+			text-align: left;
+			font-size: 3.1em;
+			font-weight: 100;
+			line-height: 1.7em;
+			float: left;
+			display: block;
+			margin-right: 2.35765%;
+			width: 60.0556%;
+			font-family: 'Open Sans';
+			font-weight: 100;
+			a{
+				color: #FFF;
+				text-shadow: 0px 5px 5px rgba(0,0,0,0.1);
+			}
+		}
+
+		.header-banner {
+			text-align: right;
+			float: left;
+			display: block;
+			margin-right: 2.35765%;
+			width: 37.58674%;
+			margin-right: 0;
+		}
+
+	}
+
+	/**
+		* @name navbar
+		* @description Style for the navbar class
+		* @markup
+		*   <div class="navbar">markup</div>
+		*/
+
+	.navbar{
+		margin-top: 2em;
+
+		a{
+			font-weight: 100;
+			font-family: 'Open Sans';
+			margin-bottom: 1em;
+		}
+
+	}
+
+	/**
+	  * @name Hentry - archive post list
+	  * @description Style for the hentry class
+	  * @markup
+	  *   <div class="hentry">markup</div>
+	  */
+
+	.hentry {
+		margin-top: 2em;
+		margin-bottom: 2em;
+		border: 1px solid #e8e8e8;
+		padding: 1em 1.6em 1em 2em;
+		height: 100%;
+		position: relative;
+		&.post:before{
+			content: '';
+			display: inline-block;
+			width: 0.4em;
+			height: 100%;
+			background: $primary-color;
+			position: absolute;
+			left: -1px;
+			top: -1px;
+		}
+	}
+
+	// swip.es
+	figure.swipe {
+		display: block;
+		position: relative;
+		padding-bottom: 56.25%;
+		height: 0;
+		overflow: hidden;
+		margin-bottom: 1em;
+		iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			border: none;
+		}
+	}
+
+	/*------------------------------------*\
+	    $HEADER
+	\*------------------------------------*/
+	.page-header{
+		margin-top: 1em;
+		margin-bottom: 0.7em;
+		.page-title{
+			color: $secondary-color;
+		}
+	}
+
+
+	/**
+		* @name Entry-Header
+		* @description Style for the entry-header class
+		* @markup
+		*   <div class="entry-header">markup</div>
+		*/
+
+	.entry-header{
+
+		h1{
+
+			font-size: 1.7em;
+			margin-bottom: 0.7em;
+			line-height: 1.2em;
+
+			&:before{
+				display: inline-block;
+				font: normal normal normal 14px/1 FontAwesome;
+				font-size: inherit;
+				text-rendering: auto;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+				content: "\f192";
+				margin-right: 1.2em;
+			}
+
+		}
+
+	}
+
+	/*------------------------------------*\
+			$ENTRY COMMENT
+	\*------------------------------------*/
+
+	.entry-meta{
+		background: darken( $primary-color,10%);
+		padding: .2em  1em;
+		color: #FFF;
+		margin-bottom: 1em;
+
+		a{
+			color: #FFF;
+		}
+
+		.byline{
+			font-style: normal;
+			font-size: 1em;
+		}
+
+	}
+
+	/**
+		* @name Entry-Content
+		* @description Style for the entry-content class
+		* @markup
+		*   <div class="entry-content">markup</div>
+		*/
+
+	.entry-content {
+
+		h1 {
+			font-size: 1.4em;
+			border-left: 3px solid #e8e8e8;
+			padding-left: 0.5em;
+			line-height: 1.4em;
+			margin: 1em 0 1em;
+			&:before{
+				content: " ";
+				display: inline-block;
+				width: 15px;
+				height: 15px;
+			}
+		}
+
+		/**
+		 * Headings for post content style
+		 */
+		h2 {
+			border-bottom: 1px solid #e8e8e8;
+			margin-bottom: 1em;
+		}
+
+		h3 {
+			margin-bottom: 1em;
+		}
+
+		h4 {
+			margin-bottom: 1em;
+		}
+
+		h5 {
+			margin-bottom: 1em;
+		}
+
+		h6 {
+			margin-bottom: 1em;
+		}
+
+		a {
+			text-decoration: underline;
+			color: $primary-color;
+			font-weight: bold;
+		}
+
+		ul {
+			li {
+				margin-bottom: 5px;
+			}
+		}
+
+		.footer{
+			background-color: darken( $primary-color, 20% );
+			color: #FFF;
+		}
+
+	}
+
+
+	/*------------------------------------*\
+	    $COMMENTS
+	\*------------------------------------*/
+	.comments{
+		padding: 1em;
+		background: lighten( $secondary-color, 30 );
+	}
+
+	.comments-title{
+		font-size: 0.8em;
+		color: $secondary-color;
+		margin-top: 0em;
+		margin-bottom: 2em;
+		line-height: 1em;
+
+	}
+	.comment-title{
+		font-size: 1.3em;
+		background: $secondary-color;
+		color: #FFF;
+		padding-left: 1em;
+		margin-bottom: 1em;
+	}
+
+	.comments-list{
+		.comment{
+			background: #FFF;
+			padding: 1em;
+		}
+	}
+
+	.comment-author{
+		cite{
+			font-style: normal;
+			&:before{
+				content: "\f0e6";
+				display: inline-block;
+				font: normal normal normal 14px/1 FontAwesome;
+				font-size: inherit;
+				text-rendering: auto;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+				margin-right: 0.7em;
+			}
+		}
+	}
+
+	.comments-content{
+		font-size: 0.8em;
+	}
+	/**
+		* @name Reply Title
+		* @description Style for the reply-title id
+		* @state :before - before state
+		* @markup
+		*   <h1 id="reply-title">markup</h1>
+		*/
+	#reply-title {
+		font-size: 1.4em;
+		border-left: 3px solid #e8e8e8;
+		padding-left: 0.5em;
+		line-height: 1.4em;
+		margin: 1em 0 1em;
+		&:before{
+			content: " ";
+			display: inline-block;
+			width: 15px;
+			height: 15px;
+		}
+	}
+
+	.screen-reader-text{
+		display: none;
+	}
+
+	/**
+		* @name Nav-Links
+		* @description Style for the nav-links class
+		* @markup
+		*   <div class="nav-links">
+		*     <div>
+		*       <a href="">markup</a>
+		*     </div>
+		*   </div>
+		*/
+
+	.nav-links{
+		margin-bottom: 1em;
+		overflow: hidden;
+		div{
+			border: 1px solid $primary-color;
+			border-radius: 50px;
+			text-align: center;
+			display: inline-block;
+			padding: 0.2em 1em 0.3em 1em;
+			&:hover{
+				background-color: $primary-color;
+				a{
+					color: #FFF;
+				}
+			}
+			a{
+				color: darken( $primary-color,20% );
+				font-weight: bold;
+			}
+		}
+		.nav-next{
+			float: right;
+		}
+		.nav-previous{
+			float: left;
+		}
+	}
+
+	/**
+		* @name Button, Input
+		* @description Style for the button, input class
+		* @markup
+		*   <div class="button, input type="submit"">markup</div>
+		*/
+	.button,
+	input[type="submit"]{
+		color: #FFF;
+		background: $primary-color;
+		border-radius: 30px;
+		border:1px solid darken( $primary-color,20% );
+	}
+
+	/**
+		* @name @Media Screen And (Max-Width: 640Px)
+		* @description Style for the @media screen and (max-width: 640px) element
+		*/
+
+	@media screen and (max-width: 640px) {
+
+		[role=main] {
+			padding: .5em;
+			overflow: hidden;
+		}
+
+		.entry-header{
+			.entry-title{
+				margin-top: 0;
+				line-height: 1.7em;
+			}
+		}
+
+		.entry-meta{
+			font-size: 0.8em;
+			line-height: 1.7em;
+			padding-top: .5em;
+			padding-bottom: .5em;
+			.posted-on{
+				display: block;
+
+			}
+		}
+
+		/**
+		  * @name Header-Minimal
+		  * @description Style for the header-minimal class
+		  * @markup
+		  *   <div class="header-minimal">markup</div>
+		  */
+		.header-minimal {
+
+			background-size: auto 100%;
+			background-position: top;
+
+			.header-logo{
+				font-size: 2em;
+				padding: .5em;
+				width: 100%;
+				margin-right: 0px;
+			}
+
+			.header-banner{
+				padding: .5em;
+				font-size: 0.8em;
+				width: 100%;
+				margin-right: 0px;
+			}
+
+			.header-description{
+				padding: .5em;
+			}
+
+		}
+
+		.navbar{
+			position: fixed;
+			top: 10px;
+			width: 100%;
+			z-index: 100;
+		}
+
+		.navbar-symbol{
+			display: none;
+		}
+
+		.nav-toggle{
+			background: $primary-color;
+			color: #FFF;
+			font-size: 0.9em;
+			position: fixed;
+			top: 10px;
+			right: 10px;
+			border-left: none;
+			&:hover{
+				cursor: pointer;
+			}
+		}
+
+		.hentry{
+			padding-left: 10px;
+			padding-right: 10px;
+			&.post:before{
+				content: '';
+				display: block;
+				width: 100%;
+				height: 5px;
+				background: $primary-color;
+				position: absolute;
+			}
+		}
+		.navbar-nav{
+			a{
+				border-radius: 0px;
+				width: 100%;
+				border-top: none;
+				border-bottom: none;
+			}
+		}
+
+		a img.alignnone{
+			margin-right: 0px;
+		}
+
+		.entry-header{
+			h1{
+				margin-top: 1em;
+				font-size: 1.2em;
+			}
+		}
+
+	}
+}

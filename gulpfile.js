@@ -42,6 +42,23 @@ gulp.task('styles', function() {
   .pipe(plugins.notify({ message: 'Styles task complete' }));
 });
 
+// theme-styles
+gulp.task('theme-styles', function() {
+  return gulp.src('assets/scss/themes/theme-blog.scss')
+  .pipe(plugins.plumber())
+	.pipe(plugins.sass({
+		includePaths: ['styles'].concat(neat)
+	}))
+  .pipe(plugins.autoprefixer('last 2 versions', 'ie 9', 'ios 6', 'android 4'))
+  .pipe(gulp.dest('assets/css'))
+  .pipe(plugins.cssshrink())
+  .pipe(plugins.rename({ suffix: '.min' }))
+  .pipe(gulp.dest('assets/css'))
+  .pipe(reload({stream:true}))
+  .pipe(plugins.notify({ message: 'Theme Styles task complete' }));
+});
+
+
 // Vendor Plugin Scripts
 gulp.task('plugins', function() {
   return gulp.src(['assets/js/bootstrap/*.js','!assets/js/plugins.js'])
@@ -103,6 +120,7 @@ gulp.task( 'watch', ['browserSync'], function() {
 
   // Watch .scss files
   gulp.watch('assets/scss/**/*.scss', ['styles']);
+  gulp.watch('assets/scss/themes/*.scss', ['theme-styles']);
 
   // Watch .js files
   gulp.watch('assets/js/**/*.js', ['plugins', 'scripts']);

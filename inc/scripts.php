@@ -11,13 +11,19 @@
 add_action( 'wp_enqueue_scripts', 'epigone_scripts', 100 );
 
 function epigone_scripts() {
+
 	/**
-	 * theme main stylesheet
+	 * The main style sheet.
 	 */
 	wp_enqueue_style( 'epigone_main', get_stylesheet_directory_uri() . '/assets/css/main.min.css', false, '99972085bc30c435929f5af3cf81d064' );
 
 	/**
-	 * vendor plugins javascript
+	 * Blog theme style sheet.
+	 */
+	wp_enqueue_style( 'epigone_blog', get_stylesheet_directory_uri() . '/assets/css/theme-blog.min.css', false, '99972085bc30c435929f5af3cf81d064' );
+
+	/**
+	 * Vendor plugin javascript.
 	 */
 	wp_register_script( 'epigone_plugins', get_template_directory_uri() . '/assets/js/plugins.min.js', array(), '632995d66dba190b04e58c7bbf9d6222', true );
 
@@ -32,6 +38,7 @@ function epigone_scripts() {
 		add_filter( 'script_loader_src', 'epigone_jquery_local_fallback', 10, 2 );
 	}
 
+
 	if ( is_single() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -39,6 +46,18 @@ function epigone_scripts() {
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'epigone_plugins' );
 	wp_enqueue_script( 'epigone_scripts' );
+
+	/**
+	 * Responsive Navigation plugin.
+	 */
+	if ( current_theme_supports( 'responsive_nav' ) ) {
+		if ( wp_is_mobile() ) {
+			wp_enqueue_style( 'epigone_responsive_nav_css', get_stylesheet_directory_uri() . '/assets/components/responsive-nav/responsive-nav.css', false, '99972085bc30c435929f5af3cf81d064' );
+			wp_register_script( 'epigone_responsive_nav_js', get_stylesheet_directory_uri() . '/assets/components/responsive-nav/responsive-nav.min.js', array( 'jquery' ), '', true );
+			wp_enqueue_script( 'epigone_responsive_nav_js' );
+		}
+	}
+
 }
 
 /**

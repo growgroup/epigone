@@ -11,6 +11,10 @@
 	<nav class="navbar navbar-default" role="navigation">
 		<div class="container">
 
+			<a href="<?php echo home_url(); ?>" class="navbar-symbol">
+				<i class="fa fa-home"></i>
+			</a>
+
 			<?php
 			/**
 			 * Global Navigation
