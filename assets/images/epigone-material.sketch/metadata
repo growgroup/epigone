@@ -11,9 +11,10 @@
 	<key>fonts</key>
 	<array>
 		<string>Calibri-Italic</string>
+		<string>SourceSansPro-Light</string>
 	</array>
 	<key>length</key>
-	<integer>28826673</integer>
+	<integer>28846438</integer>
 	<key>version</key>
 	<integer>37</integer>
 </dict>
