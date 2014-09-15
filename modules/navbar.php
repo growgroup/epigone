@@ -24,8 +24,8 @@
 						'container_class'   => 'collapse cf navbar-collapse',
 						'container_id'      => 'header-navbar-collapse',
 						'menu_class'        => 'nav navbar-nav',
-						'fallback_cb'       => 'Epigone_Nav_Walker::fallback',
-						'walker'            => new Epigone_Nav_Walker(),
+						'fallback_cb'       => 'Epigone_Walker_Nav::fallback',
+						'walker'            => new Epigone_Walker_Nav(),
 					)
 				);
 			?>

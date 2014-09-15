@@ -19,7 +19,7 @@ class Epigone_Walker_Comment extends Walker_Comment {
 
 	public function __construct() {
 
-		echo '<h3 id="comments-title" class="comments-title">' . __( 'Comments', 'epigone' ) . '</h3>';
+		echo '<h3 id="comment-title" class="comment-title">' . __( 'Comments', 'epigone' ) . '</h3>';
 		echo '<ul id="comment-list" class="comments-list">';
 
 	}
@@ -64,7 +64,7 @@ class Epigone_Walker_Comment extends Walker_Comment {
 		endif; ?>
 				</div><!-- /.comment-content -->
 
-				<div class="comment--meta comment--meta-data">
+				<div class="comment-meta comment-meta-data">
 					<a href="<?php
 					echo esc_url( get_comment_link( get_comment_ID() ) );
 					?>">

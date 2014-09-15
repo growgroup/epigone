@@ -19,7 +19,7 @@ $include_files = array(
 	array( 'inc/comment.php' ),
 	array( 'classes/class-theme-wrapper.php' ),
 	array( 'classes/class-breadcrumbs.php' ),
-	array( 'classes/class-nav-walker.php' ),
+	array( 'classes/class-walker-nav.php' ),
 	array( 'classes/class-walker-comment.php' ),
 	array( 'classes/class-helper-post-type.php' ),
 );

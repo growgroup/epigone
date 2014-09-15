@@ -10,7 +10,7 @@
  * =====================================================
  */
 
-class Epigone_Nav_Walker extends Walker_Nav_Menu {
+class Epigone_Walker_Nav extends Walker_Nav_Menu {
 
 	/**
 	 * @see Walker::start_lvl()

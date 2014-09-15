@@ -17,12 +17,13 @@
 	<div class="entry-content">
 		<?php
 		the_content();
-		wp_link_pages(
-			array(
+
+		if ( ! current_theme_supports( 'epigone-pagination' ) ) {
+			wp_link_pages( array(
 				'before' => '<div class="page-links">' . __( 'Pages:', 'epigone' ),
 				'after'  => '</div>',
-			)
-		);
+			) );
+		}
 		?>
 	</div><!-- .entry-content -->
 	<?php

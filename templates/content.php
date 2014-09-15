@@ -28,10 +28,13 @@
 	<div class="entry-content">
 		<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'epigone' ) ); ?>
 		<?php
+
+		if ( ! current_theme_supports( 'epigone-pagination' ) ) {
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . __( 'Pages:', 'epigone' ),
 				'after'  => '</div>',
 			) );
+		}
 		?>
 	</div><!-- .entry-content -->
 	<?php endif; ?>
@@ -59,9 +62,11 @@
 			<?php endif; // End if $tags_list ?>
 		<?php endif; // End if 'post' == get_post_type() ?>
 
-		<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
+		<?php
+		if ( ! post_password_required() && ( comments_open() || '0' !== get_comments_number() ) ) : ?>
 		<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'epigone' ), __( '1 Comment', 'epigone' ), __( '% Comments', 'epigone' ) ); ?></span>
-		<?php endif; ?>
+		<?php
+		endif; ?>
 
 		<?php edit_post_link( __( 'Edit', 'epigone' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-footer -->

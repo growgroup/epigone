@@ -19,12 +19,22 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
-		<?php the_content(); ?>
 		<?php
+		if ( has_post_thumbnail() ) { ?>
+			<div class="entry-thumbnail">
+				<?php the_post_thumbnail(); ?>
+			</div>
+		<?php
+		}
+		the_content();
+
+		if ( ! current_theme_supports( 'epigone-pagination' ) ) {
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . __( 'Pages:', 'epigone' ),
 				'after'  => '</div>',
 			) );
+		}
+
 		?>
 	</div><!-- .entry-content -->
 
