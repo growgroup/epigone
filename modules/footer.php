@@ -11,10 +11,15 @@
 
 	<footer id="colophon" class="footer" role="contentinfo">
 		<div class="container">
-			<div class="footer--copyright site-info">
-
+			<div class="footer-contents">
+				<?php
+				dynamic_sidebar( 'footer-primary' );
+				?>
+			</div>
+		</div>
+		<div class="footer-copyright site-info">
+			<div class="container text-center">
 				<span class="sep"> copyright © <?php echo date( 'Y' ); ?> | <?php bloginfo( 'name' ); ?></span>
-
 			</div>
 		</div>
 	</footer>

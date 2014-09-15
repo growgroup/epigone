@@ -90,7 +90,7 @@
     padding: 2em 0;
     background-color: #a6cd99;
     background-image: url("../images/header-bg.png");
-    background-position: 0em 15em;
+    background-position: 0em -13.4em;
     background-size: 100% auto;
     color: #fff;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
@@ -216,8 +216,11 @@
     .epigone .entry-content ul li {
       margin-bottom: 5px; }
     .epigone .entry-content .footer {
-      background-color: #0f3647;
+      background-color: #06161d;
       color: #FFF; }
+  .epigone .footer-copyright {
+    background-color: #0f3647;
+    color: #FFF; }
   .epigone .comments {
     padding: 1em;
     background: #efd99f; }

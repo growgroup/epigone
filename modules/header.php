@@ -17,3 +17,6 @@
 				</a>
 			</h1>
 		</header>
+
+		<?php
+dynamic_sidebar( 'header-primary' ); ?>

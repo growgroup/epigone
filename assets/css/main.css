@@ -1659,16 +1659,16 @@ header, footer, nav, section, article, hgroup, figure {
     $GLOBAL CLASSES
 \*------------------------------------*/
 /* Clearfix */
-.cf, .l-two-col, [role=main], .widget_search .input-group {
+.cf, .l-two-col, [role=main], .footer-contents, .widget_search .input-group {
   *zoom: 1; }
 
-.cf:before, .l-two-col:before, [role=main]:before, .widget_search .input-group:before, .cf:after, .l-two-col:after, [role=main]:after, .widget_search .input-group:after {
+.cf:before, .l-two-col:before, [role=main]:before, .footer-contents:before, .widget_search .input-group:before, .cf:after, .l-two-col:after, [role=main]:after, .footer-contents:after, .widget_search .input-group:after {
   content: " ";
   /* 1 */
   display: table;
   /* 2 */ }
 
-.cf:after, .l-two-col:after, [role=main]:after, .widget_search .input-group:after {
+.cf:after, .l-two-col:after, [role=main]:after, .footer-contents:after, .widget_search .input-group:after {
   clear: both; }
 
 /* Completely remove from the flow and screen readers. */
@@ -3744,6 +3744,16 @@ td {
 [role=main] {
   overflow: hidden; }
 
+/**
+  * @name Widget
+  * @description Style for the widget class
+  * @markup
+  *   <div class="widget">markup</div>
+  */
+.widget {
+  margin-top: 1em;
+  margin-bottom: 1em; }
+
 /*------------------------------------*\
     $FOOTER
 \*------------------------------------*/
@@ -3756,6 +3766,14 @@ td {
   margin-top: 3em; }
   .footer a {
     color: #f9f9f9; }
+
+.widget-footer {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 23.23176%; }
+  .widget-footer:last-child {
+    margin-right: 0; }
 
 .nav-footer {
   margin: -1em -1em 1em; }

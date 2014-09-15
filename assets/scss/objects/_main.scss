@@ -6,3 +6,14 @@
 	@extend .lc;
 	@extend .cf;
 }
+
+/**
+  * @name Widget
+  * @description Style for the widget class
+  * @markup
+  *   <div class="widget">markup</div>
+  */
+.widget{
+	margin-top: 1em;
+	margin-bottom: 1em;
+}

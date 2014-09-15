@@ -50,7 +50,7 @@ $gray: #e8e8e8;
 		padding: 2em 0;
 		background-color: #a6cd99;
 		background-image: url("../images/header-bg.png");
-		background-position: 0em 15em;
+		background-position: 0em -13.4em;
 		background-size: 100% auto;
 		color: #fff;
 		box-shadow: 0 5px 5px rgba(0,0,0,0.1);
@@ -274,12 +274,15 @@ $gray: #e8e8e8;
 		}
 
 		.footer{
-			background-color: darken( $primary-color, 20% );
+			background-color: darken( $primary-color, 30% );
 			color: #FFF;
 		}
-
 	}
 
+	.footer-copyright{
+		background-color: darken( $primary-color, 20% );
+		color: #FFF;
+	}
 
 	/*------------------------------------*\
 	    $COMMENTS

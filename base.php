@@ -16,13 +16,16 @@ do_action( 'get_header' );
 
 get_template_part( 'modules/navbar' );
 
-dynamic_sidebar( 'header-primary' ); ?>
+dynamic_sidebar( 'main-visual' );
+?>
 
 	<section class="l-two-col layout container wrapper">
 
 		<main class="l-main main" role="main">
 
 		<?php
+		dynamic_sidebar( 'content-primary' );
+
 		// Action hook before loading the main template.
 		do_action( 'get_main_template_before' );
 

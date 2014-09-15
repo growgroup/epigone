@@ -13,6 +13,13 @@
 	}
 }
 
+.footer-contents{
+	@extend .cf;
+}
+.widget-footer{
+	@include span-columns( 3 );
+}
+
 //Footer Nav
 .nav-footer {
 	margin: (-$pad) (-$pad) $space;
