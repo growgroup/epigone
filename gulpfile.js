@@ -105,7 +105,7 @@ gulp.task('php', function(){
 
 // assets version
 gulp.task('rev', function () {
-  gulp.src('inc/script.php')
+  gulp.src('inc/scripts.php')
   .pipe(plugins.rev({
     css: 'assets/css/main.min.css',
     cssHandle: "epigone_main",
