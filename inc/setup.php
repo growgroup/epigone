@@ -31,6 +31,9 @@ if ( ! function_exists( 'epigone_setup' ) ) {
 		// Support for eye-catching image.
 		add_theme_support( 'post-thumbnails' );
 
+		// Support for custom header
+		add_theme_support( 'custom-header' );
+
 		// support for menus
 		add_theme_support( 'menus' );
 
@@ -95,7 +98,7 @@ function epigone_print_browser_sync(){
 
 		$output = <<<EOF
 <script type='text/javascript'>//<![CDATA[
-document.write("<script async src='//HOST:3000/browser-sync-client.1.3.6.js'><\/script>".replace(/HOST/g, location.hostname));
+document.write("<script async src='//HOST:3000/browser-sync-client.1.4.0.js'><\/script>".replace(/HOST/g, location.hostname));
 //]]></script>
 EOF;
 		echo $output;
