@@ -98,7 +98,7 @@ function epigone_print_browser_sync(){
 
 		$output = <<<EOF
 <script type='text/javascript'>//<![CDATA[
-document.write("<script async src='//HOST:3000/browser-sync-client.1.4.0.js'><\/script>".replace(/HOST/g, location.hostname));
+document.write("<script async src='//HOST:PORT/browser-sync/browser-sync-client.1.4.0.js'><\/script>".replace(/HOST/g,location.hostname).replace(/PORT/g,location.port));
 //]]></script>
 EOF;
 		echo $output;

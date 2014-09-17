@@ -4,7 +4,7 @@
 		.form-control{
 			@include span-columns( 8.2 );
 			margin-right: 0;
-			border-color: $primary-color;
+			border-color: $base-color;
 			padding: 0.87em;
 		}
 		.input-group-btn{

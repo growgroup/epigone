@@ -16,7 +16,7 @@
 	display: inline-block;
 	margin-right: 0.8em;
 	font-size: 2.2em;
-	color: lighten( $primary-color, 30 );
+	color: lighten( $base-color, 30 );
 }
 
 .navbar {
@@ -33,29 +33,30 @@
 		font-weight: bold;
 		> li {
 			display: inline-block;
-			position: relative;
+			// position: relative;
+			overflow: hidden;
 			&.current-menu-item{
 				a{
-					background: $nav_active_background;
+					background: $nav-active-background;
 				}
 			}
 			> a {
 				display: inline-block;
 				text-decoration: none;
-				color: $nav_normal_color;
+				color: $nav-normal-color;
 				transition: 0.1s ease background;
 				padding: 12px 20px;
-				border-radius: $nav_border_radius;
-				background-color: $nav_normal_background;
+				border-radius: $nav-border-radius;
+				background-color: $nav-normal-background;
 				line-height: 1.2em;
 				vertical-align: top;
-				margin-left: 1em;
+				// margin-left: 1em;
 				text-shadow: 1px 1px 1px rgba(0,0,0,0.05);
 				&:hover {
-					background-color: $nav_hover_background;
+					background-color: $nav-hover-background;
 				}
 				&:active {
-					background: $nav_active_background;
+					background: $nav-active-background;
 					box-shadow: inset 0px 2px 2px rgba( 0,0,0,0.1 );
 				}
 			}
@@ -63,13 +64,14 @@
 				opacity: 0;
 				display: none;
 				position: absolute;
-				background-color: $nav_dropdown_background;
+				background-color: $nav-dropdown-background;
 				z-index: 1000;
 				// top: 0px;
 				> li {
 					display: block;
 					float: none;
 					> a {
+						line-height: 1.5em;
 						display: inline-block;
 					}
 				}
@@ -78,7 +80,7 @@
 				.dropdown-menu {
 					opacity: 1;
 					display: block;
-					background-color: $nav_dropdown_background_hover;
+					background-color: $nav-dropdown-background_hover;
 					box-shadow: inset 0px 2px 2px rgba( 0,0,0,0.1 );
 					> li {
 						display: block;
@@ -138,7 +140,7 @@
 	a {
 		display: block;
 		padding: $pad;
-		border-top: 1px solid $gray-light-2;
+		border-top: 1px solid $gray-light;
 	}
 
 	&.active {
@@ -174,17 +176,25 @@
 	}
 }
 
+/**
+  * @name Pagination
+  * @description Style for the pagination class
+  * @markup
+  *   <div class="pagination">markup</div>
+  */
 .pagination{
 	text-align: center;
 	margin-top: 1em;
 	margin-bottom: 1em;
-	padding: $pad-half $pad-half $pad-half;
-	background: $gray-light-2;
+	padding: 0.6em;
+	background: $gray-lighter;
 	position: relative;
 	.page-numbers{
 		padding: $pad;
 		&.current{
-			background: $primary-color;
+			background: $base-color;
+			-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+			        box-shadow: 0 1px 2px rgba(0,0,0,0.1);
 			color: $white;
 		}
 	}
@@ -200,7 +210,6 @@
 		top: 0;
 		@extend .btn;
 	}
-
 }
 
 
@@ -212,7 +221,7 @@
   */
 
 .breadcrumbs{
-	background: $gray-light-2;
+	background: $gray-lighter;
 	padding: 0.1em 0.9em;
 	li{
 		display: inline;

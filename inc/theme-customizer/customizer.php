@@ -18,6 +18,7 @@ class Epigone_Theme_Customize {
 
 	private $support_fields;
 
+	private $settings;
 	/**
 		* This hooks into 'customize_register' (available as of WP 3.4) and allows
 		* you to add new sections and controls to the Theme Customize screen.
@@ -42,73 +43,23 @@ class Epigone_Theme_Customize {
 
 		$this->setting_type = 'option';
 
+		$this->settings = $this->settings_init();
+
 
 		add_action( 'init', array( $this, 'register_fields' ) );
 		add_action( 'customize_register', array( $this, 'register' ) );
-		add_action( 'wp_head', array( $this, 'header_output' ) );
 		add_action( 'customize_preview_init', array( $this, 'live_preview' ) );
 
-	}
-
-	public function register_fields(){
-
-		// Require Fields File
-		$support_fields = array(
-			'date' => array(
-				'Date_Picker_Custom_Control' => 'date-picker',
-			),
-			'image' => array(
-				'Multi_Image_Custom_Control' => 'multi-image',
-			),
-			'layout' => array(
-				'Layout_Picker_Custom_Control' => 'layout-picker',
-			),
-			'select' => array(
-				'Category_Dropdown_Custom_Control'    => 'category-dropdown',
-				'Google_Font_Dropdown_Custom_Control' => 'google-font-dropdown',
-				'Menu_Dropdown_Custom_Control'        => 'menu-dropdown',
-				'Post_Dropdown_Custom_Control'        => 'post-dropdown',
-				'Post_Type_Dropdown_Custom_Control'   => 'post-type-dropdown',
-				'Tags_Dropdown_Custom_Control'        => 'tags-dropdown',
-				'Taxonomy_Dropdown_Custom_Control'    => 'taxonomy-dropdown',
-				'User_Dropdown_Custom_Control'        => 'user-dropdown',
-			),
-			'text' => array(
-				'Text_Editor_Custom_Control' => 'text-editor',
-				'Textarea_Custom_Control'    => 'textarea',
-			),
-			'slider' => array(
-				'Slider_Custom_Control' => 'slider',
-			),
-		);
-
-		$this->support_fields = $support_fields;
-
-		foreach ( $support_fields as $dir => $field_slugs ) {
-			foreach ( $field_slugs as $slug ) {
-				$filename = __DIR__ . '/fields/' . $dir . '/' . 'class-' . $slug . '-custom-control.php';
-				if ( file_exists( $filename ) ) {
-					require_once( $filename );
-				} else {
-					continue;
-				}
-			}
-		}
+		// output css
+		add_action( 'wp_head', array( $this, 'wphead_css_output' ), 10 );
 
 	}
 
 	/**
-	 * Register
-	 * @param  object $wp_customize
+	 * Theme Customizer Settings
 	 */
 
-	public function register( $wp_customize ) {
-
-		$this->wp_customize = $wp_customize;
-
-		/**
-		 * Theme Customizer Settings
-		 */
+	public function settings_init(){
 
 		/**
 		 * 01. logo
@@ -161,25 +112,90 @@ class Epigone_Theme_Customize {
 							'default' => 12,
 							'type' => 'multi-image',
 							'sanitaize_call_back' => '',
+							'output' => array(
+								'#masthead' => 'background-image',
+							)
 						),
 						'background_color' => array(
 							'label' => __( 'Background Color', $this->slug ),
 							'type' => 'color',
 							'sanitaize_call_back' => '',
+							'output' => array(
+								'body' => 'background-color',
+							)
 						),
-						'background_date' => array(
-							'label' => __( 'Background Date', $this->slug ),
-							'type' => 'date-picker',
-							'sanitaize_call_back' => '',
-						)
 					)
 				)
 			)
 		);
 
+		return $settings;
 
-		$this->add_customize( $settings );
+	}
 
+	/**
+	 * Registration of the input type that theme customizer support.
+	 * @return void
+	 */
+	public function register_fields(){
+
+		// Require Fields File
+		$support_fields = array(
+			'date' => array(
+				'Date_Picker_Custom_Control' => 'date-picker',
+			),
+			'image' => array(
+				'Multi_Image_Custom_Control' => 'multi-image',
+			),
+			'layout' => array(
+				'Layout_Picker_Custom_Control' => 'layout-picker',
+			),
+			'select' => array(
+				'Category_Dropdown_Custom_Control'    => 'category-dropdown',
+				'Google_Font_Dropdown_Custom_Control' => 'google-font-dropdown',
+				'Menu_Dropdown_Custom_Control'        => 'menu-dropdown',
+				'Post_Dropdown_Custom_Control'        => 'post-dropdown',
+				'Post_Type_Dropdown_Custom_Control'   => 'post-type-dropdown',
+				'Tags_Dropdown_Custom_Control'        => 'tags-dropdown',
+				'Taxonomy_Dropdown_Custom_Control'    => 'taxonomy-dropdown',
+				'User_Dropdown_Custom_Control'        => 'user-dropdown',
+			),
+			'text' => array(
+				'Text_Editor_Custom_Control' => 'text-editor',
+				'Textarea_Custom_Control'    => 'textarea',
+			),
+			'slider' => array(
+				'Slider_Custom_Control' => 'slider',
+			),
+		);
+
+		$this->support_fields = $support_fields;
+
+		foreach ( $support_fields as $dir => $field_slugs ) {
+			foreach ( $field_slugs as $slug ) {
+				$filename = __DIR__ . '/fields/' . $dir . '/' . 'class-' . $slug . '-custom-control.php';
+				if ( file_exists( $filename ) ) {
+					require_once( $filename );
+				}
+			}
+		}
+
+	}
+
+	/**
+	 * Register
+	 * @param  object $wp_customize
+	 */
+
+	public function register( $wp_customize ) {
+
+		$this->wp_customize = $wp_customize;
+
+		if ( ! $this->settings ) {
+			return false;
+		}
+
+		$this->add_customize( $this->settings );
 
 		$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 		$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
@@ -189,7 +205,8 @@ class Epigone_Theme_Customize {
 	}
 
 	/**
-	 * customize setting init
+	 * Registration of the theme customizer.
+	 *
 	 * @param array $customizer_settings
 	 *
 	 * `` EXAMPLE SETTINGS
@@ -392,25 +409,6 @@ class Epigone_Theme_Customize {
 
 	}
 
-
-	 /**
-		* This will output the custom WordPress settings to the live theme's WP head.
-		*
-		* Used by hook: 'wp_head'
-		*
-		* @see add_action('wp_head',$func)
-		* @since epigone 1.0
-		*/
-	 public function header_output(){
-			?>
-			<style type="text/css">
-				<?php self::generate_css( 'a', 'color', 'header_textcolor', '#' ); ?>
-				<?php self::generate_css( 'body', 'background-color', 'background_color', '#' ); ?>
-				<?php self::generate_css( 'a', 'color', 'link_textcolor' ); ?>
-			</style>
-			<?php
-	 }
-
 	 /**
 		* This outputs the javascript needed to automate the live settings preview.
 		* Also keep in mind that this function isn't necessary unless your settings
@@ -433,35 +431,74 @@ class Epigone_Theme_Customize {
 	}
 
 	/**
-	 * This will generate a line of CSS for use in header output. If the setting
-	 * ($mod_name) has no defined value, the CSS will not be output.
-	 *
-	 * @uses get_theme_mod()
-	 * @param string $selector CSS selector
-	 * @param string $style The name of the CSS *property* to modify
-	 * @param string $mod_name The name of the 'theme_mod' option to fetch
-	 * @param string $prefix Optional. Anything that needs to be output before the CSS property
-	 * @param string $postfix Optional. Anything that needs to be output after the CSS property
-	 * @param bool $echo Optional. Whether to print directly to the page (default: true).
-	 * @return string Returns a single line of CSS with selectors and a property.
-	 * @since epigone 1.0
+	 * Output CSS to wp_head
+	 * @return void
 	 */
-	public static function generate_css( $selector, $style, $mod_name, $prefix = '', $postfix = '', $echo = true ) {
-		$return = '';
-		$mod = get_theme_mod( $mod_name );
-		if ( ! empty( $mod ) ) {
-			$return = sprintf(
-				'%s { %s:%s; } ',
-				$selector,
-				$style,
-				$prefix.$mod.$postfix
-			);
-			if ( $echo ) {
-				echo $return;
+	public function wphead_css_output() {
+
+		$css = $this->css_parser();
+
+		if ( $css  ) {
+			echo '<style>' . $css .'</style>';
+		}
+
+	}
+
+	/**
+	 * CSS Parser
+	 * @return string $style
+	 */
+	public function css_parser() {
+
+		$style = '';
+
+		if ( ! $this->settings ) {
+			return;
+		}
+
+		foreach ( $this->settings as $panel_id => $panel ) {
+
+			foreach ( $panel['section'] as $section_id => $section ) {
+
+				if ( ! $section['setting'] ) {
+					continue;
+				}
+
+				foreach ( $section['setting'] as $setting_id => $setting ) {
+					if ( isset( $setting['output'] ) && is_array( $setting['output'] ) ) {
+						$style .= $this->generate_to_css( $setting, $setting_id );
+					}
+				}
 			}
 		}
-		return $return;
+
+		return $style;
+
 	}
+
+	public function generate_to_css( $setting, $customizer_key ){
+
+		$css = '';
+
+		foreach ( $setting['output'] as $selector => $priority ) {
+
+			if ( ! $customizer_key ) {
+				continue;
+			}
+
+			if ( 'color' === $setting['type'] ) {
+				$css = $selector . '{' . $priority . ' : #' . get_theme_mod( $customizer_key, '' ) . ';}';
+			} elseif ( 'multi-image' === $setting['type'] ) {
+				$css = $selector . '{' . $priority . ' : url(' . get_theme_mod( $customizer_key, '' ) . ' );}';
+			} else {
+				$css = $selector . '{' . $priority . ' : ' . get_theme_mod( $customizer_key, '' ) . ';}';
+			}
+		}
+
+		return $css;
+
+	}
+
 }
 
 $epigone_theme_customize = new Epigone_Theme_Customize();

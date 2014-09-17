@@ -26,10 +26,10 @@
 .header-minimal{
 	margin-bottom: 2.6em;
 	padding-bottom: 1.7em;
-	background: $gray-light-2;
+	background: $gray-light;
 	.header-description {
 		text-align: left;
-		background: $header-description-bg;
+		background: $header-description-background;
 		margin-bottom: 1.7em;
 		box-shadow: 0 1px 1px rgba(0,0,0,0.05);
 		p{
@@ -45,7 +45,7 @@
 		line-height: 1.7em;
 		@include span-columns( 3.8 );
 		a{
-			color: $primary-color;
+			color: $base-color;
 		}
 	}
 	.header-banner{

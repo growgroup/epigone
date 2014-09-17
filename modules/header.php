@@ -9,14 +9,17 @@
  */
 ?>
 
-		<header id="masthead" class="header" role="banner">
-			<p class="header-description text-center"><?php bloginfo( 'description' ) ?></p>
-			<h1 class="header-logo">
-				<a href="<?php echo home_url(); ?>">
-					<?php bloginfo( 'name' ); ?>
-				</a>
-			</h1>
-		</header>
+	<header id="masthead" class="header header-normal" role="banner">
+		<p class="header-description text-center"><?php bloginfo( 'description' ) ?></p>
+		<h1 class="header-logo">
+			<a href="<?php echo home_url(); ?>">
+				<?php bloginfo( 'name' ); ?>
+			</a>
+		</h1>
+		<div class="container">
+			<?php
+			dynamic_sidebar( 'header-primary' ); ?>
+		</div>
+	</header>
 
-		<?php
-dynamic_sidebar( 'header-primary' ); ?>
+

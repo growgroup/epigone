@@ -61,7 +61,7 @@ gulp.task('theme-styles', function() {
 
 // Vendor Plugin Scripts
 gulp.task('plugins', function() {
-  return gulp.src(['assets/js/bootstrap/*.js','!assets/js/plugins.js'])
+  return gulp.src(['assets/js/plugins/*.js','!assets/js/plugins.js'])
   .pipe(plugins.plumber())
   .pipe(plugins.concat('plugins.js'))
   .pipe(gulp.dest('assets/js/'))
@@ -119,7 +119,7 @@ gulp.task('rev', function () {
 gulp.task( 'watch', ['browserSync'], function() {
 
   // Watch .scss files
-  gulp.watch('assets/scss/**/*.scss', ['styles']);
+  gulp.watch(['assets/scss/**/*.scss','!assets/scss/themes/*.scss' ], ['styles']);
   gulp.watch('assets/scss/themes/*.scss', ['theme-styles']);
 
   // Watch .js files

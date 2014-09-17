@@ -1,20 +1,28 @@
 /*------------------------------------*\
     $VARIABLES
 \*------------------------------------*/
-@import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700");
-$primary-color: #21759b;
-$secondary-color: #D1A324;
+
 
 // Colors
-$gray         : #808080;
-$gray-light   : #f9f9f9;
-$gray-light-2 : #eee;
-$gray-light-3 : #ddd;
-$gray-med     : #666;
-$gray-dark    : #333;
-$gray-dark-2  : #131313;
+
+$base-color: #523f6d;
+$icon-color: #ece6f6;
+$highlight-color: #a3b745;
+$notification-color: #d46f15;
+$base-color: #363b3f;
+$highlight-color: #e14d43;
+$notification-color: #69a8bb;
+$button-color       : $base-color;
 $white        : #fff;
 $black        : #000;
+
+$gray-base    : $black;
+$gray-darker  : lighten( $gray-base, 13.5% ); // #222
+$gray-dark    : lighten( $gray-base, 20% );   // #333
+$gray         : lighten( $gray-base, 33.5%); // #555
+$gray-light   : lighten( $gray-base, 46.7% ); // #777
+$gray-lighter : lighten( $gray-base, 95.5% ); // #eee
+
 $dim          : rgba(0,0,0,0.5);
 $error        : #f00;
 $valid        : #089e00;
@@ -22,20 +30,19 @@ $warning      : #fff664;
 $information  : #000db5;
 
 // Typography
+
 $font           : 'HelveticaNeue', 'Helvetica', 'Arial', sans-serif;
 $font-secondary : Georgia, Times, "Times New Roman", serif;
 
-$font-size-small-2 : 0.875em;
 $font-size-small   : 0.75em;
+$font-size-small-2 : 0.875em;
 $font-size-med     : 1em;
 $font-size-med-2   : 1.0625em;
 $font-size-large   : 1.4375em;
 
-$line-height-base : 2em;
+$line-height-base : 1.7em;
 
 
-// Layout
-$max-width         : 72em;
 
 // Defaults
 $space          : 1em;
@@ -43,6 +50,7 @@ $space-and-half : $space*1.5;
 $space-double   : $space*2;
 $space-quad     : $space*4;
 $space-half     : $space/2;
+
 $pad            : 1em;
 $pad-and-half   : $pad*1.5;
 $pad-double     : $pad*2;
@@ -67,35 +75,36 @@ $bp-xxxl    : 93em;
 
 // Header
 
-$header-description-bg : $primary-color;
+$header-description-background : rgba( $base-color, 0.7);
 $header-description-color : $white;
+$header-min-height: 400px;
 
 // navbar
-$nav_normal_background: $primary-color;
-$nav_hover_background: lighten( $primary-color, 20 );
-$nav_active_background: lighten( $primary-color, 10 );
-$nav_dropdown_background: #FFFFFF;
-$nav_dropdown_background_hover: #CCCCCC;
+$nav-normal-background: $button-color;
+$nav-hover-background: lighten( $base-color, 20 );
+$nav-active-background: lighten( $base-color, 10 );
+$nav-dropdown-background: #FFFFFF;
+$nav-dropdown-background_hover: #CCCCCC;
 
-$nav_normal_color: $white;
-$nav_hover_color: $white;
-$nav_active_color: $white;
+$nav-normal-color: $white;
+$nav-hover-color: $white;
+$nav-active-color: $white;
 
-$nav_border_radius: 0.2em;
+$nav-border-radius: 0.2em;
 
 // Footer
+$footer-bg: #e8e8e8;
 
-$footer-bg: $primary-color;
-
+// Layout
+$max-width: em(1088);
 
 // Grid
-$border-box-sizing: true;
+$border-box-sizing        : true;
 $column: golden-ratio(1em, 3);
-$default-feature: min-width;
-$default-layout-direction: LTR;
+$default-feature          : min-width;
+$default-layout-direction : LTR;
 $grid-columns: 12;
 $gutter: golden-ratio(1em, 1);
-$max-width: em(1088);
 $visual-grid-color: #eee;
 $visual-grid-index: back;
 $visual-grid-opacity: 0.4;

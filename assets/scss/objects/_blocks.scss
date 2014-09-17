@@ -1,12 +1,12 @@
 /*------------------------------------*\
-    $BLOCK
+		$BLOCK
 \*------------------------------------*/
 .brick {
 	background: #dcdddc;
 	padding: $pad-double;
 	text-align: center;
 	font-weight: bold;
-	border-bottom: 1px solid $gray-light-2;
+	border-bottom: 1px solid $gray-light;
 }
 
 /* Block */
@@ -23,11 +23,11 @@
 }
 
 /**
-  * @name Block-Hero
-  * @description Style for the block-hero class
-  * @markup
-  *   <div class="block-hero">markup</div>
-  */
+	* @name Block-Hero
+	* @description Style for the block-hero class
+	* @markup
+	*   <div class="block-hero">markup</div>
+	*/
 
 .block-hero {
 	margin-bottom: $space-half;
@@ -56,13 +56,13 @@
 /* Block Thumbnail with Headline */
 
 /**
-  * @name Block-Thumb
-  * @description Block Thumbnail with Headline
-  * @markup
-  *   <div class="block-thumb">
-  *     <div class="b-inner">markup</div>
-  *   </div>
-  */
+	* @name Block-Thumb
+	* @description Block Thumbnail with Headline
+	* @markup
+	*   <div class="block-thumb">
+	*     <div class="b-inner">markup</div>
+	*   </div>
+	*/
 
 .block-thumb {
 	display: table;
@@ -72,22 +72,22 @@
 	.b-inner {
 		display: table-row;
 		vertical-align: top;
-  		overflow: hidden;
+			overflow: hidden;
 	}
 
 	.b-thumb {
 		@media all and (min-width: $bp-small-2) {
 			display: table-cell;
 			vertical-align: top;
-	  		width: 30%;
-	  		max-width: 10em;
+				width: 30%;
+				max-width: 10em;
 
-	 		img {
-	 			display: block;
-				  width: 100%;
-				  height: auto;
-	 		}
- 		}
+			img {
+				display: block;
+					width: 100%;
+					height: auto;
+			}
+		}
 	}
 
 	.b-text {

@@ -1,5 +1,5 @@
 /*------------------------------------*\
-    $TEXT
+		$TEXT
 \*------------------------------------*/
 p {
 	margin-bottom: $space;
@@ -7,41 +7,41 @@ p {
 }
 
 /**
-  * @name Blockquote
-  * @description Style for the blockquote element
-  * @markup
-  *   <blockquote>Markup</blockquote>
-  */
+	* @name Blockquote
+	* @description Style for the blockquote element
+	* @markup
+	*   <blockquote>Markup</blockquote>
+	*/
 
 blockquote {
-    font-style:italic;
-    border-left: 1px solid $gray;
-    color: $gray;
+		font-style:italic;
+		border-left: 1px solid $gray;
+		color: $gray;
 	padding-left: $pad;
 	margin-bottom: $space;
 }
 
 /**
-  * @name Hr
-  * @description Style for the hr element
-  * @markup
-  *   <hr />
-  */
+	* @name Hr
+	* @description Style for the hr element
+	* @markup
+	*   <hr />
+	*/
 hr {
 	border: 0;
-    height: 2px;
-    background: $gray-light-2;
-    margin: $space-double 0;
+		height: 2px;
+		background: $gray-light;
+		margin: $space-double 0;
 }
 
 /**
-  * @name Abbr
-  * @description Style for the abbr element
-  * @markup
-  *   <abbr>Markup</abbr>
-  */
+	* @name Abbr
+	* @description Style for the abbr element
+	* @markup
+	*   <abbr>Markup</abbr>
+	*/
 
 abbr {
-    border-bottom: 1px dotted $gray;
-    cursor: help;
+		border-bottom: 1px dotted $gray;
+		cursor: help;
 }

@@ -1,9 +1,9 @@
 /*------------------------------------*\
-    $BUTTONS
+		$BUTTONS
 \*------------------------------------*/
 .btn {
 	display: inline-block;
-	background: $primary-color;
+	background: $button-color;
 	color: $white;
 	line-height: 1;
 	font-weight: bold;
@@ -17,7 +17,7 @@
 	}
 
 	&.disabled {
-		background: $gray-light-2;
+		background: $gray-light;
 		color: $gray;
 	}
 }
