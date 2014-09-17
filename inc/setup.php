@@ -31,9 +31,6 @@ if ( ! function_exists( 'epigone_setup' ) ) {
 		// Support for eye-catching image.
 		add_theme_support( 'post-thumbnails' );
 
-		// Support for custom header
-		add_theme_support( 'custom-header' );
-
 		// support for menus
 		add_theme_support( 'menus' );
 

@@ -148,7 +148,7 @@ header, footer, nav, section, article, hgroup, figure {
  * Color uttility
  */
 .primary-bg {
-  background: #363b3f; }
+  background: #3695B5; }
 
 /*------------------------------------*\
     $MAIN
@@ -211,9 +211,9 @@ h6, .zeta {
   font-weight: normal; }
 
 .entry-title {
-  color: #363b3f; }
+  color: #3695B5; }
   .entry-title a {
-    color: #363b3f; }
+    color: #3695B5; }
 
 /*------------------------------------*\
 		$TEXT
@@ -1881,7 +1881,7 @@ td {
   background: #777777; }
   .header-minimal .header-description {
     text-align: left;
-    background: rgba(54, 59, 63, 0.7);
+    background: rgba(54, 149, 181, 0.7);
     margin-bottom: 1.7em;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05); }
     .header-minimal .header-description p {
@@ -1900,7 +1900,7 @@ td {
     .header-minimal .header-logo:last-child {
       margin-right: 0; }
     .header-minimal .header-logo a {
-      color: #363b3f; }
+      color: #3695B5; }
   .header-minimal .header-banner {
     text-align: right;
     float: left;
@@ -1990,7 +1990,7 @@ td {
   display: inline-block;
   margin-right: 0.8em;
   font-size: 2.2em;
-  color: #7e8890; }
+  color: #a1d2e3; }
 
 .navbar {
   text-align: left;
@@ -2007,7 +2007,7 @@ td {
     display: inline-block;
     overflow: hidden; }
     .navbar-collapse > ul > li.current-menu-item a {
-      background: #4e555a; }
+      background: #52adcc; }
     .navbar-collapse > ul > li > a {
       display: inline-block;
       text-decoration: none;
@@ -2016,14 +2016,14 @@ td {
               transition: 0.1s ease background;
       padding: 12px 20px;
       border-radius: 0.2em;
-      background-color: #363b3f;
+      background-color: #3695B5;
       line-height: 1.2em;
       vertical-align: top;
       text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05); }
       .navbar-collapse > ul > li > a:hover {
-        background-color: #656f76; }
+        background-color: #7ac0d7; }
       .navbar-collapse > ul > li > a:active {
-        background: #4e555a;
+        background: #52adcc;
         box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.1); }
     .navbar-collapse > ul > li .dropdown-menu {
       opacity: 0;
@@ -2110,12 +2110,12 @@ td {
   margin-top: 1em;
   margin-bottom: 1em;
   padding: 0.6em;
-  background: #f4f4f4;
+  background: #f1f1f1;
   position: relative; }
   .pagination .page-numbers {
     padding: 1em; }
     .pagination .page-numbers.current {
-      background: #363b3f;
+      background: #3695B5;
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
       color: #fff; }
   .pagination .prev {
@@ -2134,7 +2134,7 @@ td {
   *   <div class="breadcrumbs">markup</div>
   */
 .breadcrumbs {
-  background: #f4f4f4;
+  background: #f1f1f1;
   padding: 0.1em 0.9em; }
   .breadcrumbs li {
     display: inline; }
@@ -2362,7 +2362,7 @@ td {
 \*------------------------------------*/
 .btn, .pagination .prev, .pagination .next {
   display: inline-block;
-  background: #363b3f;
+  background: #3695B5;
   color: #fff;
   line-height: 1;
   font-weight: bold;
@@ -2521,7 +2521,7 @@ td {
     font-weight: normal; }
   .headline-list li {
     padding: 0.25em 0;
-    border-top: 1px solid #f4f4f4; }
+    border-top: 1px solid #f1f1f1; }
 
 /* Post List */
 .post-list li {
@@ -2620,7 +2620,7 @@ td {
   margin-right: 2.35765%;
   width: 67.58674%;
   margin-right: 0;
-  border-color: #363b3f;
+  border-color: #3695B5;
   padding: 0.87em; }
   .widget_search .input-group .form-control:last-child {
     margin-right: 0; }
@@ -2650,7 +2650,7 @@ td {
   display: block;
   position: relative;
   padding: 0.5em;
-  border-bottom: 1px solid #f4f4f4; }
+  border-bottom: 1px solid #f1f1f1; }
   .acc-handle:after {
     content: "+";
     float: right; }
@@ -2673,7 +2673,7 @@ td {
   .tabs li {
     display: table-cell;
     text-align: center;
-    border-right: 1px solid #f4f4f4; }
+    border-right: 1px solid #f1f1f1; }
     .tabs li:last-child {
       border-right: 0; }
   .tabs a {
@@ -2681,7 +2681,7 @@ td {
     padding: 0.5em;
     background: #555555; }
     .tabs a:hover, .tabs a:focus {
-      background: #f4f4f4; }
+      background: #f1f1f1; }
     .tabs a.active {
       background: #333333;
       color: #fff; }
@@ -2814,12 +2814,12 @@ table {
   margin-bottom: 1em; }
 
 th {
-  border: 1px solid #f4f4f4;
-  background: #363b3f;
+  border: 1px solid #f1f1f1;
+  background: #3695B5;
   padding-left: 1em; }
 
 td {
-  border: 1px solid #f4f4f4;
+  border: 1px solid #f1f1f1;
   padding-left: 1em; }
 
 /*

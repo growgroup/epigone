@@ -41,7 +41,6 @@ class Date_Picker_Custom_Control extends WP_Customize_Control
 
 	public function scripts(){
 		?>
-
 		<script type="text/javascript">
 			$(function() {
 				$( "#<?php echo esc_attr( $this->id ); ?>" ).datepicker();

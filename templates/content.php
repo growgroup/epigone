@@ -22,11 +22,17 @@
 
 	<?php if ( is_search() || is_archive() || is_home() || is_front_page() ) : // Only display Excerpts for Search ?>
 	<div class="entry-summary">
-		<?php the_excerpt(); ?>
+		<?php
+		the_post_thumbnail();?>
+		<?php
+		the_excerpt(); ?>
 	</div><!-- .entry-summary -->
 	<?php else : ?>
 	<div class="entry-content">
-		<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'epigone' ) ); ?>
+		<?php
+		the_post_thumbnail();?>
+		<?php
+		the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'epigone' ) ); ?>
 		<?php
 
 		if ( ! current_theme_supports( 'epigone-pagination' ) ) {

@@ -11,6 +11,11 @@ $fa-font-path: "../components/font-awesome/fonts";
 \*------------------------------------*/
 @import "../generic/variables";
 
+$base-color         : #3695B5;
+$icon-color         : #e5f8ff;
+$highlight-color    : #096484;
+$notification-color : #e1a948;
+$button-color       : #3695B5;
 $theme_name: 'epigone';
 
 @import url("http://fonts.googleapis.com/css?family=Open+Sans:300italic,300");
@@ -38,12 +43,20 @@ $theme_name: 'epigone';
 	.header-normal{
 		min-height: $header-min-height;
 		background-attachment: fixed;
+		-webkit-background-size: 100% auto;
+		     -o-background-size: 100% auto;
+		        background-size: 100% auto;
+		background-position: center center;
 		.header-description{
 			color: $white;
 		}
 		.header-logo{
 			a{
 				color: $white;
+				font-family: 'Open sans';
+				font-weight: 100;
+				font-size: 1.5em;
+				line-height: 4em;
 			}
 		}
 	}
@@ -65,7 +78,7 @@ $theme_name: 'epigone';
 		background-image: url("../images/header-bg.png");
 		background-position: 0em -13.4em;
 		background-size: 100% auto;
-		color: #fff;
+		color: $white;
 		box-shadow: 0 5px 5px rgba(0,0,0,0.1);
 		margin-bottom: 0;
 		min-height: $header-min-height/2;
@@ -86,7 +99,7 @@ $theme_name: 'epigone';
 			font-family: 'Open Sans';
 			font-weight: 100;
 			a{
-				color: #FFF;
+				color: $white;
 				text-shadow: 0px 5px 5px rgba(0,0,0,0.1);
 			}
 		}
@@ -143,19 +156,19 @@ $theme_name: 'epigone';
 	.hentry {
 		margin-top: 2em;
 		margin-bottom: 2em;
-		// border: 1px solid #e8e8e8;
-		padding: 1em 0.5em 1em 0.5em;
+		border: 1px solid $gray-lighter;
+		padding: 1em 1.6em 1em 1.6em;
+		// padding: 1em 0.5em 1em 0.5em;
 		height: 100%;
 		position: relative;
+		background: rgba( $white, 0.8 );
 	}
 
 	&.archive,
 	&.search,
 	&.home {
 		.hentry{
-			margin-top: 2em;
-			margin-bottom: 2em;
-			border: 1px solid #e8e8e8;
+			border: 1px solid $gray-lighter;
 			padding: 1em 1.6em 1em 2em;
 			height: 100%;
 			position: relative;
@@ -176,7 +189,7 @@ $theme_name: 'epigone';
 	    $HEADER
 	\*------------------------------------*/
 	.page-header{
-		margin-top: 1em;
+		margin-top: 1.7em;
 		margin-bottom: 0.7em;
 		.page-title{
 			color: $highlight-color;
@@ -193,7 +206,7 @@ $theme_name: 'epigone';
 
 	.entry-header{
 
-		h1{
+		.entry-title{
 			font-size: 1.7em;
 			margin-bottom: 0.7em;
 			line-height: 1.2em;
@@ -212,6 +225,9 @@ $theme_name: 'epigone';
 		}
 
 	}
+	&.single .entry-title{
+		margin-bottom: 1.1em;
+	}
 
 	/*------------------------------------*\
 			$ENTRY COMMENT
@@ -220,11 +236,11 @@ $theme_name: 'epigone';
 	.entry-meta{
 		background: darken( $base-color,10%);
 		padding: .2em  1em;
-		color: #FFF;
+		color: $white;
 		margin-bottom: 1em;
 
 		a{
-			color: #FFF;
+			color: $white;
 		}
 
 		.byline{
@@ -293,15 +309,24 @@ $theme_name: 'epigone';
 			}
 		}
 
-		.footer{
-			background-color: darken( $base-color, 30% );
-			color: #FFF;
+	}
+
+	.entry-footer{
+		color: $gray;
+		font-size: 0.8em;
+		padding-left: 1em;
+		padding-right: 1em;
+		border: 2px solid $gray-lighter;
+		a{
+			color: $gray;
+			text-decoration: underline;
 		}
 	}
 
 	.footer-copyright{
 		background-color: darken( $base-color, 20% );
-		color: #FFF;
+		color: $white;
+
 	}
 
 	/*------------------------------------*\
@@ -324,14 +349,14 @@ $theme_name: 'epigone';
 	.comment-title{
 		font-size: 1.3em;
 		background: $highlight-color;
-		color: #FFF;
+		color: $white;
 		padding-left: 1em;
 		margin-bottom: 1em;
 	}
 
 	.comments-list{
 		.comment{
-			background: #FFF;
+			background: $white;
 			padding: 1em;
 		}
 	}
@@ -418,7 +443,7 @@ $theme_name: 'epigone';
 			&:hover{
 				background-color: $base-color;
 				a{
-					color: #FFF;
+					color: $white;
 				}
 			}
 			a{
@@ -442,7 +467,7 @@ $theme_name: 'epigone';
 		*/
 	.button,
 	input[type="submit"]{
-		color: #FFF;
+		color: $white;
 		background: $base-color;
 		border-radius: 30px;
 		border:1px solid darken( $base-color,20% );
@@ -533,6 +558,19 @@ $theme_name: 'epigone';
 		}
 	}
 
+	.tagcloud{
+		line-height: 2.5em;
+		margin-top: 0.5em;
+		a{
+			display: inline-block;
+			border: 1px solid $gray-lighter;
+			padding: 0 0.5em;
+			-webkit-border-radius: 2em;
+			        border-radius: 2em;
+			background: #FFF;
+			line-height: 1.4em;
+		}
+	}
 	/**
 		* @name @Media Screen And (Max-Width: 640Px)
 		* @description Style for the @media screen and (max-width: 640px) element
@@ -607,7 +645,7 @@ $theme_name: 'epigone';
 
 		.nav-toggle{
 			background: $base-color;
-			color: #FFF;
+			color: $white;
 			font-size: 0.9em;
 			position: fixed;
 			top: 10px;
@@ -630,6 +668,7 @@ $theme_name: 'epigone';
 				position: absolute;
 			}
 		}
+
 		.navbar-nav{
 			a{
 				border-radius: 0px;

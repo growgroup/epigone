@@ -77,12 +77,11 @@ class Epigone_Theme_Customize {
 							'default' => 12,
 							'type' => 'slider',
 							'sanitaize_call_back' => '',
-							'input_attrs' =>  array(
+							'input_attrs' => array(
 								'min'   => 0,
-								'max'   => 10,
-								'step'  => 2,
+								'max'   => 40,
+								'step'  => 1,
 								'class' => 'test-class test',
-								'style' => 'color: #0a0',
 							),
 						),
 						'logo_color' => array(
@@ -118,7 +117,7 @@ class Epigone_Theme_Customize {
 						),
 						'background_color' => array(
 							'label' => __( 'Background Color', $this->slug ),
-							'type' => 'color',
+							'type' => 'date-picker',
 							'sanitaize_call_back' => '',
 							'output' => array(
 								'body' => 'background-color',
@@ -311,7 +310,6 @@ class Epigone_Theme_Customize {
 			'theme_supports' => $this->theme_supports,
 			'description'    => $description,
 		);
-
 
 		if ( $panel_id ) {
 			$section_settings['panel'] = $panel_id;
