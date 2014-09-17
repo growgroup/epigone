@@ -10,8 +10,7 @@ class Google_Font_Dropdown_Custom_Control extends WP_Customize_Control
 {
 	private $fonts = false;
 
-	public function __construct( $manager, $id, $args = array(), $options = array() )
-	{
+	public function __construct( $manager, $id, $args = array(), $options = array() ){
 
 		$this->fonts = $this->get_fonts();
 		parent::__construct( $manager, $id, $args );
@@ -25,19 +24,18 @@ class Google_Font_Dropdown_Custom_Control extends WP_Customize_Control
 	 */
 	public function render_content()
 	{
-		if ( ! empty( $this->fonts ) ) {
-		?>
-		<label>
-			<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-			<select <?php $this->link(); ?>>
+		if ( ! empty( $this->fonts ) ) { ?>
+			<label>
+				<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+				<select <?php $this->link(); ?>>
+				<?php
+				foreach ( $this->fonts as $k => $v ) {
+					printf( '<option value="%s" %s>%s</option>', $k, selected( $this->value(), $k, false ), $v->family );
+				}
+				?>
+				</select>
+			</label>
 			<?php
-			foreach ( $this->fonts as $k => $v ) {
-				printf( '<option value="%s" %s>%s</option>', $k, selected( $this->value(), $k, false ), $v->family );
-			}
-			?>
-			</select>
-		</label>
-		<?php
 		}
 	}
 
@@ -48,8 +46,7 @@ class Google_Font_Dropdown_Custom_Control extends WP_Customize_Control
 	 *
 	 * @return String
 	 */
-	public function get_fonts( $amount = 30 )
-	{
+	public function get_fonts( $amount = 30 ){
 
 
 		$fontFile = dirname( __FILE__ ) . '/cache/google-web-fonts.txt';
@@ -59,13 +56,13 @@ class Google_Font_Dropdown_Custom_Control extends WP_Customize_Control
 
 		if ( file_exists( $fontFile ) && $cachetime < filemtime( $fontFile ) ) {
 
-			$content = json_decode( file_get_contents( $fontFile ));
+			$content = json_decode( file_get_contents( $fontFile ) );
 
 		} else {
 
 			$googleApi = 'https://www.googleapis.com/webfonts/v1/webfonts?sort=popularity&key={API_KEY}';
 
-			$fontContent = wp_remote_get( $googleApi, array( 'sslverify'   => false ) );
+			$fontContent = wp_remote_get( $googleApi, array( 'sslverify' => false ) );
 
 			$fp = fopen( $fontFile, 'w' );
 			fwrite( $fp, $fontContent['body'] );

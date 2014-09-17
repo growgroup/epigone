@@ -1,7 +1,7 @@
 <?php
 /**
  * Contains methods for customizing the theme customization screen.
- * @author 1shiharaT
+ * @author ishihara takashi
  * @link http://codex.wordpress.org/Theme_Customization_API
  * @since 1.1.0
  */
@@ -62,7 +62,7 @@ class Epigone_Theme_Customize {
 			),
 			'layout' => array(
 				'Layout_Picker_Custom_Control' => 'layout-picker',
-      ),
+			),
 			'select' => array(
 				'Category_Dropdown_Custom_Control'    => 'category-dropdown',
 				'Google_Font_Dropdown_Custom_Control' => 'google-font-dropdown',
@@ -109,6 +109,10 @@ class Epigone_Theme_Customize {
 		/**
 		 * Theme Customizer Settings
 		 */
+
+		/**
+		 * 01. logo
+		 */
 		$settings['epigone_logo'] = array(
 			'title' => __( 'Logo Settings', $this->slug ), // Panel title
 			'description' => __( 'Please have a set of headers.', $this->slug ),
@@ -141,6 +145,9 @@ class Epigone_Theme_Customize {
 			)
 		);
 
+		/**
+		 * 02. Header
+		 */
 		$settings['epigone_header'] = array(
 			'title' => __( 'Header Settings', $this->slug ), // Panel title
 			'description' => __( 'Please have a set of headers.', $this->slug ),
@@ -159,6 +166,11 @@ class Epigone_Theme_Customize {
 							'label' => __( 'Background Color', $this->slug ),
 							'type' => 'color',
 							'sanitaize_call_back' => '',
+						),
+						'background_date' => array(
+							'label' => __( 'Background Date', $this->slug ),
+							'type' => 'date-picker',
+							'sanitaize_call_back' => '',
 						)
 					)
 				)
@@ -175,6 +187,7 @@ class Epigone_Theme_Customize {
 		$wp_customize->get_setting( 'background_color' )->transport = 'postMessage';
 
 	}
+
 	/**
 	 * customize setting init
 	 * @param array $customizer_settings

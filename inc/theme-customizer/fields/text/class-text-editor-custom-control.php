@@ -10,8 +10,7 @@ class Text_Editor_Custom_Control extends WP_Customize_Control
 	/**
 	 * Render the content on the theme customizer page
 	 */
-	public function render_content()
-	{
+	public function render_content() {
 		?>
 		<label>
 			<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
@@ -23,6 +22,6 @@ class Text_Editor_Custom_Control extends WP_Customize_Control
 			wp_editor( $this->value(), $this->id, $settings );
 			?>
 		</label>
-	<?php
+		<?php
 	}
 }

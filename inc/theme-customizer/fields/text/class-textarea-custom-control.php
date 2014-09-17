@@ -13,8 +13,7 @@ class Textarea_Custom_Control extends WP_Customize_Control
 	/**
 	 * __construct
 	 */
-	public function __construct( $manager, $id, $args = array(), $options = array() )
-	{
+	public function __construct( $manager, $id, $args = array(), $options = array() ){
 		parent::__construct( $manager, $id, $args );
 	}
 

@@ -38,8 +38,7 @@ class Multi_Image_Custom_Control extends WP_Customize_Control
 	/**
 	 * construct
 	 */
-	public function __construct( $manager, $id, $args = array() )
-	{
+	public function __construct( $manager, $id, $args = array() ){
 
 		parent::__construct( $manager, $id, $args );
 
@@ -52,8 +51,7 @@ class Multi_Image_Custom_Control extends WP_Customize_Control
 	 * js, css enqueue
 	 * @return void
 	 */
-	public function enqueue()
-	{
+	public function enqueue(){
 
 		wp_enqueue_media();
 
@@ -72,8 +70,7 @@ class Multi_Image_Custom_Control extends WP_Customize_Control
 	/**
 	 * rendering theme customizer
 	 */
-	public function render_content()
-	{
+	public function render_content(){
 
 		$image_srcs = explode( ',' , $this->value() );
 
@@ -90,12 +87,10 @@ class Multi_Image_Custom_Control extends WP_Customize_Control
 		/**
 		 * return title
 		 */
-	public function the_title()
-	{
+	public function the_title(){
 		echo '<label><span class="customize-control-title">';
 		echo esc_html( $this->label );
-		echo '</span>
-		</label>';
+		echo '</span></label>';
 	}
 
 	/**
@@ -121,14 +116,14 @@ class Multi_Image_Custom_Control extends WP_Customize_Control
 	 * @return void html
 	 */
 	public function the_buttons() {
-	?>
+		?>
 		<div>
 				<input type="hidden" value="<?php echo esc_url( $this->value() ); ?>" <?php $this->link(); ?> id="<?php echo esc_attr( $this->input_id ); ?>" data-thumbs-container="#<?php echo esc_attr( $this->thumbnails_id ); ?>" class="multi-images-control-input"/>
 				<a href="#" class="button-secondary multi-images-upload" data-store="#<?php echo esc_attr( $this->input_id ); ?>">
-						<?php echo __( 'Upload', 'extend-theme-customizer' ); ?>
+						<?php _e( 'Upload', 'epigone' ); ?>
 				</a>
 				<a href="#" class="button-secondary multi-images-remove" data-store="#<?php echo esc_attr( $this->input_id ); ?>" data-thumbs-container="#<?php echo esc_attr( $this->thumbnails_id ); ?>">
-					 <?php echo __( 'Remove', 'custom_theme_customizer'); ?>
+					 <?php _e( 'Remove', 'epigone' ); ?>
 			 </a>
 		</div>
 	<?php
@@ -137,17 +132,14 @@ class Multi_Image_Custom_Control extends WP_Customize_Control
 	/**
 	 * uploaded images
 	 */
-	public function the_uploaded_images( $srcs = array() )
-	{
-	?>
+	public function the_uploaded_images( $srcs = array() ){
+		?>
 		<div class="customize-control-content">
 		<?php
-		if ( is_array( $srcs ) ) :
-		?>
+		if ( is_array( $srcs ) ) : ?>
 			<ul class="thumbnails" data-store="#<?php echo esc_attr( $this->input_id ); ?>" id="<?php echo esc_attr( $this->thumbnails_id ); ?>">
 			<?php
-			foreach ( $srcs as $src ) :
-			?>
+			foreach ( $srcs as $src ) : ?>
 				<li class="thumbnail" style="background-image: url(<?php echo esc_url( $src ); ?>);" data-src="<?php echo esc_url( $src ); ?>">
 				</li>
 			<?php
@@ -157,7 +149,7 @@ class Multi_Image_Custom_Control extends WP_Customize_Control
 		<?php
 		endif;
 		?>
-	</div>
-	<?php
+		</div>
+		<?php
 	}
 }

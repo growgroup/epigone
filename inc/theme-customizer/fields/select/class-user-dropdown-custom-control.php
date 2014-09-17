@@ -8,8 +8,7 @@ class User_Dropdown_Custom_Control extends WP_Customize_Control
 
 	private $users = false;
 
-	public function __construct( $manager, $id, $args = array(), $options = array() )
-	{
+	public function __construct( $manager, $id, $args = array(), $options = array() ){
 
 		$this->users = get_users( $options );
 		parent::__construct( $manager, $id, $args );
@@ -21,21 +20,21 @@ class User_Dropdown_Custom_Control extends WP_Customize_Control
 	 *
 	 * @return  void
 	 */
-	public function render_content()
-	{
+	public function render_content(){
 		if ( empty( $this->users ) ) {
 			return false;
-		}
-		?>
-	<label>
+		} ?>
+		<label>
 		<span class="customize-control-title" ><?php echo esc_html( $this->label ); ?></span>
 		<select <?php $this->link(); ?>>
 		<?php
-		foreach( $this->users as $user ) {
-			printf( '<option value="%s" %s>%s</option>',
+		foreach ( $this->users as $user ) {
+			printf(
+				'<option value="%s" %s>%s</option>',
 				$user->data->ID,
 				selected( $this->value(), $user->data->ID, false ),
-				$user->data->display_name );
+				$user->data->display_name
+			);
 		} ?>
 		</select>
 		</label>

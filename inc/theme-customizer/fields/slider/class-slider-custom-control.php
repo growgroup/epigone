@@ -32,8 +32,7 @@ class Slider_Custom_Control extends WP_Customize_Control
 	/**
 	 * construct
 	 */
-	public function __construct( $manager, $id, $args = array() )
-	{
+	public function __construct( $manager, $id, $args = array() ){
 
 		parent::__construct( $manager, $id, $args );
 
@@ -45,8 +44,7 @@ class Slider_Custom_Control extends WP_Customize_Control
 	 * js, css enqueue
 	 * @return void
 	 */
-	public function enqueue()
-	{
+	public function enqueue(){
 
 		wp_enqueue_media();
 
@@ -67,8 +65,7 @@ class Slider_Custom_Control extends WP_Customize_Control
 	/**
 	 * rendering theme customizer
 	 */
-	public function render_content()
-	{
+	public function render_content(){
 		$this->the_field();
 		$this->the_scripts( $image_srcs );
 	}
@@ -80,35 +77,34 @@ class Slider_Custom_Control extends WP_Customize_Control
 	 * @return void html
 	 */
 	public function the_field() {
-	?>
+		?>
 		<label>
-		    <span class="customize-control-title"><?php echo esc_html($this->label); ?></span>
+		    <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 				<span></span>
 				<div id="<?php echo esc_attr( $this->input_id ); ?>"class="slider"></div>
-				<input type="hidden" class="slider-input <?php echo esc_attr( $this->input_id );?>" value="<?php echo esc_attr( $this->value() ); ?>" />
+				<input type="hidden" class="slider-input <?php echo esc_attr( $this->input_id );?>" <?php echo $this->link(); ?> value="<?php echo esc_attr( $this->value() ); ?>" />
 		</label>
-	<?php
- }
+		<?php
+	}
 
 	/**
 	 * uploaded images
 	 */
-	public function the_scripts( $srcs = array() )
-	{
-	?>
-	<script type="text/javascript">
-		var $ = jQuery;
-		$(function () {
-			$( "#<?php echo esc_attr( $this->input_id );?>" ).slider({
-				value: <?php echo  $this->value(); ?>,
-				min: <?php echo $this->input_attrs['min'];?>,
-				max: <?php echo $this->input_attrs['max'];?>,
-				slide: function( event, ui ) {
-					$( ".<?php echo esc_attr( $this->input_id );?>" ).val( ui.value );
-				}
+	public function the_scripts( $srcs = array() ){
+		?>
+		<script type="text/javascript">
+			var $ = jQuery;
+			$(function () {
+				$( "#<?php echo esc_attr( $this->input_id );?>" ).slider({
+					value: <?php echo esc_attr( $this->value() ); ?>,
+					min: <?php echo esc_attr( $this->input_attrs['min'] );?>,
+					max: <?php echo esc_attr( $this->input_attrs['max'] );?>,
+					slide: function( event, ui ) {
+						$( ".<?php echo esc_attr( $this->input_id );?>" ).val( ui.value );
+					}
+				});
 			});
-		});
-	</script>
-	<?php
+		</script>
+		<?php
 	}
 }
