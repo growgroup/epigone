@@ -73,7 +73,7 @@ $theme_name: 'epigone';
 		*/
 
 	.header-minimal {
-		padding: 2em 0;
+		padding: 0 0 2em 0;
 		background-color: #a6cd99;
 		background-image: url("../images/header-bg.png");
 		background-position: 0em -13.4em;
@@ -113,6 +113,23 @@ $theme_name: 'epigone';
 			margin-right: 0;
 		}
 
+		.social-icons {
+			text-align: center;
+			display: inline-block;
+			position: absolute;
+			top: 0.2em;
+			right: 21.6%;
+
+			a{
+			line-height: 1.5em;
+			width: 27px;
+			height: 27px;
+			padding-top: 2px;
+			-webkit-border-radius: 60px;
+			        border-radius: 60px;
+				font-size: 0.9em;
+			}
+		}
 	}
 
 	/**
@@ -727,12 +744,11 @@ $theme_name: 'epigone';
 			.header-description{
 				padding: .5em;
 			}
+
 			.social-icons {
 				text-align: center;
 				display: inline-block;
-				position: absolute;
-				top: 2.1em;
-				right: 15.8em;
+				position: static;
 			}
 		}
 

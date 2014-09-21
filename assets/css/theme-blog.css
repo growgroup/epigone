@@ -1636,7 +1636,7 @@ a {
 		*   </div>
 		*/
 .header-minimal {
-  padding: 2em 0;
+  padding: 0 0 2em 0;
   background-color: #a6cd99;
   background-image: url("../images/header-bg.png");
   background-position: 0em -13.4em;
@@ -1668,6 +1668,19 @@ a {
     margin-right: 2.35765%;
     width: 37.58674%;
     margin-right: 0; }
+  .header-minimal .social-icons {
+    text-align: center;
+    display: inline-block;
+    position: absolute;
+    top: 0.2em;
+    right: 21.6%; }
+    .header-minimal .social-icons a {
+      line-height: 1.5em;
+      width: 27px;
+      height: 27px;
+      padding-top: 2px;
+      border-radius: 60px;
+      font-size: 0.9em; }
 
 /**
 		* @name navbar
@@ -2118,6 +2131,10 @@ a {
       margin-right: 0px; }
     .header-minimal .header-description {
       padding: 0.5em; }
+    .header-minimal .social-icons {
+      text-align: center;
+      display: inline-block;
+      position: static; }
   .navbar {
     position: fixed;
     top: 10px;
