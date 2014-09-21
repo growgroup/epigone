@@ -411,6 +411,19 @@ function epigone_customizer_settings(){
 			),
 		);
 
+		$font_size_choices = array(
+								'1.0' => '1.0 em',
+								'1.1' => '1.1 em',
+								'1.2' => '1.2 em',
+								'1.3' => '1.3 em',
+								'1.4' => '1.4 em',
+								'1.5' => '1.5 em',
+								'1.6' => '1.6 em',
+								'1.7' => '1.7 em',
+								'1.8' => '1.8 em',
+								'1.9' => '1.9 em',
+								'2.0' => '2.1 em',
+		);
 		/**
 		 * 03. body
 		 */
@@ -481,27 +494,75 @@ function epigone_customizer_settings(){
 								'.entry-title,.entry-title a,.page-header .page-title,h1,h2,h3,h4,h5,h6' => 'color',
 							),
 						),
-						'heading_font_size' => array(
-							'label' => __( 'Heading Font Size', 'epigone' ),
-							'default' => '1.0',
+						'heading_1_font_size' => array(
+							'label' => __( 'H1 Font Size', 'epigone' ),
+							'default' => '2.0',
 							'type' => 'select',
 							'sanitaize_call_back' => '',
-							'choices' => array(
-								'1.0' => '1.0 em',
-								'1.1' => '1.1 em',
-								'1.2' => '1.2 em',
-								'1.3' => '1.3 em',
-								'1.4' => '1.4 em',
-								'1.5' => '1.5 em',
-								'1.6' => '1.6 em',
-								'1.7' => '1.7 em',
-								'1.8' => '1.8 em',
-								'1.9' => '1.9 em',
-								'2.0' => '2.1 em',
-							),
+							'choices' => $font_size_choices,
 							'output' => array(
-								'.entry-title,.entry-title a,.page-header .page-title,h1,h2,h3,h4,h5,h6' => 'font-size',
-								'.entry-title,.entry-title a,.page-header .page-title,h1,h2,h3,h4,h5' => 'line-height',
+								'h1' => 'font-size',
+								'h1' => 'line-height',
+							),
+							'output_unit' => 'em',
+						),
+						'heading_2_font_size' => array(
+							'label' => __( 'H2 Font Size', 'epigone' ),
+							'default' => '1.8',
+							'type' => 'select',
+							'sanitaize_call_back' => '',
+							'choices' => $font_size_choices,
+							'output' => array(
+								'h2' => 'font-size',
+								'h2' => 'line-height',
+							),
+							'output_unit' => 'em',
+						),
+						'heading_3_font_size' => array(
+							'label' => __( 'H3 Font Size', 'epigone' ),
+							'default' => '1.6',
+							'type' => 'select',
+							'sanitaize_call_back' => '',
+							'choices' => $font_size_choices,
+							'output' => array(
+								'h3' => 'font-size',
+								'h3' => 'line-height',
+							),
+							'output_unit' => 'em',
+						),
+						'heading_4_font_size' => array(
+							'label' => __( 'H4 Font Size', 'epigone' ),
+							'default' => '1.6',
+							'type' => 'select',
+							'sanitaize_call_back' => '',
+							'choices' => $font_size_choices,
+							'output' => array(
+								'h4' => 'font-size',
+								'h4' => 'line-height',
+							),
+							'output_unit' => 'em',
+						),
+						'heading_5_font_size' => array(
+							'label' => __( 'H5 Font Size', 'epigone' ),
+							'default' => '1.6',
+							'type' => 'select',
+							'sanitaize_call_back' => '',
+							'choices' => $font_size_choices,
+							'output' => array(
+								'h5' => 'font-size',
+								'h5' => 'line-height',
+							),
+							'output_unit' => 'em',
+						),
+						'heading_6_font_size' => array(
+							'label' => __( 'H6 Font Size', 'epigone' ),
+							'default' => '1.6',
+							'type' => 'select',
+							'sanitaize_call_back' => '',
+							'choices' => $font_size_choices,
+							'output' => array(
+								'h6' => 'font-size',
+								'h6' => 'line-height',
 							),
 							'output_unit' => 'em',
 						),
