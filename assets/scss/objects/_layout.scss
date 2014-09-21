@@ -1,5 +1,5 @@
 /*------------------------------------*\
-    $LAYOUT
+		$LAYOUT
 \*------------------------------------*/
 
 /* Layout Container */
@@ -10,11 +10,11 @@
 }
 
 /*------------------------------------*\
-    $TEMPLATES
+		$TEMPLATES
 \*------------------------------------*/
 
 .container{
-  @include outer-container;
+	@include outer-container;
 	@include clearfix();
 
 	@media (max-width: $bp-small-3) {
@@ -30,7 +30,7 @@
 	@extend .cf;
 
 	.l-main {
-	  @include span-columns(9);
+		@include span-columns(9);
 		@media (max-width: $bp-small-3) {
 			float: none;
 			width: 100%;
@@ -40,7 +40,7 @@
 	}
 
 	.l-sidebar {
-	  @include span-columns(3);
+		@include span-columns(3);
 		@media (max-width: $bp-small-3) {
 			float: none;
 			width: 100%;
@@ -54,7 +54,7 @@
 
 
 /*------------------------------------*\
-    $GRIDS
+		$GRIDS
 \*------------------------------------*/
 
 // replace map keys with whatever you want
@@ -65,21 +65,26 @@ $grid-columns: 12;
 
 // media query mixin
 @mixin mq($search) {
-    @media (min-width: map-get($breakpoint-widths, $search)){
-      @content
-    }
+		@media (min-width: map-get($breakpoint-widths, $search)){
+			@content
+		}
 }
 
 @mixin build-grid(){
-  @each $name in $breakpoint-sizes {
-    @for $n from 1 through 4 {
-	    @media (min-width: nth($breakpoint-widths, $n) ){
-	      @for $i from 1 through $grid-columns {
-	        .grid-#{$name}-#{$i} { @include span-columns($i); }
-	      }
-	    }
-	  }
-  }
+	@each $name in $breakpoint-sizes {
+		@for $n from 1 through 4 {
+			@media (min-width: nth($breakpoint-widths, $n) ){
+				@for $i from 1 through $grid-columns {
+					.grid-#{$name}-#{$i} {
+						@include span-columns($i);
+						$omega: ceil( 12/$i );
+						@include omega( #{$omega}n );
+
+					}
+				}
+			}
+		}
+	}
 }
 
 // build grid classes
