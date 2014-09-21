@@ -382,7 +382,7 @@ class Epigone_Theme_Customize {
 			'epigone-themecustomizer',
 			get_template_directory_uri() . '/assets/js/customizer.js',
 			array(  'jquery', 'customize-preview' ),
-			'',
+			'q2983792846718246918237981724',
 			true
 		);
 	}

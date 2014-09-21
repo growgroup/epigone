@@ -658,58 +658,6 @@ function epigone_customizer_settings(){
 			'title' => __( 'Footer', 'epigone' ), // Panel title
 			'description' => __( 'Please have a set of footer.', 'epigone' ),
 			'section' => array(
-				'epigone_footer_style' => array(
-					'title' => __( 'Footer Style', 'epigone' ),
-					'setting' => array(
-						'header_style' => array(
-							'label' => __( 'Fotter Style', 'epigone' ),
-							'default' => 'normal',
-							'type' => 'radio',
-							'sanitaize_call_back' => '',
-							'choices' => array(
-								'normal' => __( 'Normal', 'epigone' ),
-								'minimal' => __( 'Minimal', 'epigone' ),
-							),
-						),
-					),
-				),
-				'epigone_footer_logo' => array(
-					'title' => __( 'Logo', 'epigone' ),
-					'setting' => array(
-						'logo_font_size' => array(
-							'label' => __( 'Font Size', 'epigone' ),
-							'default' => 1.0,
-							'type' => 'select',
-							'sanitaize_call_back' => '',
-							'choices' => array(
-								'1.0' => '0',
-								'1.1' => '1',
-								'1.2' => '2',
-								'1.3' => '3',
-								'1.4' => '4',
-								'1.5' => '5',
-								'1.6' => '6',
-								'1.7' => '7',
-								'1.8' => '8',
-								'1.9' => '9',
-								'2.0' => '10',
-							),
-							'output' => array(
-								'.footer-logo a' => 'font-size',
-							),
-							'output_unit' => 'em',
-						),
-						'logo_color' => array(
-							'label' => __( 'Color', 'epigone' ),
-							'default' => '#FFFFFF',
-							'type' => 'color',
-							'sanitaize_call_back' => '',
-							'output' => array(
-								'.footer-logo a' => 'color',
-							)
-						),
-					)
-				),
 
 				'epigone_footer' => array(
 					'title' => __( 'Background', 'epigone' ),

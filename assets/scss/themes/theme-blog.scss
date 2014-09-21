@@ -727,7 +727,13 @@ $theme_name: 'epigone';
 			.header-description{
 				padding: .5em;
 			}
-
+			.social-icons {
+				text-align: center;
+				display: inline-block;
+				position: absolute;
+				top: 2.1em;
+				right: 15.8em;
+			}
 		}
 
 		.navbar{
