@@ -225,23 +225,29 @@ function epigone_social_icon(){
 	$social['google_plus'] = get_theme_mod( 'socal_google_plus', '' );
 
 	if ( $social['facebook'] ) {
-		$icons .= '<a href="' . $social['facebook'] . '" target="_blank"><i class="fa fa-facebook"></i></a>';
+		$icons .= '	<a href="' . $social['facebook'] . '" target="_blank"><i class="fa fa-facebook"></i></a>
+		';
 	}
 
 	if ( $social['twitter'] ) {
-		$icons .= '<a href="' . $social['twitter'] . '" target="_blank"><i class="fa fa-twitter"></i></a>';
+		$icons .= '	<a href="' . $social['twitter'] . '" target="_blank"><i class="fa fa-twitter"></i></a>
+		';
 	}
 
 	if ( $social['github'] ) {
-		$icons .= '<a href="' . $social['github'] . '" target="_blank"><i class="fa fa-github"></i></a>';
+		$icons .= '	<a href="' . $social['github'] . '" target="_blank"><i class="fa fa-github"></i></a>
+		';
 	}
 
 	if ( $social['google_plus'] ) {
-		$icons .= '<a href="' . $social['google_plus'] . '" target="_blank"><i class="fa fa-google-plus"></i></a>';
+		$icons .= '	<a href="' . $social['google_plus'] . '" target="_blank"><i class="fa fa-google-plus"></i></a>
+		';
 	}
 
 	if ( $icons ) {
-		echo '<div class="social-icons">' . $icons .'</div>';
+		echo '<div class="social-icons">
+		' . $icons .'</div>
+		';
 	}
 
 }

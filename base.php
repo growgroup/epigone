@@ -15,24 +15,28 @@ epigone_get_header();
 dynamic_sidebar( 'main-visual' );
 ?>
 
-	<section class="l-two-col layout container wrapper">
+	<div class="l-two-col layout container wrapper">
 
-		<main class="l-main main" role="main">
+		<section class="l-main main">
+			<main role="main">
 
-		<?php
-		dynamic_sidebar( 'content-primary' );
+			<?php
+			dynamic_sidebar( 'content-primary' );
 
-		// Action hook before loading the main template.
-		do_action( 'get_main_template_before' );
+			// Action hook before loading the main template.
+			do_action( 'get_main_template_before' );
 
-		load_template( epigone_template_path() ); ?>
+			load_template( epigone_template_path() ); ?>
 
-		<?php
-		// Action hook after loading the main template
-		do_action( 'get_main_template_after' ); ?>
-		</main>
+			<?php
+			// Action hook after loading the main template
+			do_action( 'get_main_template_after' ); ?>
+
+			</main>
+		</section>
 
 		<aside class="l-sidebar sidebar" role="aside">
+
 			<?php
 		/**
 		 * Action Hook
@@ -43,7 +47,7 @@ dynamic_sidebar( 'main-visual' );
 			get_template_part( 'modules/sidebar' ); ?>
 
 		</aside>
-	</section>
+	</div>
 
 <?php
 /**

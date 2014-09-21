@@ -86,7 +86,7 @@ function epigone_head_cleanup(){
 	);
 }
 
-add_filter( 'wp_head', 'epigone_head_cleanup', 10 );
+add_filter( 'init', 'epigone_head_cleanup', 10 );
 
 /**
  * Print browserSync client script tag.
@@ -177,6 +177,22 @@ function epigone_include_pagination(){
 }
 
 add_action( 'get_main_template_after', 'epigone_include_pagination' );
+
+
+/**
+ * Clean up output of stylesheet <link> tags
+ * @since 1.2.0
+ */
+function epigone_clean_style_tag( $input ) {
+
+	preg_match_all( "!<link rel='stylesheet'\s?(id='[^']+')?\s+href='(.*)' type='text/css' media='(.*)' />!", $input, $matches );
+	// Only display media if it is meaningful
+	$media = $matches[3][0] !== '' && $matches[3][0] !== 'all' ? ' media="' . $matches[3][0] . '"' : '';
+	return '<link rel="stylesheet" href="' . $matches[2][0] . '"' . $media . '>' . "\n";
+
+}
+
+add_filter('style_loader_tag', 'epigone_clean_style_tag');
 
 /**
  * Set of theme customizer.
@@ -368,21 +384,11 @@ function epigone_customizer_settings(){
 							'sanitaize_call_back' => '',
 							'output' => array(
 								'a,
-								#reply-title,
-								.breadcrumbs ul:before,
-								.widget-title' => 'color',
+								#reply-title,.breadcrumbs ul:before,.widget-title' => 'color',
 
-								'.pagination .prev,
-								.pagination .next,
-								.comment-title'=> 'background-color',
+								'.pagination .prev,.pagination .next,.comment-title'=> 'background-color',
 
-								'.pagination .prev,
-								.pagination .next,
-								.nav-links div,
-								input[type=text],
-								input[type=search],
-								textarea,
-								.widget_search .input-group .form-control'               => 'border-color',
+								'.pagination .prev,.pagination .next,.nav-links div,input[type=text],input[type=search],textarea,.widget_search .input-group .form-control'               => 'border-color',
 
 								'.widget-sidebar li:nth-child(even):hover,.widget-sidebar li:hover,.nav-links div:hover' => 'background-color',
 								'.entry-meta' => 'background-color',
