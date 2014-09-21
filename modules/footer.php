@@ -19,7 +19,7 @@
 		</div>
 		<div class="footer-copyright site-info">
 			<div class="container text-center">
-				<span class="sep"> copyright © <?php echo date( 'Y' ); ?> | <?php bloginfo( 'name' ); ?></span>
+				<span class="sep"> <?php echo get_theme_mod( 'copyright_text', 'copyright © ' . date( 'Y' ) . ' | ' . get_bloginfo( 'name' ) ); ?></span>
 			</div>
 		</div>
 	</footer>

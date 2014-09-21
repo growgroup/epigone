@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: epigone1.0\n"
-"POT-Creation-Date: 2014-09-21 22:00+0900\n"
-"PO-Revision-Date: 2014-09-21 22:03+0900\n"
+"POT-Creation-Date: 2014-09-22 00:46+0900\n"
+"PO-Revision-Date: 2014-09-22 00:50+0900\n"
 "Last-Translator: ishihara <ishihara@grow-group.jp>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -266,149 +266,246 @@ msgstr "ヘッダーの設定をしてください。"
 msgid "Header Style"
 msgstr "ヘッダースタイル"
 
-#: ../inc/setup.php:205
+#: ../inc/setup.php:205 ../inc/setup.php:610
 msgid "Normal"
 msgstr "ノーマル"
 
-#: ../inc/setup.php:206
+#: ../inc/setup.php:206 ../inc/setup.php:611
 msgid "Minimal"
 msgstr "ミニマル"
 
-#: ../inc/setup.php:212
+#: ../inc/setup.php:212 ../inc/setup.php:617
 msgid "Logo"
 msgstr "ロゴ"
 
-#: ../inc/setup.php:215
+#: ../inc/setup.php:215 ../inc/setup.php:620
 msgid "Font Size"
 msgstr "文字の大きさ"
 
-#: ../inc/setup.php:238
+#: ../inc/setup.php:238 ../inc/setup.php:643
 msgid "Color"
 msgstr "配色"
 
-#: ../inc/setup.php:250
+#: ../inc/setup.php:250 ../inc/setup.php:655
 msgid "Background"
 msgstr "背景"
 
-#: ../inc/setup.php:253 ../inc/setup.php:380
+#: ../inc/setup.php:253 ../inc/setup.php:435 ../inc/setup.php:658
 msgid "Background Image"
 msgstr "背景画像"
 
-#: ../inc/setup.php:262 ../inc/setup.php:389
+#: ../inc/setup.php:262 ../inc/setup.php:444 ../inc/setup.php:667
 msgid "Background Attachment"
 msgstr "背景画像の固定"
 
-#: ../inc/setup.php:267 ../inc/setup.php:394
+#: ../inc/setup.php:267 ../inc/setup.php:449 ../inc/setup.php:672
 msgid "Fixed"
 msgstr "固定"
 
-#: ../inc/setup.php:268 ../inc/setup.php:395
-msgid "Initial"
+#: ../inc/setup.php:268 ../inc/setup.php:673
+msgid "Scroll"
 msgstr "スクロール"
 
-#: ../inc/setup.php:275 ../inc/setup.php:371
+#: ../inc/setup.php:275 ../inc/setup.php:426 ../inc/setup.php:680
 msgid "Background Color"
 msgstr "背景色"
 
-#: ../inc/setup.php:292 ../inc/setup.php:300
-msgid "Theme Color"
-msgstr "テーマカラー"
-
-#: ../inc/setup.php:296
-msgid "Theme Color "
-msgstr "テーマカラー"
-
-#: ../inc/setup.php:297 ../inc/setup.php:324
-msgid "Setting for Theme color."
-msgstr "テーマカラーの設定"
-
-#: ../inc/setup.php:323
+#: ../inc/setup.php:287
 msgid "Navigation Color "
 msgstr "ナビゲーションの配色"
 
-#: ../inc/setup.php:327
+#: ../inc/setup.php:288 ../inc/setup.php:362
+msgid "Setting for Theme color."
+msgstr "テーマカラーの設定"
+
+#: ../inc/setup.php:291
 msgid "Normal Background"
 msgstr "通常の背景"
 
-#: ../inc/setup.php:337
+#: ../inc/setup.php:301
 msgid "Hover Background"
 msgstr "ホバー時の背景"
 
-#: ../inc/setup.php:347
+#: ../inc/setup.php:311
 msgid "Active Background"
 msgstr "アクティブ時の背景"
 
-#: ../inc/setup.php:364
+#: ../inc/setup.php:320
+msgid "Navigation Font Size"
+msgstr "ナビゲーションの配色"
+
+#: ../inc/setup.php:357 ../inc/setup.php:365
+msgid "Theme Color"
+msgstr "テーマカラー"
+
+#: ../inc/setup.php:361
+msgid "Theme Color "
+msgstr "テーマカラー"
+
+#: ../inc/setup.php:397
+msgid "Button Color "
+msgstr "ボタンの配色"
+
+#: ../inc/setup.php:398
+msgid "Setting for button color."
+msgstr "ボタンカラーの設定"
+
+#: ../inc/setup.php:401
+msgid "Button Color"
+msgstr "ボタンカラー"
+
+#: ../inc/setup.php:419
 msgid "Body Settings"
 msgstr "コンテンツ"
 
-#: ../inc/setup.php:365
+#: ../inc/setup.php:420
 msgid "Please have a set of body."
 msgstr "サイトボディ内の設定をしてください。"
 
-#: ../inc/setup.php:368
+#: ../inc/setup.php:423
 msgid "Body "
 msgstr "ボディ内"
 
-#: ../inc/setup.php:402
+#: ../inc/setup.php:450
+msgid "Initial"
+msgstr "スクロール"
+
+#: ../inc/setup.php:457
 msgid "Background Size"
 msgstr "背景サイズ"
 
-#: ../inc/setup.php:407
+#: ../inc/setup.php:462
 msgid "Horizontal : auto Vertical : auto"
 msgstr "横 : auto 縦 : auto"
 
-#: ../inc/setup.php:408
+#: ../inc/setup.php:463
 msgid "Horizontal : 100%, Vertical : auto"
 msgstr "横 : 100%, 縦 : auto"
 
-#: ../inc/setup.php:409
+#: ../inc/setup.php:464
 msgid "Horizontal : auto, Vertical : 100%"
 msgstr "横 : auto, 縦 : 100%"
 
-#: ../inc/setup.php:410
+#: ../inc/setup.php:465
 msgid "Horizontal : 100%, Vertical : 100%"
 msgstr "横 : 100%, 縦 : 100%"
 
-#: ../inc/setup.php:419
+#: ../inc/setup.php:474
 msgid "Headings"
 msgstr "見出し"
 
-#: ../inc/setup.php:422
+#: ../inc/setup.php:477
 msgid "Heading Color"
 msgstr "見出しカラー"
 
-#: ../inc/setup.php:439
+#: ../inc/setup.php:486
+msgid "Heading Font Size"
+msgstr "見出し文字サイズ"
+
+#: ../inc/setup.php:512
+msgid "Text"
+msgstr "テキスト"
+
+#: ../inc/setup.php:515
+msgid "Text Color"
+msgstr "テキストカラー"
+
+#: ../inc/setup.php:525
+msgid "Base Font Size"
+msgstr "ベース文字サイズ"
+
+#: ../inc/setup.php:559
 msgid "Social Settings"
 msgstr "ソーシャル"
 
-#: ../inc/setup.php:440
+#: ../inc/setup.php:560
 msgid "Please have a set of social."
 msgstr "SNSの設定をしてください。"
 
-#: ../inc/setup.php:443
+#: ../inc/setup.php:563
 msgid "Social link"
 msgstr "SNS のリンク先URL"
 
-#: ../inc/setup.php:444
+#: ../inc/setup.php:564
 msgid "Please enter the link of social services."
 msgstr "SNS のリンク先URLを入力してください。"
 
-#: ../inc/setup.php:447
+#: ../inc/setup.php:567
 msgid "Facebook URL"
 msgstr ""
 
-#: ../inc/setup.php:453
+#: ../inc/setup.php:573
 msgid "Twitter URL"
 msgstr ""
 
-#: ../inc/setup.php:459
+#: ../inc/setup.php:579
 msgid "Github URL"
 msgstr ""
 
-#: ../inc/setup.php:465
+#: ../inc/setup.php:585
 msgid "Google+ URL"
 msgstr ""
+
+#: ../inc/setup.php:598
+msgid "Footer"
+msgstr "フッター"
+
+#: ../inc/setup.php:599
+msgid "Please have a set of footer."
+msgstr "フッターの設定をしてください。"
+
+#: ../inc/setup.php:602
+msgid "Footer Style"
+msgstr "フッタースタイル"
+
+#: ../inc/setup.php:605
+msgid "Fotter Style"
+msgstr "フッタースタイル"
+
+#: ../inc/setup.php:689
+msgid "Copyright Background Color"
+msgstr "コピーライトの背景色"
+
+#: ../inc/setup.php:702
+msgid "Scroll Top"
+msgstr "スクロールトップ"
+
+#: ../inc/setup.php:703
+msgid "Setting for Scroll top."
+msgstr "スクロールトップの設定を行って下さい。"
+
+#: ../inc/setup.php:706
+msgid "Display"
+msgstr "表示"
+
+#: ../inc/setup.php:711
+msgid "Yes"
+msgstr "はい"
+
+#: ../inc/setup.php:712
+#: ../inc/theme-customizer/fields/select/class-taxonomy-dropdown-custom-control.php:30
+msgid "None"
+msgstr "なし"
+
+#: ../inc/setup.php:716
+msgid "Page Top Background"
+msgstr "スクロールトップの背景色"
+
+#: ../inc/setup.php:728
+msgid "Copyright"
+msgstr "コピーライト"
+
+#: ../inc/setup.php:729
+msgid "Setting for Copyright."
+msgstr "コピーライト文の設定"
+
+#: ../inc/setup.php:732
+msgid "Copyright text"
+msgstr "コピーライト文"
+
+#: ../inc/setup.php:738
+msgid "Copyright Background"
+msgstr "コピーライトの背景"
 
 #: ../inc/sidebar.php:17
 msgid "Sidebar Primary"
@@ -482,10 +579,6 @@ msgstr "アップロード"
 #: ../inc/theme-customizer/fields/image/class-multi-image-custom-control.php:126
 msgid "Remove"
 msgstr "削除"
-
-#: ../inc/theme-customizer/fields/select/class-taxonomy-dropdown-custom-control.php:30
-msgid "None"
-msgstr "なし"
 
 #: ../modules/comments.php:28
 #, php-format

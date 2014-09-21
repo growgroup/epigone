@@ -186,7 +186,7 @@ class Epigone_Theme_Customize {
 			return false;
 		}
 
-		$panel_i = 99;
+		$panel_i = 10;
 		foreach ( $customizer_settings as $panel_id => $panel ) {
 			$panel_title       = isset( $panel['title'] ) ? $panel['title'] : '';
 			$panel_description = isset( $panel['description'] ) ? $panel['description'] : '';

@@ -213,7 +213,7 @@ function epigone_customizer_settings(){
 					'setting' => array(
 						'logo_font_size' => array(
 							'label' => __( 'Font Size', 'epigone' ),
-							'default' => 9,
+							'default' => 1.0,
 							'type' => 'select',
 							'sanitaize_call_back' => '',
 							'choices' => array(
@@ -251,7 +251,7 @@ function epigone_customizer_settings(){
 					'setting' => array(
 						'header_background_image' => array(
 							'label' => __( 'Background Image', 'epigone' ),
-							'default' => 12,
+							'default' => get_template_directory_uri() . '/assets/images/header-bg.png',
 							'type' => 'multi-image',
 							'sanitaize_call_back' => '',
 							'output' => array(
@@ -265,7 +265,7 @@ function epigone_customizer_settings(){
 							'sanitaize_call_back' => '',
 							'choices' => array(
 								'fixed' => __( 'Fixed', 'epigone' ),
-								'initial' => __( 'Initial', 'epigone' ),
+								'scroll' => __( 'Scroll', 'epigone' ),
 							),
 							'output' => array(
 								'#masthead' => 'background-attachment',
@@ -367,18 +367,26 @@ function epigone_customizer_settings(){
 							'type' => 'color',
 							'sanitaize_call_back' => '',
 							'output' => array(
-								'a'                                                                 => 'color',
-								'.pagination .prev, .pagination .next,comment-title'          => 'background-color',
-								'.pagination .prev, .pagination .next,.nav-links div'               => 'border-color',
-								'input[type=text],input[type=search],textarea,.widget_search .input-group .form-control'               => 'border-color',
-								'.widget-sidebar li:nth-child(even):hover,.widget-sidebar li:hover' => 'background-color',
-								'.nav-links div:hover'                                              => 'background-color',
-								'.entry-meta'                                                       => 'background-color',
-								'.pagination .page-numbers.current'                                 => 'background-color',
-								'.widget-title:after'                                               => 'background-color',
-								'th'                                                                => 'background-color',
-								'.breadcrumbs ul:before,.widget-title'                              => 'color',
-								'.footer-copyright'                                                 => 'background-color',
+								'a,
+								#reply-title,
+								.breadcrumbs ul:before,
+								.widget-title' => 'color',
+
+								'.pagination .prev,
+								.pagination .next,
+								.comment-title'=> 'background-color',
+
+								'.pagination .prev,
+								.pagination .next,
+								.nav-links div,
+								input[type=text],
+								input[type=search],
+								textarea,
+								.widget_search .input-group .form-control'               => 'border-color',
+
+								'.widget-sidebar li:nth-child(even):hover,.widget-sidebar li:hover,.nav-links div:hover' => 'background-color',
+								'.entry-meta' => 'background-color',
+								'.pagination .page-numbers.current,.widget-title:after,th,.footer-copyright'                                 => 'background-color',
 								'.archive .hentry.post:before, .search .hentry.post:before, .home .hentry.post:before' => 'background-color',
 							),
 						),
@@ -514,7 +522,7 @@ function epigone_customizer_settings(){
 						),
 						'text_font_size' => array(
 							'label' => __( 'Base Font Size', 'epigone' ),
-							'default' => 0,
+							'default' => 1.0,
 							'type' => 'select',
 							'sanitaize_call_back' => '',
 							'choices' => array(
@@ -582,7 +590,170 @@ function epigone_customizer_settings(){
 				),
 			),
 		);
+		/**
+		 * 04. Footer
+		 */
+		$settings['epigone_footer'] = array(
+			'title' => __( 'Footer', 'epigone' ), // Panel title
+			'description' => __( 'Please have a set of footer.', 'epigone' ),
+			'section' => array(
+				'epigone_footer_style' => array(
+					'title' => __( 'Footer Style', 'epigone' ),
+					'setting' => array(
+						'header_style' => array(
+							'label' => __( 'Fotter Style', 'epigone' ),
+							'default' => 'normal',
+							'type' => 'radio',
+							'sanitaize_call_back' => '',
+							'choices' => array(
+								'normal' => __( 'Normal', 'epigone' ),
+								'minimal' => __( 'Minimal', 'epigone' ),
+							),
+						),
+					),
+				),
+				'epigone_footer_logo' => array(
+					'title' => __( 'Logo', 'epigone' ),
+					'setting' => array(
+						'logo_font_size' => array(
+							'label' => __( 'Font Size', 'epigone' ),
+							'default' => 1.0,
+							'type' => 'select',
+							'sanitaize_call_back' => '',
+							'choices' => array(
+								'1.0' => '0',
+								'1.1' => '1',
+								'1.2' => '2',
+								'1.3' => '3',
+								'1.4' => '4',
+								'1.5' => '5',
+								'1.6' => '6',
+								'1.7' => '7',
+								'1.8' => '8',
+								'1.9' => '9',
+								'2.0' => '10',
+							),
+							'output' => array(
+								'.footer-logo a' => 'font-size',
+							),
+							'output_unit' => 'em',
+						),
+						'logo_color' => array(
+							'label' => __( 'Color', 'epigone' ),
+							'default' => '#FFFFFF',
+							'type' => 'color',
+							'sanitaize_call_back' => '',
+							'output' => array(
+								'.footer-logo a' => 'color',
+							)
+						),
+					)
+				),
+
+				'epigone_footer' => array(
+					'title' => __( 'Background', 'epigone' ),
+					'setting' => array(
+						'footer_background_image' => array(
+							'label' => __( 'Background Image', 'epigone' ),
+							'default' => get_template_directory_uri() . '/assets/images/footer-bg.png',
+							'type' => 'multi-image',
+							'sanitaize_call_back' => '',
+							'output' => array(
+								'#colophon' => 'background-image',
+							)
+						),
+						'footer_background_attachment' => array(
+							'label' => __( 'Background Attachment', 'epigone' ),
+							'default' => 'fixed',
+							'type' => 'radio',
+							'sanitaize_call_back' => '',
+							'choices' => array(
+								'fixed' => __( 'Fixed', 'epigone' ),
+								'scroll' => __( 'Scroll', 'epigone' ),
+							),
+							'output' => array(
+								'#colophon' => 'background-attachment',
+							)
+						),
+						'footer_background_color' => array(
+							'label' => __( 'Background Color', 'epigone' ),
+							'default' => '#666666',
+							'type' => 'color',
+							'sanitaize_call_back' => '',
+							'output' => array(
+								'#colophon' => 'background-color',
+							),
+						),
+						'footer_copyright_background_color' => array(
+							'label' => __( 'Copyright Background Color', 'epigone' ),
+							'default' => '#666666',
+							'type' => 'color',
+							'sanitaize_call_back' => '',
+							'output' => array(
+								'#colophon' => 'background-color',
+							),
+						),
+					),
+				),
+
+				// navigation section
+				'epigone_scrolltop' => array(
+					'title' => __( 'Scroll Top', 'epigone' ),
+					'description' => __( 'Setting for Scroll top.', 'epigone' ),
+					'setting' => array(
+						'scroll_display' => array(
+							'label' => __( 'Display', 'epigone' ),
+							'default' => 'true',
+							'type' => 'radio',
+							'sanitaize_call_back' => '',
+							'choices' => array(
+								'true' => __( 'Yes', 'epigone' ),
+								'false' => __( 'None', 'epigone' ),
+							)
+						),
+						'scroll_background_color' => array(
+							'label' => __( 'Page Top Background', 'epigone' ),
+							'default' => '#3695b5',
+							'type' => 'color',
+							'sanitaize_call_back' => '',
+							'output' => array(
+								'#scroll-top a' => 'background-color',
+							),
+						),
+					),
+				),
+				// navigation section
+				'epigone_copyright' => array(
+					'title' => __( 'Copyright', 'epigone' ),
+					'description' => __( 'Setting for Copyright.', 'epigone' ),
+					'setting' => array(
+						'copyright_text' => array(
+							'label' => __( 'Copyright text', 'epigone' ),
+							'default' =>  'copyright © ' . get_the_date( 'Y' ) . get_bloginfo( 'name' ),
+							'type' => 'text',
+							'sanitaize_call_back' => '',
+						),
+						'copyright_background' => array(
+							'label' => __( 'Copyright Background', 'epigone' ),
+							'default' => '#3695b5',
+							'type' => 'color',
+							'sanitaize_call_back' => '',
+							'output' => array(
+								'.footer-copyright'                   => 'background-color',
+							),
+						),
+					),
+				),
+			)
+		);
 
 	return $settings;
 }
 
+add_action( 'get_footer', 'epigone_scroll_top' );
+
+function epigone_scroll_top(){
+	if ( 'true' === get_theme_mod( 'scroll_display', false ) ) {
+		echo '<div id="scroll-top"><a href="#"><i class="fa fa-angle-up"></i></a></div>';
+	}
+}
