@@ -14,21 +14,25 @@ function epigone_scripts() {
 
 	/**
 	 * The main style sheet.
+	 * @since 1.0.0
 	 */
 	wp_enqueue_style( 'epigone_main', get_stylesheet_directory_uri() . '/assets/css/main.min.css', false, '99972085bc30c435929f5af3cf81d064' );
 
 	/**
 	 * Blog theme style sheet.
+	 * @since 1.1.0
 	 */
 	wp_enqueue_style( 'epigone_blog', get_stylesheet_directory_uri() . '/assets/css/theme-blog.min.css', false, '99972085bc30c435929f5af3cf81d064' );
 
 	/**
 	 * Vendor plugin javascript.
+	 * @since 1.0.0
 	 */
 	wp_register_script( 'epigone_plugins', get_template_directory_uri() . '/assets/js/plugins.min.js', array(), '632995d66dba190b04e58c7bbf9d6222', true );
 
 	/**
-	 * theme main javascript.
+	 * Registering a javascri that is the main theme.
+	 * @since 1.0.0
 	 */
 	wp_register_script( 'epigone_scripts', get_stylesheet_directory_uri() . '/assets/js/scripts.min.js', array(), '632995d66dba190b04e58c7bbf9d6222', true );
 
@@ -47,7 +51,8 @@ function epigone_scripts() {
 	wp_enqueue_script( 'jquery' );
 
 	/**
-	 * Responsive Navigation plugin.
+	 * Registration of Responsive navigation plugin
+	 * @since 1.1.0
 	 */
 	if ( current_theme_supports( 'responsive-nav' ) && wp_is_mobile() ) {
 		wp_enqueue_style( 'epigone_responsive_nav_css', get_stylesheet_directory_uri() . '/assets/components/responsive-nav/responsive-nav.css', false, '99972085bc30c435929f5af3cf81d064' );

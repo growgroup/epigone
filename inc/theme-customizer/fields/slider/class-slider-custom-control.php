@@ -41,6 +41,17 @@ class Slider_Custom_Control extends WP_Customize_Control
 	}
 
 	/**
+	 * Refresh the parameters passed to the JavaScript via JSON.
+	 *
+	 * @since 3.4.0
+	 * @uses WP_Customize_Control::to_json()
+	 */
+	public function to_json() {
+		parent::to_json();
+		$this->json['statuses'] = $this->statuses;
+	}
+
+	/**
 	 * js, css enqueue
 	 * @return void
 	 */
@@ -82,25 +93,25 @@ class Slider_Custom_Control extends WP_Customize_Control
 		    <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 				<span></span>
 				<div id="<?php echo esc_attr( $this->input_id ); ?>"class="slider"></div>
-				<input type="hidden" class="slider-input <?php echo esc_attr( $this->input_id );?>" <?php echo $this->link(); ?> value="<?php echo esc_attr( $this->value() ); ?>" />
+				<input type="hidden" class="slider-input <?php echo esc_attr( $this->input_id );?>" <?php $this->link(); ?> value="<?php echo esc_attr( $this->value() ); ?>" />
 		</label>
 		<?php
 	}
 
 	/**
-	 * uploaded images
+	 * Slider init scripts.
 	 */
 	public function the_scripts( $srcs = array() ){
 		?>
 		<script type="text/javascript">
 			var $ = jQuery;
 			$(function () {
-				$( "#<?php echo esc_attr( $this->input_id );?>" ).slider({
-					value: <?php echo esc_attr( $this->value() ); ?>,
-					min: <?php echo esc_attr( $this->input_attrs['min'] );?>,
-					max: <?php echo esc_attr( $this->input_attrs['max'] );?>,
+				$( "#<?php echo esc_js( $this->input_id );?>" ).slider({
+					value: <?php echo esc_js( $this->value() ); ?>,
+					min: <?php echo esc_js( $this->input_attrs['min'] );?>,
+					max: <?php echo esc_js( $this->input_attrs['max'] );?>,
 					slide: function( event, ui ) {
-						$( ".<?php echo esc_attr( $this->input_id );?>" ).val( ui.value );
+						$( ".<?php echo esc_js( $this->input_id );?>" ).val( ui.value );
 					}
 				});
 			});

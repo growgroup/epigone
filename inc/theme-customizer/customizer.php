@@ -81,13 +81,16 @@ class Epigone_Theme_Customize {
 								'min'   => 0,
 								'max'   => 40,
 								'step'  => 1,
-								'class' => 'test-class test',
 							),
+							'output' => array(
+								'.header-logo a' => 'font-size',
+							),
+							'output_unit' => 'em',
 						),
 						'logo_color' => array(
 							'label' => __( 'Color', $this->slug ),
 							'default' => 12,
-							'type' => 'color',
+							'type' => 'date-picker',
 							'sanitaize_call_back' => '',
 						)
 					)
@@ -117,11 +120,11 @@ class Epigone_Theme_Customize {
 						),
 						'background_color' => array(
 							'label' => __( 'Background Color', $this->slug ),
-							'type' => 'date-picker',
+							'type' => 'color',
 							'sanitaize_call_back' => '',
 							'output' => array(
 								'body' => 'background-color',
-							)
+							),
 						),
 					)
 				)
@@ -238,10 +241,10 @@ class Epigone_Theme_Customize {
 			return false;
 		}
 
-
+		$i = 10;
 		foreach ( $customizer_settings as $panel_id => $panel ) {
 
-			$this->add_panel( $panel_id, $panel['title'], $panel['description'] );
+			$this->add_panel( $panel_id, $panel['title'], $panel['description'], $i );
 
 			if ( is_array( $panel['section'] ) ) {
 
@@ -260,15 +263,18 @@ class Epigone_Theme_Customize {
 							$setting_label               = isset( $setting['label'] ) ? $setting['label'] : '';
 							$setting_type                = isset( $setting['type'] ) ? $setting['type'] : '';
 							$setting_input_attrs         = isset( $setting['input_attrs'] ) ? $setting['input_attrs'] : '';
+							$setting_choices             = isset( $setting['choices'] ) ? $setting['choices'] : '';
 
 							$this->add_setting( $setting_id, $setting_default, $setting_sanitaize_call_back );
-							$this->add_control( $setting_id, $setting_type, $setting_label, $section_id,  $setting_input_attrs );
+							$this->add_control( $setting_id, $setting_type, $setting_label, $section_id,  $setting_choices );
 
 						}
-					}
+					} // end setting
 				}
-			}
-		}
+			} // end section
+
+			$i++;
+		} // end panel
 
 	}
 
@@ -279,12 +285,12 @@ class Epigone_Theme_Customize {
 	 * @param string $title
 	 * @param string $description
 	 */
-	public function add_panel( $panel_id, $title = '', $description = '' ){
+	public function add_panel( $panel_id, $title = '', $description = '', $priority = 10 ){
 
 		$this->wp_customize->add_panel(
 			$panel_id,
 			array(
-				'priority'       => 10,
+				'priority'       => $priority,
 				'capability'     => $this->capability,
 				'theme_supports' => $this->theme_supports,
 				'title'          => $title,
@@ -354,9 +360,9 @@ class Epigone_Theme_Customize {
 	 * @param string  $type
 	 * @param string  $label
 	 * @param string  $section
-	 * @param boolean $input_attrs
+	 * @param array $input_attrs
 	 */
-	public function add_control( $control_id, $type, $label, $section, $input_attrs = false ){
+	public function add_control( $control_id, $type, $label, $section, $input_attrs = false, $choices = false ){
 
 		$extend_field_classname = false;
 
@@ -370,6 +376,10 @@ class Epigone_Theme_Customize {
 
 		if ( $input_attrs ) {
 			$control_settings['input_attrs'] = $input_attrs;
+		}
+
+		if ( $choices ) {
+			$control_settings['choices'] = $choices;
 		}
 
 		/**
@@ -483,13 +493,13 @@ class Epigone_Theme_Customize {
 			if ( ! $customizer_key ) {
 				continue;
 			}
-
+			$unit = isset( $setting['output_unit'] ) ? $setting['output_unit'] : '';
 			if ( 'color' === $setting['type'] ) {
 				$css = $selector . '{' . $priority . ' : #' . get_theme_mod( $customizer_key, '' ) . ';}';
 			} elseif ( 'multi-image' === $setting['type'] ) {
 				$css = $selector . '{' . $priority . ' : url(' . get_theme_mod( $customizer_key, '' ) . ' );}';
 			} else {
-				$css = $selector . '{' . $priority . ' : ' . get_theme_mod( $customizer_key, '' ) . ';}';
+				$css = $selector . '{' . $priority . ' : ' . get_theme_mod( $customizer_key, '' ) . $unit . ';}';
 			}
 		}
 

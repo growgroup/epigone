@@ -37,8 +37,17 @@ if ( ! function_exists( 'epigone_setup' ) ) {
 		// supports for responsive navigation
 		add_theme_support( 'responsive-nav' );
 
-		// Enable support for HTML5 markup.
-		add_theme_support( 'html5', array( 'comment-list', 'search-form', 'comment-form', 'gallery' ) );
+		// Add HTML5 markup structure
+		add_theme_support(
+			'html5',
+			array(
+				'comment-list',
+				'search-form',
+				'comment-form',
+				'gallery',
+				'caption',
+			)
+		);
 
 		// registration header navigation
 		register_nav_menus( array( 'primary' => __( 'Header Primary Navigation', 'epigone' ) ) );
