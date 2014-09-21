@@ -23,10 +23,16 @@
 				</h1>
 				<div class="header-banner">
 					<?php
-					if ( !dynamic_sidebar( 'header-primary' ) ) { ?>
+					if ( ! dynamic_sidebar( 'header-primary' ) ) { ?>
 						<img src="<?php echo get_template_directory_uri(); ?>/assets/images/dammy-banner728×90.png" alt="Demo Image">
 					<?php
 					}; ?>
 				</div>
 			</div>
+			<?php
+			do_action( 'get_header' );
+			?>
 		</header>
+
+		<?php
+		get_template_part( 'modules/navbar' ); ?>

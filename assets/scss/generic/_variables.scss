@@ -75,7 +75,7 @@ $bp-xxxl    : 93em;
 
 $header-description-background : rgba( $base-color, 0.7);
 $header-description-color : $white;
-$header-min-height: 400px;
+$header-min-height: em(400);
 
 // navbar
 $nav-normal-background: $button-color;

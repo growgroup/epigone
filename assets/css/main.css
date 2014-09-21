@@ -8,6 +8,7 @@
     Document of neat : http://neat.bourbon.io/docs/
 \*------------------------------------*/
 * {
+  -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
 /**
@@ -49,6 +50,7 @@
 \*------------------------------------*/
 /* Border-Box http:/paulirish.com/2012/box-sizing-border-box-ftw/ */
 * {
+  -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
 html, body, div, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, ol, ul, li, form, legend, label, table, header, footer, nav, section, figure {
@@ -65,16 +67,16 @@ header, footer, nav, section, article, hgroup, figure {
 		$GLOBAL CLASSES
 \*------------------------------------*/
 /* Clearfix */
-.cf, .l-two-col, [role=main], .footer-contents, .widget_search .input-group {
+.cf, .l-two-col, [role=main], .footer-contents, .widget_search .input-group, .entry-content {
   *zoom: 1; }
 
-.cf:before, .l-two-col:before, [role=main]:before, .footer-contents:before, .widget_search .input-group:before, .cf:after, .l-two-col:after, [role=main]:after, .footer-contents:after, .widget_search .input-group:after {
+.cf:before, .l-two-col:before, [role=main]:before, .footer-contents:before, .widget_search .input-group:before, .entry-content:before, .cf:after, .l-two-col:after, [role=main]:after, .footer-contents:after, .widget_search .input-group:after, .entry-content:after {
   content: " ";
   /* 1 */
   display: table;
   /* 2 */ }
 
-.cf:after, .l-two-col:after, [role=main]:after, .footer-contents:after, .widget_search .input-group:after {
+.cf:after, .l-two-col:after, [role=main]:after, .footer-contents:after, .widget_search .input-group:after, .entry-content:after {
   clear: both; }
 
 /* Completely remove from the flow and screen readers. */
@@ -257,6 +259,23 @@ abbr {
   border-bottom: 1px dotted #555555;
   cursor: help; }
 
+/**
+  * @name Pre, Code, Var, Samp, Kbd, .Mono
+  * @description Style for the pre, code, var, samp, kbd, .mono element
+  * @markup
+  *   <pre, code, var, samp, kbd, .mono>Markup</pre, code, var, samp, kbd, .mono>
+  */
+pre, code, var, samp, kbd, .mono {
+  font-family: Consolas, 'Courier New', Courier, Monaco, monospace;
+  background: #e8e8e8;
+  padding: 0.5em;
+  line-height: 1em;
+  overflow: scroll; }
+
+pre {
+  padding-top: 1em;
+  padding-bottom: 1em; }
+
 /*------------------------------------*\
     $LISTS
 \*------------------------------------*/
@@ -293,7 +312,7 @@ figure {
     margin-bottom: 0.5em; }
 
 figcaption {
-  font-style: italic; }
+  font-style: normal; }
 
 /*------------------------------------*\
     $FORMS
@@ -1899,8 +1918,6 @@ td {
     width: 30.0556%; }
     .header-minimal .header-logo:last-child {
       margin-right: 0; }
-    .header-minimal .header-logo a {
-      color: #3695B5; }
   .header-minimal .header-banner {
     text-align: right;
     float: left;
@@ -2035,7 +2052,7 @@ td {
         display: block;
         float: none; }
         .navbar-collapse > ul > li .dropdown-menu > li > a {
-          line-height: 1.5em;
+          font-size: 14px;
           display: inline-block; }
     .navbar-collapse > ul > li:hover .dropdown-menu {
       opacity: 1;
@@ -2817,6 +2834,8 @@ th {
   border: 1px solid #f1f1f1;
   background: #3695B5;
   padding-left: 1em; }
+  th a {
+    color: #FFF; }
 
 td {
   border: 1px solid #f1f1f1;
@@ -2886,8 +2905,9 @@ a img.aligncenter {
   padding: 0;
   width: auto; }
 
-.wp-caption p.wp-caption-text {
+.wp-caption .wp-caption-text {
   font-size: 11px;
   line-height: 17px;
+  font-style: normal;
   margin: 0;
   padding: 0 4px 5px; }

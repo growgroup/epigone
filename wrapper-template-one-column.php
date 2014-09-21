@@ -1,10 +1,10 @@
 <?php
 /**
- * base theme template
+ * Wrapper of the one-column page
  * =====================================================
  * @package  epigone
  * @license  GPLv2 or later
- * @since 1.0.0
+ * @since 1.2.0
  * =====================================================
  */
 
@@ -15,9 +15,9 @@ epigone_get_header();
 dynamic_sidebar( 'main-visual' );
 ?>
 
-	<section class="l-two-col layout container wrapper">
+	<section class="l-one-col layout container wrapper">
 
-		<main class="l-main main" role="main">
+		<main class="l-main main grid-lg-12" role="main">
 
 		<?php
 		dynamic_sidebar( 'content-primary' );
@@ -32,17 +32,6 @@ dynamic_sidebar( 'main-visual' );
 		do_action( 'get_main_template_after' ); ?>
 		</main>
 
-		<aside class="l-sidebar sidebar" role="aside">
-			<?php
-		/**
-		 * Action Hook
-		 */
-			do_action( 'get_sidebar_template' );
-
-			// Get sidebar
-			get_template_part( 'modules/sidebar' ); ?>
-
-		</aside>
 	</section>
 
 <?php
@@ -52,3 +41,4 @@ dynamic_sidebar( 'main-visual' );
 do_action( 'get_footer' );
 
 get_template_part( 'modules/footer' );
+

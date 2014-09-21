@@ -19,6 +19,8 @@ class Epigone_Theme_Customize {
 	private $support_fields;
 
 	private $settings;
+
+	public static $instance;
 	/**
 		* This hooks into 'customize_register' (available as of WP 3.4) and allows
 		* you to add new sections and controls to the Theme Customize screen.
@@ -56,83 +58,26 @@ class Epigone_Theme_Customize {
 	}
 
 	/**
+	 * instance
+	 */
+
+	public static function get_instance(){
+
+		if ( null == self::$instance ) {
+			self::$instance = new self;
+		}
+
+		return self::$instance;
+
+	}
+
+	/**
 	 * Theme Customizer Settings
 	 */
 
 	public function settings_init(){
-
-		/**
-		 * 01. logo
-		 */
-		$settings['epigone_logo'] = array(
-			'title' => __( 'Logo Settings', $this->slug ), // Panel title
-			'description' => __( 'Please have a set of headers.', $this->slug ),
-			'section' => array(
-				'epigone_logo' => array(
-					'title' => __( 'Logo', $this->slug ),
-					'description' => __( '', $this->slug ),
-					'setting' => array(
-						'logo_font_size' => array(
-							'label' => __( 'Font Size', $this->slug ),
-							'default' => 12,
-							'type' => 'slider',
-							'sanitaize_call_back' => '',
-							'input_attrs' => array(
-								'min'   => 0,
-								'max'   => 40,
-								'step'  => 1,
-							),
-							'output' => array(
-								'.header-logo a' => 'font-size',
-							),
-							'output_unit' => 'em',
-						),
-						'logo_color' => array(
-							'label' => __( 'Color', $this->slug ),
-							'default' => 12,
-							'type' => 'date-picker',
-							'sanitaize_call_back' => '',
-						)
-					)
-				)
-			)
-		);
-
-		/**
-		 * 02. Header
-		 */
-		$settings['epigone_header'] = array(
-			'title' => __( 'Header Settings', $this->slug ), // Panel title
-			'description' => __( 'Please have a set of headers.', $this->slug ),
-			'section' => array(
-				'epigone_header' => array(
-					'title' => __( 'Background', $this->slug ),
-					'description' => __( '', $this->slug ),
-					'setting' => array(
-						'background_image' => array(
-							'label' => __( 'Background Image', $this->slug ),
-							'default' => 12,
-							'type' => 'multi-image',
-							'sanitaize_call_back' => '',
-							'output' => array(
-								'#masthead' => 'background-image',
-							)
-						),
-						'background_color' => array(
-							'label' => __( 'Background Color', $this->slug ),
-							'type' => 'color',
-							'sanitaize_call_back' => '',
-							'output' => array(
-								'body' => 'background-color',
-							),
-						),
-					)
-				)
-			)
-		);
-
-		return $settings;
-
+		$settings = array();
+		return apply_filters( 'epigone_theme_customizer_settings', $settings );
 	}
 
 	/**
@@ -241,18 +186,21 @@ class Epigone_Theme_Customize {
 			return false;
 		}
 
-		$i = 10;
+		$panel_i = 99;
 		foreach ( $customizer_settings as $panel_id => $panel ) {
+			$panel_title       = isset( $panel['title'] ) ? $panel['title'] : '';
+			$panel_description = isset( $panel['description'] ) ? $panel['description'] : '';
 
-			$this->add_panel( $panel_id, $panel['title'], $panel['description'], $i );
+			$this->add_panel( $panel_id, $panel_title, $panel_description, $panel_i );
 
 			if ( is_array( $panel['section'] ) ) {
 
+				$section_i = 10;
 				foreach ( $panel['section'] as $section_id => $section ) {
 
 					$section_title       = isset( $section['title'] ) ? $section['title'] : '';
 					$section_description = isset( $section['description'] ) ? $section['description'] : '';
-					$this->add_section( $section_id, $section_title, $section_description, $panel_id );
+					$this->add_section( $section_id, $section_title, $section_description, $panel_id, $section_i );
 
 					if ( $section['setting'] ) {
 
@@ -266,14 +214,15 @@ class Epigone_Theme_Customize {
 							$setting_choices             = isset( $setting['choices'] ) ? $setting['choices'] : '';
 
 							$this->add_setting( $setting_id, $setting_default, $setting_sanitaize_call_back );
-							$this->add_control( $setting_id, $setting_type, $setting_label, $section_id,  $setting_choices );
+							$this->add_control( $setting_id, $setting_type, $setting_label, $section_id,  $setting_input_attrs, $setting_choices );
 
 						}
 					} // end setting
+					$section_i++;
 				}
 			} // end section
 
-			$i++;
+			$panel_i++;
 		} // end panel
 
 	}
@@ -307,11 +256,11 @@ class Epigone_Theme_Customize {
 	 * @param string $description
 	 * @param string $panel_id
 	 */
-	public function add_section( $section_id, $title = '', $description = '', $panel_id = '' ){
+	public function add_section( $section_id, $title = '', $description = '', $panel_id = '', $priority = 10 ){
 
 		$section_settings = array(
 			'title'          => $title,
-			'priority'       => 10,
+			'priority'       => $priority,
 			'capability'     => $this->capability,
 			'theme_supports' => $this->theme_supports,
 			'description'    => $description,
@@ -487,20 +436,25 @@ class Epigone_Theme_Customize {
 	public function generate_to_css( $setting, $customizer_key ){
 
 		$css = '';
-
+		$prev_priority = '';
 		foreach ( $setting['output'] as $selector => $priority ) {
 
 			if ( ! $customizer_key ) {
 				continue;
 			}
+			// if ( $prev_priority === $priority ) {
+			// 	$css .= $selector . ',';
+			// 	continue;
+			// }
 			$unit = isset( $setting['output_unit'] ) ? $setting['output_unit'] : '';
 			if ( 'color' === $setting['type'] ) {
-				$css = $selector . '{' . $priority . ' : #' . get_theme_mod( $customizer_key, '' ) . ';}';
+				$css .= $selector . '{' . $priority . ' : ' . get_theme_mod( $customizer_key, '' ) . ';}';
 			} elseif ( 'multi-image' === $setting['type'] ) {
-				$css = $selector . '{' . $priority . ' : url(' . get_theme_mod( $customizer_key, '' ) . ' );}';
+				$css .= $selector . '{' . $priority . ' : url(' . get_theme_mod( $customizer_key, '' ) . ' );}';
 			} else {
-				$css = $selector . '{' . $priority . ' : ' . get_theme_mod( $customizer_key, '' ) . $unit . ';}';
+				$css .= $selector . '{' . $priority . ' : ' . get_theme_mod( $customizer_key, '' ) . $unit . ';}';
 			}
+			$prev_priority = $priority;
 		}
 
 		return $css;
@@ -509,4 +463,4 @@ class Epigone_Theme_Customize {
 
 }
 
-$epigone_theme_customize = new Epigone_Theme_Customize();
+add_action( 'after_setup_theme', array( 'Epigone_Theme_Customize', 'get_instance' ), 10 );

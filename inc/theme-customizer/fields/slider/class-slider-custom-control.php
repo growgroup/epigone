@@ -105,16 +105,19 @@ class Slider_Custom_Control extends WP_Customize_Control
 		?>
 		<script type="text/javascript">
 			var $ = jQuery;
-			$(function () {
+			(function ($) {
 				$( "#<?php echo esc_js( $this->input_id );?>" ).slider({
 					value: <?php echo esc_js( $this->value() ); ?>,
-					min: <?php echo esc_js( $this->input_attrs['min'] );?>,
-					max: <?php echo esc_js( $this->input_attrs['max'] );?>,
+
+					<?php echo ( $this->input_attrs['min'] ) ? 'min: ' . esc_js( $this->input_attrs['min'] ) . ',' : ''; ?>
+
+					<?php echo ( $this->input_attrs['max'] ) ? 'max: ' . esc_js( $this->input_attrs['max'] ) . ',' : ''; ?>
+
 					slide: function( event, ui ) {
 						$( ".<?php echo esc_js( $this->input_id );?>" ).val( ui.value );
 					}
 				});
-			});
+			})(jQuery);
 		</script>
 		<?php
 	}

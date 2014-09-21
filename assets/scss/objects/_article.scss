@@ -17,6 +17,9 @@
 	margin-bottom: $space-half;
 }
 
+.entry-content{
+	@extend .cf;
+}
 /*------------------------------------*\
     $SOCIAL SHARE
 \*------------------------------------*/

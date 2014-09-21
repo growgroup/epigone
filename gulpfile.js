@@ -129,7 +129,7 @@ gulp.task( 'watch', ['browserSync'], function() {
   gulp.watch('assets/images/**/*', ['images']);
 
   // watch php .php
-  gulp.watch('./**/*.php', ['php']);
+  // gulp.watch('./**/*.php', ['php']);
 
 });
 

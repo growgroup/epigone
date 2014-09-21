@@ -76,9 +76,10 @@ a img.aligncenter {
 		width: auto;
 }
 
-.wp-caption p.wp-caption-text {
+.wp-caption .wp-caption-text {
 		font-size: 11px;
 		line-height: 17px;
+		font-style: normal;
 		margin: 0;
 		padding: 0 4px 5px;
 }

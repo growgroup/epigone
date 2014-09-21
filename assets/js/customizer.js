@@ -8,12 +8,39 @@
 	// Site title and description.
 	wp.customize( 'blogname', function( value ) {
 		value.bind( function( to ) {
-			$( '.site-title a' ).text( to );
+			$( '.header-logo a' ).text( to );
 		} );
 	} );
 	wp.customize( 'blogdescription', function( value ) {
 		value.bind( function( to ) {
-			$( '.site-description' ).text( to );
+			$( '.header-description' ).text( to );
+		} );
+	} );
+	wp.customize( 'theme_mods_epigone[body_background_image]', function( value ) {
+		value.bind( function( to ) {
+			$( 'body' ).css( 'background-image', 'url(' + to + ')' );
+		} );
+	} );
+	wp.customize( 'theme_mods_epigone[body_background_color]', function( value ) {
+		value.bind( function( to ) {
+			$( 'body' ).css( 'background-color', to );
+		} );
+	} );
+	wp.customize( 'theme_mods_epigone[body_background_attachment]', function( value ) {
+		value.bind( function( to ) {
+			$( 'body' ).css( 'background-attachment', to );
+		} );
+	} );
+	wp.customize( 'theme_mods_epigone[body_background_size]', function( value ) {
+		value.bind( function( to ) {
+			$( 'body' ).css( 'background-size', to );
+		} );
+	} );
+	wp.customize( 'theme_mods_epigone[theme_color]', function( value ) {
+		value.bind( function( to ) {
+			$( '.btn, .pagination .prev, .pagination .next,comment-title,pagination .prev, .pagination .next,.nav-links div,.widget-sidebar li:nth-child(even):hover,.widget-sidebar li:hover,.nav-links div:hover,.entry-meta,.pagination .page-numbers.current,.widget-title:after,th,.archive .hentry.post:before, .search .hentry.post:before, .home .hentry.post:before,.footer-copyright' ).css( 'background-color', to );
+			$( '.main a,.sidebar a,.breadcrumbs ul:before,.widget-title,.entry-header .entry-title:before' ).css( 'color', to );
+			$( '.pagination .prev, .pagination .next,.nav-links div' ).css( 'border-color', to );
 		} );
 	} );
 	// Header text color.

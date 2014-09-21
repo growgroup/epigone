@@ -45,3 +45,23 @@ abbr {
 		border-bottom: 1px dotted $gray;
 		cursor: help;
 }
+
+/**
+  * @name Pre, Code, Var, Samp, Kbd, .Mono
+  * @description Style for the pre, code, var, samp, kbd, .mono element
+  * @markup
+  *   <pre, code, var, samp, kbd, .mono>Markup</pre, code, var, samp, kbd, .mono>
+  */
+
+pre, code, var, samp, kbd, .mono{
+	font-family: Consolas, 'Courier New', Courier, Monaco, monospace;
+	background: #e8e8e8;
+	padding: 0.5em;
+	line-height: 1em;
+	overflow: scroll;
+}
+
+pre{
+	padding-top: 1em;
+	padding-bottom: 1em;
+}

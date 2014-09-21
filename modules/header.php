@@ -20,6 +20,10 @@
 			<?php
 			dynamic_sidebar( 'header-primary' ); ?>
 		</div>
+		<?php
+		do_action( 'get_header' );
+		get_template_part( 'modules/navbar' ); ?>
 	</header>
+
 
 

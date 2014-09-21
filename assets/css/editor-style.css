@@ -4,3 +4,6 @@
  */
 
 @import url( "main.min.css" );
+#tinymce{
+	margin: 10px;
+}

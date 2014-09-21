@@ -12,7 +12,7 @@ class Date_Picker_Custom_Control extends WP_Customize_Control
 	* Enqueue the styles and scripts
 	*/
 	public function enqueue(){
-		 global $wp_scripts;
+		global $wp_scripts;
 
 		wp_enqueue_script( 'jquery-ui-datepicker' );
 
@@ -42,9 +42,10 @@ class Date_Picker_Custom_Control extends WP_Customize_Control
 	public function scripts(){
 		?>
 		<script type="text/javascript">
-			$(function() {
+			var $ = jQuery
+			(function($) {
 				$( "#<?php echo esc_attr( $this->id ); ?>" ).datepicker();
-			});
+			})(jQuery);
 		</script>
 		<?php
 	}
