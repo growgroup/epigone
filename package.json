@@ -29,7 +29,6 @@
     "gulp-load-plugins": "^0.6.0",
     "gulp-notify": "^1.6.0",
     "gulp-rename": "^1.2.0",
-    "gulp-wp-rev": "0.0.1",
     "gulp-clean": "^0.3.1",
     "gulp-cssshrink": "0.1.4",
     "gulp-plumber": "^0.6.5",

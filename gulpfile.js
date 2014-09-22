@@ -103,18 +103,6 @@ gulp.task('php', function(){
   .pipe(reload({stream:true}));
 });
 
-// assets version
-gulp.task('rev', function () {
-  gulp.src('inc/scripts.php')
-  .pipe(plugins.rev({
-    css: 'assets/css/main.min.css',
-    cssHandle: "epigone_main",
-    js: 'assets/js/scripts.min.js',
-    jsHandle: "epigone_scripts"
-  }))
-  .pipe(gulp.dest('inc'));
-});
-
 // task "watch"
 gulp.task( 'watch', ['browserSync'], function() {
 
@@ -140,4 +128,4 @@ gulp.task('pagespeed', psi.bind(null, {
 }));
 
 // Default task
-gulp.task( 'default', ['styles', 'plugins', 'scripts', 'images', 'rev'] );
+gulp.task( 'default', ['styles', 'plugins', 'scripts', 'images'] );
