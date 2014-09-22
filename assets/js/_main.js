@@ -5,13 +5,13 @@
  * it will be converted into scripts.min.js.
  */
 
-/**
- * Responsive Nav
- * ------------------
- * http://responsive-nav.com/
- *
- */
 (function($){
+
+	/**
+	 * Responsice Navigation
+	 * @see http://responsive-nav.com/
+	 * @since 1.0.0
+	 */
 	if ( typeof responsiveNav ===  "function" ) {
 		var ResponsiveNav = responsiveNav("#header-navbar-collapse",{
 			animate: false,
@@ -26,6 +26,8 @@
 			jsClass: "js",
 		});
 	};
+
+	// Scroll Top Button
 	var topBtn = $('#scroll-top');
 	if ( topBtn ) {
 		topBtn.hide();
@@ -43,4 +45,28 @@
 				return false;
 		});
 	};
+	// /**
+	//  * Header Background
+	//  * @return {[type]} [description]
+	//  */
+	// function fader() {
+	// 	var r = $('.header'),
+	// 	wh = $(window).height(),
+	// 	dt = $(document).scrollTop(),
+	// 	elView, opacity;
+
+	// 	// Loop elements with class "blurred"
+	// 	r.each(function() {
+	// 		elView = wh - ($(this).offset().top - dt + 180);
+	// 		if (elView > 0) {
+	// 			opacity = 1 / (wh + $(this).height()) * elView * 2;
+	// 			if (opacity < 1) {
+	// 				$(this).css('opacity', opacity);
+	// 			};
+	// 		};
+	// 	});
+	// };
+
+	// $(document).bind('scroll', fader);
+
 })(jQuery);

@@ -203,6 +203,60 @@ add_filter( 'epigone_theme_customizer_settings', 'epigone_customizer_settings', 
 
 function epigone_customizer_settings(){
 		/**
+		 * 0. General
+		 */
+		$settings['epigone_general'] = array(
+			'title' => __( 'General', 'epigone' ), // Panel title
+			'description' => __( 'Please have a set of general setting.', 'epigone' ),
+			'section' => array(
+				'epigone_google_analytics' => array(
+					'title' => __( 'Google Analytics - Tracking code', 'epigone' ),
+					'setting' => array(
+						'tracking_code' => array(
+							'label' => __( 'Tracking Code', 'epigone' ),
+							'default' => '',
+							'type' => 'textarea',
+							'sanitaize_call_back' => '',
+						),
+					),
+				),
+				'epigone_meta_description' => array(
+					'title' => __( 'Meta Description', 'epigone' ),
+					'setting' => array(
+						'meta_description' => array(
+							'label' => __( 'Meta Description', 'epigone' ),
+							'default' => get_bloginfo( 'description' ),
+							'type' => 'textarea',
+							'sanitaize_call_back' => '',
+						),
+					),
+				),
+				'epigone_meta_keyword' => array(
+					'title' => __( 'Meta Keyword', 'epigone' ),
+					'setting' => array(
+						'meta_keyword' => array(
+							'label' => __( 'Meta Keyword', 'epigone' ),
+							'default' => '',
+							'type' => 'text',
+							'sanitaize_call_back' => '',
+						),
+					),
+				),
+				'epigone_favicon' => array(
+					'title' => __( 'Favicon', 'epigone' ),
+					'description' => __( '16  16 px .ico file or .png', 'epigone' ),
+					'setting' => array(
+						'meta_favicon' => array(
+							'label' => __( 'Favicon', 'epigone' ),
+							'default' => '',
+							'type' => 'multi-image',
+							'sanitaize_call_back' => '',
+						),
+					),
+				),
+			),
+		);
+		/**
 		 * 01. Header
 		 */
 		$settings['epigone_header'] = array(
@@ -383,15 +437,10 @@ function epigone_customizer_settings(){
 							'type' => 'color',
 							'sanitaize_call_back' => '',
 							'output' => array(
-								'a,
-								#reply-title,.breadcrumbs ul:before,.widget-title' => 'color',
-
-								'.pagination .prev,.pagination .next,.comment-title'=> 'background-color',
-
-								'.pagination .prev,.pagination .next,.nav-links div,input[type=text],input[type=search],textarea,.widget_search .input-group .form-control'               => 'border-color',
-
+								'a,#reply-title,.breadcrumbs ul:before,.widget-title' => 'color',
+								'.pagination .prev,.pagination .next,.comment-title,.entry-meta'=> 'background-color',
+								'.pagination .prev,.pagination .next,.nav-links div,input[type=text],input[type=search],textarea,.widget_search .input-group .form-control' => 'border-color',
 								'.widget-sidebar li:nth-child(even):hover,.widget-sidebar li:hover,.nav-links div:hover' => 'background-color',
-								'.entry-meta' => 'background-color',
 								'.pagination .page-numbers.current,.widget-title:after,th,.footer-copyright'                                 => 'background-color',
 								'.archive .hentry.post:before, .search .hentry.post:before, .home .hentry.post:before' => 'background-color',
 							),
@@ -418,6 +467,8 @@ function epigone_customizer_settings(){
 		);
 
 		$font_size_choices = array(
+								'0.8' => '0.8 em',
+								'0.9' => '0.9 em',
 								'1.0' => '1.0 em',
 								'1.1' => '1.1 em',
 								'1.2' => '1.2 em',
@@ -430,6 +481,7 @@ function epigone_customizer_settings(){
 								'1.9' => '1.9 em',
 								'2.0' => '2.1 em',
 		);
+
 		/**
 		 * 03. body
 		 */
@@ -765,10 +817,78 @@ function epigone_customizer_settings(){
 	return $settings;
 }
 
-add_action( 'get_footer', 'epigone_scroll_top' );
+/**
+ * Theme Scroll top
+ * @since 1.2.0
+ */
 
 function epigone_scroll_top(){
 	if ( 'true' === get_theme_mod( 'scroll_display', false ) ) {
 		echo '<div id="scroll-top"><a href="#"><i class="fa fa-angle-up"></i></a></div>';
 	}
 }
+
+add_action( 'get_footer', 'epigone_scroll_top' );
+
+/**
+ * Google Analytics - Tracking
+ * @since 1.2.0
+ */
+
+function epigone_tracking_code(){
+	$traking_code = get_theme_mod( 'tracking_code', false );
+	if ( $traking_code ) {
+		echo '<!-- Google Analytics -->
+' . $traking_code .
+'
+';
+	}
+}
+
+add_action( 'wp_footer', 'epigone_tracking_code' );
+
+/**
+ * output meta tag to wp_head
+ * @since 1.2.0
+ */
+
+function epigone_meta_tag(){
+
+	$meta_tag         = '';
+	$meta_description = get_theme_mod( 'meta_description', false );
+	$meta_keyword     = get_theme_mod( 'meta_keyword', false );
+
+	if ( $meta_description ) {
+		$meta_tag .= '<meta name="description" content="' . esc_html( $meta_description ) . '">' . "\n";
+	}
+
+	if ( $meta_keyword ) {
+		$meta_tag .=  '<meta name="keywords" content="' . esc_html( $meta_keyword ) . '">' . "\n";
+	}
+
+	echo $meta_tag;
+
+}
+
+add_action( 'wp_head', 'epigone_meta_tag', 10 );
+
+/**
+ * output favicon tag to wp_head
+ * @since 1.2.0
+ */
+
+function epigone_favicon(){
+
+	$favicon_tag         = '';
+	$favicon = get_theme_mod( 'meta_favicon', false );
+
+
+	if ( $favicon ) {
+		$favicon_tag .= '<link rel="shortcut icon" href="' . esc_url( $favicon ) . '">' . "\n";
+	}
+
+	echo $favicon_tag;
+
+}
+
+add_action( 'wp_head', 'epigone_favicon', 10 );
