@@ -39,3 +39,4 @@ access_log
 #============================================#
 node_modules
 assets/components
+src

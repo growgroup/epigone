@@ -1740,6 +1740,8 @@ a {
 
 .breadcrumbs ul:before {
   margin-right: 0.3em; }
+.breadcrumbs ul li {
+  line-height: 1.7em; }
 
 /*------------------------------------*\
 	    $HEADER
@@ -1787,7 +1789,7 @@ a {
   line-height: 1.8em; }
 
 .entry-meta {
-  background-color: #2a758e;
+  background-color: #f6f6f6;
   padding: 0.3em 0.5em;
   color: #fff;
   margin-bottom: 1em;

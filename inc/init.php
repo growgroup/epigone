@@ -16,12 +16,13 @@ $include_files = array(
 	array( 'inc/scripts.php' ),
 	array( 'inc/sidebar.php' ),
 	array( 'inc/comment.php' ),
+	array( 'inc/modified.php' ),
 	array( 'inc/theme-customizer/customizer.php' ),
 	array( 'classes/class-theme-wrapper.php' ),
 	array( 'classes/class-breadcrumbs.php' ),
 	array( 'classes/class-walker-nav.php' ),
 	array( 'classes/class-walker-comment.php' ),
-	array( 'classes/class-helper-post-type.php' ),
+	array( 'classes/class-post-type.php' ),
 );
 
 $include_files = apply_filters( 'epigone_init_files', $include_files );

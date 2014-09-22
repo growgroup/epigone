@@ -56,10 +56,12 @@ function epigone_comment_form_defaults( $defaults ) {
 add_filter( 'comment_form_default_fields', 'epigone_comment_form_args' );
 
 function epigone_comment_form_args( $args ) {
-
-	$args['author'] = '<p class="comment-form-author"><input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="40" tabindex="1" aria-required="true" title="'. __( 'Your Name (required)','epigone' ) .'" placeholder="'. __( 'Your Name (required)','epigone' ) .'" required /><!-- .comment-form-author .form-section --></p>';
-	$args['email'] = '<p class="comment-form-email"><input id="email" name="email" type="email" value="' . esc_attr( $commenter['comment_author_email'] ) . '" size="40" tabindex="2" aria-required="true" title="'. __( 'Email Address (required)','epigone' ) .'" placeholder="'. __( 'Email Address (required)','epigone' ) .'" required /><!-- .comment-form-email .form-section --></p>';
-	$args['url'] = '<p class="comment-form-url"><input id="url" name="url" type="url" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="40" tabindex="3" aria-required="false" title="'. __( 'Website (url)','epigone' ) .'" placeholder="'. __( 'Website (url)','epigone' ) .'" required /><!-- .comment-form-url .form-section --></p>';
+	$comment_author = isset( $commenter['comment_author'] ) ? $commenter['comment_author'] : '';
+	$comment_author_email = isset( $commenter['comment_author_email'] ) ? $commenter['comment_author_email'] : '';
+	$comment_author_url = isset( $commenter['comment_author_url'] ) ? $commenter['comment_author_url'] : '';
+	$args['author'] = '<p class="comment-form-author"><input id="author" name="author" type="text" value="' . esc_attr( $comment_author ) . '" size="40" tabindex="1" aria-required="true" title="'. __( 'Your Name (required)','epigone' ) .'" placeholder="'. __( 'Your Name (required)','epigone' ) .'" required /><!-- .comment-form-author .form-section --></p>';
+	$args['email'] = '<p class="comment-form-email"><input id="email" name="email" type="email" value="' . esc_attr( $comment_author_email ) . '" size="40" tabindex="2" aria-required="true" title="'. __( 'Email Address (required)','epigone' ) .'" placeholder="'. __( 'Email Address (required)','epigone' ) .'" required /><!-- .comment-form-email .form-section --></p>';
+	$args['url'] = '<p class="comment-form-url"><input id="url" name="url" type="url" value="' . esc_attr( $comment_author_url ) . '" size="40" tabindex="3" aria-required="false" title="'. __( 'Website (url)','epigone' ) .'" placeholder="'. __( 'Website (url)','epigone' ) .'" required /><!-- .comment-form-url .form-section --></p>';
 
 	return $args;
 

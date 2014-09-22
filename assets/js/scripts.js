@@ -45,28 +45,6 @@
 				return false;
 		});
 	};
-	// /**
-	//  * Header Background
-	//  * @return {[type]} [description]
-	//  */
-	// function fader() {
-	// 	var r = $('.header'),
-	// 	wh = $(window).height(),
-	// 	dt = $(document).scrollTop(),
-	// 	elView, opacity;
 
-	// 	// Loop elements with class "blurred"
-	// 	r.each(function() {
-	// 		elView = wh - ($(this).offset().top - dt + 180);
-	// 		if (elView > 0) {
-	// 			opacity = 1 / (wh + $(this).height()) * elView * 2;
-	// 			if (opacity < 1) {
-	// 				$(this).css('opacity', opacity);
-	// 			};
-	// 		};
-	// 	});
-	// };
-
-	// $(document).bind('scroll', fader);
 
 })(jQuery);

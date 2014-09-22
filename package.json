@@ -1,6 +1,6 @@
 {
   "name": "epigone",
-  "version": "1.0.1",
+  "version": "1.2.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/1shiharaT/epigone.git"
@@ -36,7 +36,9 @@
     "browser-sync": "^1.3.7",
     "node-bourbon": "^1.2.3",
     "node-neat": "^1.3.0",
-    "psi": "^0.1.2"
+    "psi": "^0.1.2",
+    "gulp-zip": "^2.0.2",
+    "streamqueue": "^0.1.1"
   },
   "scripts": {
     "setup": "npm install",

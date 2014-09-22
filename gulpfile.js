@@ -7,13 +7,16 @@ var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 var psi = require('psi');
 var neat = require('node-neat').includePaths;
+var zip = require('gulp-zip');
+var pjson = require('./package.json');
+var streamqueue = require('streamqueue');
 
 // browser sync
 gulp.task('browserSync', function() {
   browserSync.init( null, {
     notify: true,
     proxy: {
-      host: "your-domain.dev", // replace your domain
+      host: 'your-domain.dev', // replace your domain
       //port: 3000
     },
     ghostMode: {
@@ -121,6 +124,52 @@ gulp.task( 'watch', ['browserSync'], function() {
 
 });
 
+
+/**
+ * Generate a zip package of the application
+ */
+gulp.task("zip", function () {
+    var date = new Date().toISOString().replace(/[^0-9]/g, ''),
+        stream = streamqueue({ objectMode: true });
+
+    stream.queue(
+        gulp.src(
+            [
+                "assets/**/*",
+                "templates/**/*",
+                "modules/**/*",
+                "classes/**/*",
+                "inc/**/*",
+                "languages/**/*",
+                "!views/layout.jade", // will use the built one
+                ".bowerrc",
+                ".editorconfig",
+                ".jshintrc",
+                "404.php",
+                "archive.php",
+                "attachment.php",
+                "base.php",
+                "bower.json",
+                "functions.php",
+                "index.php",
+                "page.php",
+                "rtl.css",
+                "screenshot.png",
+                "search.php",
+                "single.php",
+                "style.css",
+                "wrapper-template-one-column.php"
+            ],
+            {base: "."})
+    );
+
+    // once preprocess ended, concat result into a real file
+    return stream.done()
+        .pipe(zip("package-" + pjson.version + "-" + date + ".zip"))
+        .pipe(gulp.dest("src/"));
+});
+
+
 // Run PageSpeed Insights
 gulp.task('pagespeed', psi.bind(null, {
 	url: 'http://your-domain.dev',
@@ -129,3 +178,6 @@ gulp.task('pagespeed', psi.bind(null, {
 
 // Default task
 gulp.task( 'default', ['styles', 'plugins', 'scripts', 'images'] );
+
+// Production
+gulp.task( 'production', ['styles', 'plugins', 'scripts', 'images', 'zip'] );

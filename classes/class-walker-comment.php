@@ -73,6 +73,7 @@ class Epigone_Walker_Comment extends Walker_Comment {
 
 				<div class="reply">
 					<?php
+					$add_below  = isset( $add_below ) ? $add_below : '';
 					$reply_args = array(
 						'add_below' => $add_below,
 						'depth' => $depth,
@@ -88,6 +89,7 @@ class Epigone_Walker_Comment extends Walker_Comment {
 
 	public function end_el( &$output, $comment, $depth = 0, $args = array() ) {
 
+		global $comment_ID;
 		echo '</li><!-- /#comment-' . $comment_ID . ' -->';
 
 	}
