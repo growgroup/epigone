@@ -22,7 +22,7 @@ function epigone_clean_style_tag( $input ) {
 
 }
 
-add_filter('style_loader_tag', 'epigone_clean_style_tag');
+add_filter( 'style_loader_tag', 'epigone_clean_style_tag' );
 
 /**
  * Set of theme customizer.
@@ -268,8 +268,8 @@ function epigone_customizer_settings(){
 							'sanitaize_call_back' => '',
 							'output' => array(
 								'a,#reply-title,.breadcrumbs ul:before' => 'color',
-								'.pagination .prev,.pagination .next,.comment-title,.entry-meta .byline,.posted-on'=> 'background-color',
-								'.pagination .prev,.pagination .next,.nav-links div,input[type=text],input[type=search],textarea,.widget_search .input-group .form-control' => 'border-color',
+								'.comment-title,.entry-meta .byline,.posted-on' => 'background-color',
+								'input[type=text],input[type=search],textarea,.widget_search .input-group .form-control' => 'border-color',
 								'.widget-sidebar li:nth-child(even):hover,.widget-sidebar li:hover,.nav-links div:hover' => 'background-color',
 								'.pagination .page-numbers.current,.widget-title:after,th,.footer-copyright'                                 => 'background-color',
 								'.archive .hentry.post:before, .search .hentry.post:before, .home .hentry.post:before' => 'background-color',
@@ -287,8 +287,9 @@ function epigone_customizer_settings(){
 							'type' => 'color',
 							'sanitaize_call_back' => '',
 							'output' => array(
-								'.btn, #submit,input[type=submit]'          => 'background-color',
-								'.btn, #submit,input[type=submit] '          => 'border-color',
+								'.btn, #submit,input[type=submit],.pagination .prev,.pagination .next,.btn-more' => 'background-color',
+								'.nav-links div a' => 'color',
+								'.nav-links div,.nav-links div:hover,.btn, #submit,input[type=submit],.pagination .prev,.pagination .next' => 'border-color',
 							),
 						),
 					),
@@ -297,19 +298,19 @@ function epigone_customizer_settings(){
 		);
 
 		$font_size_choices = array(
-								'0.8' => '0.8 em',
-								'0.9' => '0.9 em',
-								'1.0' => '1.0 em',
-								'1.1' => '1.1 em',
-								'1.2' => '1.2 em',
-								'1.3' => '1.3 em',
-								'1.4' => '1.4 em',
-								'1.5' => '1.5 em',
-								'1.6' => '1.6 em',
-								'1.7' => '1.7 em',
-								'1.8' => '1.8 em',
-								'1.9' => '1.9 em',
-								'2.0' => '2.1 em',
+			'0.8' => '0.8 em',
+			'0.9' => '0.9 em',
+			'1.0' => '1.0 em',
+			'1.1' => '1.1 em',
+			'1.2' => '1.2 em',
+			'1.3' => '1.3 em',
+			'1.4' => '1.4 em',
+			'1.5' => '1.5 em',
+			'1.6' => '1.6 em',
+			'1.7' => '1.7 em',
+			'1.8' => '1.8 em',
+			'1.9' => '1.9 em',
+			'2.0' => '2.1 em',
 		);
 
 		/**

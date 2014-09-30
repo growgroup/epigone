@@ -54,7 +54,7 @@ function epigone_custom_sidebar() {
 		'id'            => 'footer-primary',
 		'before_widget' => '<section class="widget widget-footer %1$s %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
+		'before_title'  => '<h2 class="widget-title footer-title">',
 		'after_title'   => '</h2>',
 	) );
 

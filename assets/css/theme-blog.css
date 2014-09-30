@@ -1717,19 +1717,17 @@ a {
   margin-top: 2em;
   margin-bottom: 2em;
   border: 1px solid #f1f1f1;
-  padding: 1em 1.6em 1em 1.6em;
+  padding: 1em 1em 1em 1em;
   height: 100%;
   position: relative;
-  background: #fff;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.02), -1px 1px 1px rgba(0, 0, 0, 0.02), 1px 1px 1px rgba(0, 0, 0, 0.02); }
+  background: #fff; }
 
 .archive .hentry, .search .hentry, .home .hentry {
   border: 1px solid #f1f1f1;
-  padding: 1em 1.6em 1em 2em;
+  padding: 1em 1em 1em 1em;
   height: 100%;
   position: relative; }
   .archive .hentry.post:before, .search .hentry.post:before, .home .hentry.post:before {
-    content: '';
     display: inline-block;
     width: 0.4em;
     height: 100%;
@@ -1738,10 +1736,13 @@ a {
     left: -1px;
     top: -1px; }
 
-.breadcrumbs ul:before {
-  margin-right: 0.3em; }
-.breadcrumbs ul li {
-  line-height: 1.7em; }
+.breadcrumbs {
+  background: none;
+  font-size: 0.85em; }
+  .breadcrumbs ul:before {
+    margin-right: 0.3em; }
+  .breadcrumbs ul li {
+    line-height: 1.7em; }
 
 /*------------------------------------*\
 	    $HEADER
@@ -1858,6 +1859,9 @@ a {
   .entry-footer a {
     color: #555555;
     text-decoration: underline; }
+
+.footer {
+  border-top: 5px solid #f1f1f1; }
 
 .footer-copyright {
   background-color: #1f5466;
@@ -2006,12 +2010,10 @@ a {
 /*------------------------------------*\
 	    $SIDE
 	\*------------------------------------*/
-.sidebar .widget {
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05); }
-  .sidebar .widget ul {
-    border-left: 1px solid #f1f1f1;
-    border-right: 1px solid #f1f1f1;
-    border-bottom: 1px solid #f1f1f1; }
+.sidebar .widget ul {
+  border-left: 1px solid #f1f1f1;
+  border-right: 1px solid #f1f1f1;
+  border-bottom: 1px solid #f1f1f1; }
 
 .widget-sidebar li {
   padding-left: 1em;
@@ -2032,7 +2034,7 @@ a {
     .widget-sidebar li:hover a {
       color: #fff; }
   .widget-sidebar li:nth-child(even) {
-    background: #f9f9f9; }
+    background: #fbfbfb; }
     .widget-sidebar li:nth-child(even):hover {
       background: #66b7d1; }
 
@@ -2061,6 +2063,14 @@ a {
     position: absolute;
     left: 0;
     bottom: 0px; }
+  .widget-title.footer-title {
+    background: none;
+    padding-left: 0; }
+    .widget-title.footer-title:before {
+      content: none; }
+    .widget-title.footer-title:after {
+      height: 1px;
+      width: 100%; }
 
 .tagcloud {
   line-height: 2.5em;

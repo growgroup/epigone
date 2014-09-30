@@ -17,7 +17,7 @@ if ( ! function_exists( 'epigone_paging_nav' ) ) :
 	 */
 	function epigone_paging_nav() {
 		// Don't print empty markup if there's only one page.
-		if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
+		if ( $GLOBALS['wp_query']->max_num_pages < 2 || current_theme_supports( 'epigone-pagination' ) ) {
 			return;
 		}
 		?>

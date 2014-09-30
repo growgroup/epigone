@@ -102,8 +102,8 @@ function epigone_setup_author() {
 
 add_action( 'excerpt_more', 'epigone_change_more' );
 function epigone_change_more( $more ) {
-	$more = ' &hellip; <a href="' . get_permalink() . '" class="btn btn-more">' . __( 'More', 'epigone' ) . '</a>';
 
+	$more = ' &hellip; <a href="' . get_permalink() . '" class="btn btn-more">' . __( 'More', 'epigone' ) . '</a>';
 	return apply_filters( 'epigone_readmore', $more );
 
 }

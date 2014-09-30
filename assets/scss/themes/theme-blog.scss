@@ -182,12 +182,12 @@ $theme_name: 'epigone';
 		margin-top: 2em;
 		margin-bottom: 2em;
 		border: 1px solid $gray-lighter;
-		padding: 1em 1.6em 1em 1.6em;
+		padding: 1em 1em 1em 1em;
 		// padding: 1em 0.5em 1em 0.5em;
 		height: 100%;
 		position: relative;
 		background: $white;
-		box-shadow: 0 1px 1px rgba(0,0,0,0.02),-1px 1px 1px rgba(0,0,0,0.02),1px 1px 1px rgba(0,0,0,0.02);
+		// box-shadow: 0 1px 1px rgba(0,0,0,0.02),-1px 1px 1px rgba(0,0,0,0.02),1px 1px 1px rgba(0,0,0,0.02);
 	}
 
 	&.archive,
@@ -195,11 +195,11 @@ $theme_name: 'epigone';
 	&.home {
 		.hentry{
 			border: 1px solid $gray-lighter;
-			padding: 1em 1.6em 1em 2em;
+			padding: 1em 1em 1em 1em;
 			height: 100%;
 			position: relative;
 			&.post:before{
-				content: '';
+				// content: '';
 				display: inline-block;
 				width: 0.4em;
 				height: 100%;
@@ -210,16 +210,20 @@ $theme_name: 'epigone';
 			}
 		}
 	}
-	.breadcrumbs ul{
-		@extend .fa;
-		@extend .fa-home;
-		&:before{
-			margin-right: 0.3em;
-		}
-		li{
-			line-height: 1.7em;
-		}
+	.breadcrumbs{
+		background: none;
+		font-size: 0.85em;
+		ul{
+			@extend .fa;
+			@extend .fa-home;
+			&:before{
+				margin-right: 0.3em;
+			}
+			li{
+				line-height: 1.7em;
+			}
 
+		}
 	}
 
 	/*------------------------------------*\
@@ -279,6 +283,7 @@ $theme_name: 'epigone';
 	/*------------------------------------*\
 			$ENTRY COMMENT
 	\*------------------------------------*/
+
 	.posted-on{
 		display: inline-block;
 		background: rgba(0,0,0,0.2);
@@ -286,6 +291,7 @@ $theme_name: 'epigone';
 		padding-right: 0.5em;
 		line-height: 1.8em;
 	}
+
 	.entry-meta{
 		background-color: #f6f6f6;
 		padding: 0.3em  0.5em;
@@ -386,7 +392,9 @@ $theme_name: 'epigone';
 			text-decoration: underline;
 		}
 	}
-
+	.footer{
+		border-top: 5px solid $gray-lighter;
+	}
 	.footer-copyright{
 		background-color: darken( $base-color, 20% );
 		color: $white;
@@ -572,7 +580,7 @@ $theme_name: 'epigone';
 	\*------------------------------------*/
 	.sidebar{
 		.widget{
-			box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+			// box-shadow: 0 1px 1px rgba(0,0,0,0.05);
 			ul{
 				border-left: 1px solid $gray-lighter;
 				border-right: 1px solid $gray-lighter;
@@ -611,7 +619,7 @@ $theme_name: 'epigone';
 				}
 			}
 			&:nth-child(even){
-				background: lighten( $gray-lighter, 3 );
+				background: lighten( $gray-lighter, 4 );
 				&:hover{
 					background: lighten( $base-color, 15 );
 				}
@@ -648,6 +656,18 @@ $theme_name: 'epigone';
 			position: absolute;
 			left: 0;
 			bottom: 0px;
+		}
+		&.footer-title{
+			background: none;
+			padding-left: 0;
+			// border-bottom: 1px solid;
+			&:before{
+				content: none;
+			}
+			&:after{
+				height: 1px;
+				width: 100%;
+			}
 		}
 	}
 
