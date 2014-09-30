@@ -91,3 +91,19 @@ function epigone_setup_author() {
 		$GLOBALS['authordata'] = get_userdata( $wp_query->post->post_author );
 	}
 }
+
+
+/**
+ * Change excerpt more string
+ *
+ * @since 1.2.1
+ * @return void
+ */
+
+add_action( 'excerpt_more', 'epigone_change_more' );
+function epigone_change_more( $more ) {
+	$more = ' &hellip; <a href="' . get_permalink() . '" class="btn btn-more">' . __( 'More', 'epigone' ) . '</a>';
+
+	return apply_filters( 'epigone_readmore', $more );
+
+}

@@ -165,7 +165,7 @@ gulp.task("zip", function () {
 
     // once preprocess ended, concat result into a real file
     return stream.done()
-        .pipe(zip("package-" + pjson.version + "-" + date + ".zip"))
+        .pipe(zip("epigone-" + pjson.version + ".zip"))
         .pipe(gulp.dest("src/"));
 });
 

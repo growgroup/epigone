@@ -32,4 +32,3 @@ foreach ( $include_files as $key => $files ) {
 		load_template( $filename , true );
 	}
 }
-
