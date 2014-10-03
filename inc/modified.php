@@ -29,8 +29,6 @@ add_filter( 'style_loader_tag', 'epigone_clean_style_tag' );
  * @since 1.2.0
  */
 
-add_filter( 'epigone_theme_customizer_settings', 'epigone_customizer_settings', 1 );
-
 function epigone_customizer_settings(){
 		/**
 		 * 0. General
@@ -502,6 +500,52 @@ function epigone_customizer_settings(){
 		);
 
 		/**
+		 * 03. Layout
+		 */
+
+		$settings['epigone_layout'] = array(
+			'title' => __( 'Layout Settings', 'epigone' ), // Panel title
+			'description' => __( 'Please have a set of layout.', 'epigone' ),
+			'section' => array(
+				'epigone_layout_top' => array(
+					'title' => __( 'Top Page', 'epigone' ),
+					'description' => __( 'Please select the layout.', 'epigone' ),
+					'setting' => array(
+						'epigone_layout_top' => array(
+							'label' => __( 'Layout of top page', 'epigone' ),
+							'default' => 'l-right-sidebar',
+							'type' => 'layout-picker',
+							'sanitaize_call_back' => '',
+						),
+					)
+				),
+				'epigone_layout_page' => array(
+					'title' => __( 'static page', 'epigone' ),
+					'description' => __( 'Please select the layout.', 'epigone' ),
+					'setting' => array(
+						'epigone_layout_page' => array(
+							'label' => __( 'Layout of static page', 'epigone' ),
+							'default' => 'l-right-sidebar',
+							'type' => 'layout-picker',
+							'sanitaize_call_back' => '',
+						),
+					)
+				),
+				'epigone_layout_single' => array(
+					'title' => __( 'single page', 'epigone' ),
+					'description' => __( 'Please select the layout.', 'epigone' ),
+					'setting' => array(
+						'epigone_layout_single' => array(
+							'label' => __( 'Layout of single page', 'epigone' ),
+							'default' => 'l-right-sidebar',
+							'type' => 'layout-picker',
+							'sanitaize_call_back' => '',
+						),
+					)
+				),
+			)
+		);
+		/**
 		 * 03. Social
 		 */
 		$settings['epigone_social'] = array(
@@ -639,6 +683,8 @@ function epigone_customizer_settings(){
 	return $settings;
 }
 
+add_filter( 'epigone_theme_customizer_settings', 'epigone_customizer_settings', 1 );
+
 /**
  * Theme Scroll top
  * @since 1.2.0
@@ -714,3 +760,4 @@ function epigone_favicon(){
 }
 
 add_action( 'wp_head', 'epigone_favicon', 10 );
+

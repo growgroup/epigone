@@ -2318,7 +2318,7 @@ a {
   margin-top: 2em;
   margin-bottom: 2em;
   border: 1px solid #f1f1f1;
-  padding: 1em 1em 1em 1em;
+  padding: 2em 2em 4.5em;
   height: 100%;
   position: relative;
   background: #fff;
@@ -2328,7 +2328,7 @@ a {
 .search .hentry,
 .home .hentry {
   border: 1px solid #f1f1f1;
-  padding: 1em 1em 1em 1em;
+  padding: 2em 2em 4.5em;
   height: 100%;
   position: relative;
 }
@@ -2630,12 +2630,39 @@ a {
 .nav-links div a {
   color: #1f5466;
   font-weight: bold;
+  display: block;
+  padding: 0 1em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: auto;
+  height: 50px;
+  font-style: italic;
 }
 .nav-links .nav-next {
   float: right;
+  display: block;
+  width: 50%;
+  border-radius: 0px;
+  height: 5.9em;
+  border-left: none;
+  vertical-align: middle;
+  padding-top: 2.4em;
+  text-align: right;
+  position: relative;
 }
 .nav-links .nav-previous {
   float: left;
+  display: block;
+  width: 50%;
+  border-radius: 0px;
+  height: 5.9em;
+  vertical-align: middle;
+  position: relative;
+  text-align: left;
 }
 
 .social-icons {
@@ -2689,7 +2716,7 @@ input[type="submit"] {
   transition: all ease-in 0.1s;
 }
 .widget-sidebar li a {
-  display: block;
+  display: inline-block;
 }
 .widget-sidebar li a:hover {
   color: #333;

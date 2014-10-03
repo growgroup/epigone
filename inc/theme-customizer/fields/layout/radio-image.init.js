@@ -1,0 +1,3 @@
+(function ($) {
+	$('.radioImageSelect').radioImageSelect();
+})(jQuery);

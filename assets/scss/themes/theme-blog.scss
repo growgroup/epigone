@@ -178,12 +178,10 @@ a{
 	margin-top: 2em;
 	margin-bottom: 2em;
 	border: 1px solid $gray-lighter;
-	padding: 1em 1em 1em 1em;
-	// padding: 1em 0.5em 1em 0.5em;
+	padding: 2em 2em 4.5em;
 	height: 100%;
 	position: relative;
 	background: $white;
-	// box-shadow: 0 1px 1px rgba(0,0,0,0.02),-1px 1px 1px rgba(0,0,0,0.02),1px 1px 1px rgba(0,0,0,0.02);
 }
 
 .archive,
@@ -191,7 +189,7 @@ a{
 .home {
 	.hentry{
 		border: 1px solid $gray-lighter;
-		padding: 1em 1em 1em 1em;
+		padding: 2em 2em 4.5em;
 		height: 100%;
 		position: relative;
 		&.post:before{
@@ -526,13 +524,40 @@ a{
 		a{
 			color: darken( $base-color,20% );
 			font-weight: bold;
+			display:block;
+			padding: 0 1em;
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    right: 0;
+	    bottom: 0;
+	    margin: auto;
+	    width: auto;
+	    height: 50px;
+			font-style: italic;
 		}
 	}
 	.nav-next{
-		float: right;
+	  float: right;
+	  display: block;
+	  width: 50%;
+	  border-radius: 0px;
+	  height: 5.9em;
+	  border-left: none;
+	  vertical-align: middle;
+	  padding-top: 2.4em;
+	  text-align: right;
+	  position: relative;
 	}
 	.nav-previous{
 		float: left;
+		display: block;
+		width: 50%;
+		border-radius: 0px;
+		height: 5.9em;
+		vertical-align: middle;
+		position: relative;
+		text-align: left;
 	}
 }
 
@@ -598,7 +623,7 @@ input[type="submit"]{
 		     -o-transition: all ease-in 0.1s;
 		        transition: all ease-in 0.1s;
 		a{
-			display: block;
+			display: inline-block;
 			&:hover{
 				color: #333;
 			}

@@ -14,11 +14,16 @@ p {
 	*/
 
 blockquote {
-		font-style:italic;
-		border-left: 1px solid $gray;
-		color: $gray;
+	font-style:italic;
+	border-left: 5px solid $base-color;
+	color: $gray;
 	padding-left: $pad;
 	margin-bottom: $space;
+	background: #f5f5f5;
+	padding: 1em;
+	p{
+		margin-bottom: 0.4em;
+	}
 }
 
 /**
@@ -62,6 +67,10 @@ pre, code, var, samp, kbd, .mono{
 }
 
 pre{
-	padding-top: 1em;
-	padding-bottom: 1em;
+	// padding-top: 1em;
+	// padding-bottom: 1em;
+}
+
+code{
+	line-height: 1.7em;
 }

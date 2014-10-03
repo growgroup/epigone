@@ -200,6 +200,7 @@ function epigone_pagination( $output = true ){
  * @return void
  */
 function epigone_get_header(){
+
 	$header_style = get_theme_mod( 'header_style', '' );
 
 	if ( $header_style === 'minimal' ) {
@@ -214,6 +215,10 @@ function epigone_get_header(){
 
 }
 
+
+/**
+ * Social Icon
+ */
 add_action( 'get_header', 'epigone_social_icon' );
 
 function epigone_social_icon(){
@@ -225,22 +230,22 @@ function epigone_social_icon(){
 	$social['google_plus'] = get_theme_mod( 'socal_google_plus', '' );
 
 	if ( $social['facebook'] ) {
-		$icons .= '	<a href="' . $social['facebook'] . '" target="_blank"><i class="fa fa-facebook"></i></a>
+		$icons .= '	<a href="' . esc_url( $social['facebook'] ) . '" target="_blank"><i class="fa fa-facebook"></i></a>
 		';
 	}
 
 	if ( $social['twitter'] ) {
-		$icons .= '	<a href="' . $social['twitter'] . '" target="_blank"><i class="fa fa-twitter"></i></a>
+		$icons .= '	<a href="' . esc_url( $social['twitter'] ) . '" target="_blank"><i class="fa fa-twitter"></i></a>
 		';
 	}
 
 	if ( $social['github'] ) {
-		$icons .= '	<a href="' . $social['github'] . '" target="_blank"><i class="fa fa-github"></i></a>
+		$icons .= '	<a href="' . esc_url( $social['github'] ) . '" target="_blank"><i class="fa fa-github"></i></a>
 		';
 	}
 
 	if ( $social['google_plus'] ) {
-		$icons .= '	<a href="' . $social['google_plus'] . '" target="_blank"><i class="fa fa-google-plus"></i></a>
+		$icons .= '	<a href="' . esc_url( $social['google_plus'] ) . '" target="_blank"><i class="fa fa-google-plus"></i></a>
 		';
 	}
 
@@ -249,5 +254,36 @@ function epigone_social_icon(){
 		' . $icons .'</div>
 		';
 	}
+
+}
+
+/**
+ * epigone_template_path
+ *
+ * @return template path
+ * @since 0.0.1
+ */
+function epigone_template_path() {
+	return Theme_Wrapper::$main_template;
+}
+
+/**
+ * epigone_template_base
+ *
+ * @return string template path
+ * @since 0.0.1
+ */
+
+function epigone_template_base() {
+	return Theme_Wrapper::$base;
+}
+
+/**
+ * Return layout class
+ *
+ * @return void
+ * @since 0.0.1
+ */
+function epigone_layout_class(){
 
 }

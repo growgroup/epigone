@@ -18,6 +18,7 @@ dynamic_sidebar( 'main-visual' );
 	<div class="l-two-col layout container wrapper">
 
 		<section class="l-main main">
+
 			<main role="main">
 
 			<?php
@@ -47,6 +48,7 @@ dynamic_sidebar( 'main-visual' );
 			get_template_part( 'modules/sidebar' ); ?>
 
 		</aside>
+
 	</div>
 
 <?php
