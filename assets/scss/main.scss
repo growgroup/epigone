@@ -9,8 +9,8 @@
     Document of neat : http://neat.bourbon.io/docs/
 \*------------------------------------*/
 
-@import "bourbon";
-@import "neat";
+@import "vender/bourbon/bourbon";
+@import "vender/neat/neat";
 
 /**
  * VARIABLES..............................Declarations of Sass variables
@@ -68,6 +68,7 @@
 @import "objects/nav";
 @import "objects/main";
 @import "objects/footer";
+@import "objects/aside";
 
 /*------------------------------------*\
     $TEXT Styles
@@ -79,7 +80,6 @@
     $COMPONENTS
 \*------------------------------------*/
 
-@import "objects/icons";
 @import "objects/buttons";
 @import "objects/blocks";
 @import "objects/lists";
@@ -93,5 +93,4 @@
 @import "objects/messaging";
 @import "objects/gallery";
 @import "objects/table";
-@import "objects/aside";
 @import "objects/wordpress";

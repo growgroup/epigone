@@ -2,11 +2,12 @@
 
 // load plugins
 var gulp = require('gulp');
-var plugins = require('gulp-load-plugins')({ camelize: true });
+var $ = require('gulp-load-plugins')({ camelize: true });
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 var psi = require('psi');
-var neat = require('node-neat').includePaths;
+var minifyCSS = require('gulp-minify-css');
+
 var zip = require('gulp-zip');
 var pjson = require('./package.json');
 var streamqueue = require('streamqueue');
@@ -17,7 +18,6 @@ gulp.task('browserSync', function() {
     notify: true,
     proxy: {
       host: 'your-domain.dev', // replace your domain
-      //port: 3000
     },
     ghostMode: {
       clicks: true,
@@ -31,72 +31,72 @@ gulp.task('browserSync', function() {
 // styles
 gulp.task('styles', function() {
   return gulp.src('assets/scss/main.scss')
-  .pipe(plugins.plumber())
-	.pipe(plugins.sass({
-		includePaths: ['styles'].concat(neat)
-		// sourceComments: 'map'
+  .pipe($.plumber())
+	.pipe($.rubySass({
+	    style: 'expanded',
+	    precision: 10
 	}))
-  .pipe(plugins.autoprefixer('last 2 versions', 'ie 9', 'ios 6', 'android 4'))
+  .pipe($.autoprefixer('last 2 versions', 'ie 9', 'ios 6', 'android 4'))
   .pipe(gulp.dest('assets/css'))
-  .pipe(plugins.cssshrink())
-  .pipe(plugins.rename({ suffix: '.min' }))
+  .pipe($.rename({ suffix: '.min' }))
+  .pipe(minifyCSS({keepBreaks:true}))
   .pipe(gulp.dest('assets/css'))
   .pipe(reload({stream:true}))
-  .pipe(plugins.notify({ message: 'Styles task complete' }));
+  .pipe($.notify({ message: 'Styles task complete' }));
 });
 
 // theme-styles
 gulp.task('theme-styles', function() {
   return gulp.src('assets/scss/themes/theme-blog.scss')
-  .pipe(plugins.plumber())
-	.pipe(plugins.sass({
-		includePaths: ['styles'].concat(neat)
+  .pipe($.plumber())
+	.pipe($.rubySass({
+	    style: 'expanded',
+	    precision: 10
 	}))
-  .pipe(plugins.autoprefixer('last 2 versions', 'ie 9', 'ios 6', 'android 4'))
+  .pipe($.autoprefixer('last 2 versions', 'ie 9', 'ios 6', 'android 4'))
   .pipe(gulp.dest('assets/css'))
-  .pipe(plugins.cssshrink())
-  .pipe(plugins.rename({ suffix: '.min' }))
+  .pipe($.rename({ suffix: '.min' }))
+  .pipe(minifyCSS({keepBreaks:true}))
   .pipe(gulp.dest('assets/css'))
   .pipe(reload({stream:true}))
-  .pipe(plugins.notify({ message: 'Theme Styles task complete' }));
+  .pipe($.notify({ message: 'Theme Styles task complete' }));
 });
-
 
 // Vendor Plugin Scripts
 gulp.task('plugins', function() {
   return gulp.src(['assets/js/plugins/*.js','!assets/js/plugins.js'])
-  .pipe(plugins.plumber())
-  .pipe(plugins.concat('plugins.js'))
+  .pipe($.plumber())
+  .pipe($.concat('plugins.js'))
   .pipe(gulp.dest('assets/js/'))
-  .pipe(plugins.rename({ suffix: '.min' }))
-  .pipe(plugins.uglify())
+  .pipe($.rename({ suffix: '.min' }))
+  .pipe($.uglify())
   .pipe(gulp.dest('assets/js'))
-  .pipe(plugins.notify({ message: 'Plugins task complete' }))
+  .pipe($.notify({ message: 'Plugins task complete' }))
   .pipe(reload( {stream:true} ));
 });
 
 // task "scripts"
 gulp.task('scripts', function() {
   return gulp.src(['assets/js/_*.js', '!assets/js/scripts.js'])
-  .pipe(plugins.plumber())
-  .pipe(plugins.jshint('.jshintrc'))
-  .pipe(plugins.jshint.reporter('default'))
-  .pipe(plugins.concat('scripts.js'))
+  .pipe($.plumber())
+  .pipe($.jshint('.jshintrc'))
+  .pipe($.jshint.reporter('default'))
+  .pipe($.concat('scripts.js'))
   .pipe(gulp.dest('assets/js'))
-  .pipe(plugins.rename({ suffix: '.min' }))
-  .pipe(plugins.uglify())
+  .pipe($.rename({ suffix: '.min' }))
+  .pipe($.uglify())
   .pipe(gulp.dest('assets/js'))
-  .pipe(plugins.notify({ message: 'Scripts task complete' }))
+  .pipe($.notify({ message: 'Scripts task complete' }))
   .pipe(reload( {stream:true} ));
 });
 
 // task "images"
 gulp.task('images', function() {
   return gulp.src('assets/images/**/*')
-  .pipe(plugins.plumber())
-  .pipe(plugins.cache(plugins.imagemin({ optimizationLevel: 7, progressive: true, interlaced: true })))
+  .pipe($.plumber())
+  .pipe($.cache($.imagemin({ optimizationLevel: 7, progressive: true, interlaced: true })))
   .pipe(gulp.dest('assets/images'))
-  .pipe(plugins.notify({ message: 'Images task complete.' }))
+  .pipe($.notify({ message: 'Images task complete.' }))
   .pipe(reload( {stream:true} ));
 });
 
@@ -141,7 +141,6 @@ gulp.task("zip", function () {
                 "classes/**/*",
                 "inc/**/*",
                 "languages/**/*",
-                "!views/layout.jade", // will use the built one
                 ".bowerrc",
                 ".editorconfig",
                 ".jshintrc",
