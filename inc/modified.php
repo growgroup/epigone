@@ -153,7 +153,7 @@ function epigone_customizer_settings(){
 							'type' => 'multi-image',
 							'sanitaize_call_back' => '',
 							'output' => array(
-								'#masthead' => 'background-image',
+								'#masthead:after' => 'background-image',
 							)
 						),
 						'header_background_attachment' => array(
@@ -166,7 +166,7 @@ function epigone_customizer_settings(){
 								'scroll' => __( 'Scroll', 'epigone' ),
 							),
 							'output' => array(
-								'#masthead' => 'background-attachment',
+								'#masthead:after' => 'background-attachment',
 							)
 						),
 						'header_background_color' => array(
@@ -175,8 +175,23 @@ function epigone_customizer_settings(){
 							'type' => 'color',
 							'sanitaize_call_back' => '',
 							'output' => array(
-								'#masthead' => 'background-color',
+								'#masthead:after' => 'background-color',
 							),
+						),
+						'header_background_size' => array(
+							'label' => __( 'Background Size', 'epigone' ),
+							'default' => '100% auto',
+							'type' => 'radio',
+							'sanitaize_call_back' => '',
+							'choices' => array(
+								'auto auto' => __( 'Horizontal : auto Vertical : auto', 'epigone' ),
+								'100% auto' => __( 'Horizontal : 100%, Vertical : auto', 'epigone' ),
+								'auto 100%' => __( 'Horizontal : auto, Vertical : 100%', 'epigone' ),
+								'100% 100%' => __( 'Horizontal : 100%, Vertical : 100%', 'epigone' ),
+							),
+							'output' => array(
+								'#masthead:after' => 'background-size',
+							)
 						),
 					),
 				),

@@ -517,9 +517,10 @@
 .fa-meanpath:before{content:""}
 [role=main]{padding:.5em 1em 1em 0;overflow:hidden}
 a{-webkit-transition:all ease-in .1s;transition:all ease-in .1s}
-.header-normal{min-height:em(400);background-attachment:fixed;background-size:100% auto;background-position:center center}
+.header-normal{min-height:em(400);background-position:center center;position:relative}
 .header-normal .header-description{color:#fff}
 .header-normal .header-logo a{font-family:'Open sans';font-weight:100;line-height:4em}
+.header-normal:after{content:"";opacity:1;top:0;left:0;bottom:0;right:0;position:absolute;z-index:-1}
 .header-minimal{padding:0 0 2em;background-color:#a6cd99;background-image:url(../images/header-bg.png);background-position:0 -13.4em;background-size:100% auto;color:#fff;box-shadow:0 5px 5px rgba(0,0,0,.1);margin-bottom:0;min-height:em(400)/2}
 .header-minimal .header-description{background:rgba(54,149,181,.7);box-shadow:0 1px 1px rgba(0,0,0,.05)}
 .header-minimal .header-logo{text-align:left;font-size:3.1em;line-height:1.7em;float:left;display:block;margin-right:2.35765%;width:60.0556%;font-family:'Open Sans';font-weight:100}

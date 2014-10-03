@@ -60,6 +60,15 @@ function epigone_scripts() {
 		wp_enqueue_script( 'epigone_responsive_nav_js' );
 	}
 
+	/**
+	 * Registration of header Effect
+	 * @since 1.3.0
+	 */
+	if ( current_theme_supports( 'skrollr-effect' ) ) {
+		wp_register_script( 'epigone_skrollr_js', get_stylesheet_directory_uri() . '/assets/components/skrollr/dist/skrollr.min.js', array( 'jquery' ), '', true );
+		wp_enqueue_script( 'epigone_skrollr_js' );
+	}
+
 	wp_enqueue_script( 'epigone_plugins' );
 	wp_enqueue_script( 'epigone_scripts' );
 

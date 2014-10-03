@@ -2200,9 +2200,8 @@ a {
 
 .header-normal {
   min-height: em(400);
-  background-attachment: fixed;
-  background-size: 100% auto;
   background-position: center center;
+  position: relative;
 }
 .header-normal .header-description {
   color: #fff;
@@ -2211,6 +2210,16 @@ a {
   font-family: 'Open sans';
   font-weight: 100;
   line-height: 4em;
+}
+.header-normal:after {
+  content: "";
+  opacity: 1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
 }
 
 /**

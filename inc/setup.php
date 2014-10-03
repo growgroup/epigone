@@ -37,6 +37,9 @@ if ( ! function_exists( 'epigone_setup' ) ) {
 		// supports for responsive navigation
 		add_theme_support( 'responsive-nav' );
 
+		// supports for responsive navigation
+		add_theme_support( 'skrollr-effect' );
+
 		// Add HTML5 markup structure
 		add_theme_support(
 			'html5',
@@ -173,8 +176,25 @@ function epigone_include_pagination(){
 	if ( current_theme_supports( 'epigone-pagination' ) ) {
 		get_template_part( 'modules/pagination' );
 	}
-
 }
 
 add_action( 'get_main_template_after', 'epigone_include_pagination' );
+
+/**
+ *
+ * @since 1.3.0
+ * @return void
+ */
+function epigone_skrollr_init(){
+
+	if ( current_theme_supports( 'skrollr-effect' ) ) {
+		$script = '
+<script type="text/javascript">
+    var s = skrollr.init();
+</script>
+';
+		echo $script;
+	}
+}
+add_action( 'wp_footer', 'epigone_skrollr_init', 99 );
 

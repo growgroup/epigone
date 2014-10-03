@@ -38,15 +38,18 @@ a{
 
 .header-normal{
 	min-height: $header-min-height;
-	background-attachment: fixed;
-	-webkit-background-size: 100% auto;
-	     -o-background-size: 100% auto;
-	        background-size: 100% auto;
 	background-position: center center;
+	position: relative;
 	.header-description{
 		color: $white;
 	}
 	.header-logo{
+		// position: absolute;
+		// top: 0;
+		// left: 0;
+		// bottom: 0;
+		// right: 0;
+		// margin: auto;
 		a{
 			// color: $white;
 			font-family: 'Open sans';
@@ -54,6 +57,16 @@ a{
 			// font-size: 1.5em;
 			line-height: 4em;
 		}
+	}
+	&:after{
+	  content: "";
+	  opacity: 1;
+	  top: 0;
+	  left: 0;
+	  bottom: 0;
+	  right: 0;
+	  position: absolute;
+	  z-index: -1;
 	}
 }
 

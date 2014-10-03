@@ -467,7 +467,7 @@ td{padding:.2em}
 .grid-lg-11:last-child,.grid-lg-11:nth-child(2n){margin-right:0}
 .grid-lg-12{float:left;display:block;margin-right:2.3576515979%;width:100%}
 .grid-lg-12:last-child,.grid-lg-12:nth-child(1n){margin-right:0}}
-.header{background:#fff;padding:0 0 1em;margin-bottom:1em}
+.header{padding:0 0 1em;margin-bottom:1em}
 .header-minimal{margin-bottom:2.6em;padding-bottom:1.7em;background:#777}
 .header-minimal .header-description{text-align:left;background:rgba(54,149,181,.7);margin-bottom:1.7em;box-shadow:0 1px 1px rgba(0,0,0,.05)}
 .header-minimal .header-description p{line-height:2.2em;margin-bottom:0;color:#fff}

@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "font-awesome": "~4.2.0",
-    "responsive-nav": "~1.0.32"
+    "responsive-nav": "~1.0.32",
+    "skrollr": "~0.6.27"
   }
 }
