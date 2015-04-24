@@ -3,15 +3,6 @@
     based generally on Harry Roberts excellent CSS Guidelines https://github.com/csswizardry/CSS-Guidelines
 \*------------------------------------*/
 
-/*------------------------------------*\
-    $IMPORT Borbon & neat
-    Document of bourbon : http://bourbon.io/docs/
-    Document of neat : http://neat.bourbon.io/docs/
-\*------------------------------------*/
-
-@import "vender/bourbon/bourbon";
-@import "vender/neat/neat";
-
 /**
  * VARIABLES..............................Declarations of Sass variables
  * .....Colors
@@ -37,7 +28,7 @@
 
 @import "generic/variables";
 @import "generic/mixins";
-@import "generic/reset";
+@import "generic/normalize";
 
 /*------------------------------------*\
     $GLOBAL ELEMENTS
@@ -67,8 +58,9 @@
 @import "objects/header";
 @import "objects/nav";
 @import "objects/main";
-@import "objects/footer";
 @import "objects/aside";
+@import "objects/footer";
+
 
 /*------------------------------------*\
     $TEXT Styles
@@ -83,9 +75,7 @@
 @import "objects/buttons";
 @import "objects/blocks";
 @import "objects/lists";
-@import "objects/tooltip";
 @import "objects/forms";
-@import "objects/accordion";
 @import "objects/tabs";
 @import "objects/sections";
 @import "objects/article";

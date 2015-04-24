@@ -1,6 +1,6 @@
 <?php
 /**
- * Jetpack Compatibility File
+ * Jetpack のための設定ファイル
  * See: http://jetpack.me/
  *
  * @package epigone

@@ -37,8 +37,8 @@ if ( ! function_exists( 'epigone_setup' ) ) {
 		// supports for responsive navigation
 		add_theme_support( 'responsive-nav' );
 
-		// supports for responsive navigation
-		add_theme_support( 'skrollr-effect' );
+		// タイトルタグをサポート
+		add_theme_support( 'title-tag' );
 
 		// Add HTML5 markup structure
 		add_theme_support(

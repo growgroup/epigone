@@ -1,6 +1,6 @@
 <?php
 /**
- * single post content template
+ * 投稿ページテンプレート
  * =====================================================
  * @package  epigone
  * @license  GPLv2 or later

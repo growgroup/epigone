@@ -1,6 +1,6 @@
 <?php
 /**
- * theme init script
+ * 必要なファイルを読み込む
  * =====================================================
  * @package  epigone
  * @license  GPLv2 or later
@@ -8,6 +8,10 @@
  * =====================================================''
  */
 
+
+/**
+ * 読み込むファイルを配列として渡す
+ */
 $include_files = array(
 	array( 'inc/setup.php' ),
 	array( 'inc/template-tags.php' ),
@@ -16,8 +20,8 @@ $include_files = array(
 	array( 'inc/scripts.php' ),
 	array( 'inc/sidebar.php' ),
 	array( 'inc/comment.php' ),
-	array( 'inc/modified.php' ),
-	array( 'inc/theme-customizer/customizer.php' ),
+//	array( 'inc/modification.php' ),
+//	array( 'inc/theme-customizer/customizer.php' ),
 	array( 'classes/class-theme-wrapper.php' ),
 	array( 'classes/class-breadcrumbs.php' ),
 	array( 'classes/class-walker-nav.php' ),
@@ -25,6 +29,9 @@ $include_files = array(
 	array( 'classes/class-post-type.php' ),
 );
 
+/**
+ * @action 読み込むファイルにフィルターを設ける
+ */
 $include_files = apply_filters( 'epigone_init_files', $include_files );
 
 foreach ( $include_files as $key => $files ) {

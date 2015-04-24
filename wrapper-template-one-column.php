@@ -1,6 +1,10 @@
 <?php
 /**
- * Wrapper of the one-column page
+ * ワンカラム用のベーステンプレート
+ * : wrapper-{template-slug}.php
+ *   例 ) wrapper-archive.php
+ *   というテンプレートを作ることで、
+ *   ベーステンプレートをオリジナルで作ることができます。
  * =====================================================
  * @package  epigone
  * @license  GPLv2 or later
@@ -22,13 +26,17 @@ dynamic_sidebar( 'main-visual' );
 		<?php
 		dynamic_sidebar( 'content-primary' );
 
-		// Action hook before loading the main template.
+		/**
+		 * @action メインテンプレートを読み込む前のアクションフック
+		 */
 		do_action( 'get_main_template_before' );
 
 		load_template( epigone_template_path() ); ?>
 
 		<?php
-		// Action hook after loading the main template
+		/**
+		 * @action メインテンプレートを読み込んだ後のアクションフック
+		 */
 		do_action( 'get_main_template_after' ); ?>
 		</main>
 
@@ -36,7 +44,7 @@ dynamic_sidebar( 'main-visual' );
 
 <?php
 /**
- * Action hook "get_footer"
+ * @action ヘッダーテンプレートを呼び出す前のアクションフック
  */
 do_action( 'get_footer' );
 

@@ -12,5 +12,9 @@
   "noarg": true,
   "node": true,
   "strict": true,
-  "trailing": true
+  "trailing": true,
+  "globals": {
+    "Modernizr": true,
+    "responsiveNav": true
+  }
 }

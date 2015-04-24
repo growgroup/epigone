@@ -1,6 +1,8 @@
 <?php
 /**
- * base theme template
+ * ベーステンプレート
+ * : テンプレート階層を上書きし、
+ * 基本的にこのテンプレートを先に読み込みます。
  * =====================================================
  * @package  epigone
  * @license  GPLv2 or later
@@ -12,26 +14,25 @@ get_template_part( 'modules/head' );
 
 epigone_get_header();
 
-dynamic_sidebar( 'main-visual' );
-?>
+dynamic_sidebar( 'main-visual' ); ?>
 
-	<div class="l-two-col layout container wrapper">
+	<div class="<?php echo esc_html( epigone_layout_class() ); ?> container wrapper">
 
 		<section class="l-main main">
 
 			<main role="main">
 
-			<?php
-			dynamic_sidebar( 'content-primary' );
+				<?php
+				dynamic_sidebar( 'content-primary' );
 
-			// Action hook before loading the main template.
-			do_action( 'get_main_template_before' );
+				// Action hook before loading the main template.
+				do_action( 'get_main_template_before' );
 
-			load_template( epigone_template_path() ); ?>
+				load_template( epigone_template_path() ); ?>
 
-			<?php
-			// Action hook after loading the main template
-			do_action( 'get_main_template_after' ); ?>
+				<?php
+				// Action hook after loading the main template
+				do_action( 'get_main_template_after' ); ?>
 
 			</main>
 		</section>
@@ -39,9 +40,9 @@ dynamic_sidebar( 'main-visual' );
 		<aside class="l-sidebar sidebar" role="aside">
 
 			<?php
-		/**
-		 * Action Hook
-		 */
+			/**
+			 * Action Hook
+			 */
 			do_action( 'get_sidebar_template' );
 
 			// Get sidebar

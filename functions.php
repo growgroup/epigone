@@ -1,6 +1,6 @@
 <?php
 /**
- * function for theme.
+ * テーマのための関数
  * =====================================================
  * @package  epigone
  * @license  GPLv2 or later

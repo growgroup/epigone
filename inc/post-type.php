@@ -1,6 +1,6 @@
 <?php
 /**
- * Register custom post-type & taxonomy
+ * カスタム登録タイプ、カスタムタクソノミーの追加記述
  * =====================================================
  * @package  epigone
  * @license  GPLv2 or later

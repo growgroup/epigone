@@ -1,6 +1,6 @@
 <?php
 /**
- * The Template for displaying all single posts.
+ * 投稿テンプレート
  * =====================================================
  * @package  epigone
  * @license  GPLv2 or later

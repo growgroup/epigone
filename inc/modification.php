@@ -9,23 +9,11 @@
  */
 
 
-/**
- * Clean up output of stylesheet <link> tags
- * @since 1.2.0
- */
-function epigone_clean_style_tag( $input ) {
-
-	preg_match_all( "!<link rel='stylesheet'\s?(id='[^']+')?\s+href='(.*)' type='text/css' media='(.*)' />!", $input, $matches );
-	// Only display media if it is meaningful
-	$media = $matches[3][0] !== '' && $matches[3][0] !== 'all' ? ' media="' . $matches[3][0] . '"' : '';
-	return '<link rel="stylesheet" href="' . $matches[2][0] . '"' . $media . '>' . "\n";
-
-}
 
 add_filter( 'style_loader_tag', 'epigone_clean_style_tag' );
 
 /**
- * Set of theme customizer.
+ * テーマカスタマイザーを拡張
  * @since 1.2.0
  */
 

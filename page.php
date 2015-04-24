@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying all pages.
+ * 固定ページテンプレート
  * =====================================================
  * @package  epigone
  * @license  GPLv2 or later
@@ -14,7 +14,7 @@ while ( have_posts() ) :
 
 	get_template_part( 'templates/content', 'page' );
 
-	// If comments are open or we have at least one comment, load up the comment template
+
 	if ( comments_open() || '0' != get_comments_number() ) :
 		comments_template();
 	endif;

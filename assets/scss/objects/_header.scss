@@ -1,58 +1,47 @@
 /*------------------------------------*\
 		$HEADER
 \*------------------------------------*/
-/**
-	* @name Header
-	* @description Style for the header class
-	* @state .header-minimal - header-minimal state
-	* @markup
-	*   <div class="header">markup</div>
-	*/
+
 
 .header {
-	// background: $white;
-	padding: 0;
-	padding-bottom: 1em;
-	margin-bottom: 1em;
-	@extend .lc;
+  // background: $white;
+  padding: 0;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+  @extend .lc;
 }
 
-/**
-	* @name Header-Minimal
-	* @description Style for the header-minimal class
-	* @markup
-	*   <div class="header-minimal">markup</div>
-	*/
-.header-minimal{
-	margin-bottom: 2.6em;
-	padding-bottom: 1.7em;
-	background: $gray-light;
-	.header-description {
-		text-align: left;
-		background: $header-description-background;
-		margin-bottom: 1.7em;
-		box-shadow: 0 1px 1px rgba(0,0,0,0.05);
-		p{
-			line-height: 2.2em;
-			margin-bottom: 0;
-			color: $header-description-color;
-		}
-	}
-	.header-logo{
-		text-align: left;
-		font-size: 3.1em;
-		font-weight: 100;
-		line-height: 1.7em;
-		@include span-columns( 3.8 );
-		a{
-			// color: $base-color;
-		}
-	}
-	.header-banner{
-		text-align: right;
-		@include span-columns( 8.2 );
-		@include omega();
-	}
+
+.header-minimal {
+  margin-bottom: 2.6em;
+  padding-bottom: 1.7em;
+  background: $gray-light;
+  .header-description {
+    text-align: left;
+    background: $header-description-background;
+    margin-bottom: 1.7em;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    p {
+      line-height: 2.2em;
+      margin-bottom: 0;
+      color: $header-description-color;
+    }
+  }
+  .header-logo {
+    text-align: left;
+    font-size: 3.1em;
+    font-weight: 100;
+    line-height: 1.7em;
+    @include span-columns(3.8);
+    a {
+      // color: $base-color;
+    }
+  }
+  .header-banner {
+    text-align: right;
+    @include span-columns(8.2);
+    @include omega();
+  }
 }
 
 /**
@@ -62,8 +51,8 @@
 	*   <div class="header--description">markup</div>
 	*/
 .header-description {
-	margin-bottom: 0;
-	line-height: 3em;
+  margin-bottom: 0;
+  line-height: 3em;
 }
 
 /**
@@ -73,17 +62,17 @@
 	*   <div class="header--logo">markup</div>
 	*/
 .header-logo {
-	text-align: center;
-	font-size: 4em;
-	@media all and (min-width: $bp-med) {
-		// max-width: 9rem;
-	}
+  text-align: center;
+  font-size: 4em;
+  @media all and (min-width: $bp-med) {
+    // max-width: 9rem;
+  }
 
-	@media (max-width: $bp-small-3) {
-		font-size: 2em;
-		padding-left: 0.2rem;
-		padding-right: 0.2rem;
-	}
+  @media (max-width: $bp-small-3) {
+    font-size: 2em;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+  }
 }
 
 /**
@@ -93,21 +82,21 @@
 	*   <div class="nav-toggle">markup</div>
 	*/
 .nav-toggle {
-	float: right;
-	display: block;
-	padding: 0.9rem 1rem 0.7rem;
-	font-size: 1.3rem;
-	line-height: 1;
-	border-left: 1px solid #dbdbdb;
+  float: right;
+  display: block;
+  padding: 0.9rem 1rem 0.7rem;
+  font-size: 1.3rem;
+  line-height: 1;
+  border-left: 1px solid #dbdbdb;
 
-	@media all and (min-width: $bp-med) {
-		display: none;
-	}
+  @media all and (min-width: $bp-med) {
+    display: none;
+  }
 
-	@media all and (max-width: 17em) {
-		padding-left: 0.2rem;
-		padding-right: 0.2rem;
-	}
+  @media all and (max-width: 17em) {
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+  }
 
 }
 
@@ -118,13 +107,13 @@
 	*   <div class="search-form">markup</div>
 	*/
 .search-form {
-	overflow: hidden;
-	max-height: 0;
+  overflow: hidden;
+  max-height: 0;
 
-	@media all and (min-width: $bp-med) {
-		float: right;
-		max-height: none;
-		margin: 0.65em 0.5em 0 0;
-	}
+  @media all and (min-width: $bp-med) {
+    float: right;
+    max-height: none;
+    margin: 0.65em 0.5em 0 0;
+  }
 }
 

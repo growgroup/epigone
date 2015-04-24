@@ -1,6 +1,6 @@
 <?php
 /**
- * 404 content template
+ * 404 コンテンツテンプレート
  * =====================================================
  * @package  epigone
  * @license  GPLv2 or later

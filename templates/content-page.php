@@ -1,6 +1,6 @@
 <?php
 /**
- * static page content template
+ * 固定ページテンプレート
  * =====================================================
  * @package  epigone
  * @license  GPLv2 or later

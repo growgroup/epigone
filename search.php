@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying Search Results pages.
+ * 検索結果用テンプレート
  * =====================================================
  * @package  epigone
  * @license  GPLv2 or later

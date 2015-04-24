@@ -1,6 +1,6 @@
 <?php
 /**
- * The main template file.
+ * ブログのトップページ
  * =====================================================
  * @package  epigone
  * @license  GPLv2 or later

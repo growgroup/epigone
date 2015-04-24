@@ -4,54 +4,53 @@
 
 /* Layout Container */
 .lc {
-	// max-width: $max-width;
-	margin: 0 auto;
-	// padding: $pad-half;
+  // max-width: $max-width;
+  margin: 0 auto;
+  // padding: $pad-half;
 }
 
 /*------------------------------------*\
 		$TEMPLATES
 \*------------------------------------*/
 
-.container{
-	@include outer-container;
-	@include clearfix();
+.container {
+  @include outer-container;
+  @include clearfix();
 
-	@media (max-width: $bp-small-3) {
-		float: none;
-		width: 100%;
-		padding-right: 0;
-	}
+  @media (max-width: $bp-small-3) {
+    float: none;
+    width: 100%;
+    padding-right: 0;
+  }
 
 }
 
 /* Two Column Layout */
 .l-two-col {
-	@extend .cf;
+  @extend .cf;
 
-	.l-main {
-		@include span-columns(9);
-		@media (max-width: $bp-small-3) {
-			float: none;
-			width: 100%;
-			padding-right: 10px;
-			margin-right: 0px;
-		}
-	}
+  .l-main {
+    @include span-columns(9);
+    @media (max-width: $bp-small-3) {
+      float: none;
+      width: 100%;
+      padding-right: 10px;
+      margin-right: 0px;
+    }
+  }
 
-	.l-sidebar {
-		@include span-columns(3);
-		@media (max-width: $bp-small-3) {
-			float: none;
-			width: 100%;
-			margin-right: 0px;
-			margin-left: 0px;
-			padding: 10px;
-		}
+  .l-sidebar {
+    @include span-columns(3);
+    @media (max-width: $bp-small-3) {
+      float: none;
+      width: 100%;
+      margin-right: 0px;
+      margin-left: 0px;
+      padding: 10px;
+    }
 
-	}
+  }
 }
-
 
 /*------------------------------------*\
 		$GRIDS
@@ -65,26 +64,26 @@ $grid-columns: 12;
 
 // media query mixin
 @mixin mq($search) {
-		@media (min-width: map-get($breakpoint-widths, $search)){
-			@content
-		}
+  @media (min-width: map-get($breakpoint-widths, $search)) {
+    @content
+  }
 }
 
-@mixin build-grid(){
-	@each $name in $breakpoint-sizes {
-		@for $n from 1 through 4 {
-			@media (min-width: nth($breakpoint-widths, $n) ){
-				@for $i from 1 through $grid-columns {
-					.grid-#{$name}-#{$i} {
-						@include span-columns($i);
-						$omega: ceil( 12/$i );
-						@include omega( #{$omega}n );
+@mixin build-grid() {
+  @each $name in $breakpoint-sizes {
+    @for $n from 1 through 4 {
+      @media (min-width: nth($breakpoint-widths, $n)) {
+        @for $i from 1 through $grid-columns {
+          .grid-#{$name}-#{$i} {
+            @include span-columns($i);
+            $omega: ceil(12/$i);
+            @include omega(#{$omega}n);
 
-					}
-				}
-			}
-		}
-	}
+          }
+        }
+      }
+    }
+  }
 }
 
 // build grid classes

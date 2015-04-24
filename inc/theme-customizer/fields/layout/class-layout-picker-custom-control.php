@@ -27,7 +27,6 @@ class Layout_Picker_Custom_Control extends WP_Customize_Control
 			<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 			<ul>
 				<li>
-
 					<input type="radio" name="<?php echo esc_attr( $this->id ); ?>" <?php echo $this->link(); ?> class="radioImageSelect" data-image="<?php echo get_template_directory_uri() . '/inc/theme-customizer/fields/layout/img/1col.png'; ?>" value="l-full" <?php echo checked( $this->value(), 'l-full' ); ?> />
 				</li>
 				<li>

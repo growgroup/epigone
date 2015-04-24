@@ -1,6 +1,6 @@
 <?php
 /**
- * default content template
+ * デフォルトのコンテンツテンプレート
  * =====================================================
  * @package  epigone
  * @license  GPLv2 or later
@@ -76,4 +76,4 @@
 
 		<?php edit_post_link( __( 'Edit', 'epigone' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-footer -->
-</article><!-- #post-## -->
+</article><!-- #post-<?php the_ID(); ?> -->

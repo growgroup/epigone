@@ -15,11 +15,8 @@
 	$.fn.radioImageSelect = function( options ) {
 		// Default var for options.
 		var defaults = {
-				// Img class.
 				imgItemClass: 'radio-select-img-item',
-				// Img Checked class.
 				imgItemCheckedClass: 'item-checked',
-				// Is need hide label connected?
 				hideLabel: true
 			},
 
@@ -50,15 +47,10 @@
 
 		// Start jQuery loop on elements..
 		return this.each(function() {
-			$(this)
-				// First all we are need to hide the radio input.
-				.hide()
-				// And add new img element by data-image source.
-				.after('<img src="' + $(this).data('image') + '" alt="radio image" />');
 
-			// Define the new img element.
+			$(this).hide().after('<img src="' + $(this).data('image') + '" alt="radio image" />');
+
 			var img = $(this).next('img');
-			// Add item class.
 			img.addClass(options.imgItemClass);
 
 			// Check if need to hide label connected.
@@ -73,11 +65,13 @@
 
 			// Create click event on img element.
 			img.on('click', function(e) {
+				var radioContainer = $(this).closest('ul');
+				radioContainer.find('input[type="radio"]').attr('checked', false);
 				$(this)
 					// Prev to current radio input.
 					.prev('input[type="radio"]')
 					// Set checked attr.
-					.prop('checked', true)
+					.attr('checked', true)
 					// Run change event for radio element.
 					.trigger('change');
 

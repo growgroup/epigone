@@ -1,6 +1,6 @@
 <?php
 /**
- * Custom template tags for this theme.
+ * このテーマオリジナルのテンプレートタグ
  * =====================================================
  * @package  epigone
  * @license  GPLv2 or later
@@ -281,9 +281,31 @@ function epigone_template_base() {
 /**
  * Return layout class
  *
- * @return void
+ * @return string
  * @since 0.0.1
  */
 function epigone_layout_class(){
+
+	$class = '';
+
+	$layouts['top']    = get_theme_mod( 'epigone_layout_top', 'l-two-column' );
+	$layouts['page']   = get_theme_mod( 'epigone_layout_page', 'l-two-column' );
+	$layouts['single'] = get_theme_mod( 'epigone_layout_single', 'l-two-column' );
+
+	if ( is_home() || is_front_page() ) {
+
+		$class = $layouts['top'];
+
+	} elseif ( is_archive() || is_page() ) {
+
+		$class = $layouts['page'];
+
+	} elseif ( is_single() ){
+
+		$class = $layouts['single'];
+
+	}
+
+	return $class;
 
 }
