@@ -309,3 +309,12 @@ function epigone_layout_class(){
 	return $class;
 
 }
+
+/**
+ * 静的なファイルのURLを出力
+ * @param string $filename ファイルのパス
+ * @return string  URL
+ */
+function epigone_assets( $filename ){
+  echo esc_url( get_template_directory_uri() ) . '$filename';
+}
