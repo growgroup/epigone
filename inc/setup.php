@@ -35,7 +35,7 @@ if ( ! function_exists( 'epigone_setup' ) ) {
 		add_theme_support( 'menus' );
 
 		// supports for responsive navigation
-		add_theme_support( 'responsive-nav' );
+//		add_theme_support( 'responsive-nav' );
 
 		// タイトルタグをサポート
 		add_theme_support( 'title-tag' );

@@ -26,16 +26,14 @@ if ( ! function_exists( 'epigone_paging_nav' ) ) :
 			<div class="nav-links cf">
 
 				<?php if ( get_next_posts_link() ) : ?>
-				<div class="nav-previous navigation-previous left"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'epigone' ) ); ?></div>
-				<?php endif; ?>
+					<div class="nav-previous navigation-previous left"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'epigone' ) ); ?></div>				<?php endif; ?>
 
 				<?php if ( get_previous_posts_link() ) : ?>
-				<div class="nav-next navigation-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'epigone' ) ); ?></div>
-				<?php endif; ?>
+					<div class="nav-next navigation-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'epigone' ) ); ?></div>				<?php endif; ?>
 
-			</div><!-- .nav-links -->
-		</nav><!-- .navigation -->
-		<?php
+			</div>
+			<!-- .nav-links -->
+		</nav><!-- .navigation -->		<?php
 	}
 endif;
 
@@ -58,12 +56,12 @@ if ( ! function_exists( 'epigone_post_nav' ) ) :
 			<h1 class="screen-reader-text navigation-title"><?php _e( 'Post navigation', 'epigone' ); ?></h1>
 			<div class="nav-links">
 				<?php
-					previous_post_link( '<div class="nav-previous">%link</div>', _x( '<span class="meta-nav">&larr;</span> %title', 'Previous post link', 'epigone' ) );
-					next_post_link(     '<div class="nav-next">%link</div>',     _x( '%title <span class="meta-nav">&rarr;</span>', 'Next post link',     'epigone' ) );
+				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<span class="meta-nav">&larr;</span> %title', 'Previous post link', 'epigone' ) );
+				next_post_link( '<div class="nav-next">%link</div>', _x( '%title <span class="meta-nav">&rarr;</span>', 'Next post link', 'epigone' ) );
 				?>
-			</div><!-- .nav-links -->
-		</nav><!-- .navigation -->
-		<?php
+			</div>
+			<!-- .nav-links -->
+		</nav><!-- .navigation -->		<?php
 	}
 endif;
 
@@ -106,7 +104,6 @@ function epigone_categorized_blog() {
 		$all_the_cool_cats = get_categories( array(
 			'fields'     => 'ids',
 			'hide_empty' => 1,
-
 			// We only need to know if there is more than one category.
 			'number'     => 2,
 		) );
@@ -134,7 +131,7 @@ function epigone_category_transient_flusher() {
 }
 
 add_action( 'edit_category', 'epigone_category_transient_flusher' );
-add_action( 'save_post',     'epigone_category_transient_flusher' );
+add_action( 'save_post', 'epigone_category_transient_flusher' );
 
 
 /**
@@ -145,11 +142,11 @@ add_action( 'save_post',     'epigone_category_transient_flusher' );
 function epigone_breadcrumb() {
 
 	$templates = array(
-		'before' => '<nav class="breadcrumbs"><ul>',
-		'after' => '</ul></nav>',
+		'before'   => '<nav class="breadcrumbs"><ul>',
+		'after'    => '</ul></nav>',
 		'standard' => '<li itemscope itemtype="http://data-vocabulary.org/Breadcrumb">%s</li>',
-		'current' => '<li class="current">%s</li>',
-		'link' => '<a href="%s" itemprop="url"><span itemprop="title">%s</span></a>',
+		'current'  => '<li class="current">%s</li>',
+		'link'     => '<a href="%s" itemprop="url"><span itemprop="title">%s</span></a>',
 	);
 
 	$options = array(
@@ -163,31 +160,34 @@ function epigone_breadcrumb() {
 
 /**
  * For function for outputting pagination
+ *
  * @param boolean $output
+ *
  * @return void
  */
-function epigone_pagination( $output = true ){
+function epigone_pagination( $output = true ) {
 
 	global $wp_query, $wp_rewrite;
 
-	$base = trailingslashit( get_pagenum_link( 1 ) ) . '%_%';
+	$base   = trailingslashit( get_pagenum_link( 1 ) ) . '%_%';
 	$format = ( $wp_rewrite->using_permalinks() ) ? 'page/%#%' : '?paged=%#%';
-	$args = array(
-		'base' => $base,
-		'format' => $format,
-		'current' => max( 1, get_query_var( 'paged' ) ),
-		'total' => $wp_query->max_num_pages,
+	$args   = array(
+		'base'      => $base,
+		'format'    => $format,
+		'current'   => max( 1, get_query_var( 'paged' ) ),
+		'total'     => $wp_query->max_num_pages,
 		'prev_next' => true,
-		'prev_text' => '&larr;' . __( 'Previous','epigone' ),
-		'next_text' => __( 'Next','epigone' ) . '&rarr;',
+		'prev_text' => '&larr;' . __( 'Previous', 'epigone' ),
+		'next_text' => __( 'Next', 'epigone' ) . '&rarr;',
 	);
 
-	$before = apply_filters( 'epigone_paginavi_before', '<nav class="pagination primary-links">' );
+	$before     = apply_filters( 'epigone_paginavi_before', '<nav class="pagination primary-links">' );
 	$pagination = paginate_links( $args );
-	$after = apply_filters( 'epigone_paginavi_after', '</nav>' );
+	$after      = apply_filters( 'epigone_paginavi_after', '</nav>' );
 
 	if ( $output && $pagination ) {
 		echo $before . wp_kses_post( $pagination ) . $after;
+
 		return false;
 	}
 
@@ -199,7 +199,7 @@ function epigone_pagination( $output = true ){
  * Header file include path
  * @return void
  */
-function epigone_get_header(){
+function epigone_get_header() {
 
 	$header_style = get_theme_mod( 'header_style', '' );
 
@@ -221,9 +221,9 @@ function epigone_get_header(){
  */
 add_action( 'get_header', 'epigone_social_icon' );
 
-function epigone_social_icon(){
+function epigone_social_icon() {
 
-	$icons = '';
+	$icons                 = '';
 	$social['facebook']    = get_theme_mod( 'socal_facebook', '' );
 	$social['twitter']     = get_theme_mod( 'socal_twitter', '' );
 	$social['github']      = get_theme_mod( 'socal_github', '' );
@@ -251,7 +251,7 @@ function epigone_social_icon(){
 
 	if ( $icons ) {
 		echo '<div class="social-icons">
-		' . $icons .'</div>
+		' . $icons . '</div>
 		';
 	}
 
@@ -284,7 +284,7 @@ function epigone_template_base() {
  * @return string
  * @since 0.0.1
  */
-function epigone_layout_class(){
+function epigone_layout_class() {
 
 	$class = '';
 
@@ -300,7 +300,7 @@ function epigone_layout_class(){
 
 		$class = $layouts['page'];
 
-	} elseif ( is_single() ){
+	} elseif ( is_single() ) {
 
 		$class = $layouts['single'];
 
@@ -312,9 +312,11 @@ function epigone_layout_class(){
 
 /**
  * 静的なファイルのURLを出力
+ *
  * @param string $filename ファイルのパス
+ *
  * @return string  URL
  */
-function epigone_assets( $filename ){
-  echo esc_url( get_template_directory_uri() ) . '$filename';
+function e_assets_url( $filename ) {
+	echo esc_url( get_stylesheet_directory_uri() ) . '/assets/' .  $filename;
 }

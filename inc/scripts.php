@@ -30,7 +30,7 @@ function epigone_scripts() {
 	 * jQueryプラグイン等のjsファイル
 	 * @since 1.0.0
 	 */
-	wp_register_script( 'epigone_plugins', get_template_directory_uri() . '/assets/js/plugins.min.js', array(), null, true );
+//	wp_register_script( 'epigone_plugins', get_template_directory_uri() . '/assets/js/plugins.min.js', array(), null, true );
 
 	/**
 	 * テーマのメインjsファイル

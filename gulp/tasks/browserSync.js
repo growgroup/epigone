@@ -7,7 +7,7 @@ gulp.task('browserSync', function () {
 	browserSync(config);
 });
 
-// ブラウザのリロード
+// reload
 gulp.task('bs-reload', function () {
-	browserSync.reload();
+	browserSync.stream();
 });

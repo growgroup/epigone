@@ -39,4 +39,5 @@ access_log
 #============================================#
 node_modules
 assets/components
+.map
 src

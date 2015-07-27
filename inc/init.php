@@ -36,6 +36,6 @@ $include_files = apply_filters( 'epigone_init_files', $include_files );
 
 foreach ( $include_files as $key => $files ) {
 	if ( $filename = locate_template( $files, false ) ) {
-		load_template( $filename , true );
+		load_template( $filename, true );
 	}
 }

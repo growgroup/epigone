@@ -10,7 +10,7 @@
 ?>
 <div id="secondary" class="widget-area" role="complementary">
 	<?php
-if ( ! dynamic_sidebar( 'sidebar-primary' ) ) : ?>
+	if ( ! dynamic_sidebar( 'sidebar-primary' ) ) : ?>
 
 		<aside id="search" class="widget widget_search">
 			<?php get_search_form(); ?>
@@ -27,11 +27,10 @@ if ( ! dynamic_sidebar( 'sidebar-primary' ) ) : ?>
 			<h1 class="widget-title"><?php _e( 'Meta', 'epigone' ); ?></h1>
 			<ul>
 				<?php wp_register(); ?>
-				<li><?php wp_loginout(); ?></li>
-				<?php wp_meta(); ?>
+				<li><?php wp_loginout(); ?></li> <?php wp_meta(); ?>
 			</ul>
 		</aside>
 
-	<?php
-endif; // end sidebar widget area ?>
+		<?php
+	endif; // end sidebar widget area ?>
 </div><!-- #secondary -->

@@ -22,7 +22,7 @@ module.exports = {
 	 **/
 	browserSync : {
 		proxy:  "your url here",
-		notufy: false,
+		notify: true,
 		open : true,
 		ghostMode: {
 			clicks: true,
@@ -67,7 +67,7 @@ module.exports = {
 	watch: {
 		enhanced: ["sass","js"],
 		src : {
-			sass : ['../assets/sass/**/*.scss','!../assets/scss/themes/*.scss'],
+			sass : ['assets/scss/**/*.scss','!../assets/scss/themes/*.scss'],
 			js : ["../assets/js/**/*.js"],
 			images : ['../assets/images/**/*']
 		},

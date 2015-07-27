@@ -3,6 +3,9 @@
     based generally on Harry Roberts excellent CSS Guidelines https://github.com/csswizardry/CSS-Guidelines
 \*------------------------------------*/
 
+
+@import "vender/bourbon/bourbon";
+@import "vender/neat/neat";
 /**
  * VARIABLES..............................Declarations of Sass variables
  * .....Colors
@@ -25,6 +28,8 @@
  * NAVIGATION------------------------------
  * WORDPRESS.............................Set Default WordPress styles.
  */
+
+
 
 @import "generic/variables";
 @import "generic/mixins";
@@ -80,7 +85,6 @@
 @import "objects/sections";
 @import "objects/article";
 @import "objects/comments";
-@import "objects/messaging";
 @import "objects/gallery";
 @import "objects/table";
 @import "objects/wordpress";
