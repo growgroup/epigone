@@ -21,3 +21,13 @@ img.radio-select-img-item.item-checked {
 .customize-control-layout-picker ul li{
 	display: inline;
 }
+
+.radioImageSelect{
+	display: none!important;
+}
+.radioImageSelect + label img{
+	border: 2px solid transparent;
+}
+.radioImageSelect:checked + label img{
+	border: 2px solid #499601;
+}

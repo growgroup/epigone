@@ -21,6 +21,7 @@ class Epigone_Theme_Customize {
 	private $settings;
 
 	public static $instance;
+
 	/**
 		* This hooks into 'customize_register' (available as of WP 3.4) and allows
 		* you to add new sections and controls to the Theme Customize screen.
@@ -433,19 +434,22 @@ class Epigone_Theme_Customize {
 
 	}
 
+	/**
+	 * Generate CSS
+	 * @param $setting
+	 * @param $customizer_key
+	 *
+	 * @return string
+	 */
 	public function generate_to_css( $setting, $customizer_key ){
 
 		$css = '';
-		$prev_priority = '';
+
 		foreach ( $setting['output'] as $selector => $priority ) {
 
 			if ( ! $customizer_key ) {
 				continue;
 			}
-			// if ( $prev_priority === $priority ) {
-			// 	$css .= $selector . ',';
-			// 	continue;
-			// }
 			$unit = isset( $setting['output_unit'] ) ? $setting['output_unit'] : '';
 			if ( 'color' === $setting['type'] ) {
 				$css .= $selector . '{' . $priority . ' : ' . get_theme_mod( $customizer_key, '' ) . ';}';
@@ -454,9 +458,8 @@ class Epigone_Theme_Customize {
 			} else {
 				$css .= $selector . '{' . $priority . ' : ' . get_theme_mod( $customizer_key, '' ) . $unit . ';}';
 			}
-			$prev_priority = $priority;
-		}
 
+		}
 		return $css;
 
 	}

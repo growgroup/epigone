@@ -1,16 +1,19 @@
-var gulp = require('gulp');
-var $ = require('gulp-load-plugins')({camelize: true});
-var config = require('../config.js').watch;
+import gulp from 'gulp';
+import gulpLoadPlugin from 'gulp-load-plugins';
+import sourcemaps from 'gulp-sourcemaps';
+import globalConfig from '../config.js';
+
+const src = globalConfig.watch.src;
 
 // task "watch"
 gulp.task('watch', ['browserSync'], function () {
 	// sassファイルの監視
-	gulp.watch( config.src.sass, ['sass','bs-reload']);
+	gulp.watch( src.sass, ['sass','bs-reload']);
 
 	// jsファイルの監視
-	gulp.watch(config.src.js, ['js','bs-reload']);
+	gulp.watch( src.js, ['js','bs-reload']);
 
 	// 画像ファイルの監視
-	gulp.watch(config.src.images, ['bs-reload']);
+	gulp.watch( src.images, ['bs-reload']);
 
 });

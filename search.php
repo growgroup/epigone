@@ -23,7 +23,7 @@ if ( have_posts() ) : ?>
 
 	endwhile;
 
-		epigone_paging_nav();
+	epigone_paging_nav();
 
 else :
 

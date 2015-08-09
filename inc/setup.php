@@ -91,29 +91,6 @@ function epigone_head_cleanup(){
 
 add_filter( 'init', 'epigone_head_cleanup', 10 );
 
-/**
- * Print browserSync client script tag.
- *
- * @return void
- */
-
-add_action( 'wp_footer', 'epigone_print_browser_sync', 99 );
-
-function epigone_print_browser_sync(){
-
-	$output = '';
-	if ( defined( 'BROWSERSYNC_MODE' )
-			 && true === BROWSERSYNC_MODE ) {
-
-		$output = <<<EOF
-<script type='text/javascript'>//<![CDATA[
-document.write("<script async src='//HOST:3000/browser-sync/browser-sync-client.1.5.2.js'><\/script>".replace(/HOST/g, location.hostname));
-//]]></script>
-EOF;
-		echo $output;
-	}
-
-}
 
 /**
  * Get an avatar
@@ -165,36 +142,3 @@ function epigone_include_breadcrumbs(){
 }
 
 add_action( 'get_main_template_before', 'epigone_include_breadcrumbs' );
-
-/**
- * Function to include the pagination.
- * @since 1.1.0
- * @return void
- */
-function epigone_include_pagination(){
-
-	if ( current_theme_supports( 'epigone-pagination' ) ) {
-		get_template_part( 'modules/pagination' );
-	}
-}
-
-add_action( 'get_main_template_after', 'epigone_include_pagination' );
-
-/**
- *
- * @since 1.3.0
- * @return void
- */
-function epigone_skrollr_init(){
-
-	if ( current_theme_supports( 'skrollr-effect' ) ) {
-		$script = '
-<script type="text/javascript">
-    var s = skrollr.init();
-</script>
-';
-		echo $script;
-	}
-}
-add_action( 'wp_footer', 'epigone_skrollr_init', 99 );
-

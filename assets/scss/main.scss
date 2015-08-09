@@ -2,10 +2,6 @@
     $TABLE OF CONTENTS
     based generally on Harry Roberts excellent CSS Guidelines https://github.com/csswizardry/CSS-Guidelines
 \*------------------------------------*/
-
-
-@import "vender/bourbon/bourbon";
-@import "vender/neat/neat";
 /**
  * VARIABLES..............................Declarations of Sass variables
  * .....Colors
@@ -14,14 +10,9 @@
  * .....Defaults
  * .....Breakpoints
  * MIXINS.................................Sass mixins
- * RESET..................................Set reset defaults
- * GLOBAL CLASSES.........................Set reset defaults
- * GLOBAL ELEMENTS........................Establish global styles
- * .....Main
- * .....Headings
- * .....Text-related elements (p, blockquote, lists)
- * .....Defaults
- * .....Breakpoints
+ * NORMALIZE..................................Set normalize styles
+ * GLOBAL CLASSES.........................Set global styles
+ * ANIMATION........................ For Animate.css
  * TYPOGRAPHY------------------------------
  * MEDIA------------------------------
  * LAYOUT------------------------------
@@ -29,62 +20,57 @@
  * WORDPRESS.............................Set Default WordPress styles.
  */
 
-
-
 @import "generic/variables";
 @import "generic/mixins";
 @import "generic/normalize";
+@import "generic/animation";
+@import "generic/global-classes";
 
-/*------------------------------------*\
-    $GLOBAL ELEMENTS
-\*------------------------------------*/
-
-@import "base/global-classes";
-@import "base/main";
-@import "base/links";
-@import "base/headings";
-@import "base/text";
-@import "base/lists";
-@import "base/media";
-@import "base/forms";
-@import "base/tables";
-@import "base/animation";
-
-/*------------------------------------*\
-    $LAYOUT
-\*------------------------------------*/
-
-@import "objects/layout";
-
-/*------------------------------------*\
-    $PAGE STRUCTURE
-\*------------------------------------*/
-
-@import "objects/header";
-@import "objects/nav";
-@import "objects/main";
-@import "objects/aside";
-@import "objects/footer";
 
 
 /*------------------------------------*\
-    $TEXT Styles
+    $ELEMENT
 \*------------------------------------*/
 
-@import "objects/text";
+@import "element/buttons";
+@import "element/lists";
+@import "element/headings";
+@import "element/links";
+@import "element/media";
+@import "element/table";
+@import "element/text";
+
+/*------------------------------------*\
+    $STRUCTURE
+\*------------------------------------*/
+
+@import "structure/layout";
+@import "structure/header";
+@import "structure/main";
+@import "structure/aside";
+@import "structure/footer";
 
 /*------------------------------------*\
     $COMPONENTS
 \*------------------------------------*/
 
-@import "objects/buttons";
-@import "objects/blocks";
-@import "objects/lists";
-@import "objects/forms";
-@import "objects/tabs";
-@import "objects/sections";
-@import "objects/article";
-@import "objects/comments";
-@import "objects/gallery";
-@import "objects/table";
-@import "objects/wordpress";
+@import "components/article";
+@import "components/blocks";
+@import "components/comments";
+@import "components/forms";
+@import "components/gallery";
+@import "components/nav";
+@import "components/sections";
+@import "components/tabs";
+@import "components/wordpress";
+
+/*------------------------------------*\
+    $PAGES
+\*------------------------------------*/
+
+@import "pages/home";
+
+// Import style sheet of other pages
+// @import "pages/example";
+
+

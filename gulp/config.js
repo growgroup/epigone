@@ -7,7 +7,7 @@ var sass = {
 		dest : "assets/css",
 	},
 	js = {
-		src : ['assets/js/_*.js', '!assets/js/scripts.js'],
+		src : ['assets/js/_*.js', '!assets/js/scripts.js','!assets/js/scripts.min.js'],
 		dest: "assets/js",
 	},
 	images = {
@@ -36,7 +36,7 @@ module.exports = {
 	 * Sass compile config
 	 **/
 	sass : {
-		src :  sass.src,
+		src : sass.src,
 		dest: sass.dest,
 		options : {
 		},
@@ -67,9 +67,9 @@ module.exports = {
 	watch: {
 		enhanced: ["sass","js"],
 		src : {
-			sass : ['assets/scss/**/*.scss','!../assets/scss/themes/*.scss'],
-			js : ["../assets/js/**/*.js"],
-			images : ['../assets/images/**/*']
+			sass : ['assets/scss/**/*.scss','!assets/scss/themes/*.scss'],
+			js : ["assets/js/**/*.js"],
+			images : ['assets/images/**/*']
 		},
 	}
 }

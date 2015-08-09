@@ -318,5 +318,5 @@ function epigone_layout_class() {
  * @return string  URL
  */
 function e_assets_url( $filename ) {
-	echo esc_url( get_stylesheet_directory_uri() ) . '/assets/' .  $filename;
+	echo esc_url( get_stylesheet_directory_uri() . '/assets/' .  $filename );
 }

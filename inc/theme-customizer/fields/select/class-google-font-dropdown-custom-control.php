@@ -81,6 +81,5 @@ class Google_Font_Dropdown_Custom_Control extends WP_Customize_Control
 			return array_slice( $content->items, 0, $amount );
 
 		}
-
 	}
 }

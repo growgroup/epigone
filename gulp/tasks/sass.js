@@ -11,7 +11,7 @@ gulp.task('sass', function () {
 	return gulp.src(config.src)
 		.pipe($.plumber())
 		.pipe(sourcemaps.init())
-		.pipe($.sass(config.options))
+		.pipe($.sass.sync(config.options))
 		.pipe($.autoprefixer({
 			browsers: ['last 2 versions'],
 			cascade: false
