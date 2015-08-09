@@ -9,8 +9,8 @@
  */
 ?>
 
-<nav class="navbar navbar-default" role="navigation">
-	<div class="container">
+<nav class="top-bar" role="navigation">
+	<div class="top-bar-section">
 		<?php
 		/**
 		 * Global Navigation
@@ -21,9 +21,9 @@
 				'theme_location'  => 'primary',
 				'depth'           => 2,
 				'container'       => 'div',
-				'container_class' => 'collapse cf navbar-collapse',
+				'container_class' => 'collapse btn-group',
 				'container_id'    => 'header-navbar-collapse',
-				'menu_class'      => 'nav navbar-nav',
+				'menu_class'      => 'nav navbar-nav btn',
 				'fallback_cb'     => 'Epigone_Walker_Nav::fallback',
 				'walker'          => new Epigone_Walker_Nav(),
 			)

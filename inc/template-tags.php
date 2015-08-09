@@ -142,15 +142,17 @@ add_action( 'save_post', 'epigone_category_transient_flusher' );
 function epigone_breadcrumb() {
 
 	$templates = array(
-		'before'   => '<nav class="breadcrumbs"><ul>',
+		'before'   => '<nav><ul class="breadcrumbs">',
 		'after'    => '</ul></nav>',
 		'standard' => '<li itemscope itemtype="http://data-vocabulary.org/Breadcrumb">%s</li>',
 		'current'  => '<li class="current">%s</li>',
 		'link'     => '<a href="%s" itemprop="url"><span itemprop="title">%s</span></a>',
+
 	);
 
 	$options = array(
 		'show_htfpt' => true,
+		'separator' => ''
 	);
 
 	// init

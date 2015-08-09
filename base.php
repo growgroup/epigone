@@ -16,9 +16,9 @@ epigone_get_header();
 
 dynamic_sidebar( 'main-visual' ); ?>
 
-	<div class="<?php echo esc_html( epigone_layout_class() ); ?> container wrapper">
+	<div class="<?php echo esc_html( epigone_layout_class() ); ?> row wrapper">
 
-		<section class="l-main main">
+		<section class="l-main main large-9 columns">
 
 			<main role="main">
 
@@ -37,7 +37,7 @@ dynamic_sidebar( 'main-visual' ); ?>
 			</main>
 		</section>
 
-		<aside class="l-sidebar sidebar" role="aside">
+		<aside class="l-sidebar sidebar large-3 columns" role="aside">
 
 			<?php
 			/**

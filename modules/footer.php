@@ -10,7 +10,8 @@
 
 
 	<footer id="colophon" class="footer" role="contentinfo">
-		<div class="container">
+
+		<div class="row">
 			<div class="footer-contents">
 				<?php
 				dynamic_sidebar( 'footer-primary' );
@@ -18,9 +19,11 @@
 			</div>
 		</div>
 		<div class="footer-copyright site-info">
-			<div class="container text-center">
+			<hr />
+			<div class="row text-center">
 				<span class="sep"> <?php echo get_theme_mod( 'copyright_text', 'copyright © ' . date( 'Y' ) . ' | ' . get_bloginfo( 'name' ) ); ?></span>
 			</div>
+			<hr />
 		</div>
 	</footer>
 </div>

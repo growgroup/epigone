@@ -17,6 +17,8 @@
   },
   "devDependencies": {
     "font-awesome": "~4.2.0",
-    "modernizer": "~2.8.2"
+    "modernizer": "~2.8.2",
+    "bootstrap-sass": "~3.3.5",
+    "foundation": "~5.5.2"
   }
 }

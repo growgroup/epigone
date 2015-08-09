@@ -7,26 +7,28 @@
  * @since 1.0.0
  * =====================================================
  */
+get_template_part( 'modules/navbar' );
 ?>
 
+
 <header id="masthead" class="header header-normal" role="banner">
-	<div class="container">
-		<p class="header-description text-center"><?php bloginfo( 'description' ) ?></p>
-		<h1 class="header-logo">
-			<a href="<?php echo home_url(); ?>">
-			<?php bloginfo( 'name' ); ?>
+	<div class="row">
+		<div class="large-12 columns">
+			<p class="header-description text-center"><?php bloginfo( 'description' ) ?></p>
 
-			</a>
-		</h1> <?php
-		if ( is_dynamic_sidebar( 'header-praimry' ) ) { ?><?php
-			dynamic_sidebar( 'header-primary' ); ?>
-
+			<h1 class="header-logo">
+				<a href="<?php echo home_url(); ?>">
+					<?php bloginfo( 'name' ); ?>
+				</a>
+			</h1>
 			<?php
-		}
-		do_action( 'get_header' );
-		get_template_part( 'modules/navbar' ); ?>
+			if ( is_dynamic_sidebar( 'header-praimry' ) ) {
+				dynamic_sidebar( 'header-primary' );
+			}
+			do_action( 'get_header' );
+			?>
+		</div>
 	</div>
-
 </header>
 
 
