@@ -38,6 +38,7 @@ access_log
 #    Config. ,components and npm Files       #
 #============================================#
 node_modules
+bower_components
 assets/components
 .map
 src
