@@ -1,21 +1,23 @@
-//
-// Gulp config
-//
+// config
+
 
 var sass = {
-		src: "assets/scss/main.scss",
-		dest : "assets/css",
-	},
-	js = {
-		src : ['assets/js/_*.js', '!assets/js/scripts.js','!assets/js/scripts.min.js'],
-		dest: "assets/js",
-	},
-	images = {
-		src: "assets/_images/**/*",
-		dest: "assets/images",
-	};
+	src: "assets/scss/main.scss",
+	dest : "assets/css",
+}
+
+var js = {
+	src : ['assets/js/_*.js', '!assets/js/scripts.js','!assets/js/scripts.min.js'],
+	dest: "assets/js",
+}
+var images = {
+	src: "assets/_images/**/*",
+	dest: "assets/images",
+};
 
 module.exports = {
+	bowerPath : "bower_components",
+	bowerConfigPath : "bower.json",
 	/**
 	 * browserSync config
 	 * @todo rewrite "proxy" setting

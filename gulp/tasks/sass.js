@@ -11,11 +11,7 @@ gulp.task('sass', function () {
 	return gulp.src(config.src)
 		.pipe($.plumber())
 		.pipe(sourcemaps.init())
-		.pipe($.sass.sync(config.options))
-		.pipe($.autoprefixer({
-			browsers: ['last 2 versions'],
-			cascade: false
-		}))
+		.pipe($.sass.sync(config.options).on('error', $.sass.logError))
 		.pipe(gulp.dest(config.dest))
 		.pipe($.rename({
 			suffix: '.min'
@@ -26,5 +22,6 @@ gulp.task('sass', function () {
 		}))
 		.pipe($.sourcemaps.write('./'))
 		.pipe(gulp.dest(config.dest))
-		.pipe($.notify({message: 'Styles task complete'}));
+		.pipe($.notify({message: 'Styles task complete'}))
+		.pipe($.size({title: 'css'}))
 });

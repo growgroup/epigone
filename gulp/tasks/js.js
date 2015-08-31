@@ -17,5 +17,6 @@ gulp.task('js', function () {
         .pipe($.uglify())
         .pipe(gulp.dest(config.dest))
         .pipe($.notify({message: 'Scripts task complete'}))
+		.pipe($.size({title: 'js'}));
 });
 

@@ -16,4 +16,6 @@ gulp.task('watch', ['browserSync'], function () {
 	// 画像ファイルの監視
 	gulp.watch( src.images, ['bs-reload']);
 
+	gulp.watch( globalConfig.bowerConfigPath, ['wiredep']);
+
 });
