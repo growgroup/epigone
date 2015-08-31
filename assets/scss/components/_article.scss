@@ -2,5 +2,164 @@
     $ARTICLE
 \*------------------------------------*/
 .hentry.panel {
-    background: #fff;
+  background: #fff;
+  border-color: #e8e8e8;
+}
+.hentry {
+  &--listcard{
+    border: 1px solid #e8e8e8;
+    padding: 1em 1em 0em;
+    margin-bottom: 1em;
+  }
+  &__header{
+
+  }
+  &__title{
+    font-size: rem-calc(22);
+    line-height: 1.725em;
+    margin-bottom: 1em;
+    color: #373737;
+    a {
+      color: #373737;
+    }
+  }
+  &__meta{
+    margin-top: 0;
+    margin-bottom: 0.9em;
+    font-size: rem-calc(12);
+    color: #999;
+
+    a {
+      color: #999;
+      text-decoration: underline;
+    }
+  }
+  &__footer{
+    border-top: 1px solid #E8E8E8;
+    padding-top: 1em;
+    font-size: rem-calc(13);
+    margin-top: 1em;
+    margin-bottom: 1em;
+    .cat-links {
+      display: inline-block;
+
+    }
+    .tags-links {
+      margin-left: 0.5em;
+      margin-right: 0.5em;
+      display: inline-block;
+    }
+  }
+  &__content{
+
+  }
+  &__summary{
+
+  }
+}
+
+
+
+.page-header {
+  &__title {
+    margin-bottom: 2em;
+    margin-top: 2em;
+  }
+}
+
+.breadcrumbs {
+  text-align: center;
+  margin-bottom: 0;
+  border-color: #e8e8e8;
+  > * {
+    display: inline-block;
+    float: none;
+    font-size: rem-calc(14);
+  }
+}
+
+
+
+.entry {
+  &__header{
+
+  }
+  &__title{
+    font-size: rem-calc(22);
+    line-height: 1.725em;
+    margin-bottom: 1em;
+    color: #373737;
+    a {
+      color: #373737;
+    }
+  }
+  &__meta{
+    margin-top: 0;
+    margin-bottom: 0.9em;
+    font-size: rem-calc(12);
+    color: #999;
+
+    a {
+      color: #999;
+      text-decoration: underline;
+    }
+  }
+  &__footer{
+    border-top: 1px solid #E8E8E8;
+    padding-top: 1em;
+    font-size: rem-calc(13);
+    margin-top: 1em;
+    margin-bottom: 1em;
+    .cat-links {
+      display: inline-block;
+
+    }
+    .tags-links {
+      margin-left: 0.5em;
+      margin-right: 0.5em;
+      display: inline-block;
+    }
+  }
+  &__content{
+
+  }
+  &__summary{
+
+  }
+}
+
+.post-navigation {
+  margin-top: 2em;
+}
+.nav-links{
+  > div {
+    width: 100%;
+    min-height: 2em;
+    margin-bottom: 1em;
+    border: 1px solid #e8e8e8;
+    padding: 1em;
+  }
+  .nav-previous {
+    &:before {
+      content: "Prev post";
+      display: block;
+      font-size: rem-calc(12);
+      color: #ccc;
+    }
+  }
+  .nav-next{
+    text-align: right;
+    &:before {
+      content: "Next";
+      display: block;
+      font-size: rem-calc(12);
+      color: #ccc;
+    }
+  }
+}
+
+.breadcrumbs {
+  > * {
+    line-height: 1.7em;
+  }
 }

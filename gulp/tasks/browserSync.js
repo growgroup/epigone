@@ -5,7 +5,7 @@ import configAll from '../config.js';
 const config = configAll.browserSync;
 
 // browserSync task
-gulp.task('browserSync', () =>
+gulp.task('browserSync',['sass'], () =>
 	browserSync(config)
 );
 

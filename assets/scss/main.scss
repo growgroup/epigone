@@ -20,17 +20,19 @@
  * WORDPRESS.............................Set Default WordPress styles.
  */
 
-
-
 //@import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "generic/settings";
+
+$fa-font-path:        "../../bower_components/font-awesome/fonts";
+@import "../../bower_components/font-awesome/scss/font-awesome";
 @import "../../bower_components/foundation/scss/foundation";
+
 
 @import "generic/variables";
 @import "generic/mixins";
 @import "generic/normalize";
 @import "generic/animation";
 @import "generic/global-classes";
-
 
 
 /*------------------------------------*\

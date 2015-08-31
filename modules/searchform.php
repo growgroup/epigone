@@ -11,12 +11,13 @@
 
 <form role="form" action="<?php echo site_url( '/' ); ?>" id="searchform" method="get">
 	<label for="s" class="sr-only"><?php _e( 'Search', 'epigone' ); ?></label>
-
-	<div class="input-group">
-		<input type="text" class="form-control" id="s" name="s" placeholder="<?php _e( 'Search', 'epigone' ); ?>" value=""/>
-		<span class="input-group-btn">
-			<button type="submit" class="btn"><?php _e( 'Submit', 'epigone' ); ?> </button>
-		</span>
+	<div class="row collapse">
+		<div class="small-7 columns">
+			<input type="text" class="form-control" id="s" name="s" placeholder="<?php _e( 'Search', 'epigone' ); ?>" value=""/>
+		</div>
+		<div class="small-5 columns">
+			<button type="submit" class="button postfix"><?php _e( 'Submit', 'epigone' ); ?> </button>
+		</div>
 	</div>
 	<!-- .input-group -->
 </form>

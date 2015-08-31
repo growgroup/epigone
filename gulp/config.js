@@ -1,5 +1,7 @@
 // config
 
+// ここにURLを入力
+var url = "http://example.com";
 
 var sass = {
 	src: "assets/scss/main.scss",
@@ -23,7 +25,7 @@ module.exports = {
 	 * @todo rewrite "proxy" setting
 	 **/
 	browserSync : {
-		proxy:  "your url here",
+		proxy:  url,
 		notify: true,
 		open : true,
 		ghostMode: {

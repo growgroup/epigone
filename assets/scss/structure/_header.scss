@@ -2,3 +2,23 @@
 		$HEADER
 \*------------------------------------*/
 
+.header {
+  padding-top: 2em;
+  padding-bottom: 2em;
+  margin-bottom: 0em;
+  border-bottom: 1px solid $gray-lighter;
+  // 説明文
+  &__description{
+    text-align: left;
+    margin-bottom: 2.6em;
+    font-size: rem-calc(13);
+    color: #ccc;
+  }
+  // ロゴ
+  &__logo{
+
+  }
+}
+.top-bar.global-navigation{
+
+}

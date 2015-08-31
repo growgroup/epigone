@@ -141,4 +141,4 @@ function epigone_include_breadcrumbs(){
 
 }
 
-add_action( 'get_main_template_before', 'epigone_include_breadcrumbs' );
+add_action( 'get_footer', 'epigone_include_breadcrumbs' );

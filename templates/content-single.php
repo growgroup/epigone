@@ -9,19 +9,19 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<h1 class="entry-title"><?php the_title(); ?></h1>
-
-		<div class="entry-meta">
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'entry' ); ?>>
+	<header class="entry__header">
+		<div class="entry__meta">
 			<?php epigone_posted_on(); ?>
 		</div><!-- .entry-meta -->
+
+		<h1 class="entry__title"><?php the_title(); ?></h1>
 	</header><!-- .entry-header -->
 
-	<div class="entry-content">
+	<div class="entry__content">
 		<?php
 		if ( has_post_thumbnail() ) { ?>
-			<div class="entry-thumbnail">
+			<div class="entry__thumbnail">
 				<?php the_post_thumbnail(); ?>
 			</div>
 		<?php
@@ -38,7 +38,7 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
+	<footer class="entry__footer">
 		<?php
 		/* translators: used between list items, there is a space after the comma */
 		$category_list = get_the_category_list( __( ', ', 'epigone' ) );
