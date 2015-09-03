@@ -275,7 +275,7 @@ function epigone_customizer_settings(){
 							'type' => 'color',
 							'sanitaize_call_back' => '',
 							'output' => array(
-								'a,#reply-title,.breadcrumbs ul:before,.hentry__title a' => 'color',
+								'a,a:hover,a:active,a:focus,#reply-title,.breadcrumbs ul:before,.hentry__title a' => 'color',
 								'.comment-title' => 'background-color',
 								'.sidebar .widget .widget-title' => 'border-color',
 								'.widget-sidebar li:nth-child(even):hover,.widget-sidebar li:hover,.nav-links div:hover' => 'background-color',

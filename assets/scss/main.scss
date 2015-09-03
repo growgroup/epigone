@@ -23,7 +23,8 @@
 //@import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
 @import "generic/settings";
 
-$fa-font-path:        "../../bower_components/font-awesome/fonts";
+
+$fa-font-path:        "../fonts";
 @import "../../bower_components/font-awesome/scss/font-awesome";
 @import "../../bower_components/foundation/scss/foundation";
 
