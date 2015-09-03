@@ -2,21 +2,19 @@
     $ASIDE
 \*------------------------------------*/
 
-
 .sidebar {
   .widget {
-    ul{
+    ul {
       list-style: none;
       margin-left: 0;
       padding-left: 0;
-      li{
+      li {
         border: 1px solid #f1f1f1;
         margin-top: -1px;
         padding-left: .5em;
         padding-right: .5em;
         padding-top: 0.5em;
         padding-bottom: .5em;
-
 
         &:before {
           @extend .fa;
@@ -26,10 +24,17 @@
           transform: scale(0.7);
           transform-origin: 50% 50%;
         }
+        transition: background ease-in-out .2s;
+
+        &:hover {
+          a {
+            color: #FFF;
+          }
+        }
 
       }
     }
-    .widget-title{
+    .widget-title {
       border-left: 3px solid #373737;
       padding-left: 1em;
       margin-top: 0.3em;
@@ -38,7 +43,7 @@
   }
 }
 
-.widget_search{
+.widget_search {
   button {
     font-size: 14px;
   }

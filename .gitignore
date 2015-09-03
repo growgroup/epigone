@@ -39,6 +39,7 @@ access_log
 #============================================#
 node_modules
 bower_components
+!bower_components/font-awesome/fonts
 assets/components
 .map
 src

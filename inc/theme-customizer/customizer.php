@@ -42,7 +42,7 @@ class Epigone_Theme_Customize {
 
 		$this->theme_supports = '';
 
-		$this->transport = 'postMessage';
+		$this->transport = 'refresh';
 
 		$this->setting_type = 'option';
 

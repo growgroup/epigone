@@ -69,6 +69,6 @@ if ( post_password_required() ) {
 		<p class="no-comments"><?php _e( 'Comments are closed.', 'epigone' ); ?></p>	<?php endif; ?>
 
 	<?php
-	comment_form(); ?>
+	comment_form( array( 'class_submit' => 'button submit' ) ); ?>
 
 </div><!-- #comments -->

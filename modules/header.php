@@ -8,6 +8,9 @@
  * =====================================================
  */
 
+if ( get_theme_mod('header_style', 'top') == 'top' ) {
+	get_template_part( 'modules/navbar' );
+}
 ?>
 
 
@@ -17,13 +20,21 @@
 			<p class="header__description"><?php bloginfo( 'description' ) ?></p>
 			<h1 class="header__logo">
 				<a href="<?php echo home_url(); ?>">
-					<?php bloginfo( 'name' ); ?>
+					<?php
+					if ( get_theme_mod( 'logo_image', '' ) ) {
+						?>
+						<img src="<?php echo get_theme_mod( 'logo_image', '' ) ?>" alt="<?php bloginfo( 'name' ); ?>"/>
+						<?php
+					} else {
+						bloginfo( 'name' );
+					} ?>
+
 				</a>
 			</h1>
 		</div>
 		<div class="large-8 columns">
 			<?php
-			if ( is_dynamic_sidebar( 'header-praimry' ) ) {
+			if ( is_dynamic_sidebar( 'header-primary' ) ) {
 				dynamic_sidebar( 'header-primary' );
 			}
 			do_action( 'get_header' );
@@ -34,5 +45,7 @@
 
 
 <?php
-get_template_part( 'modules/navbar' );
+if ( get_theme_mod('header_style', 'top') == 'normal' ) {
+	get_template_part( 'modules/navbar' );
+}
 ?>

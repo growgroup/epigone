@@ -88,8 +88,9 @@ function epigone_customizer_settings(){
 							'type' => 'radio',
 							'sanitaize_call_back' => '',
 							'choices' => array(
+								'top' => __( 'Top', 'epigone' ),
 								'normal' => __( 'Normal', 'epigone' ),
-								'minimal' => __( 'Minimal', 'epigone' ),
+								'none' => __( 'None', 'epigone' ),
 							),
 						),
 					),
@@ -97,6 +98,12 @@ function epigone_customizer_settings(){
 				'epigone_logo' => array(
 					'title' => __( 'Logo', 'epigone' ),
 					'setting' => array(
+						'logo_image' => array(
+							'label' => __( 'Logo Image', 'epigone' ),
+							'default' => '',
+							'type' => 'multi-image',
+							'sanitaize_call_back' => '',
+						),
 						'logo_font_size' => array(
 							'label' => __( 'Font Size', 'epigone' ),
 							'default' => 1.0,
@@ -278,23 +285,6 @@ function epigone_customizer_settings(){
 						),
 					),
 				),
-				'epigone_button_color' => array(
-					'title' => __( 'Button Color ', 'epigone' ),
-					'description' => __( 'Setting for button color.', 'epigone' ),
-					'setting' => array(
-						'button_color' => array(
-							'label' => __( 'Button Color', 'epigone' ),
-							'default' => '#3695b5',
-							'type' => 'color',
-							'sanitaize_call_back' => '',
-							'output' => array(
-								'.btn, #submit,input[type=submit],.pagination .prev,.pagination .next,.btn-more' => 'background-color',
-								'.nav-links div a' => 'color',
-								'.nav-links div,.nav-links div:hover,.btn, #submit,input[type=submit],.pagination .prev,.pagination .next' => 'border-color',
-							),
-						),
-					),
-				),
 			),
 		);
 
@@ -381,7 +371,7 @@ function epigone_customizer_settings(){
 							'type' => 'color',
 							'sanitaize_call_back' => '',
 							'output' => array(
-								'.entry-title,.entry-title a,.page-header .page-title,h1,h2,h3,h4,h5,h6,.widget-title' => 'color',
+								'.entry__title,.entry__title a,.page-header .page-title,h1,h2,h3,h4,h5,h6,.widget-title' => 'color',
 							),
 						),
 						'heading_1_font_size' => array(
@@ -391,8 +381,9 @@ function epigone_customizer_settings(){
 							'sanitaize_call_back' => '',
 							'choices' => $font_size_choices,
 							'output' => array(
-								'h1' => 'font-size',
-								'h1' => 'line-height',
+								'.entry__content > h1' => 'line-height',
+								'.entry__content h1' => 'font-size',
+
 							),
 							'output_unit' => 'em',
 						),
@@ -403,8 +394,8 @@ function epigone_customizer_settings(){
 							'sanitaize_call_back' => '',
 							'choices' => $font_size_choices,
 							'output' => array(
-								'h2' => 'font-size',
-								'h2' => 'line-height',
+								'.entry__content > h2' => 'line-height',
+								'.entry__content h2' => 'font-size',
 							),
 							'output_unit' => 'em',
 						),
@@ -415,8 +406,9 @@ function epigone_customizer_settings(){
 							'sanitaize_call_back' => '',
 							'choices' => $font_size_choices,
 							'output' => array(
-								'h3' => 'font-size',
-								'h3' => 'line-height',
+								'.entry__content > h3' => 'line-height',
+								'.entry__content h3' => 'font-size',
+
 							),
 							'output_unit' => 'em',
 						),
@@ -427,8 +419,8 @@ function epigone_customizer_settings(){
 							'sanitaize_call_back' => '',
 							'choices' => $font_size_choices,
 							'output' => array(
-								'h4' => 'font-size',
-								'h4' => 'line-height',
+								'.entry__content > h4' => 'line-height',
+								'.entry__content h4' => 'font-size',
 							),
 							'output_unit' => 'em',
 						),
@@ -439,8 +431,8 @@ function epigone_customizer_settings(){
 							'sanitaize_call_back' => '',
 							'choices' => $font_size_choices,
 							'output' => array(
-								'h5' => 'font-size',
-								'h5' => 'line-height',
+								'.entry__content > h5' => 'line-height',
+								'.entry__content h5' => 'font-size',
 							),
 							'output_unit' => 'em',
 						),
@@ -451,8 +443,8 @@ function epigone_customizer_settings(){
 							'sanitaize_call_back' => '',
 							'choices' => $font_size_choices,
 							'output' => array(
-								'h6' => 'font-size',
-								'h6' => 'line-height',
+								'.entry__content > h6' => 'font-size',
+								'.entry__content h6' => 'line-height',
 							),
 							'output_unit' => 'em',
 						),
@@ -468,7 +460,7 @@ function epigone_customizer_settings(){
 							'sanitaize_call_back' => '',
 							'output' => array(
 								'body' => 'color',
-								'p'    => 'color',
+								'.entry__content p,.entry__content blockquote,.entry__content code,.entry__content pre,.entry__content dl,.entry__content dt,.entry__content dd,.entry__content table,.entry__content ul'    => 'color',
 							),
 						),
 						'text_font_size' => array(
@@ -493,7 +485,7 @@ function epigone_customizer_settings(){
 							),
 							'output' => array(
 								'body' => 'font-size',
-								// 'ul li' => 'font-size',
+								'.entry__content p,.entry__content blockquote,.entry__content code,.entry__content pre,.entry__content dl,.entry__content dt,.entry__content dd,.entry__content table,.entry__content ul' => 'font-size'
 							),
 							'output_unit' => 'em',
 						),

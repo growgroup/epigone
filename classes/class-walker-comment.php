@@ -49,7 +49,7 @@ class Epigone_Walker_Comment extends Walker_Comment {
 		<li <?php comment_class( $parent_class ); ?> id="comment-<?php echo esc_attr( $comment_ID ); ?>">
 			<div id="comment-body-<?php echo esc_attr( $comment_ID ); ?>" class="comments-body">
 
-				<div class="comment-author vcard author">
+				<div class="comment-author  author">
 					<?php echo wp_kses_post( ( $args['avatar_size'] !== 0 ? get_avatar( $comment, $args['avatar_size'] ) : '' ) ); ?>
 					<cite class="comment author-name"><?php echo get_comment_author_link(); ?></cite>
 				</div><!-- /.comment-author -->
