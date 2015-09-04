@@ -14,6 +14,15 @@ add_action( 'widgets_init', 'epigone_custom_sidebar' );
 function epigone_custom_sidebar() {
 
 	register_sidebar( array(
+		'name'          => __( 'Top Page Contents', 'epigone' ),
+		'id'            => 'home-primary',
+		'before_widget' => '<div class="widget widget-content %1$s %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+
+	register_sidebar( array(
 		'name'          => __( 'Sidebar Primary', 'epigone' ),
 		'id'            => 'sidebar-primary',
 		'before_widget' => '<div class="widget widget-sidebar %1$s %2$s">',
@@ -48,6 +57,25 @@ function epigone_custom_sidebar() {
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
 	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Under Content', 'epigone' ),
+		'id'            => 'content-secondary',
+		'before_widget' => '<div class="widget widget-content %1$s %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Under title (single post)', 'epigone' ),
+		'id'            => 'single-under-title',
+		'before_widget' => '<div class="widget widget-content %1$s %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+
 
 	register_sidebar( array(
 		'name'          => __( 'Footer Primary', 'epigone' ),

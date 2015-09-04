@@ -16,16 +16,27 @@
   background: #fff;
   &--listcard{
     border: 1px solid #e8e8e8;
+    padding: 0.6em 1em 0em;
+    margin-bottom: 1em;
+  }
+  &__thumbnail{
+    margin-right: 1em;
+  }
+  &--tilecard{
+    border: 1px solid #e8e8e8;
     padding: 1em 1em 0em;
     margin-bottom: 1em;
+    .hentry__title{
+      font-size: 16px;
+    }
   }
   &__header{
 
   }
   &__title{
-    font-size: rem-calc(22);
+    font-size: rem-calc(18);
     line-height: 1.725em;
-    margin-bottom: 1em;
+    margin-bottom: 0.6em;
     color: #373737;
     a {
       color: #373737;
@@ -33,10 +44,9 @@
   }
   &__meta{
     margin-top: 0;
-    margin-bottom: 0.9em;
+    margin-bottom: 0.4em;
     font-size: rem-calc(12);
     color: #999;
-
     a {
       color: #999;
       text-decoration: underline;
@@ -44,10 +54,11 @@
   }
   &__footer{
     border-top: 1px solid #E8E8E8;
-    padding-top: 1em;
-    font-size: rem-calc(13);
-    margin-top: 1em;
-    margin-bottom: 1em;
+    padding-top: 0.6em;
+
+    margin-top: 0.6em;
+    margin-bottom: 0.6em;
+    font-size: rem-calc(12);
     .cat-links {
       display: inline-block;
 
@@ -62,7 +73,10 @@
 
   }
   &__summary{
-
+    font-size: rem-calc(12);
+    p {
+      font-size: rem-calc(12);
+    }
   }
 }
 
@@ -165,10 +179,12 @@
     }
 
   }
+
   .nav-next{
     text-align: right;
+
     &:before {
-      content: "Next";
+      content: "Next post";
       display: block;
       font-size: rem-calc(12);
       color: #ccc;
@@ -179,5 +195,45 @@
 .breadcrumbs {
   > * {
     line-height: 1.7em;
+  }
+
+}
+
+.upw-posts{
+  .format-standard {
+    @include grid-column(3);
+    font-size: 14px;
+
+    padding-top: 1.6em;
+    min-height: 300px;
+    .entry-title{
+      font-size: 16px;
+    }
+    .vcard{
+      font-size: 14px;
+      border: none;
+      padding: 0;
+      margin: 0;
+
+      a {
+        font-size: 14px;
+      }
+    }
+    .entry-summary{
+      max-height: 100px;
+      overflow: hidden;
+      p {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+.edit-link {
+  a {
+    color: #fff;
+    &:hover,&:focus,&:active {
+      color: #fff;
+    }
   }
 }

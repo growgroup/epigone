@@ -43,17 +43,7 @@ class Layout_Picker_Custom_Control extends WP_Customize_Control {
 					</label>
 					</input>
 				</li>
-				<?php
-				// 投稿レイアウト以外
-				if ( $this->id !== 'risingdragon_layout_single' ) { ?>
-				<li>
-					<input type="radio" id="<?php echo esc_attr( $this->id ); ?>_l-right-left-sidebar" name="<?php echo esc_attr( $this->id ); ?>" <?php echo $this->link(); ?> class="radioImageSelect" value="l-right-left-sidebar" <?php echo checked( $this->value(), 'l-right-left-sidebar' ); ?>>
-					<label for="<?php echo esc_attr( $this->id ); ?>_l-right-left-sidebar">
-						<img src="<?php echo get_template_directory_uri() . '/inc/theme-customizer/fields/layout/img/2crl.png'; ?>" alt="">
-					</label>
-					</input>
-				</li>
-				<?php } ?>
+
 			</ul>
 		</label>
 	<?php

@@ -55,7 +55,7 @@
  $rem-base: 14px;
 
 // Allows the use of rem-calc() or lower-bound() in your settings
-//@import 'foundation/functions';
+@import '../../../bower_components/foundation/scss/foundation/functions';
 
 // The default font-size is set to 100% of the browser style sheet (usually 16px)
 // for compatibility with browser-based text zoom or user-set defaults.
@@ -79,9 +79,9 @@ $include-html-global-classes: $include-html-classes;
 // $include-html-grid-classes: $include-html-classes;
 // $include-xl-html-grid-classes: false;
 
-// $row-width: rem-calc(1000);
-// $total-columns: 12;
-// $column-gutter: rem-calc(30);
+$row-width: rem-calc(964);
+$total-columns: 12;
+$column-gutter: rem-calc(20);
 
 // c. Global
 // - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -393,7 +393,7 @@ $paragraph-line-height: 1.725em;
 
 // We use this to control the maximum number of block grid elements per row
 // $block-grid-elements: 12;
-// $block-grid-default-spacing: rem-calc(20);
+ $block-grid-default-spacing: rem-calc(16);
 
 // $align-block-grid-to-grid: false;
 // @if $align-block-grid-to-grid {$block-grid-default-spacing: $column-gutter;}
@@ -438,14 +438,14 @@ $crumb-radius: 0px;
 // $include-html-button-classes: $include-html-classes;
 
 // We use these to build padding for buttons.
-// $button-tny: rem-calc(10);
-// $button-sml: rem-calc(14);
-// $button-med: rem-calc(16);
-// $button-lrg: rem-calc(18);
+ $button-tny: 0.3rem;
+ //$button-sml: rem-calc(14);
+ //$button-med: rem-calc(16);
+ //$button-lrg: rem-calc(18);
 
 // We use this to control the display property.
-// $button-display: inline-block;
-// $button-margin-bottom: rem-calc(20);
+ $button-display: inline-block;
+ $button-margin-bottom: rem-calc(20);
 
 // We use these to control button text styles.
 // $button-font-family: $body-font-family;

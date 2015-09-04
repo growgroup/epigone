@@ -123,7 +123,7 @@ function epigone_customizer_settings(){
 								'2.0' => '10',
 							),
 							'output' => array(
-								'.header-logo a' => 'font-size',
+								'.header__logo a' => 'font-size',
 							),
 							'output_unit' => 'em',
 						),
@@ -133,7 +133,7 @@ function epigone_customizer_settings(){
 							'type' => 'color',
 							'sanitaize_call_back' => '',
 							'output' => array(
-								'.header-logo a' => 'color',
+								'.header__logo a' => 'color',
 							)
 						),
 					)
@@ -144,11 +144,11 @@ function epigone_customizer_settings(){
 					'setting' => array(
 						'header_background_image' => array(
 							'label' => __( 'Background Image', 'epigone' ),
-							'default' => get_template_directory_uri() . '/assets/images/header-bg.png',
+							'default' => '',
 							'type' => 'multi-image',
 							'sanitaize_call_back' => '',
 							'output' => array(
-								'#masthead:after' => 'background-image',
+								'#masthead' => 'background-image',
 							)
 						),
 						'header_background_attachment' => array(
@@ -161,7 +161,7 @@ function epigone_customizer_settings(){
 								'scroll' => __( 'Scroll', 'epigone' ),
 							),
 							'output' => array(
-								'#masthead:after' => 'background-attachment',
+								'#masthead' => 'background-attachment',
 							)
 						),
 						'header_background_color' => array(
@@ -170,7 +170,7 @@ function epigone_customizer_settings(){
 							'type' => 'color',
 							'sanitaize_call_back' => '',
 							'output' => array(
-								'#masthead:after' => 'background-color',
+								'#masthead' => 'background-color',
 							),
 						),
 						'header_background_size' => array(
@@ -185,76 +185,76 @@ function epigone_customizer_settings(){
 								'100% 100%' => __( 'Horizontal : 100%, Vertical : 100%', 'epigone' ),
 							),
 							'output' => array(
-								'#masthead:after' => 'background-size',
+								'#masthead' => 'background-size',
 							)
 						),
 					),
 				),
 				// navigation section
-				'epigone_navigation_color' => array(
-					'title' => __( 'Navigation Color ', 'epigone' ),
-					'description' => __( 'Setting for Theme color.', 'epigone' ),
-					'setting' => array(
-						'nav_background_color' => array(
-							'label' => __( 'Normal Background', 'epigone' ),
-							'default' => '#3695b5',
-							'type' => 'color',
-							'sanitaize_call_back' => '',
-							'output' => array(
-								'.navbar-collapse>ul>li>a'                   => 'background-color',
-								'.navbar-collapse>ul>li .dropdown-menu>li>a' => 'background-color',
-							),
-						),
-						'nav_background_hover_color' => array(
-							'label' => __( 'Hover Background', 'epigone' ),
-							'default' => '#3695b5',
-							'type' => 'color',
-							'sanitaize_call_back' => '',
-							'output' => array(
-								'.navbar-collapse>ul>li>a:hover'                   => 'background-color',
-								'.navbar-collapse>ul>li .dropdown-menu>li>a:hover'                   => 'color',
-							),
-						),
-						'nav_background_active_color' => array(
-							'label' => __( 'Active Background', 'epigone' ),
-							'default' => '#3695b5',
-							'type' => 'color',
-							'sanitaize_call_back' => '',
-							'output' => array(
-								'.navbar-collapse>ul>li>a:active,.navbar-collapse>ul>li.current-menu-item a'                   => 'background-color',
-							),
-						),
-						'nav_font_size' => array(
-							'label' => __( 'Navigation Font Size', 'epigone' ),
-							'default' => '1.0',
-							'type' => 'select',
-							'sanitaize_call_back' => '',
-							'choices' => array(
-								'0.7' => '0.7 em',
-								'0.8' => '0.8 em',
-								'0.9' => '0.9 em',
-								'1.0' => '1.0 em',
-								'1.1' => '1.1 em',
-								'1.2' => '1.2 em',
-								'1.3' => '1.3 em',
-								'1.4' => '1.4 em',
-								'1.5' => '1.5 em',
-								'1.6' => '1.6 em',
-								'1.7' => '1.7 em',
-								'1.8' => '1.8 em',
-								'1.9' => '1.9 em',
-								'2.0' => '2.1 em',
-							),
-							'output' => array(
-								'.navbar-collapse ul li a ' => 'font-size',
-								'.navbar-collapse ul li a' => 'line-height',
-								'.navbar-collapse ul.dropdown-menu a' => 'font-size',
-								'.navbar-collapse ul.dropdown-menu a ' => 'line-height',
-							),
-							'output_unit' => 'em',
-						),
-					),
-				),
+//				'epigone_navigation_color' => array(
+//					'title' => __( 'Navigation Color ', 'epigone' ),
+//					'description' => __( 'Setting for Theme color.', 'epigone' ),
+//					'setting' => array(
+//						'nav_background_color' => array(
+//							'label' => __( 'Normal Background', 'epigone' ),
+//							'default' => '#3695b5',
+//							'type' => 'color',
+//							'sanitaize_call_back' => '',
+//							'output' => array(
+//								'.navbar-collapse>ul>li>a'                   => 'background-color',
+//								'.navbar-collapse>ul>li .dropdown-menu>li>a' => 'background-color',
+//							),
+//						),
+//						'nav_background_hover_color' => array(
+//							'label' => __( 'Hover Background', 'epigone' ),
+//							'default' => '#3695b5',
+//							'type' => 'color',
+//							'sanitaize_call_back' => '',
+//							'output' => array(
+//								'.navbar-collapse>ul>li>a:hover'                   => 'background-color',
+//								'.navbar-collapse>ul>li .dropdown-menu>li>a:hover'                   => 'color',
+//							),
+//						),
+//						'nav_background_active_color' => array(
+//							'label' => __( 'Active Background', 'epigone' ),
+//							'default' => '#3695b5',
+//							'type' => 'color',
+//							'sanitaize_call_back' => '',
+//							'output' => array(
+//								'.navbar-collapse>ul>li>a:active,.navbar-collapse>ul>li.current-menu-item a'                   => 'background-color',
+//							),
+//						),
+//						'nav_font_size' => array(
+//							'label' => __( 'Navigation Font Size', 'epigone' ),
+//							'default' => '1.0',
+//							'type' => 'select',
+//							'sanitaize_call_back' => '',
+//							'choices' => array(
+//								'0.7' => '0.7 em',
+//								'0.8' => '0.8 em',
+//								'0.9' => '0.9 em',
+//								'1.0' => '1.0 em',
+//								'1.1' => '1.1 em',
+//								'1.2' => '1.2 em',
+//								'1.3' => '1.3 em',
+//								'1.4' => '1.4 em',
+//								'1.5' => '1.5 em',
+//								'1.6' => '1.6 em',
+//								'1.7' => '1.7 em',
+//								'1.8' => '1.8 em',
+//								'1.9' => '1.9 em',
+//								'2.0' => '2.1 em',
+//							),
+//							'output' => array(
+//								'.navbar-collapse ul li a ' => 'font-size',
+//								'.navbar-collapse ul li a' => 'line-height',
+//								'.navbar-collapse ul.dropdown-menu a' => 'font-size',
+//								'.navbar-collapse ul.dropdown-menu a ' => 'line-height',
+//							),
+//							'output_unit' => 'em',
+//						),
+//					),
+//				),
 			)
 		);
 
@@ -493,7 +493,56 @@ function epigone_customizer_settings(){
 				),
 			)
 		);
+	/**
+	 * 03. Layout
+	 */
 
+	$settings['epigone_single'] = array(
+		'title' => __( 'Single Post Settings', 'epigone' ), // Panel title
+		'description' => __( 'Please settings for single post.', 'epigone' ),
+		'section' => array(
+			'epigone_single_thumbnail' => array(
+				'title' => __( 'Display Thumbnail', 'epigone' ),
+				'description' => __( 'Do you want to display a thumbnail?', 'epigone' ),
+				'setting' => array(
+					'single_thumbnail' => array(
+						'label' => __( 'Display Thumbnail', 'epigone' ),
+						'default' => 'false',
+						'type' => 'radio',
+						'sanitaize_call_back' => '',
+						'choices' => array(
+							'true' => __( 'Yes', 'epigone' ),
+							'false' => __( 'None', 'epigone' ),
+						),
+					),
+				)
+			),
+			'epigone_layout_page' => array(
+				'title' => __( 'static page', 'epigone' ),
+				'description' => __( 'Please select the layout.', 'epigone' ),
+				'setting' => array(
+					'epigone_layout_page' => array(
+						'label' => __( 'Layout of static page', 'epigone' ),
+						'default' => 'l-right-sidebar',
+						'type' => 'layout-picker',
+						'sanitaize_call_back' => '',
+					),
+				)
+			),
+			'epigone_layout_single' => array(
+				'title' => __( 'single page', 'epigone' ),
+				'description' => __( 'Please select the layout.', 'epigone' ),
+				'setting' => array(
+					'epigone_layout_single' => array(
+						'label' => __( 'Layout of single page', 'epigone' ),
+						'default' => 'l-right-sidebar',
+						'type' => 'layout-picker',
+						'sanitaize_call_back' => '',
+					),
+				)
+			),
+		)
+	);
 		/**
 		 * 03. Layout
 		 */
@@ -559,12 +608,6 @@ function epigone_customizer_settings(){
 						),
 						'socal_twitter' => array(
 							'label' => __( 'Twitter URL', 'epigone' ),
-							'default' => '',
-							'type' => 'text',
-							'sanitaize_call_back' => '',
-						),
-						'socal_github' => array(
-							'label' => __( 'Github URL', 'epigone' ),
 							'default' => '',
 							'type' => 'text',
 							'sanitaize_call_back' => '',

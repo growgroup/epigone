@@ -17,7 +17,21 @@ body {
 
 .wrapper {
   margin-top: 2.5em;
+  .l-main {
+    @include grid-column(8.19);
+    @media (max-width: 768px) {
+      @include grid-column(12);
+    }
+  }
+
+  .l-sidebar {
+    @include grid-column(3.81);
+    @media (max-width: 768px) {
+      @include grid-column(12);
+    }
+  }
 }
+
 .container {
 }
 
@@ -31,5 +45,35 @@ body {
 
   .l-sidebar {
 
+  }
+}
+
+.l-right-sidebar {
+  .l-main {
+    float: left;
+  }
+
+  .l-sidebar {
+    float: right;
+  }
+}
+
+.l-left-sidebar {
+  .l-main {
+    float: right;
+  }
+
+  .l-sidebar {
+    float: left;
+  }
+}
+
+.l-full{
+  .l-main {
+    width: 100%;
+  }
+
+  .l-sidebar {
+    display: none;
   }
 }
