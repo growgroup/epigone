@@ -238,7 +238,7 @@ class DWPlugin{
 		$instance['dw_include'] = isset($instance['dw_include']) ? $instance['dw_include'] : 0;
 		$instance['dw_logged'] = self::show_logged($instance);
 		$instance['other_ids'] = isset($instance['other_ids']) ? $instance['other_ids'] : '';
-		$instance['auto_scroll_sidebar'] = isset($instance['auto_scroll_sidebar']) ? $instance['auto_scroll_sidebar'] : '';
+
 		$instance['mobile_detect_disp'] = isset($instance['mobile_detect_disp']) ? $instance['mobile_detect_disp'] : '';
 		?>
 		<div class="dw_opts">
@@ -258,7 +258,6 @@ class DWPlugin{
 			<?php } ?>
 
 			<input type="hidden" name="<?php echo $widget->get_field_name('other_ids'); ?>" id="<?php echo $widget->get_field_id('other_ids'); ?>" value="<?php echo esc_attr($instance['other_ids']) ?>" />
-			<input type="hidden" name="<?php echo $widget->get_field_name('auto_scroll_sidebar'); ?>" id="<?php echo $widget->get_field_id('auto_scroll_sidebar'); ?>" value="<?php echo esc_attr($instance['auto_scroll_sidebar']) ?>" />
 			<input type="hidden" name="<?php echo $widget->get_field_name('mobile_detect_disp'); ?>" id="<?php echo $widget->get_field_id('mobile_detect_disp'); ?>" value="<?php echo esc_attr($instance['mobile_detect_disp']) ?>" />
 		</div>
 		<?php
@@ -289,7 +288,7 @@ class DWPlugin{
 		$instance['dw_include'] = isset($instance['dw_include']) ? $instance['dw_include'] : 0;
 		$instance['dw_logged'] = self::show_logged($instance);
 		$instance['other_ids'] = isset($instance['other_ids']) ? $instance['other_ids'] : '';
-		$instance['auto_scroll_sidebar'] = isset($instance['auto_scroll_sidebar']) ? $instance['auto_scroll_sidebar'] : '';
+
 		$instance['mobile_detect_disp'] = isset($instance['mobile_detect_disp']) ? $instance['mobile_detect_disp'] : '';
 		?>
 		<hr>
@@ -419,9 +418,7 @@ class DWPlugin{
 				</p>
 			</div>
 			<hr>
-			<p><label for="<?php echo $widget->get_field_id('auto_scroll_sidebar'); ?>"><?php _e('自動追尾の起点として設定', 'display-widgets') ?>:</label>
-				<input type="checkbox" value="true" name="<?php echo $widget->get_field_name('auto_scroll_sidebar'); ?>" id="<?php echo $widget->get_field_id('auto_scroll_sidebar'); ?>" <?php checked( 'true' , $instance['auto_scroll_sidebar'] , true ) ?>/>
-			</p>
+
 			<p><label for="<?php echo $widget->get_field_id('mobile_detect_disp'); ?>"><?php _e('スマートフォンからのアクセスの場合表示しない', 'display-widgets') ?>:</label>
 				<input type="checkbox" value="true" name="<?php echo $widget->get_field_name('mobile_detect_disp'); ?>" id="<?php echo $widget->get_field_id('mobile_detect_disp'); ?>" <?php checked( 'true' , $instance['mobile_detect_disp'] , true ) ?>/>
 			</p>
@@ -495,7 +492,7 @@ class DWPlugin{
 		$instance['dw_include'] = ( isset($new_instance['dw_include']) && $new_instance['dw_include'] ) ? 1 : 0;
 		$instance['dw_logged'] = ( isset($new_instance['dw_logged']) && $new_instance['dw_logged'] ) ? $new_instance['dw_logged'] : '';
 		$instance['other_ids'] = ( isset($new_instance['other_ids']) && $new_instance['other_ids'] ) ? $new_instance['other_ids'] : '';
-		$instance['auto_scroll_sidebar'] = ( isset($new_instance['auto_scroll_sidebar']) && $new_instance['auto_scroll_sidebar'] ) ? $new_instance['auto_scroll_sidebar'] : '';
+
 		$instance['mobile_detect_disp'] = ( isset($new_instance['mobile_detect_disp']) && $new_instance['mobile_detect_disp'] ) ? $new_instance['mobile_detect_disp'] : '';
 
 		$page_types = self::page_types();
@@ -734,86 +731,6 @@ function dw_widgets_style() {
 }
 add_action( 'admin_print_styles-widgets.php', 'dw_widgets_style' );
 
-
-/**
- * 自動追尾サイドバーの設定
- *
- * @return $script : javascript
- */
-
-add_action( 'get_footer', 'get_sidebar_widgets' , 10, 1 );
-
-function get_sidebar_widgets(){
-
-	if ( wp_is_mobile() ) return ;
-	$script = '';
-	// 登録済みウィジェットを取得
-	$get_sidebar_widgets = get_option( 'sidebars_widgets', '');
-
-	if ( !$get_sidebar_widgets ) return ;
-	// サイドバーに登録しているウィジェットをforeachでループ
-	if ( $get_sidebar_widgets ) {
-		foreach ( $get_sidebar_widgets['sidebar-primary']  as $key => $value ) {
-			$widget_number = mb_substr( $value , -2);
-			// 末尾のナンバーを削除
-			$widget_name = str_replace( $widget_number, '' , $value );
-			$widgets_instance = get_option( 'widget_' . $widget_name ,'' );
-
-			// ウィジェットの内容をループし、auto_scroll_sidebarがtrueか調べる
-			if ( $widgets_instance ) {
-				foreach ( $widgets_instance as $key => $widgets ) {
-					if ( isset( $widgets['auto_scroll_sidebar'] ) && $widgets['auto_scroll_sidebar'] == true ) {
-						$auto_scroll_sidebar = $widget_name . '-' . $key;
-					}
-				}
-			}
-		}
-	}
-	// trueだったらwp_footerにjavascriptを出力
-	if ( isset( $auto_scroll_sidebar ) ) {
-		$script .= '
-<script type="text/javascript">
-	var $ = jQuery;
-	function fixed_scroll(){
-    var sidebar = $(".sidebar");
-    var main = $(".main");
-    var target = sidebar.find(".' . $auto_scroll_sidebar . ' ,.' . $auto_scroll_sidebar . ' ~ .widget");
-    if ( !sidebar ) return;
-    var targetTop = target.offset().top;
-    var this_height;
-    var old_widget;
-    if (  target && targetTop && main.height() >= sidebar.height() ) {
-      $(window).scroll(function () {
-        if( $(window).scrollTop() > targetTop) {
-          $.each( target , function( key , value ){
-            if ( key !== 0 ) {
-              this_height +=  old_widget.height() ;
-            } else {
-              this_height = 0;
-            }
-            $(this).css({
-              position:"fixed",
-              top: this_height,
-              width: sidebar.width(),
-            });
-            old_widget = $(this);
-          });
-        } else {
-          target.css({
-            position:"static"
-          });
-        }
-      });
-    }
-	}
-  $( function(){
-  	fixed_scroll();
-  });
-</script>
-    ';
-	}
-	echo $script;
-}
 
 
 
