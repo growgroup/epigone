@@ -14,18 +14,17 @@ get_template_part( 'modules/head' );
 
 epigone_get_header(); ?>
 
-epigone_dynamic_sidebar( 'main-visual' ); ?>
 
 	<div class="<?php echo esc_html( epigone_layout_class() ); ?> row wrapper">
 
-		<div class="large-12 columns main-visual"> 
+		<div class="large-12 columns main-visual">
 		 	<?php
 			// メインビジュアルサイドバー
 			epigone_dynamic_sidebar( 'main-visual' ); ?>
 		</div>
 
 		<section class="l-main main columns">
-  
+
 			<main role="main">
 
 				<?php

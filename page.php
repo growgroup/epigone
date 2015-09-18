@@ -16,9 +16,9 @@ while ( have_posts() ) :
 
 	if ( "true" == get_theme_mod('single_comment_num', 'true') && ( comments_open() || '0' != get_comments_number() ) ) {
 		comments_template();
-	endif;
+	}
 
 endwhile; // end of the loop.
 
 
- 
+
