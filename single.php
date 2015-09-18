@@ -10,15 +10,26 @@
  */
 
 
-while ( have_posts() ) :
+while ( have_posts() ) :  
 	the_post();
+	?>
+		<div class="post-wrapper">
+			<?php
 
-	get_template_part( 'templates/content', 'single' );
-	epigone_post_nav();
+			get_template_part( 'templates/content', 'single' );
 
-	// If comments are open or we have at least one comment, load up the comment template
-	if ( comments_open() || '0' != get_comments_number() ) {
-		comments_template();
-	}
+			epigone_post_nav();
+
+			// 関連する記事を取得
+			epigone_related_post();
+
+			// If comments are open or we have at least one comment, load up the comment template
+			if ( "true" == get_theme_mod('single_comment_num', 'true') && ( comments_open() || '0' != get_comments_number() ) ) {
+				comments_template();
+			}
+			?>
+
+	</div><!--/.post-wrapper-->
+	<?php
 
 endwhile; // end of the loop.

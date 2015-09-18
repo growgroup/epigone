@@ -12,18 +12,23 @@
 
 get_template_part( 'modules/head' );
 
-epigone_get_header();
+epigone_get_header(); ?>
 
-dynamic_sidebar( 'main-visual' ); ?>
 
 	<div class="<?php echo esc_html( epigone_layout_class() ); ?> row wrapper">
 
-		<section class="l-main main large-9 columns">
+		<div class="large-12 columns main-visual">
+		 	<?php
+			// メインビジュアルサイドバー
+			epigone_dynamic_sidebar( 'main-visual' ); ?>
+		</div>
+
+		<section class="l-main main columns">
 
 			<main role="main">
 
 				<?php
-				dynamic_sidebar( 'content-primary' );
+				epigone_dynamic_sidebar( 'content-primary' );
 
 				// Action hook before loading the main template.
 				do_action( 'get_main_template_before' );
@@ -31,13 +36,14 @@ dynamic_sidebar( 'main-visual' ); ?>
 				load_template( epigone_template_path() ); ?>
 
 				<?php
+				epigone_dynamic_sidebar( 'content-secondary' );
 				// Action hook after loading the main template
 				do_action( 'get_main_template_after' ); ?>
 
 			</main>
 		</section>
 
-		<aside class="l-sidebar sidebar large-3 columns" role="aside">
+		<aside class="l-sidebar sidebar columns" role="aside">
 
 			<?php
 			/**

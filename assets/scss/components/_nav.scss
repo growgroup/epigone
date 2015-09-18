@@ -1,3 +1,46 @@
 /*------------------------------------*\
   $NAVIGATION
 \*------------------------------------*/
+
+.nav-links{
+  display: inline-block;
+  margin-top: 1em;
+  .page-numbers{
+    @include pagination();
+    .current {
+      @include pagination-current-item();
+      color: #fff;
+    }
+    span{
+      border-radius: 3px;
+      transition: background-color 300ms ease-out;
+      background: none;
+      color: #999999;
+      display: block;
+      font-size: 1em;
+      font-weight: normal;
+      line-height: inherit;
+      padding: 0.05556rem 0.55556rem 0.05556rem;
+    }
+  }
+}
+
+
+.post-navigation{
+  .nav-links{
+    display: block;
+  }
+}
+
+// パンくず
+.breadcrumbs{
+  text-align: center;
+  margin-bottom: 0;
+  border-color: #e8e8e8;
+  > * {
+    line-height: 1.7em;
+    font-size: 0.8rem;
+    display: inline-block;
+    float: none;
+  }
+}

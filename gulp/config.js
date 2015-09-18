@@ -1,7 +1,7 @@
 // config
 
 // ここにURLを入力
-var url = "http://example.com";
+var url = "http://ultimate-dragon-tools.dev";
 
 var sass = {
 	src: "assets/scss/main.scss",

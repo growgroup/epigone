@@ -450,13 +450,14 @@ class Epigone_Theme_Customize {
 			if ( ! $customizer_key ) {
 				continue;
 			}
+
 			$unit = isset( $setting['output_unit'] ) ? $setting['output_unit'] : '';
 			if ( 'color' === $setting['type'] ) {
-				$css .= $selector . '{' . $priority . ' : ' . get_theme_mod( $customizer_key, '' ) . ';}';
+				$css .= $selector . '{' . $priority . ' : ' . get_theme_mod( $customizer_key, $setting['default'] ) . ';}';
 			} elseif ( 'multi-image' === $setting['type'] ) {
-				$css .= $selector . '{' . $priority . ' : url(' . get_theme_mod( $customizer_key, '' ) . ' );}';
+				$css .= $selector . '{' . $priority . ' : url(' . get_theme_mod( $customizer_key, $setting['default'] ) . ' );}';
 			} else {
-				$css .= $selector . '{' . $priority . ' : ' . get_theme_mod( $customizer_key, '' ) . $unit . ';}';
+				$css .= $selector . '{' . $priority . ' : ' . get_theme_mod( $customizer_key, $setting['default'] ) . $unit . ';}';
 			}
 
 		}

@@ -9,5 +9,5 @@
  * =====================================================
  */
 
-
+require "vendor/autoload.php";
 load_template( get_template_directory() . '/inc/init.php', true );

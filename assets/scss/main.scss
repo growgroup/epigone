@@ -23,6 +23,7 @@
 //@import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
 @import "generic/settings";
 
+@import "components/webfont";
 
 $fa-font-path:        "../fonts";
 @import "../../bower_components/font-awesome/scss/font-awesome";
@@ -69,8 +70,10 @@ $fa-font-path:        "../fonts";
 @import "components/gallery";
 @import "components/nav";
 @import "components/sections";
+@import "components/related_posts";
 @import "components/tabs";
 @import "components/wordpress";
+
 
 /*------------------------------------*\
     $PAGES

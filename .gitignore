@@ -43,3 +43,5 @@ bower_components
 assets/components
 .map
 src
+
+/vendor/

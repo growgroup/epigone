@@ -1,0 +1,16 @@
+{
+    "name": "1shiharat/epigone",
+    "description": "This theme is a simple WordPress theme.",
+    "require": {
+        "tgmpa/tgm-plugin-activation": "2.5.2",
+        "mobiledetect/mobiledetectlib": "~2.8"
+    },
+    "license": "GPL v2 or later",
+    "authors": [
+        {
+            "name": "ishihara takashi",
+            "email": "akeome1369@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}

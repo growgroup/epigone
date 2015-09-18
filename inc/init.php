@@ -21,8 +21,11 @@ $include_files = array(
 	array( 'inc/sidebar.php' ),
 	array( 'inc/comment.php' ),
 	array( 'inc/modification.php' ),
+
+//	array( 'inc/display-widget.php' ),
 	array( 'inc/theme-customizer/customizer.php' ),
 	array( 'classes/class-theme-wrapper.php' ),
+	array( 'classes/class-related-post.php' ),
 	array( 'classes/class-breadcrumbs.php' ),
 	array( 'classes/class-walker-nav.php' ),
 	array( 'classes/class-walker-comment.php' ),
