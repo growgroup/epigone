@@ -16,24 +16,23 @@ if ( ! function_exists( 'epigone_paging_nav' ) ) :
 	 * @return void
 	 */
 	function epigone_paging_nav() {
-		// Don't print empty markup if there's only one page.
-		if ( $GLOBALS['wp_query']->max_num_pages < 2 || current_theme_supports( 'epigone-pagination' ) ) {
-			return;
-		}
-		?>
-		<nav class="navigation paging-navigation" role="navigation">
-			<h1 class="screen-reader-text navigation-title"><?php _e( 'Posts navigation', 'epigone' ); ?></h1>
-			<div class="nav-links cf">
 
-				<?php if ( get_next_posts_link() ) : ?>
-					<div class="nav-previous navigation-previous left"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'epigone' ) ); ?></div>				<?php endif; ?>
-
-				<?php if ( get_previous_posts_link() ) : ?>
-					<div class="nav-next navigation-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'epigone' ) ); ?></div>				<?php endif; ?>
-
-			</div>
-			<!-- .nav-links -->
-		</nav><!-- .navigation -->		<?php
+		$defaults = array(
+			'show_all' => false,
+			'prev_next' => true,
+			'prev_text' => __('&laquo; Previous'),
+			'next_text' => __('Next &raquo;'),
+			'end_size' => 1,
+			'mid_size' => 2,
+			'type' => 'list',
+			'add_args' => array(), // array of query args to add
+			'add_fragment' => '',
+			'before_page_number' => '',
+			'after_page_number' => ''
+		);
+		echo "<div class='text-center'>";
+		the_posts_pagination($defaults);
+		echo "</div>";
 	}
 endif;
 
@@ -72,27 +71,34 @@ if ( ! function_exists( 'epigone_posted_on' ) ) :
 	function epigone_posted_on() {
 		$time_string = '<time class="entry-date published" datetime="%1$s"> %2$s</time>';
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-//			$time_string .= '<time class="updated" datetime="%3$s">%4$s</time>';
 		}
 
 		$time_string = sprintf( $time_string,
 			esc_attr( get_the_date( 'c' ) ),
 			esc_html( get_the_date() ),
 			esc_attr( get_the_modified_date( 'c' ) )
-//			esc_html( __( 'Updated : ', 'epigone' ) . get_the_modified_date() )
 		);
 
-		echo '<i class="fa fa-calendar-o"></i> ';
-		printf( __( '<span class="posted-on">Posted on %1$s</span> <i class="fa fa-user"></i> <span class="byline"> by %2$s</span>', 'epigone' ),
-			sprintf( '<a href="%1$s" rel="bookmark">%2$s</a>',
-				esc_url( get_permalink() ),
+
+		$posted_string = __( '<i class="fa fa-calendar-o"></i> <span class="posted-on">Posted on %1$s</span> ', 'epigone' );
+		$author_string = __( '<i class="fa fa-user"></i><span class="byline"> by %1$s</span>', 'epigone' );
+
+		if ( "true" ==  get_theme_mod( 'single_post_date', "true" ) ) {
+			printf($posted_string, sprintf('<a href="%1$s" rel="bookmark">%2$s</a>',
+				esc_url(get_permalink()),
 				$time_string
-			),
-			sprintf( '<span class="author"><a class="url fn n" href="%1$s">%2$s</a></span>',
-				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-				esc_html( get_the_author() )
-			)
-		);
+			));
+		}
+
+		if ( "true" ==  get_theme_mod( 'single_post_author', "true" ) ) {
+			printf(
+				$author_string,
+				sprintf('<span class="author"><a class="url fn n" href="%1$s">%2$s</a></span>',
+					esc_url(get_author_posts_url(get_the_author_meta('ID'))),
+					esc_html(get_the_author())
+				)
+			);
+		}
 	}
 endif;
 

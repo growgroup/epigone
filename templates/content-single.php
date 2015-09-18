@@ -19,7 +19,7 @@
 		<h1 class="entry__title"><?php the_title(); ?></h1>
 	</header>
 	<!-- .entry-header -->
-	<?php dynamic_sidebar('single-under-title'); ?>
+	<?php epigone_dynamic_sidebar('single-under-title'); ?>
 	<div class="entry__content">
 		<?php
 		if (has_post_thumbnail() && 'true' === get_theme_mod( 'single_thumbnail', 'false' )  ) { ?>
@@ -50,7 +50,7 @@
 		/* translators: used between list items, there is a space after the comma */
 		$tag_list = get_the_tag_list('', __(', ', 'epigone'));
 
-		if (!epigone_categorized_blog()) {
+		if ( ! epigone_categorized_blog()) {
 			// This blog only has 1 category so we just need to worry about tags in the meta text
 			if ('' != $tag_list) {
 				$meta_text = __('This entry was tagged %2$s. Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', 'epigone');

@@ -13,7 +13,12 @@ if (have_posts()) :
 	while (have_posts()) :
 		the_post();
 
-		get_template_part('templates/content', get_post_format());
+		if ( 'normal' == get_theme_mod( 'home_post_list', 'normal' ) ) {
+			get_template_part('templates/content', get_post_format());
+		} else {
+
+			get_template_part('templates/content-tile', get_post_format());
+		}
 
 	endwhile;
 

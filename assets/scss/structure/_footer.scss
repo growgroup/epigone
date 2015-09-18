@@ -2,15 +2,37 @@
     $FOOTER
 \*------------------------------------*/
 
+// スクロールトップ
+#scroll-top {
+
+  a{
+    display: block;
+    color: #fff;
+    bottom: 1em;
+    right: 1em;
+    position: fixed;
+    border-radius: 2em;
+    width: 1.6em;
+    text-align: center;
+    font-size: 2em;
+    height: 1.6em;
+  }
+
+}
+
 .footer {
   padding-top: 1em;
-  padding-bottom: 1em;
+  padding-bottom: 0em;
   background: #373737;
   color: #fff;
 }
 
-.footer-copyright {
+.footer__copyright {
   border-top: none;
+  padding-bottom: 0.5em;
+  padding-top: .5em;
+  font-size: 0.9em;
+  margin-top: 2em;
 }
 
 .footer .widget-title {

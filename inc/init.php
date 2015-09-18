@@ -21,7 +21,7 @@ $include_files = array(
 	array( 'inc/sidebar.php' ),
 	array( 'inc/comment.php' ),
 	array( 'inc/modification.php' ),
-	array( 'inc/display-widget.php' ),
+//	array( 'inc/display-widget.php' ),
 	array( 'inc/theme-customizer/customizer.php' ),
 	array( 'classes/class-theme-wrapper.php' ),
 	array( 'classes/class-breadcrumbs.php' ),

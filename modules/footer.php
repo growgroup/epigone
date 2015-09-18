@@ -14,7 +14,7 @@
 		<div class="row">
 			<div class="footer__contents">
 				<?php
-				dynamic_sidebar( 'footer-primary' );
+				epigone_dynamic_sidebar( 'footer-primary' );
 				?>
 			</div>
 		</div>

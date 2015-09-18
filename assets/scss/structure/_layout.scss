@@ -16,7 +16,7 @@ body {
 \*------------------------------------*/
 
 .wrapper {
-  margin-top: 2.5em;
+  margin-top: 1.5em;
   .l-main {
     @include grid-column(8.19);
     @media (max-width: 768px) {
@@ -77,3 +77,4 @@ body {
     display: none;
   }
 }
+

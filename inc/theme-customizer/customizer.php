@@ -445,6 +445,7 @@ class Epigone_Theme_Customize {
 
 		$css = '';
 
+
 		foreach ( $setting['output'] as $selector => $priority ) {
 
 			if ( ! $customizer_key ) {
