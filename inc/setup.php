@@ -52,8 +52,6 @@ if ( ! function_exists( 'epigone_setup' ) ) {
 			)
 		);
 
-		add_image_size( 'tile_thumbnail', 200, 200, true );
-
 		// registration header navigation
 		register_nav_menus( array( 'primary' => __( 'Header Primary Navigation', 'epigone' ) ) );
 

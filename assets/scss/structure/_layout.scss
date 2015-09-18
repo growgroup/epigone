@@ -16,7 +16,7 @@ body {
 \*------------------------------------*/
 
 .wrapper {
-  margin-top: 1.5em;
+  margin-top: 2.5em;
   .l-main {
     @include grid-column(8.19);
     @media (max-width: 768px) {
@@ -78,3 +78,25 @@ body {
   }
 }
 
+.nav-links{
+  display: inline-block;
+  margin-top: 1em;
+  .page-numbers{
+    @include pagination();
+    .current {
+      @include pagination-current-item();
+      color: #fff;
+    }
+    span{
+      border-radius: 3px;
+      transition: background-color 300ms ease-out;
+      background: none;
+      color: #999999;
+      display: block;
+      font-size: 1em;
+      font-weight: normal;
+      line-height: inherit;
+      padding: 0.05556rem 0.55556rem 0.05556rem;
+    }
+  }
+}

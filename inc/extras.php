@@ -103,6 +103,9 @@ function epigone_setup_author() {
 add_action( 'excerpt_more', 'epigone_change_more' );
 
 function epigone_change_more( $more ) {
+	if ( 0 == get_theme_mod('single_char_num', 50) ) {
+		return "";
+	}
 	$more = ' &hellip; <a href="' . get_permalink() . '" class="btn btn-more">' . __( 'More', 'epigone' ) . '</a>';
 	return apply_filters( 'epigone_readmore', $more );
 

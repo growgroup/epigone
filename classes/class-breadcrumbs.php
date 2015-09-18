@@ -82,7 +82,7 @@ class Epigone_Breadcrumbs {
 		 * @var [type]
 		 */
 		$this->strings = wp_parse_args( $strings, array(
-			'home'      => __( 'Home', 'epigone' ),
+			'home'      =>  '<i class="fa fa-home"></i> ' . __( 'Home', 'epigone' ),
 			'search'    => array(
 				'singular' => __( 'Search Result for <em>%s</em>', 'epigone' ),
 				'plural'   => __( '%s Search results for <em>%s</em>', 'epigone' ),
@@ -348,7 +348,7 @@ class Epigone_Breadcrumbs {
 					) );
 					$this->breadcrumb['archive_month'] = $this->template( array(
 						'link'  => get_month_link( get_query_var( 'year' ), get_query_var( 'monthnum' ) ),
-						'title' => get_the_date( 'F' )
+						'title  ' => get_the_date( 'F' )
 					) );
 					$this->breadcrumb['archive_day']   = $this->template( get_the_date( 'j' ) );
 

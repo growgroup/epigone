@@ -12,17 +12,25 @@
   }
 }
 
+.post-wrapper{
+  padding: 1em 1em 0;
+}
+
+
+// ------------------------------- \\
 // 記事一覧
+// .hentry
+// ------------------------------- //
 .hentry {
   background: #fff;
+
+  // リストカードタイプ
   &--listcard{
     border: 1px solid #e8e8e8;
     padding: 0.6em 1em 0em;
     margin-bottom: 1em;
   }
-  &__thumbnail{
-    margin-right: 1em;
-  }
+  // タイルカードタイプ
   &--tilecard{
     border: 1px solid #e8e8e8;
     vertical-align: top;
@@ -31,15 +39,21 @@
     width: 32.5%;
     display: inline-block;
     margin-right: 1%;
-    &:nth-child(3n+1){
+
+    &:nth-child(3n){
       margin-right: -1%;
+    }
+    &:first-child{
+      margin-right: 1%;
     }
     @media(max-width: 768px){
       width: 100%;
       float: none;
-
     }
 
+    .hentry__thumbnail{
+      margin-bottom: 1em;
+    }
     .hentry__title{
       font-size: 16px;
     }
@@ -49,9 +63,16 @@
       }
     }
   }
+
+  &__thumbnail{
+    margin-right: 1em;
+  }
+
   &__header{
 
   }
+
+  // タイトル
   &__title{
     font-size: rem-calc(18);
     line-height: 1.725em;
@@ -61,6 +82,8 @@
       color: #373737;
     }
   }
+
+  // メタ
   &__meta{
     margin-top: 0;
     margin-bottom: 0.4em;
@@ -71,6 +94,8 @@
       text-decoration: underline;
     }
   }
+
+  // フッター
   &__footer{
     border-top: 1px solid #E8E8E8;
     padding-top: 0.6em;
@@ -88,9 +113,13 @@
       display: inline-block;
     }
   }
+
+  // コンテンツ
   &__content{
 
   }
+
+  // 抜粋コンテンツ
   &__summary{
     font-size: rem-calc(12);
     p {
@@ -108,19 +137,15 @@
   }
 }
 
-.breadcrumbs {
-  text-align: center;
-  margin-bottom: 0;
-  border-color: #e8e8e8;
-  > * {
-    display: inline-block;
-    float: none;
-    font-size: rem-calc(14);
-  }
-}
 
 
 
+// ------------------------------- \\
+// 記事詳細コンテンツ
+// .entry
+//   .entry__header
+//   .entry__title
+// ------------------------------- //
 .entry {
   &__header{
 
@@ -211,13 +236,56 @@
   }
 }
 
-.breadcrumbs {
-  > * {
-    line-height: 1.7em;
-  }
 
+
+.entry{
+  &__content{
+    h1{
+      border-bottom: 2px solid #e8e8e8;
+      padding-bottom: 0.3em;
+    }
+    h2{
+      border-left: 6px solid transparent;
+      padding-left: 1em;
+      margin-top: 1.5em;
+      margin-bottom: 1.5em;
+    }
+    h3{
+
+    }
+    h4{
+
+    }
+    table{
+      tr{
+        th{
+          color: #fff;
+        }
+      }
+    }
+    pre{
+      font-size: 1em;
+      line-height: 0.8em;
+      padding: 1em;
+      background: #f5f5f5;
+    }
+  }
 }
 
+// 編集ボタン
+
+.edit-link {
+  margin-bottom: 0;
+  a {
+    color: #fff;
+    &:hover,&:focus,&:active {
+      color: #fff;
+    }
+  }
+}
+
+
+// Ultimate Post Widget ウィジェット
 .upw-posts{
   .format-standard {
     @include grid-column(3);
@@ -244,18 +312,6 @@
       p {
         font-size: 12px;
       }
-    }
-  }
-}
-
-// 編集ボタン
-
-.edit-link {
-  margin-bottom: 0;
-  a {
-    color: #fff;
-    &:hover,&:focus,&:active {
-      color: #fff;
     }
   }
 }

@@ -134,7 +134,7 @@ function epigone_customizer_settings()
 						'type' => 'color',
 						'sanitaize_call_back' => '',
 						'output' => array(
-							'.header__logo a' => 'color',
+							'.header__logo a,.header__description' => 'color',
 						)
 					),
 				)
@@ -278,8 +278,8 @@ function epigone_customizer_settings()
 						'output' => array(
 							'a,a:hover,a:active,a:focus,#reply-title,.breadcrumbs ul:before,.hentry__title a' => 'color',
 							'.comment-title' => 'background-color',
-							'.sidebar .widget .widget-title,.button' => 'border-color',
-							'.widget-sidebar li:nth-child(even):hover,.widget-sidebar ul li:hover,.nav-links div:hover' => 'background-color',
+							'.sidebar .widget .widget-title,.button, .entry__content h2' => 'border-color',
+							'.widget-sidebar li:nth-child(even):hover,.widget-sidebar ul li:hover,.nav-links div:hover ,#secondary .widget ul li:before' => 'background-color',
 							'.pagination .page-numbers.current,.widget-title:after,th,.footer-copyright,#scroll-top a' => 'background-color',
 							'.top-bar-section li.active:not(.has-form) a:not(.button):hover,.top-bar-section li.active:not(.has-form) a:not(.button),.button' => 'background-color',
 						),
@@ -519,7 +519,7 @@ function epigone_customizer_settings()
 
 
 	/**
-	 * 03. Layout
+	 * 03. 投稿記事設定
 	 */
 
 	$settings['epigone_single'] = array(
@@ -619,8 +619,24 @@ function epigone_customizer_settings()
 					),
 				)
 			),
+			'epigone_single_comment_num' => array(
+				'title' => __('Display Comment Number', 'epigone'),
+				'description' => __('Do you want to display the comment number?', 'epigone'),
+				'setting' => array(
+					'single_comment_num' => array(
+						'label' => __('Do you want to display the comment number?', 'epigone'),
+						'default' => 'true',
+						'type' => 'radio',
+						'sanitaize_call_back' => '',
+						'choices' => array(
+							'true' => __('Yes', 'epigone'),
+							'false' => __('None', 'epigone'),
+						),
+					),
+				)
+			),
 			'epigone_single_related_post' => array(
-				'title' => __('', 'epigone'),
+				'title' => __('Display Related Post', 'epigone'),
 				'description' => __('Do you want to display the associated article?', 'epigone'),
 				'setting' => array(
 					'single_related_post' => array(
@@ -686,36 +702,36 @@ function epigone_customizer_settings()
 	/**
 	 * 03. Social
 	 */
-	$settings['epigone_social'] = array(
-		'title' => __('Social Settings', 'epigone'), // Panel title
-		'description' => __('Please have a set of social.', 'epigone'),
-		'section' => array(
-			'epigone_social' => array(
-				'title' => __('Social link', 'epigone'),
-				'description' => __('Please enter the link of social services.', 'epigone'),
-				'setting' => array(
-					'socal_facebook' => array(
-						'label' => __('Facebook URL', 'epigone'),
-						'default' => '',
-						'type' => 'text',
-						'sanitaize_call_back' => '',
-					),
-					'socal_twitter' => array(
-						'label' => __('Twitter URL', 'epigone'),
-						'default' => '',
-						'type' => 'text',
-						'sanitaize_call_back' => '',
-					),
-					'socal_google_plus' => array(
-						'label' => __('Google+ URL', 'epigone'),
-						'default' => '',
-						'type' => 'text',
-						'sanitaize_call_back' => '',
-					),
-				),
-			),
-		),
-	);
+//	$settings['epigone_social'] = array(
+//		'title' => __('Social Settings', 'epigone'), // Panel title
+//		'description' => __('Please have a set of social.', 'epigone'),
+//		'section' => array(
+//			'epigone_social' => array(
+//				'title' => __('Social link', 'epigone'),
+//				'description' => __('Please enter the link of social services.', 'epigone'),
+//				'setting' => array(
+//					'socal_facebook' => array(
+//						'label' => __('Facebook URL', 'epigone'),
+//						'default' => '',
+//						'type' => 'text',
+//						'sanitaize_call_back' => '',
+//					),
+//					'socal_twitter' => array(
+//						'label' => __('Twitter URL', 'epigone'),
+//						'default' => '',
+//						'type' => 'text',
+//						'sanitaize_call_back' => '',
+//					),
+//					'socal_google_plus' => array(
+//						'label' => __('Google+ URL', 'epigone'),
+//						'default' => '',
+//						'type' => 'text',
+//						'sanitaize_call_back' => '',
+//					),
+//				),
+//			),
+//		),
+//	);
 	/**
 	 * 04. Footer
 	 */

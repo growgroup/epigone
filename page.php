@@ -14,10 +14,11 @@ while ( have_posts() ) :
 
 	get_template_part( 'templates/content', 'page' );
 
-	if ( comments_open() || '0' != get_comments_number() ) :
+	if ( "true" == get_theme_mod('single_comment_num', 'true') && ( comments_open() || '0' != get_comments_number() ) ) {
 		comments_template();
 	endif;
 
 endwhile; // end of the loop.
 
 
+ 

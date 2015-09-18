@@ -68,7 +68,9 @@
 		}
 
 		var postListTile = function(){
-			$('.hentry--tilecard').autoHeight({ column: 3});
+			if ( $(window).width() > 768 ) {
+				$('.hentry--tilecard').autoHeight({column: 3, height:'minHeight'});
+			}
 		}
 
 		var self = function(){

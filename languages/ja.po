@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: epigone1.0\n"
-"POT-Creation-Date: 2015-09-09 18:17+0900\n"
-"PO-Revision-Date: 2015-09-09 18:18+0900\n"
+"POT-Creation-Date: 2015-09-09 19:35+0900\n"
+"PO-Revision-Date: 2015-09-09 19:36+0900\n"
 "Last-Translator: ishihara <ishihara@grow-group.jp>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -139,6 +139,10 @@ msgstr "新しい%sを追加"
 msgid "New %s Name"
 msgstr "新しい %s の名称"
 
+#: classes/class-related-post.php:105
+msgid "Related Posts"
+msgstr "関連記事"
+
 #: classes/class-walker-comment.php:22
 msgid "Comments"
 msgstr "コメント"
@@ -269,7 +273,7 @@ msgstr "#%d (no title)"
 msgid "Page %s"
 msgstr "ページ %s"
 
-#: inc/extras.php:106
+#: inc/extras.php:109
 msgid "More"
 msgstr "続きを見る"
 
@@ -307,7 +311,7 @@ msgstr "16×16px のファビコン用の画像ファイルをアップロード
 
 #: inc/modification.php:79
 msgid "Header"
-msgstr "ヘッダー - デザイン設定"
+msgstr "ヘッダー 設定"
 
 #: inc/modification.php:80
 msgid "Please have a set of headers."
@@ -349,27 +353,27 @@ msgstr "文字の大きさ"
 msgid "Color"
 msgstr "配色"
 
-#: inc/modification.php:144 inc/modification.php:728
+#: inc/modification.php:144 inc/modification.php:744
 msgid "Background"
 msgstr "背景"
 
-#: inc/modification.php:147 inc/modification.php:328 inc/modification.php:731
+#: inc/modification.php:147 inc/modification.php:328 inc/modification.php:747
 msgid "Background Image"
 msgstr "背景画像"
 
-#: inc/modification.php:156 inc/modification.php:337 inc/modification.php:740
+#: inc/modification.php:156 inc/modification.php:337 inc/modification.php:756
 msgid "Background Attachment"
 msgstr "背景画像の固定"
 
-#: inc/modification.php:161 inc/modification.php:342 inc/modification.php:745
+#: inc/modification.php:161 inc/modification.php:342 inc/modification.php:761
 msgid "Fixed"
 msgstr "固定"
 
-#: inc/modification.php:162 inc/modification.php:746
+#: inc/modification.php:162 inc/modification.php:762
 msgid "Scroll"
 msgstr "スクロール"
 
-#: inc/modification.php:169 inc/modification.php:319 inc/modification.php:753
+#: inc/modification.php:169 inc/modification.php:319 inc/modification.php:769
 msgid "Background Color"
 msgstr "背景色"
 
@@ -395,7 +399,7 @@ msgstr "横 : 100%, 縦 : 100%"
 
 #: inc/modification.php:266 inc/modification.php:274
 msgid "Theme Color"
-msgstr "テーマカラー - デザイン設定"
+msgstr "テーマカラー 設定"
 
 #: inc/modification.php:270
 msgid "Theme Color "
@@ -407,7 +411,7 @@ msgstr "テーマカラーの設定"
 
 #: inc/modification.php:312
 msgid "Body Settings"
-msgstr "コンテンツ - デザイン設定"
+msgstr "コンテンツデザイン 設定"
 
 #: inc/modification.php:313
 msgid "Please have a set of body."
@@ -495,7 +499,7 @@ msgstr "タイル"
 
 #: inc/modification.php:526
 msgid "Single Post Settings"
-msgstr "投稿記事設定"
+msgstr "投稿記事 表示設定"
 
 #: inc/modification.php:527
 msgid "Please settings for single post."
@@ -507,16 +511,16 @@ msgstr "アイキャッチ画像を自動出力しますか？"
 
 #: inc/modification.php:539 inc/modification.php:568 inc/modification.php:584
 #: inc/modification.php:600 inc/modification.php:616 inc/modification.php:632
-#: inc/modification.php:775
+#: inc/modification.php:648 inc/modification.php:791
 msgid "Yes"
 msgstr "はい"
 
 #: inc/modification.php:540 inc/modification.php:569 inc/modification.php:585
 #: inc/modification.php:601 inc/modification.php:617 inc/modification.php:633
-#: inc/modification.php:776
+#: inc/modification.php:649 inc/modification.php:792
 #: inc/theme-customizer/fields/select/class-taxonomy-dropdown-custom-control.php:30
 msgid "None"
-msgstr "なし"
+msgstr "いいえ"
 
 #: inc/modification.php:546 inc/modification.php:550
 msgid "Except Number of characters"
@@ -558,111 +562,95 @@ msgstr "タグの表示"
 msgid "Do you want to display a tag?"
 msgstr "タグを表示しますか？"
 
+#: inc/modification.php:623
+msgid "Display Comment Number"
+msgstr "コメント数の表示"
+
 #: inc/modification.php:624 inc/modification.php:627
+msgid "Do you want to display the comment number?"
+msgstr "コメント数を表示しますか？"
+
+#: inc/modification.php:639
+msgid "Display Related Post"
+msgstr "関連記事の表示"
+
+#: inc/modification.php:640 inc/modification.php:643
 msgid "Do you want to display the associated article?"
 msgstr "関連記事を表示しますか？"
 
-#: inc/modification.php:645
+#: inc/modification.php:661
 msgid "Layout Settings"
-msgstr "レイアウト設定"
+msgstr "レイアウト 設定"
 
-#: inc/modification.php:646
+#: inc/modification.php:662
 msgid "Please have a set of layout."
 msgstr "レイアウトの設定を行ってください。"
 
-#: inc/modification.php:649
+#: inc/modification.php:665
 msgid "Top Page"
 msgstr "トップページ"
 
-#: inc/modification.php:650 inc/modification.php:662 inc/modification.php:674
+#: inc/modification.php:666 inc/modification.php:678 inc/modification.php:690
 msgid "Please select the layout."
 msgstr "レイアウトを選択してください"
 
-#: inc/modification.php:653
+#: inc/modification.php:669
 msgid "Layout of top page"
 msgstr "トップページのレイアウト"
 
-#: inc/modification.php:661
+#: inc/modification.php:677
 msgid "static page"
 msgstr "固定ページ"
 
-#: inc/modification.php:665
+#: inc/modification.php:681
 msgid "Layout of static page"
 msgstr "固定ページのレイアウト"
 
-#: inc/modification.php:673
+#: inc/modification.php:689
 msgid "single page"
 msgstr "投稿ページ"
 
-#: inc/modification.php:677
+#: inc/modification.php:693
 msgid "Layout of single page"
 msgstr "投稿ページのレイアウト"
 
-#: inc/modification.php:690
-msgid "Social Settings"
-msgstr "ソーシャル"
-
-#: inc/modification.php:691
-msgid "Please have a set of social."
-msgstr "SNSの設定をしてください。"
-
-#: inc/modification.php:694
-msgid "Social link"
-msgstr "SNS のリンク先URL"
-
-#: inc/modification.php:695
-msgid "Please enter the link of social services."
-msgstr "SNS のリンク先URLを入力してください。"
-
-#: inc/modification.php:698
-msgid "Facebook URL"
-msgstr "Facebook URL"
-
-#: inc/modification.php:704
-msgid "Twitter URL"
-msgstr "Twitter URL"
-
-#: inc/modification.php:710
-msgid "Google+ URL"
-msgstr "Google+ URL"
-
-#: inc/modification.php:723
+#: inc/modification.php:739
 msgid "Footer"
-msgstr "フッター"
+msgstr "フッター 設定"
 
-#: inc/modification.php:724
+#: inc/modification.php:740
 msgid "Please have a set of footer."
 msgstr "フッターの設定をしてください。"
 
-#: inc/modification.php:766
+#: inc/modification.php:782
 msgid "Scroll Top"
 msgstr "スクロールトップ"
 
-#: inc/modification.php:767
+#: inc/modification.php:783
 msgid "Setting for Scroll top."
 msgstr "スクロールトップの設定を行って下さい。"
 
-#: inc/modification.php:770
+#: inc/modification.php:786
 msgid "Display"
 msgstr "表示"
 
-#: inc/modification.php:780
+#: inc/modification.php:796
 msgid "Page Top Background"
 msgstr "スクロールトップの背景色"
 
-#: inc/modification.php:792
+#: inc/modification.php:808
 msgid "Copyright"
 msgstr "コピーライト"
 
-#: inc/modification.php:793
+#: inc/modification.php:809
 msgid "Setting for Copyright."
 msgstr "コピーライト文の設定"
 
-#: inc/modification.php:796
+#: inc/modification.php:812
 msgid "Copyright text"
 msgstr "コピーライト文"
 
-#: inc/modification.php:802
+#: inc/modification.php:818
 msgid "Copyright Background"
 msgstr "コピーライトの背景"
 
@@ -804,7 +792,7 @@ msgstr "検索"
 
 #: modules/searchform.php:19
 msgid "Submit"
-msgstr "送信"
+msgstr "検索"
 
 #: modules/sidebar.php:20
 msgid "Archives"
@@ -814,7 +802,7 @@ msgstr "アーカイブ"
 msgid "Meta"
 msgstr "メタ"
 
-#: search.php:17
+#: search.php:18
 #, php-format
 msgid "Search Results for&#x3A; %s"
 msgstr "%sの検索結果 &#x3A;"
@@ -848,22 +836,49 @@ msgstr ""
 "別の単語でお探し下さい。"
 
 #: templates/content-page.php:23 templates/content-single.php:36
-#: templates/content-tile.php:45 templates/content.php:45
-#: templates/template-one-column.php:28
+#: templates/content.php:45 templates/template-one-column.php:28
 msgid "Pages:"
 msgstr "ページ : "
 
 #: templates/content-page.php:30 templates/content-single.php:79
-#: templates/content-tile.php:88 templates/content.php:88
+#: templates/content-tile.php:84 templates/content.php:88
 #: templates/template-one-column.php:35
 msgid "Edit"
 msgstr "編集"
 
+#: templates/content-related-post.php:47 templates/content-related-post.php:60
 #: templates/content-single.php:48 templates/content-single.php:51
-#: templates/content-tile.php:60 templates/content-tile.php:73
+#: templates/content-tile.php:51 templates/content-tile.php:64
 #: templates/content.php:60 templates/content.php:73
 msgid ", "
 msgstr ","
+
+#: templates/content-related-post.php:51 templates/content-tile.php:55
+#: templates/content.php:64
+#, php-format
+msgid "Posted in %1$s"
+msgstr "%1$s への投稿"
+
+#: templates/content-related-post.php:64 templates/content-tile.php:68
+#: templates/content.php:77
+#, php-format
+msgid "Tagged %1$s"
+msgstr "タグ : %1$s"
+
+#: templates/content-related-post.php:73 templates/content-tile.php:81
+#: templates/content.php:85
+msgid "Leave a comment"
+msgstr "コメントを残す"
+
+#: templates/content-related-post.php:73 templates/content-tile.php:81
+#: templates/content.php:85
+msgid "1 Comment"
+msgstr "1つのコメント"
+
+#: templates/content-related-post.php:73 templates/content-tile.php:81
+#: templates/content.php:85
+msgid "% Comments"
+msgstr "% コメント"
 
 #: templates/content-single.php:56
 #, php-format
@@ -897,31 +912,9 @@ msgstr ""
 "この投稿は %1$sに投稿されました。ブックマークは <a href=\"%3$s\" rel="
 "\"bookmark\">こちら</a>から。"
 
-#: templates/content-tile.php:41 templates/content.php:41
+#: templates/content.php:41
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr "続きを読む <span class=\"meta-nav\">&rarr;</span>"
-
-#: templates/content-tile.php:64 templates/content.php:64
-#, php-format
-msgid "Posted in %1$s"
-msgstr "%1$s への投稿"
-
-#: templates/content-tile.php:77 templates/content.php:77
-#, php-format
-msgid "Tagged %1$s"
-msgstr "タグ : %1$s"
-
-#: templates/content-tile.php:85 templates/content.php:85
-msgid "Leave a comment"
-msgstr "コメントを残す"
-
-#: templates/content-tile.php:85 templates/content.php:85
-msgid "1 Comment"
-msgstr "1つのコメント"
-
-#: templates/content-tile.php:85 templates/content.php:85
-msgid "% Comments"
-msgstr "% コメント"
 
 #: vendor/tgmpa/tgm-plugin-activation/class-tgm-plugin-activation.php:333
 msgid "Install Required Plugins"
@@ -1219,6 +1212,27 @@ msgstr "<script>"
 #: bower_components/foundation/js/vendor/jquery.js:27
 msgid "<div>"
 msgstr "<div>"
+
+#~ msgid "Social Settings"
+#~ msgstr "ソーシャル"
+
+#~ msgid "Please have a set of social."
+#~ msgstr "SNSの設定をしてください。"
+
+#~ msgid "Social link"
+#~ msgstr "SNS のリンク先URL"
+
+#~ msgid "Please enter the link of social services."
+#~ msgstr "SNS のリンク先URLを入力してください。"
+
+#~ msgid "Facebook URL"
+#~ msgstr "Facebook URL"
+
+#~ msgid "Twitter URL"
+#~ msgstr "Twitter URL"
+
+#~ msgid "Google+ URL"
+#~ msgstr "Google+ URL"
 
 #~ msgid "Top Page Contents"
 #~ msgstr "トップページ コンテンツ"

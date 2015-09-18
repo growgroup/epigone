@@ -69,7 +69,7 @@
 
 		var postListTile = function(){
 			if ( $(window).width() > 768 ) {
-				$('.hentry--tilecard').autoHeight({column: 3,height:'height'});
+				$('.hentry--tilecard').autoHeight({column: 3, height:'minHeight'});
 			}
 		}
 
@@ -78,6 +78,8 @@
 			$(document).foundation();
 			postListTile();
 		};
+
+
 
 		return self;
 
