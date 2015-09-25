@@ -43,5 +43,6 @@ bower_components
 assets/components
 .map
 dist
+.idea
 
 /vendor/
