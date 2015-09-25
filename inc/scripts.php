@@ -18,8 +18,6 @@ function epigone_scripts() {
 	 */
 	wp_enqueue_style( 'epigone_main', get_stylesheet_directory_uri() . '/assets/css/main.min.css', false, null );
 
-
-
 	/**
 	 * テーマのメインjsファイル
 	 * @since 1.0.0
@@ -50,7 +48,7 @@ function epigone_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	wp_enqueue_script( 'jquery' );
+	wp_deregister_script( 'jquery' );
 
 	wp_enqueue_script( 'epigone_plugins' );
 	wp_enqueue_script( 'epigone_scripts' );
@@ -90,3 +88,4 @@ function epigone_clean_style_tag( $input ) {
 	$media = $matches[3][0] !== '' && $matches[3][0] !== 'all' ? ' media="' . $matches[3][0] . '"' : '';
 	return '<link rel="stylesheet" href="' . $matches[2][0] . '"' . $media . '>' . "\n";
 }
+add_filter( 'style_loader_tag', 'epigone_clean_style_tag' );

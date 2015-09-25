@@ -1,6 +1,6 @@
 <?php
 /**
- * Output file theme customizer.
+ * テーマカスタマイザーの設定
  * =====================================================
  * @package  epigone
  * @license  GPLv2 or later
@@ -9,17 +9,16 @@
  */
 
 
-add_filter('style_loader_tag', 'epigone_clean_style_tag');
+
 
 /**
  * テーマカスタマイザーを拡張
  * @since 1.2.0
  */
 
-function epigone_customizer_settings()
-{
+function epigone_customizer_settings(){
 	/**
-	 * 0. General
+	 * 0. 基本的な設定
 	 */
 	$settings['epigone_general'] = array(
 		'title' => __('General', 'epigone'), // Panel title
@@ -73,7 +72,7 @@ function epigone_customizer_settings()
 		),
 	);
 	/**
-	 * 01. Header
+	 * 01. ヘッダーの設定
 	 */
 	$settings['epigone_header'] = array(
 		'title' => __('Header', 'epigone'), // Panel title
@@ -191,76 +190,11 @@ function epigone_customizer_settings()
 					),
 				),
 			),
-			// navigation section
-//				'epigone_navigation_color' => array(
-//					'title' => __( 'Navigation Color ', 'epigone' ),
-//					'description' => __( 'Setting for Theme color.', 'epigone' ),
-//					'setting' => array(
-//						'nav_background_color' => array(
-//							'label' => __( 'Normal Background', 'epigone' ),
-//							'default' => '#3695b5',
-//							'type' => 'color',
-//							'sanitaize_call_back' => '',
-//							'output' => array(
-//								'.navbar-collapse>ul>li>a'                   => 'background-color',
-//								'.navbar-collapse>ul>li .dropdown-menu>li>a' => 'background-color',
-//							),
-//						),
-//						'nav_background_hover_color' => array(
-//							'label' => __( 'Hover Background', 'epigone' ),
-//							'default' => '#3695b5',
-//							'type' => 'color',
-//							'sanitaize_call_back' => '',
-//							'output' => array(
-//								'.navbar-collapse>ul>li>a:hover'                   => 'background-color',
-//								'.navbar-collapse>ul>li .dropdown-menu>li>a:hover'                   => 'color',
-//							),
-//						),
-//						'nav_background_active_color' => array(
-//							'label' => __( 'Active Background', 'epigone' ),
-//							'default' => '#3695b5',
-//							'type' => 'color',
-//							'sanitaize_call_back' => '',
-//							'output' => array(
-//								'.navbar-collapse>ul>li>a:active,.navbar-collapse>ul>li.current-menu-item a'                   => 'background-color',
-//							),
-//						),
-//						'nav_font_size' => array(
-//							'label' => __( 'Navigation Font Size', 'epigone' ),
-//							'default' => '1.0',
-//							'type' => 'select',
-//							'sanitaize_call_back' => '',
-//							'choices' => array(
-//								'0.7' => '0.7 em',
-//								'0.8' => '0.8 em',
-//								'0.9' => '0.9 em',
-//								'1.0' => '1.0 em',
-//								'1.1' => '1.1 em',
-//								'1.2' => '1.2 em',
-//								'1.3' => '1.3 em',
-//								'1.4' => '1.4 em',
-//								'1.5' => '1.5 em',
-//								'1.6' => '1.6 em',
-//								'1.7' => '1.7 em',
-//								'1.8' => '1.8 em',
-//								'1.9' => '1.9 em',
-//								'2.0' => '2.1 em',
-//							),
-//							'output' => array(
-//								'.navbar-collapse ul li a ' => 'font-size',
-//								'.navbar-collapse ul li a' => 'line-height',
-//								'.navbar-collapse ul.dropdown-menu a' => 'font-size',
-//								'.navbar-collapse ul.dropdown-menu a ' => 'line-height',
-//							),
-//							'output_unit' => 'em',
-//						),
-//					),
-//				),
 		)
 	);
 
 	/**
-	 * 02. Theme Color
+	 * 02. テーマカラー
 	 */
 	$settings['epigone_theme_color'] = array(
 		'title' => __('Theme Color', 'epigone'), // Panel title
@@ -306,7 +240,7 @@ function epigone_customizer_settings()
 	);
 
 	/**
-	 * 03. body
+	 * 03. ボディ設定
 	 */
 	$settings['epigone_body'] = array(
 		'title' => __('Body Settings', 'epigone'), // Panel title
@@ -699,39 +633,7 @@ function epigone_customizer_settings()
 			),
 		)
 	);
-	/**
-	 * 03. Social
-	 */
-//	$settings['epigone_social'] = array(
-//		'title' => __('Social Settings', 'epigone'), // Panel title
-//		'description' => __('Please have a set of social.', 'epigone'),
-//		'section' => array(
-//			'epigone_social' => array(
-//				'title' => __('Social link', 'epigone'),
-//				'description' => __('Please enter the link of social services.', 'epigone'),
-//				'setting' => array(
-//					'socal_facebook' => array(
-//						'label' => __('Facebook URL', 'epigone'),
-//						'default' => '',
-//						'type' => 'text',
-//						'sanitaize_call_back' => '',
-//					),
-//					'socal_twitter' => array(
-//						'label' => __('Twitter URL', 'epigone'),
-//						'default' => '',
-//						'type' => 'text',
-//						'sanitaize_call_back' => '',
-//					),
-//					'socal_google_plus' => array(
-//						'label' => __('Google+ URL', 'epigone'),
-//						'default' => '',
-//						'type' => 'text',
-//						'sanitaize_call_back' => '',
-//					),
-//				),
-//			),
-//		),
-//	);
+
 	/**
 	 * 04. Footer
 	 */
@@ -896,8 +798,7 @@ add_action('wp_head', 'epigone_meta_tag', 10);
  * @since 1.2.0
  */
 
-function epigone_favicon()
-{
+function epigone_favicon(){
 
 	$favicon_tag = '';
 	$favicon = get_theme_mod('meta_favicon', false);
@@ -911,7 +812,7 @@ function epigone_favicon()
 
 }
 
-add_action('wp_head', 'epigone_favicon', 10);
+add_action( 'wp_head', 'epigone_favicon', 10 );
 
 
 /**
@@ -919,11 +820,10 @@ add_action('wp_head', 'epigone_favicon', 10);
  * @param $length
  * @return string
  */
-function epigone_excerpt_length( $length )
-{
-	$thememod = get_theme_mod('single_char_num', $length);
+function epigone_excerpt_length( $length ){
+	$thememod = get_theme_mod( 'single_char_num', $length );
 
 	return $thememod;
 }
 
-add_filter('excerpt_length', 'epigone_excerpt_length', 999);
+add_filter( 'excerpt_length', 'epigone_excerpt_length', 999 );
