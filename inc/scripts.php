@@ -18,17 +18,19 @@ function epigone_scripts() {
 	 */
 	wp_enqueue_style( 'epigone_main', get_stylesheet_directory_uri() . '/assets/css/main.min.css', false, null );
 
-	/**
-	 * jQueryプラグイン等のjsファイル
-	 * @since 1.0.0
-	 */
-	wp_register_script( 'epigone_plugins', get_template_directory_uri() . '/assets/js/foundation.min.js', array(), null, true );
+
 
 	/**
 	 * テーマのメインjsファイル
 	 * @since 1.0.0
 	 */
 	wp_register_script( 'epigone_scripts', get_stylesheet_directory_uri() . '/assets/js/scripts.min.js', array(), null, true );
+
+	/**
+	 * jQueryプラグイン等のjsファイル
+	 * @since 1.0.0
+	 */
+	wp_register_script( 'epigone_plugins', get_template_directory_uri() . '/assets/js/plugins.min.js', array(), null, true );
 
 	/**
 	 * WordPressのjQueryを使用せず、

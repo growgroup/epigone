@@ -3,21 +3,18 @@
     based generally on Harry Roberts excellent CSS Guidelines https://github.com/csswizardry/CSS-Guidelines
 \*------------------------------------*/
 /**
- * VARIABLES..............................Declarations of Sass variables
- * .....Colors
- * .....Typography
- * .....Layout
- * .....Defaults
- * .....Breakpoints
- * MIXINS.................................Sass mixins
- * NORMALIZE..................................Set normalize styles
- * GLOBAL CLASSES.........................Set global styles
- * ANIMATION........................ For Animate.css
- * TYPOGRAPHY------------------------------
- * MEDIA------------------------------
- * LAYOUT------------------------------
- * NAVIGATION------------------------------
- * WORDPRESS.............................Set Default WordPress styles.
+ * # 階層について
+ * generic/.............変数の定義、基本的なスタイル
+ * element/.............HTMLエレメントに対するスタイル
+ * structure/...........ヘッダー、フッターなどの基本構造に関するスタイル
+ * components/..........サイト内で利用するコンポーネント単位のスタイル
+ * pages/...............ページ毎に対応する必要がある場合のスタイル。できるだけ利用しないように心がけること.
+ *
+ * # 依存関係について
+ * (Foundation v5.5.2)[http://foundation.zurb.com/]..............CSSフレームワーク
+ * (FontAwesome)[https://fortawesome.github.io/Font-Awesome/]....アイコンフォント
+ * (Slidebars)[https://github.com/adchsm/Slidebars]..............レスポンシブナビゲーション
+ *
  */
 @font-face {
   font-family: 'Noto Sans Japanese';
@@ -3012,8 +3009,8 @@ select {
   .breadcrumbs > * {
     color: #008CBA;
     float: left;
-    font-size: 0.42857rem;
-    line-height: 0.42857rem;
+    font-size: 0.78571rem;
+    line-height: 0.78571rem;
     margin: 0;
     text-transform: uppercase; }
     .breadcrumbs > *:hover a, .breadcrumbs > *:focus a {
@@ -10621,8 +10618,6 @@ Copyright (c) 2015 Daniel Eden
 \*------------------------------------*/
 /*------------------------------------*		$BUTTONS
 \*------------------------------------*/
-/*------------------------------------*  $LIST
-\*------------------------------------*/
 .entry-title {
   line-height: 1.525em;
   font-size: 1.64286rem; }
@@ -10633,6 +10628,8 @@ Copyright (c) 2015 Daniel Eden
   font-size: 1.28571rem;
   line-height: 1.4em; }
 
+/*------------------------------------*  $LIST
+\*------------------------------------*/
 /*------------------------------------*    $テーブル
 \*------------------------------------*/
 table {
@@ -10652,143 +10649,6 @@ td {
 /*------------------------------------*    $TEXT
 \*------------------------------------*/
 /*------------------------------------*    $STRUCTURE
-\*------------------------------------*/
-/*------------------------------------*		$LAYOUT
-\*------------------------------------*/
-body {
-  -webkit-font-smoothing: antialiased; }
-
-/* Layout Container */
-/*------------------------------------*		$TEMPLATES
-\*------------------------------------*/
-.wrapper {
-  margin-top: 2.5em; }
-  .wrapper .l-main {
-    padding-left: 0.71429rem;
-    padding-right: 0.71429rem;
-    width: 68.25%;
-    float: left; }
-    @media (max-width: 768px) {
-      .wrapper .l-main {
-        padding-left: 0.71429rem;
-        padding-right: 0.71429rem;
-        width: 100%;
-        float: left; } }
-  .wrapper .l-sidebar {
-    padding-left: 0.71429rem;
-    padding-right: 0.71429rem;
-    width: 31.75%;
-    float: left; }
-    @media (max-width: 768px) {
-      .wrapper .l-sidebar {
-        padding-left: 0.71429rem;
-        padding-right: 0.71429rem;
-        width: 100%;
-        float: left; } }
-
-/* Two Column Layout */
-.l-right-sidebar .l-main {
-  float: left; }
-
-.l-right-sidebar .l-sidebar {
-  float: right; }
-
-.l-left-sidebar .l-main {
-  float: right; }
-
-.l-left-sidebar .l-sidebar {
-  float: left; }
-
-.l-full .l-main {
-  width: 100%; }
-
-.l-full .l-sidebar {
-  display: none; }
-
-.nav-links {
-  display: inline-block;
-  margin-top: 1em; }
-  .nav-links .page-numbers {
-    display: block;
-    margin-left: -0.35714rem;
-    min-height: 1.71429rem; }
-    .nav-links .page-numbers li {
-      color: #222222;
-      font-size: 1rem;
-      height: 1.71429rem;
-      margin-left: 0.35714rem; }
-      .nav-links .page-numbers li a, .nav-links .page-numbers li button {
-        border-radius: 3px;
-        transition: background-color 300ms ease-out;
-        background: none;
-        color: #999999;
-        display: block;
-        font-size: 1em;
-        font-weight: normal;
-        line-height: inherit;
-        padding: 0.07143rem 0.71429rem 0.07143rem; }
-      .nav-links .page-numbers li:hover a,
-      .nav-links .page-numbers li a:focus,
-      .nav-links .page-numbers li:hover button,
-      .nav-links .page-numbers li
-button:focus {
-        background: #e6e6e6; }
-      .nav-links .page-numbers li.unavailable a, .nav-links .page-numbers li.unavailable button {
-        cursor: default;
-        color: #999999; }
-      .nav-links .page-numbers li.unavailable:hover a,
-      .nav-links .page-numbers li.unavailable a:focus,
-      .nav-links .page-numbers li.unavailable:hover button,
-      .nav-links .page-numbers li.unavailable button:focus {
-        background: transparent; }
-      .nav-links .page-numbers li.current a, .nav-links .page-numbers li.current button {
-        background: #008CBA;
-        color: #FFFFFF;
-        cursor: default;
-        font-weight: bold; }
-        .nav-links .page-numbers li.current a:hover,
-        .nav-links .page-numbers li.current a:focus, .nav-links .page-numbers li.current button:hover,
-        .nav-links .page-numbers li.current button:focus {
-          background: #008CBA; }
-    .nav-links .page-numbers li {
-      display: block;
-      float: left; }
-    .nav-links .page-numbers .current {
-      color: #fff; }
-      .nav-links .page-numbers .current a, .nav-links .page-numbers .current button {
-        background: #008CBA;
-        color: #FFFFFF;
-        cursor: default;
-        font-weight: bold; }
-        .nav-links .page-numbers .current a:hover,
-        .nav-links .page-numbers .current a:focus, .nav-links .page-numbers .current button:hover,
-        .nav-links .page-numbers .current button:focus {
-          background: #008CBA; }
-    .nav-links .page-numbers span {
-      border-radius: 3px;
-      transition: background-color 300ms ease-out;
-      background: none;
-      color: #999999;
-      display: block;
-      font-size: 1em;
-      font-weight: normal;
-      line-height: inherit;
-      padding: 0.05556rem 0.55556rem 0.05556rem; }
-
-/*------------------------------------*		$HEADER
-\*------------------------------------*/
-.header {
-  padding-top: 2em;
-  padding-bottom: 2em;
-  margin-bottom: 0em;
-  border-bottom: 1px solid #f1f1f1; }
-  .header__description {
-    text-align: left;
-    margin-bottom: 2.6em;
-    font-size: 0.92857rem;
-    color: #ccc; }
-
-/*------------------------------------*    $MAIN CONTENT AREA
 \*------------------------------------*/
 /*------------------------------------*    $ASIDE
 \*------------------------------------*/
@@ -10935,6 +10795,143 @@ button:focus {
   border-bottom: 1px solid #E8E8E8;
   padding-bottom: 0.6em; }
 
+/*------------------------------------*		$HEADER
+\*------------------------------------*/
+.header {
+  padding-top: 2em;
+  padding-bottom: 2em;
+  margin-bottom: 0em;
+  border-bottom: 1px solid #f1f1f1; }
+  .header__description {
+    text-align: left;
+    margin-bottom: 2.6em;
+    font-size: 0.92857rem;
+    color: #ccc; }
+
+/*------------------------------------*		$LAYOUT
+\*------------------------------------*/
+body {
+  -webkit-font-smoothing: antialiased; }
+
+/* Layout Container */
+/*------------------------------------*		$TEMPLATES
+\*------------------------------------*/
+.wrapper {
+  margin-top: 2.5em; }
+  .wrapper .l-main {
+    padding-left: 0.71429rem;
+    padding-right: 0.71429rem;
+    width: 68.25%;
+    float: left; }
+    @media (max-width: 768px) {
+      .wrapper .l-main {
+        padding-left: 0.71429rem;
+        padding-right: 0.71429rem;
+        width: 100%;
+        float: left; } }
+  .wrapper .l-sidebar {
+    padding-left: 0.71429rem;
+    padding-right: 0.71429rem;
+    width: 31.75%;
+    float: left; }
+    @media (max-width: 768px) {
+      .wrapper .l-sidebar {
+        padding-left: 0.71429rem;
+        padding-right: 0.71429rem;
+        width: 100%;
+        float: left; } }
+
+/* Two Column Layout */
+.l-right-sidebar .l-main {
+  float: left; }
+
+.l-right-sidebar .l-sidebar {
+  float: right; }
+
+.l-left-sidebar .l-main {
+  float: right; }
+
+.l-left-sidebar .l-sidebar {
+  float: left; }
+
+.l-full .l-main {
+  width: 100%; }
+
+.l-full .l-sidebar {
+  display: none; }
+
+.nav-links {
+  display: inline-block;
+  margin-top: 1em; }
+  .nav-links .page-numbers {
+    display: block;
+    margin-left: -0.35714rem;
+    min-height: 1.71429rem; }
+    .nav-links .page-numbers li {
+      color: #222222;
+      font-size: 1rem;
+      height: 1.71429rem;
+      margin-left: 0.35714rem; }
+      .nav-links .page-numbers li a, .nav-links .page-numbers li button {
+        border-radius: 3px;
+        transition: background-color 300ms ease-out;
+        background: none;
+        color: #999999;
+        display: block;
+        font-size: 1em;
+        font-weight: normal;
+        line-height: inherit;
+        padding: 0.07143rem 0.71429rem 0.07143rem; }
+      .nav-links .page-numbers li:hover a,
+      .nav-links .page-numbers li a:focus,
+      .nav-links .page-numbers li:hover button,
+      .nav-links .page-numbers li
+button:focus {
+        background: #e6e6e6; }
+      .nav-links .page-numbers li.unavailable a, .nav-links .page-numbers li.unavailable button {
+        cursor: default;
+        color: #999999; }
+      .nav-links .page-numbers li.unavailable:hover a,
+      .nav-links .page-numbers li.unavailable a:focus,
+      .nav-links .page-numbers li.unavailable:hover button,
+      .nav-links .page-numbers li.unavailable button:focus {
+        background: transparent; }
+      .nav-links .page-numbers li.current a, .nav-links .page-numbers li.current button {
+        background: #008CBA;
+        color: #FFFFFF;
+        cursor: default;
+        font-weight: bold; }
+        .nav-links .page-numbers li.current a:hover,
+        .nav-links .page-numbers li.current a:focus, .nav-links .page-numbers li.current button:hover,
+        .nav-links .page-numbers li.current button:focus {
+          background: #008CBA; }
+    .nav-links .page-numbers li {
+      display: block;
+      float: left; }
+    .nav-links .page-numbers .current {
+      color: #fff; }
+      .nav-links .page-numbers .current a, .nav-links .page-numbers .current button {
+        background: #008CBA;
+        color: #FFFFFF;
+        cursor: default;
+        font-weight: bold; }
+        .nav-links .page-numbers .current a:hover,
+        .nav-links .page-numbers .current a:focus, .nav-links .page-numbers .current button:hover,
+        .nav-links .page-numbers .current button:focus {
+          background: #008CBA; }
+    .nav-links .page-numbers span {
+      border-radius: 3px;
+      transition: background-color 300ms ease-out;
+      background: none;
+      color: #999999;
+      display: block;
+      font-size: 1em;
+      font-weight: normal;
+      line-height: inherit;
+      padding: 0.05556rem 0.55556rem 0.05556rem; }
+
+/*------------------------------------*    $MAIN CONTENT AREA
+\*------------------------------------*/
 /*------------------------------------*    $COMPONENTS
 \*------------------------------------*/
 /*------------------------------------*    $ARTICLE
@@ -10955,8 +10952,6 @@ button:focus {
     border: 1px solid #e8e8e8;
     padding: 0.6em 1em 0em;
     margin-bottom: 1em; }
-  .hentry__thumbnail {
-    margin-right: 1em; }
   .hentry--tilecard {
     border: 1px solid #e8e8e8;
     vertical-align: top;
@@ -10979,6 +10974,8 @@ button:focus {
       font-size: 16px; }
     .hentry--tilecard .hentry__summary p {
       font-size: 12px; }
+  .hentry__thumbnail {
+    margin-right: 1em; }
   .hentry__title {
     font-size: 1.28571rem;
     line-height: 1.725em;
@@ -11014,15 +11011,6 @@ button:focus {
 .page-header__title {
   margin-bottom: 2em;
   margin-top: 2em; }
-
-.breadcrumbs {
-  text-align: center;
-  margin-bottom: 0;
-  border-color: #e8e8e8; }
-  .breadcrumbs > * {
-    display: inline-block;
-    float: none;
-    font-size: 1rem; }
 
 .entry__title {
   font-size: 1.57143rem;
@@ -11083,32 +11071,6 @@ button:focus {
     font-size: 0.85714rem;
     color: #ccc; }
 
-.breadcrumbs > * {
-  line-height: 1.7em; }
-
-.upw-posts .format-standard {
-  padding-left: 0.71429rem;
-  padding-right: 0.71429rem;
-  width: 25%;
-  float: left;
-  font-size: 14px;
-  padding-top: 1.6em;
-  min-height: 300px; }
-  .upw-posts .format-standard .entry-title {
-    font-size: 16px; }
-  .upw-posts .format-standard .vcard {
-    font-size: 14px;
-    border: none;
-    padding: 0;
-    margin: 0; }
-    .upw-posts .format-standard .vcard a {
-      font-size: 14px; }
-  .upw-posts .format-standard .entry-summary {
-    max-height: 100px;
-    overflow: hidden; }
-    .upw-posts .format-standard .entry-summary p {
-      font-size: 12px; }
-
 .entry__content h1 {
   border-bottom: 2px solid #e8e8e8;
   padding-bottom: 0.3em; }
@@ -11134,6 +11096,29 @@ button:focus {
     color: #fff; }
     .edit-link a:hover, .edit-link a:focus, .edit-link a:active {
       color: #fff; }
+
+.upw-posts .format-standard {
+  padding-left: 0.71429rem;
+  padding-right: 0.71429rem;
+  width: 25%;
+  float: left;
+  font-size: 14px;
+  padding-top: 1.6em;
+  min-height: 300px; }
+  .upw-posts .format-standard .entry-title {
+    font-size: 16px; }
+  .upw-posts .format-standard .vcard {
+    font-size: 14px;
+    border: none;
+    padding: 0;
+    margin: 0; }
+    .upw-posts .format-standard .vcard a {
+      font-size: 14px; }
+  .upw-posts .format-standard .entry-summary {
+    max-height: 100px;
+    overflow: hidden; }
+    .upw-posts .format-standard .entry-summary p {
+      font-size: 12px; }
 
 /*------------------------------------*		$BLOCK
 \*------------------------------------*/
@@ -11282,14 +11267,15 @@ button:focus {
 .post-navigation .nav-links {
   display: block; }
 
-.breadcrumbs > * {
-  font-size: 0.8rem; }
-
-/*------------------------------------*    $SECTION
-\*------------------------------------*/
-.main-visual .widget {
-  margin-top: 1em;
-  margin-bottom: 1em; }
+.breadcrumbs {
+  text-align: center;
+  margin-bottom: 0;
+  border-color: #e8e8e8; }
+  .breadcrumbs > * {
+    line-height: 1.7em;
+    font-size: 0.8rem;
+    display: inline-block;
+    float: none; }
 
 .relatedpost {
   margin-top: 2em;
@@ -11305,8 +11291,38 @@ button:focus {
   .relatedpost__item__footer {
     font-size: 0.6em; }
 
+/*------------------------------------*    $SECTION
+\*------------------------------------*/
+.main-visual .widget {
+  margin-top: 1em;
+  margin-bottom: 1em; }
+
 /*------------------------------------*    $TAB
 \*------------------------------------*/
+@font-face {
+  font-family: 'Noto Sans Japanese';
+  font-style: normal;
+  font-weight: 100;
+  src: url("../fonts/NotoSansCJKjp-Light.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Noto Sans Japanese';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/NotoSansCJKjp-Regular.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Noto Sans Japanese';
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/NotoSansCJKjp-Medium.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Noto Sans Japanese';
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/NotoSansCJKjp-Bold.woff") format("woff"); }
+
 /*
  * WordPress Core
  * http://codex.wordpress.org/CSS

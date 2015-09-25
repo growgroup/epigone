@@ -1,83 +1,64 @@
 epigone
 ===
-A simple WordPress boilerplate theme.
+シンプルな WordPress テーマ。
 
+迅速にコーディングを進めるために開発しています。
 
 ![](https://raw.githubusercontent.com/1shiharaT/epigone/master/screenshot.png)
 
-
-# Featured
+# 特徴
 
 * [Gulp](http://gulpjs.com/)
 * [Bower](http://bower.io/)
 * [BrowserSync](http://www.browsersync.io/)
-* [Bourbon](http://bourbon.io/)
-* [neat](http://neat.bourbon.io/)
+* [Foundation](http://foundation.zurb.com/)
+* [FontAwesome](http://font-awesome/)
 
-# Require
+# 必要なライブラリ
 
-* node.js
-* npm >= 1.4.3
-* Sass >= 3.2.19
+* node.js >= v0.12.4
+* npm >= 2.0
 
-# Getting Started
+# 地道な開発方法
 
-### 1. Install
+### 1. インストール
 
-Go to the theme directory and type this command.
+WordPress のテーマディレクトリにコマンドライン、もしくは Git クライアントソフトウェアから git clone
+してください。
 
+    $ cd wp-content/themes/
 	$ git clone https://github.com/1shiharaT/epigone.git epigone
 
-or [download](https://github.com/1shiharaT/epigone/archive/master.zip) it and then rename the directory to the name of your theme or website.
+もしくは、[ここ](https://github.com/1shiharaT/epigone/archive/master.zip)からダウンロード後、
+解凍したディレクトリをテーマディレクトリに設置してください。
 
-### 2. npm install
+### 2. 依存パッケージのインストール
 
-Navigate to the theme directory & then run from the command line:
+テーマディレクトリに移動し、依存しているパッケージをインストールします。
 
-	$ npm install
+    $ cd wp-content/themes/epigone/
+	$ npm run-script setup
 
-### 3. bower package install
+上記のコマンドで、npm install, bower install, gulp build の3つのコマンドが走ります。
+多少時間がかかりますが、我慢してください。
 
-you need to install the package using the bower.
+### 3. Gulp の設定
 
-	$ bower install
+BrowserSyncの proxy_url を指定します。
 
-* [RESPONSIVE NAV](http://responsive-nav.com/)
-* [Font Awesome](http://fortawesome.github.io/Font-Awesome/)
+gulp/config.js をテキストエディタで開き、URLを変更してください。
 
-### 4. Setting gulpfile.js
+    // ここにURLを入力
+    var url = "http://example.com";
 
-1.change BrowserSync settings.
-
-	// browser sync
-	gulp.task('browserSync', function() {
-		browserSync.init(null, {
-			notify: true,
-			proxy: {
-				host: "your-domain.dev", // replace
-				// port: 3333
-			},
-			ghostMode: {
-				clicks: true,
-				location: true,
-				forms: true,
-				scroll: false
-			}
-		});
-	});
-
-2.1 line added to wp-config.php
-
-	define( 'BROWSERSYNC_MODE', true );
-
-
-3.Starting the Gulp.
+watch タスクを実行するには、次のコマンドを実行してください。自動的にブラウザが立ち上がり、Sass, JavaScript の監視を開始します。
 
 	$ gulp watch
 
-## Use your projects
+## 独自テーマの開発
 
-If you want to use in your project :
+Yeoman の Generator を別途開発しています。
+
 [generator-epigone](https://github.com/1shiharaT/generator-epigone)
 
 

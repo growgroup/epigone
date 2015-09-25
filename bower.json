@@ -16,9 +16,9 @@
     "jquery": "~2.1.0"
   },
   "devDependencies": {
+    "Slidebars": "slidebars#~0.10.3",
     "font-awesome": "~4.2.0",
-    "modernizer": "~2.8.2",
-    "bootstrap-sass": "~3.3.5",
-    "foundation": "~5.5.2"
+    "foundation": "~5.5.2",
+    "modernizer": "~2.8.2"
   }
 }

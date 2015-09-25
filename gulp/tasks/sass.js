@@ -1,6 +1,7 @@
 import gulp from 'gulp';
 import gulpLoadPlugin from 'gulp-load-plugins';
 import sourcemaps from 'gulp-sourcemaps';
+import globbing from 'gulp-css-globbing';
 import browserSync from 'browser-sync';
 import globalConfig from '../config.js';
 
@@ -12,12 +13,16 @@ gulp.task('sass', function () {
 	return gulp.src(config.src)
 		.pipe($.plumber())
 
+		.pipe(globbing({
+			extensions: ['.scss']
+		}))
 		.pipe($.sass.sync(config.options))
 		.pipe(gulp.dest(config.dest))
 
 		.pipe($.rename({
 			suffix: '.min'
 		}))
+
 		.pipe($.minifyCss({
 			keepBreaks: false,
 			advanced: true,

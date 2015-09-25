@@ -11,11 +11,11 @@ gulp.task('watch', ['browserSync'], function () {
 	gulp.watch( src.sass, ['sass','bs-reload']);
 
 	// jsファイルの監視
-	gulp.watch( src.js, ['js','bs-reload']);
+	gulp.watch( src.js, ['scripts','bs-reload']);
+
+	gulp.watch( src.plugins, ['plugins','bs-reload']);
 
 	// 画像ファイルの監視
 	gulp.watch( src.images, ['bs-reload']);
-
-	gulp.watch( globalConfig.bowerConfigPath, ['wiredep']);
 
 });

@@ -3,24 +3,19 @@
     based generally on Harry Roberts excellent CSS Guidelines https://github.com/csswizardry/CSS-Guidelines
 \*------------------------------------*/
 /**
- * VARIABLES..............................Declarations of Sass variables
- * .....Colors
- * .....Typography
- * .....Layout
- * .....Defaults
- * .....Breakpoints
- * MIXINS.................................Sass mixins
- * NORMALIZE..................................Set normalize styles
- * GLOBAL CLASSES.........................Set global styles
- * ANIMATION........................ For Animate.css
- * TYPOGRAPHY------------------------------
- * MEDIA------------------------------
- * LAYOUT------------------------------
- * NAVIGATION------------------------------
- * WORDPRESS.............................Set Default WordPress styles.
+ * # 階層について
+ * generic/.............変数の定義、基本的なスタイル
+ * element/.............HTMLエレメントに対するスタイル
+ * structure/...........ヘッダー、フッターなどの基本構造に関するスタイル
+ * components/..........サイト内で利用するコンポーネント単位のスタイル
+ * pages/...............ページ毎に対応する必要がある場合のスタイル。できるだけ利用しないように心がけること.
+ *
+ * # 依存関係について
+ * (Foundation v5.5.2)[http://foundation.zurb.com/]..............CSSフレームワーク
+ * (FontAwesome)[https://fortawesome.github.io/Font-Awesome/]....アイコンフォント
+ * (Slidebars)[https://github.com/adchsm/Slidebars]..............レスポンシブナビゲーション
+ *
  */
-
-//@import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
 @import "generic/settings";
 
 @import "components/webfont";
@@ -41,47 +36,26 @@ $fa-font-path:        "../fonts";
     $ELEMENT
 \*------------------------------------*/
 
-@import "element/buttons";
-@import "element/lists";
-@import "element/headings";
-@import "element/links";
-@import "element/media";
-@import "element/table";
-@import "element/text";
+@import "element/*";
 
 /*------------------------------------*\
     $STRUCTURE
 \*------------------------------------*/
 
-@import "structure/layout";
-@import "structure/header";
-@import "structure/main";
-@import "structure/aside";
-@import "structure/footer";
+@import "structure/*";
 
 /*------------------------------------*\
     $COMPONENTS
 \*------------------------------------*/
 
-@import "components/article";
-@import "components/blocks";
-@import "components/comments";
-@import "components/forms";
-@import "components/gallery";
-@import "components/nav";
-@import "components/sections";
-@import "components/related_posts";
-@import "components/tabs";
-@import "components/wordpress";
+@import "components/*";
 
 
 /*------------------------------------*\
     $PAGES
 \*------------------------------------*/
 
-@import "pages/home";
+@import "pages/*";
 
-// Import style sheet of other pages
-// @import "pages/example";
 
 

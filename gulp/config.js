@@ -1,7 +1,7 @@
 // config
 
 // ここにURLを入力
-var url = "http://ultimate-dragon-tools.dev";
+var url = "http://example.com";
 
 var sass = {
 	src: "assets/scss/main.scss",
@@ -12,6 +12,12 @@ var js = {
 	src : ['assets/js/_*.js', '!assets/js/scripts.js','!assets/js/scripts.min.js'],
 	dest: "assets/js",
 }
+
+var plugins = {
+	src : [],
+	dest: "assets/js",
+}
+
 var images = {
 	src: "assets/_images/**/*",
 	dest: "assets/images",
@@ -57,6 +63,13 @@ module.exports = {
 		},
 	},
 
+	plugins: {
+		src: plugins.src,
+		dest: plugins.dest,
+		options: {
+		},
+	},
+
 	/**
 	 * js compile config
 	 **/
@@ -73,6 +86,7 @@ module.exports = {
 		src : {
 			sass : ['assets/scss/**/*.scss','!assets/scss/themes/*.scss'],
 			js : ["assets/js/**/*.js"],
+			plugins : ["bower_components/**/*.js"],
 			images : ['assets/images/**/*']
 		},
 	}
