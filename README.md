@@ -6,7 +6,7 @@ epigone
 
 ![](https://raw.githubusercontent.com/1shiharaT/epigone/master/screenshot.png)
 
-# 特徴
+## 特徴
 
 * [Gulp](http://gulpjs.com/)
 * [Bower](http://bower.io/)
@@ -14,12 +14,12 @@ epigone
 * [Foundation](http://foundation.zurb.com/)
 * [FontAwesome](http://font-awesome/)
 
-# 必要なライブラリ
+## 必要なライブラリ
 
 * node.js >= v0.12.4
 * npm >= 2.0
 
-# 地道な開発方法
+## 地道な開発方法
 
 ### 1. インストール
 
