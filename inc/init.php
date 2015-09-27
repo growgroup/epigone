@@ -20,19 +20,21 @@ $include_files = array(
 	array( 'inc/scripts.php' ),
 	array( 'inc/sidebar.php' ),
 	array( 'inc/comment.php' ),
+	array( 'inc/tgmpa.php' ),
 	array( 'inc/modification.php' ),
-
-	array( 'inc/theme-customizer/customizer.php' ),
 	array( 'classes/class-theme-wrapper.php' ),
 	array( 'classes/class-related-post.php' ),
 	array( 'classes/class-breadcrumbs.php' ),
 	array( 'classes/class-walker-nav.php' ),
 	array( 'classes/class-walker-comment.php' ),
 	array( 'classes/class-post-type.php' ),
+
 );
 
+
+
 /**
- * @action 読み込むファイルにフィルターを設ける
+ * 読み込むファイルにフィルターを設ける
  */
 $include_files = apply_filters( 'epigone_init_files', $include_files );
 

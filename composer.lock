@@ -4,8 +4,41 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7317c3594d3743b25cb18a35ba82b775",
+    "hash": "02db642cf06b71d20e9d14227086f31f",
     "packages": [
+        {
+            "name": "1shiharat/epigone-theme-customizer",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/1shiharat/epigone-theme-customizer.git",
+                "reference": "8e12b6b06f86e125b2fea4528edeb47eec5f8450"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/1shiharat/epigone-theme-customizer/zipball/8e12b6b06f86e125b2fea4528edeb47eec5f8450",
+                "reference": "8e12b6b06f86e125b2fea4528edeb47eec5f8450",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "customizer.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL v2 or later"
+            ],
+            "authors": [
+                {
+                    "name": "ishihara takashi",
+                    "email": "akeome1369@gmail.com"
+                }
+            ],
+            "description": "utility class for WordPress.",
+            "time": "2015-09-27 06:53:50"
+        },
         {
             "name": "mobiledetect/mobiledetectlib",
             "version": "2.8.16",

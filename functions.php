@@ -9,8 +9,6 @@
  * =====================================================
  */
 
-if ( file_exists( './vendor/autoload.php' ) ){
-	load_template( 'vendor/autoload.php' );
-}
+load_template( dirname(__FILE__) . '/vendor/autoload.php' );
 
 load_template( get_template_directory() . '/inc/init.php', true );

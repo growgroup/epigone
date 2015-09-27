@@ -8,24 +8,26 @@
  * @see http://codex.wordpress.org/Template_Hierarchy
  * =====================================================
  */
-
 if (have_posts()) :
-	while (have_posts()) :
-		the_post();
+	?>
+	<div class="row">
+		<?php
+		while (have_posts()) :
+			the_post();
+				if ( 'normal' == get_theme_mod( 'home_post_list', 'normal' ) ) {
+					get_template_part('templates/content', get_post_format());
+				} else {
+					get_template_part('templates/content-tile', get_post_format());
+				}
+				?>
 
-		if ( 'normal' == get_theme_mod( 'home_post_list', 'normal' ) ) {
-			get_template_part('templates/content', get_post_format());
-		} else {
+			<?php
 
-			get_template_part('templates/content-tile', get_post_format());
-		}
-
-	endwhile;
-
+		endwhile;
+		?>
+	</div>
+	<?php
 	epigone_paging_nav();
-
 else :
-
 	get_template_part('templates/content', 'none');
-
 endif;
