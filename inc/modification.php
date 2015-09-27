@@ -7,18 +7,15 @@
  * @since 1.2.0
  * =====================================================''
  */
-
 /**
  * テーマカスタマイザーを拡張
  * @since 1.2.0
  */
+function epigone_customizer_settings()
+{
 
-function epigone_customizer_settings(){
-	/**
-	 * 0. 基本的な設定
-	 */
 	$settings['epigone_general'] = array(
-		'title' => __('General', 'epigone'), // Panel title
+		'title' => __('General', 'epigone'),
 		'description' => __('Please have a set of general setting.', 'epigone'),
 		'section' => array(
 			'epigone_google_analytics' => array(
@@ -88,6 +85,20 @@ function epigone_customizer_settings(){
 							'bottom' => __('Navigation : Bottom', 'epigone'),
 							'none' => __('Navigation : None', 'epigone'),
 							'header_none' => __('Header : None', 'epigone'),
+						),
+					),
+					'header_text_align' => array(
+						'label' => __('Header Text Align', 'epigone'),
+						'default' => 'left',
+						'type' => 'radio',
+						'sanitaize_call_back' => '',
+						'choices' => array(
+							'left' => __('Text Align: Left', 'epigone'),
+							'center' => __('Text Align: Center', 'epigone'),
+							'right' => __('Text Align: Right', 'epigone'),
+						),
+						'output' => array(
+							'.header' => 'text-align',
 						),
 					),
 				),
@@ -194,8 +205,27 @@ function epigone_customizer_settings(){
 	 * 02. テーマカラー
 	 */
 	$settings['epigone_theme_color'] = array(
-		'title' => __('Theme Color', 'epigone'), // Panel title
+		'title' => __('Theme Style', 'epigone'), // Panel title
 		'section' => array(
+			'epigone_theme_style' => array(
+				'title' => __('Theme Style ', 'epigone'),
+				'description' => __('Setting for Theme color.', 'epigone'),
+				'setting' => array(
+					'epigone_theme_style' => array(
+						'label' => __('Theme Style', 'epigone'),
+						'default' => 'left',
+						'type' => 'radio',
+						'sanitaize_call_back' => '',
+						'choices' => array(
+							'normal' => __('Normal', 'epigone'),
+							'blog' => __('Blog', 'epigone'),
+						),
+						'output' => array(
+							'.header' => 'text-align',
+						),
+					),
+				),
+			),
 			// theme color section
 			'epigone_theme_color' => array(
 				'title' => __('Theme Color ', 'epigone'),
@@ -207,7 +237,7 @@ function epigone_customizer_settings(){
 						'type' => 'color',
 						'sanitaize_call_back' => '',
 						'output' => array(
-							'a,a:hover,a:active,a:focus,#reply-title,.breadcrumbs ul:before,.hentry__title a' => 'color',
+							'a,a:hover,a:active,a:focus,#reply-title,.breadcrumbs ul:before,.hentry__title a,.breadcrumbs > li > a' => 'color',
 							'.comment-title' => 'background-color',
 							'.sidebar .widget .widget-title,.button, .entry__content h2' => 'border-color',
 							'.widget-sidebar li:nth-child(even):hover,.widget-sidebar ul li:hover,.nav-links div:hover ,#secondary .widget ul li:before' => 'background-color',
@@ -346,7 +376,7 @@ function epigone_customizer_settings(){
 					),
 					'heading_4_font_size' => array(
 						'label' => __('H4 Font Size', 'epigone'),
-						'default' => '1.6',
+						'default' => '1.4',
 						'type' => 'select',
 						'sanitaize_call_back' => '',
 						'choices' => $font_size_choices,
@@ -358,7 +388,7 @@ function epigone_customizer_settings(){
 					),
 					'heading_5_font_size' => array(
 						'label' => __('H5 Font Size', 'epigone'),
-						'default' => '1.6',
+						'default' => '1.2',
 						'type' => 'select',
 						'sanitaize_call_back' => '',
 						'choices' => $font_size_choices,
@@ -370,7 +400,7 @@ function epigone_customizer_settings(){
 					),
 					'heading_6_font_size' => array(
 						'label' => __('H6 Font Size', 'epigone'),
-						'default' => '1.6',
+						'default' => '1.1',
 						'type' => 'select',
 						'sanitaize_call_back' => '',
 						'choices' => $font_size_choices,
@@ -434,7 +464,7 @@ function epigone_customizer_settings(){
 				'description' => __('Please select the style of Posts List', 'epigone'),
 				'setting' => array(
 					'home_post_list' => array(
-						'label' => __('Display Thumbnail', 'epigone'),
+						'label' => __('Post List Style', 'epigone'),
 						'default' => 'normal',
 						'type' => 'radio',
 						'sanitaize_call_back' => '',
@@ -795,7 +825,8 @@ add_action('wp_head', 'epigone_meta_tag', 10);
  * @since 1.2.0
  */
 
-function epigone_favicon(){
+function epigone_favicon()
+{
 
 	$favicon_tag = '';
 	$favicon = get_theme_mod('meta_favicon', false);
@@ -809,7 +840,7 @@ function epigone_favicon(){
 
 }
 
-add_action( 'wp_head', 'epigone_favicon', 10 );
+add_action('wp_head', 'epigone_favicon', 10);
 
 
 /**
@@ -817,10 +848,56 @@ add_action( 'wp_head', 'epigone_favicon', 10 );
  * @param $length
  * @return string
  */
-function epigone_excerpt_length( $length ){
-	$thememod = get_theme_mod( 'single_char_num', $length );
+function epigone_excerpt_length($length)
+{
+	$thememod = get_theme_mod('single_char_num', $length);
 
 	return $thememod;
 }
 
-add_filter( 'excerpt_length', 'epigone_excerpt_length', 999 );
+add_filter('excerpt_length', 'epigone_excerpt_length', 999);
+
+
+/**
+ * body タグに付与するクラスを調整
+ * @param $classes
+ * @return mixed
+ */
+function epigone_body_class($classes)
+{
+
+	$layouts['top'] = get_theme_mod('epigone_layout_top', 'l-two-column');
+	$layouts['page'] = get_theme_mod('epigone_layout_page', 'l-two-column');
+	$layouts['single'] = get_theme_mod('epigone_layout_single', 'l-two-column');
+
+	$theme_style = get_theme_mod('epigone_theme_style', 'normal');
+
+	if (is_home() || is_front_page() || is_archive()) {
+
+		$class = $layouts['top'];
+
+	} elseif (is_archive() || is_page()) {
+
+		$class = $layouts['page'];
+
+	} elseif (is_single()) {
+
+		$class = $layouts['single'];
+
+	}
+	$classes[] = $class;
+
+	if (is_page()) {
+		global $post;
+		$classes[] = $post->post_name;
+	}
+
+	if ( $theme_style == 'blog' ){
+		$classes[] = 'epigone-blog';
+	}
+
+
+	return $classes;
+}
+
+add_filter('body_class', 'epigone_body_class');

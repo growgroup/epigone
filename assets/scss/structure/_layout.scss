@@ -6,10 +6,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Layout Container */
-.lc {
-
-}
 
 /*------------------------------------*\
 		$TEMPLATES
@@ -32,21 +28,10 @@ body {
   }
 }
 
-.container {
-}
 
-/* Two Column Layout */
-.l-two-col {
-
-
-  .l-main {
-
-  }
-
-  .l-sidebar {
-
-  }
-}
+// ------------------------------ \\
+// 右サイドバー
+// ------------------------------ //
 
 .l-right-sidebar {
   .l-main {
@@ -58,6 +43,9 @@ body {
   }
 }
 
+// ------------------------------ \\
+// 左サイドバー
+// ------------------------------ //
 .l-left-sidebar {
   .l-main {
     float: right;
@@ -68,35 +56,22 @@ body {
   }
 }
 
+// ------------------------------ \\
+// ワンカラム
+// ------------------------------ //
+
 .l-full{
+  .top-bar,
+  .row{
+    max-width: rem-calc(760);
+  }
   .l-main {
     width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    float: none;
   }
-
   .l-sidebar {
     display: none;
-  }
-}
-
-.nav-links{
-  display: inline-block;
-  margin-top: 1em;
-  .page-numbers{
-    @include pagination();
-    .current {
-      @include pagination-current-item();
-      color: #fff;
-    }
-    span{
-      border-radius: 3px;
-      transition: background-color 300ms ease-out;
-      background: none;
-      color: #999999;
-      display: block;
-      font-size: 1em;
-      font-weight: normal;
-      line-height: inherit;
-      padding: 0.05556rem 0.55556rem 0.05556rem;
-    }
   }
 }

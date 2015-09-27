@@ -18,7 +18,7 @@ if ( get_theme_mod('header_style', 'top') !== 'header_none' ) {
 
 	<header id="masthead" class="header header-normal" role="banner">
 		<div class="row">
-			<div class="large-4 columns">
+			<div class="large-12 columns">
 				<p class="header__description"><?php bloginfo('description') ?></p>
 
 				<h1 class="header__logo">
@@ -35,7 +35,7 @@ if ( get_theme_mod('header_style', 'top') !== 'header_none' ) {
 					</a>
 				</h1>
 			</div>
-			<div class="large-8 columns">
+			<div class="large-12 columns">
 				<?php
 
 				epigone_dynamic_sidebar('header-primary');

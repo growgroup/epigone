@@ -2,16 +2,17 @@
 // 見出し
 // ================================= //
 
-.entry-title{
+.entry__title{
   line-height: 1.525em;
   font-size: rem-calc(23);
   a {
     color: #373737;
   }
 }
-.panel {
-  .entry-title{
-    font-size: rem-calc(18);
-    line-height: 1.4em;
+
+.page-header {
+  &__title {
+    margin-bottom: 2em;
+    margin-top: 2em;
   }
 }

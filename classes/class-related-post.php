@@ -106,11 +106,18 @@ class Epigone_Related_Post {
 		}
 
 		global $post;
+		?>
+		<div class="row">
+		<?php
 		foreach ( $this->related_posts as $r_post ) {
 			$post = $r_post;
-			setup_postdata( $post );
-			get_template_part( 'templates/content-related-post' );
+			setup_postdata( $post ); ?>
+				<?php get_template_part( 'templates/content-related-post' ); ?>
+			<?php
 		}
+		?>
+		</div>
+		<?php
 		wp_reset_postdata();
 
 		if ( $this->show_wrapper ){

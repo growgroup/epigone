@@ -9,8 +9,8 @@
  */
 ?>
 
-<form role="form" action="<?php echo site_url( '/' ); ?>" id="searchform" method="get">
-	<label for="s" class="sr-only"><?php _e( 'Search', 'epigone' ); ?></label>
+<form role="form" action="<?php echo site_url( '/' ); ?>" id="searchform" class="block" method="get">
+	<label for="s" class="screen-reader-text"><?php _e( 'Search', 'epigone' ); ?></label>
 	<div class="row collapse">
 		<div class="small-7 columns">
 			<input type="text" class="form-control" id="s" name="s" placeholder="<?php _e( 'Search', 'epigone' ); ?>" value=""/>

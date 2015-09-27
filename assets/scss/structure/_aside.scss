@@ -2,8 +2,8 @@
     $ASIDE
 \*------------------------------------*/
 
+// メインエリアのウィジェット
 .l-main{
-
   .widget-title {
     border-left: 3px solid #373737;
     padding-left: 1em;
@@ -18,6 +18,9 @@
     margin-top: 0;
   }
 }
+
+
+
 .sidebar {
   .widget-title {
     border-left: 3px solid #373737;
@@ -40,7 +43,6 @@
         padding-right: .5em;
         padding-top: 0.5em;
         padding-bottom: .5em;
-
         &:before {
           @extend .fa;
           @extend .fa-chevron-right;
@@ -64,8 +66,24 @@
           a {
             color: #FFF;
           }
+          .children{
+            height: auto;
+            transform: scaleY(1) skew(0deg);
+            margin-top: 1em;
+            opacity: 1;
+            a{
+              color: #333;
+            }
+          }
         }
 
+      }
+      .children{
+        height: 0;
+        transform-origin: 0 0;
+        transform: scaleY(0) skew(20deg);
+        opacity: 0;
+        transition: all ease-in-out .2s;
       }
     }
 

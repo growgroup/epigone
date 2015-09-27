@@ -17,6 +17,7 @@
 function epigone_setup(){
 
 	load_theme_textdomain( 'epigone', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'tgmpa', get_template_directory() . '/languages' );
 
 	// automatic feed をサポート
 	add_theme_support( 'automatic-feed-links' );
