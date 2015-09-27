@@ -122,6 +122,14 @@
   // リンク
   a {
     text-decoration: underline;
+    white-space: nowrap;
+    word-break: break-all;
+  }
+  pre {
+    code{
+      border: none;
+      line-height: 1.725em;
+    }
   }
 }
 

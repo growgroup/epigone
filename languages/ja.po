@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: epigone\n"
-"POT-Creation-Date: 2015-09-27 23:40+0900\n"
-"PO-Revision-Date: 2015-09-28 00:20+0900\n"
+"POT-Creation-Date: 2015-09-28 01:44+0900\n"
+"PO-Revision-Date: 2015-09-28 01:45+0900\n"
 "Last-Translator: ishihara <ishihara@grow-group.jp>\n"
 "Language-Team: ishihara takashi <akeome1369@gmail.com>\n"
 "Language: ja\n"
@@ -186,380 +186,408 @@ msgstr "ページ %s"
 msgid "More"
 msgstr "続きを見る"
 
-#: inc/modification.php:21
+#: inc/modification.php:18
 msgid "General"
 msgstr "基本的な設定"
 
-#: inc/modification.php:22
+#: inc/modification.php:19
 msgid "Please have a set of general setting."
 msgstr "基本的な設定をしてください。"
 
-#: inc/modification.php:25
+#: inc/modification.php:22
 msgid "Google Analytics - Tracking code"
 msgstr "Google アナリティクス - トラッキングコード"
 
-#: inc/modification.php:28
+#: inc/modification.php:25
 msgid "Tracking Code"
 msgstr "トラッキングコード"
 
-#: inc/modification.php:36 inc/modification.php:39
+#: inc/modification.php:33 inc/modification.php:36
 msgid "Meta Description"
 msgstr "メタ説明文"
 
-#: inc/modification.php:47 inc/modification.php:50
+#: inc/modification.php:44 inc/modification.php:47
 msgid "Meta Keyword"
 msgstr "メタキーワード"
 
-#: inc/modification.php:58 inc/modification.php:62
+#: inc/modification.php:55 inc/modification.php:59
 msgid "Favicon"
 msgstr "ファビコン"
 
-#: inc/modification.php:59
+#: inc/modification.php:56
 msgid "16  16 px .ico file or .png"
 msgstr "16×16px のファビコン用の画像ファイルをアップロードしてください。"
 
-#: inc/modification.php:75
+#: inc/modification.php:72
 msgid "Header"
 msgstr "ヘッダー 設定"
 
-#: inc/modification.php:76
+#: inc/modification.php:73
 msgid "Please have a set of headers."
 msgstr "ヘッダーの設定をしてください。"
 
-#: inc/modification.php:79 inc/modification.php:82
+#: inc/modification.php:76 inc/modification.php:79
 msgid "Header Style"
 msgstr "ヘッダースタイル"
 
-#: inc/modification.php:87
+#: inc/modification.php:84
 msgid "Navigation : Top"
 msgstr "ナビゲーション : トップ"
 
-#: inc/modification.php:88
+#: inc/modification.php:85
 msgid "Navigation : Bottom"
 msgstr "ナビゲーション : ボトム"
 
-#: inc/modification.php:89
+#: inc/modification.php:86
 msgid "Navigation : None"
 msgstr "ナビゲーション : 非表示"
 
-#: inc/modification.php:90
+#: inc/modification.php:87
 msgid "Header : None"
 msgstr "ヘッダー : 非表示"
 
+#: inc/modification.php:91
+msgid "Header Text Align"
+msgstr "ヘッダー : テキストの位置"
+
 #: inc/modification.php:96
+msgid "Text Align: Left"
+msgstr "テキストの位置 : 左"
+
+#: inc/modification.php:97
+msgid "Text Align: Center"
+msgstr "テキストの位置 : センター"
+
+#: inc/modification.php:98
+msgid "Text Align: Right"
+msgstr "テキストの位置 : 右"
+
+#: inc/modification.php:107
 msgid "Logo"
 msgstr "ロゴ"
 
-#: inc/modification.php:99
+#: inc/modification.php:110
 msgid "Logo Image"
 msgstr "ロゴ画像"
 
-#: inc/modification.php:105
+#: inc/modification.php:116
 msgid "Font Size"
 msgstr "文字の大きさ"
 
-#: inc/modification.php:128
+#: inc/modification.php:139
 msgid "Color"
 msgstr "配色"
 
-#: inc/modification.php:140 inc/modification.php:643
+#: inc/modification.php:151 inc/modification.php:673
 msgid "Background"
 msgstr "背景"
 
-#: inc/modification.php:143 inc/modification.php:259 inc/modification.php:646
+#: inc/modification.php:154 inc/modification.php:289 inc/modification.php:676
 msgid "Background Image"
 msgstr "背景画像"
 
-#: inc/modification.php:152 inc/modification.php:268 inc/modification.php:655
+#: inc/modification.php:163 inc/modification.php:298 inc/modification.php:685
 msgid "Background Attachment"
 msgstr "背景画像の固定"
 
-#: inc/modification.php:157 inc/modification.php:273 inc/modification.php:660
+#: inc/modification.php:168 inc/modification.php:303 inc/modification.php:690
 msgid "Fixed"
 msgstr "固定"
 
-#: inc/modification.php:158 inc/modification.php:661
+#: inc/modification.php:169 inc/modification.php:691
 msgid "Scroll"
 msgstr "スクロール"
 
-#: inc/modification.php:165 inc/modification.php:250 inc/modification.php:668
+#: inc/modification.php:176 inc/modification.php:280 inc/modification.php:698
 msgid "Background Color"
 msgstr "背景色"
 
-#: inc/modification.php:174 inc/modification.php:281
+#: inc/modification.php:185 inc/modification.php:311
 msgid "Background Size"
 msgstr "背景サイズ"
 
-#: inc/modification.php:179 inc/modification.php:286
+#: inc/modification.php:190 inc/modification.php:316
 msgid "Horizontal : auto Vertical : auto"
 msgstr "横 : auto 縦 : auto"
 
-#: inc/modification.php:180 inc/modification.php:287
+#: inc/modification.php:191 inc/modification.php:317
 msgid "Horizontal : 100%, Vertical : auto"
 msgstr "横 : 100%, 縦 : auto"
 
-#: inc/modification.php:181 inc/modification.php:288
+#: inc/modification.php:192 inc/modification.php:318
 msgid "Horizontal : auto, Vertical : 100%"
 msgstr "横 : auto, 縦 : 100%"
 
-#: inc/modification.php:182 inc/modification.php:289
+#: inc/modification.php:193 inc/modification.php:319
 msgid "Horizontal : 100%, Vertical : 100%"
 msgstr "横 : 100%, 縦 : 100%"
 
-#: inc/modification.php:197 inc/modification.php:205
-msgid "Theme Color"
-msgstr "テーマカラー"
+#: inc/modification.php:208 inc/modification.php:215
+msgid "Theme Style"
+msgstr "テーマスタイル"
 
-#: inc/modification.php:201
-msgid "Theme Color "
-msgstr "テーマカラー"
+#: inc/modification.php:211
+msgid "Theme Style "
+msgstr "テーマスタイル"
 
-#: inc/modification.php:202
+#: inc/modification.php:212 inc/modification.php:232
 msgid "Setting for Theme color."
 msgstr "テーマカラーの設定"
 
-#: inc/modification.php:243
-msgid "Body Settings"
-msgstr "コンテンツ"
-
-#: inc/modification.php:244
-msgid "Please have a set of body."
-msgstr "サイトボディ内の設定をしてください。"
-
-#: inc/modification.php:247
-msgid "Body "
-msgstr "ボディ内"
-
-#: inc/modification.php:274
-msgid "Initial"
-msgstr "スクロール"
-
-#: inc/modification.php:298
-msgid "Headings"
-msgstr "見出し"
-
-#: inc/modification.php:301
-msgid "Heading Color"
-msgstr "見出しカラー"
-
-#: inc/modification.php:310
-msgid "H1 Font Size"
-msgstr "H1 : フォントサイズ"
-
-#: inc/modification.php:323
-msgid "H2 Font Size"
-msgstr "H2 : フォントサイズ"
-
-#: inc/modification.php:335
-msgid "H3 Font Size"
-msgstr "H3 : フォントサイズ "
-
-#: inc/modification.php:348
-msgid "H4 Font Size"
-msgstr "H4 : フォントサイズ"
-
-#: inc/modification.php:360
-msgid "H5 Font Size"
-msgstr "H5 : フォントサイズ"
-
-#: inc/modification.php:372
-msgid "H6 Font Size"
-msgstr "H6 : フォントサイズ"
-
-#: inc/modification.php:386
-msgid "Text"
-msgstr "テキスト"
-
-#: inc/modification.php:389
-msgid "Text Color"
-msgstr "テキストカラー"
-
-#: inc/modification.php:399
-msgid "Base Font Size"
-msgstr "ベース文字サイズ"
-
-#: inc/modification.php:429
-msgid "Home Page Settings"
-msgstr "トップページ 設定"
-
-#: inc/modification.php:430
-msgid "Please settings for home page."
-msgstr "トップページの設定をしてください。"
-
-#: inc/modification.php:433
-msgid "Post List Style"
-msgstr "投稿リストスタイル"
-
-#: inc/modification.php:434
-msgid "Please select the style of Posts List"
-msgstr "投稿一覧のスタイルを選択してください。"
-
-#: inc/modification.php:437 inc/modification.php:461 inc/modification.php:465
-msgid "Display Thumbnail"
-msgstr "アイキャッチ画像の表示"
-
-#: inc/modification.php:442
+#: inc/modification.php:220 inc/modification.php:472
 msgid "Normal"
 msgstr "ノーマル"
 
-#: inc/modification.php:443
+#: inc/modification.php:221
+msgid "Blog"
+msgstr "ブログ"
+
+#: inc/modification.php:231
+msgid "Theme Color "
+msgstr "テーマカラー"
+
+#: inc/modification.php:235
+msgid "Theme Color"
+msgstr "テーマカラー"
+
+#: inc/modification.php:273
+msgid "Body Settings"
+msgstr "コンテンツ"
+
+#: inc/modification.php:274
+msgid "Please have a set of body."
+msgstr "サイトボディ内の設定をしてください。"
+
+#: inc/modification.php:277
+msgid "Body "
+msgstr "ボディ内"
+
+#: inc/modification.php:304
+msgid "Initial"
+msgstr "スクロール"
+
+#: inc/modification.php:328
+msgid "Headings"
+msgstr "見出し"
+
+#: inc/modification.php:331
+msgid "Heading Color"
+msgstr "見出しカラー"
+
+#: inc/modification.php:340
+msgid "H1 Font Size"
+msgstr "H1 : フォントサイズ"
+
+#: inc/modification.php:353
+msgid "H2 Font Size"
+msgstr "H2 : フォントサイズ"
+
+#: inc/modification.php:365
+msgid "H3 Font Size"
+msgstr "H3 : フォントサイズ "
+
+#: inc/modification.php:378
+msgid "H4 Font Size"
+msgstr "H4 : フォントサイズ"
+
+#: inc/modification.php:390
+msgid "H5 Font Size"
+msgstr "H5 : フォントサイズ"
+
+#: inc/modification.php:402
+msgid "H6 Font Size"
+msgstr "H6 : フォントサイズ"
+
+#: inc/modification.php:416
+msgid "Text"
+msgstr "テキスト"
+
+#: inc/modification.php:419
+msgid "Text Color"
+msgstr "テキストカラー"
+
+#: inc/modification.php:429
+msgid "Base Font Size"
+msgstr "ベース文字サイズ"
+
+#: inc/modification.php:459
+msgid "Home Page Settings"
+msgstr "トップページ 設定"
+
+#: inc/modification.php:460
+msgid "Please settings for home page."
+msgstr "トップページの設定をしてください。"
+
+#: inc/modification.php:463 inc/modification.php:467
+msgid "Post List Style"
+msgstr "投稿リストスタイル"
+
+#: inc/modification.php:464
+msgid "Please select the style of Posts List"
+msgstr "投稿一覧のスタイルを選択してください。"
+
+#: inc/modification.php:473
 msgid "Tile"
 msgstr "タイル"
 
-#: inc/modification.php:457
+#: inc/modification.php:487
 msgid "Single Post Settings"
 msgstr "投稿記事 表示設定"
 
-#: inc/modification.php:458
+#: inc/modification.php:488
 msgid "Please settings for single post."
 msgstr "投稿ページの設定をしてください。"
 
-#: inc/modification.php:462
+#: inc/modification.php:491 inc/modification.php:495
+msgid "Display Thumbnail"
+msgstr "アイキャッチ画像の表示"
+
+#: inc/modification.php:492
 msgid "Do you want to display a thumbnail?"
 msgstr "アイキャッチ画像を自動出力しますか？"
 
-#: inc/modification.php:470 inc/modification.php:499 inc/modification.php:515
-#: inc/modification.php:531 inc/modification.php:547 inc/modification.php:563
-#: inc/modification.php:579 inc/modification.php:690
+#: inc/modification.php:500 inc/modification.php:529 inc/modification.php:545
+#: inc/modification.php:561 inc/modification.php:577 inc/modification.php:593
+#: inc/modification.php:609 inc/modification.php:720
 msgid "Yes"
 msgstr "はい"
 
-#: inc/modification.php:471 inc/modification.php:500 inc/modification.php:516
-#: inc/modification.php:532 inc/modification.php:548 inc/modification.php:564
-#: inc/modification.php:580 inc/modification.php:691
+#: inc/modification.php:501 inc/modification.php:530 inc/modification.php:546
+#: inc/modification.php:562 inc/modification.php:578 inc/modification.php:594
+#: inc/modification.php:610 inc/modification.php:721
 #: vendor/1shiharat/epigone-theme-customizer/fields/select/class-taxonomy-dropdown-custom-control.php:30
 msgid "None"
 msgstr "いいえ"
 
-#: inc/modification.php:477 inc/modification.php:481
+#: inc/modification.php:507 inc/modification.php:511
 msgid "Except Number of characters"
 msgstr "投稿一覧の本文の文字数"
 
-#: inc/modification.php:478
+#: inc/modification.php:508
 msgid "Do you want to display a excerpt?"
 msgstr "投稿一覧の文章を何文字出力するか指定してください。"
 
-#: inc/modification.php:490 inc/modification.php:494
+#: inc/modification.php:520 inc/modification.php:524
 msgid "Display Date"
 msgstr "日付の表示"
 
-#: inc/modification.php:491
+#: inc/modification.php:521
 msgid "Do you want to display a posted date?"
 msgstr "投稿日時を表示しますか？"
 
-#: inc/modification.php:506 inc/modification.php:510
+#: inc/modification.php:536 inc/modification.php:540
 msgid "Display Author"
 msgstr "投稿者の表示"
 
-#: inc/modification.php:507
+#: inc/modification.php:537
 msgid "Do you want to display a posted author?"
 msgstr "投稿者を表示しますか？"
 
-#: inc/modification.php:522 inc/modification.php:526
+#: inc/modification.php:552 inc/modification.php:556
 msgid "Display Category"
 msgstr "カテゴリの表示"
 
-#: inc/modification.php:523
+#: inc/modification.php:553
 msgid "Do you want to display a category?"
 msgstr "カテゴリ表示しますか？"
 
-#: inc/modification.php:538 inc/modification.php:542
+#: inc/modification.php:568 inc/modification.php:572
 msgid "Display Tags"
 msgstr "タグの表示"
 
-#: inc/modification.php:539
+#: inc/modification.php:569
 msgid "Do you want to display a tag?"
 msgstr "タグを表示しますか？"
 
-#: inc/modification.php:554
+#: inc/modification.php:584
 msgid "Display Comment Number"
 msgstr "コメント数の表示"
 
-#: inc/modification.php:555 inc/modification.php:558
+#: inc/modification.php:585 inc/modification.php:588
 msgid "Do you want to display the comment number?"
 msgstr "コメント数を表示しますか？"
 
-#: inc/modification.php:570
+#: inc/modification.php:600
 msgid "Display Related Post"
 msgstr "関連記事の表示"
 
-#: inc/modification.php:571 inc/modification.php:574
+#: inc/modification.php:601 inc/modification.php:604
 msgid "Do you want to display the associated article?"
 msgstr "関連記事を表示しますか？"
 
-#: inc/modification.php:592
+#: inc/modification.php:622
 msgid "Layout Settings"
 msgstr "レイアウト 設定"
 
-#: inc/modification.php:593
+#: inc/modification.php:623
 msgid "Please have a set of layout."
 msgstr "レイアウトの設定を行ってください。"
 
-#: inc/modification.php:596
+#: inc/modification.php:626
 msgid "Top Page"
 msgstr "トップページ"
 
-#: inc/modification.php:597 inc/modification.php:609 inc/modification.php:621
+#: inc/modification.php:627 inc/modification.php:639 inc/modification.php:651
 msgid "Please select the layout."
 msgstr "レイアウトを選択してください"
 
-#: inc/modification.php:600
+#: inc/modification.php:630
 msgid "Layout of top page"
 msgstr "トップページのレイアウト"
 
-#: inc/modification.php:608
+#: inc/modification.php:638
 msgid "static page"
 msgstr "固定ページ"
 
-#: inc/modification.php:612
+#: inc/modification.php:642
 msgid "Layout of static page"
 msgstr "固定ページのレイアウト"
 
-#: inc/modification.php:620
+#: inc/modification.php:650
 msgid "single page"
 msgstr "投稿ページ"
 
-#: inc/modification.php:624
+#: inc/modification.php:654
 msgid "Layout of single page"
 msgstr "投稿ページのレイアウト"
 
-#: inc/modification.php:638
+#: inc/modification.php:668
 msgid "Footer"
 msgstr "フッター"
 
-#: inc/modification.php:639
+#: inc/modification.php:669
 msgid "Please have a set of footer."
 msgstr "フッターの設定をしてください。"
 
-#: inc/modification.php:681
+#: inc/modification.php:711
 msgid "Scroll Top"
 msgstr "スクロールトップ"
 
-#: inc/modification.php:682
+#: inc/modification.php:712
 msgid "Setting for Scroll top."
 msgstr "スクロールトップの設定を行って下さい。"
 
-#: inc/modification.php:685
+#: inc/modification.php:715
 msgid "Display"
 msgstr "表示"
 
-#: inc/modification.php:695
+#: inc/modification.php:725
 msgid "Page Top Background"
 msgstr "スクロールトップの背景色"
 
-#: inc/modification.php:707
+#: inc/modification.php:737
 msgid "Copyright"
 msgstr "コピーライト"
 
-#: inc/modification.php:708
+#: inc/modification.php:738
 msgid "Setting for Copyright."
 msgstr "コピーライト文の設定"
 
-#: inc/modification.php:711
+#: inc/modification.php:741
 msgid "Copyright text"
 msgstr "コピーライト文"
 
-#: inc/modification.php:717
+#: inc/modification.php:747
 msgid "Copyright Background"
 msgstr "コピーライトの背景"
 

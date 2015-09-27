@@ -1744,7 +1744,7 @@ body {
   background: #fff;
   color: #222;
   cursor: auto;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: "NotoSansCJKjp", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   line-height: 1.5;
@@ -2632,7 +2632,7 @@ select {
       background: #EFEFEF;
       color: #222222;
       display: block;
-      font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+      font-family: "NotoSansCJKjp", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
       font-size: 1.14286rem;
       padding: 1.14286rem; }
       .accordion .accordion-navigation > a:hover, .accordion dd > a:hover {
@@ -3034,7 +3034,7 @@ button, .button {
   border-style: solid;
   border-width: 0;
   cursor: pointer;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: "NotoSansCJKjp", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   font-weight: normal;
   line-height: normal;
   margin: 0 0 1.42857rem;
@@ -5069,7 +5069,7 @@ kbd {
 
 .label {
   display: inline-block;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: "NotoSansCJKjp", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   font-weight: normal;
   line-height: 1;
   margin-bottom: auto;
@@ -5460,7 +5460,7 @@ button:focus {
   .pricing-table .title {
     background-color: #373737;
     color: #EEEEEE;
-    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    font-family: "NotoSansCJKjp", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
     font-size: 1.14286rem;
     font-weight: normal;
     padding: 1.07143rem 1.42857rem;
@@ -5468,7 +5468,7 @@ button:focus {
   .pricing-table .price {
     background-color: #F6F6F6;
     color: #373737;
-    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    font-family: "NotoSansCJKjp", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
     font-size: 2.28571rem;
     font-weight: normal;
     padding: 1.07143rem 1.42857rem;
@@ -5722,7 +5722,7 @@ button:focus {
 
 .side-nav {
   display: block;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: "NotoSansCJKjp", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   list-style-position: outside;
   list-style-type: none;
   margin: 0;
@@ -5744,7 +5744,7 @@ button:focus {
         color: #1cc7ff; }
     .side-nav li.active > a:first-child:not(.button) {
       color: #1cc7ff;
-      font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+      font-family: "NotoSansCJKjp", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
       font-weight: normal; }
     .side-nav li.divider {
       border-top: 1px solid;
@@ -5864,7 +5864,7 @@ button:focus {
   .sub-nav li {
     color: #999999;
     float: left;
-    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    font-family: "NotoSansCJKjp", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
     font-size: 1rem;
     font-weight: normal;
     margin-left: 1.14286rem;
@@ -6059,7 +6059,7 @@ table {
       display: block;
       background-color: #EFEFEF;
       color: #222222;
-      font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+      font-family: "NotoSansCJKjp", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
       font-size: 1.14286rem;
       padding: 1.14286rem 2.28571rem; }
       .tabs dd > a:hover,
@@ -6375,7 +6375,7 @@ meta.foundation-mq-topbar {
     .top-bar-section ul li > a {
       color: #FFFFFF;
       display: block;
-      font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+      font-family: "NotoSansCJKjp", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
       font-size: 0.92857rem;
       font-weight: normal;
       padding-left: 0.85714rem;
@@ -6937,7 +6937,7 @@ p {
 /* Default header styles */
 h1, h2, h3, h4, h5, h6 {
   color: #373737;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: "NotoSansCJKjp", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   font-style: normal;
   font-weight: bold;
   line-height: 1.725rem;
@@ -10982,7 +10982,7 @@ body {
     padding-top: 1em;
     padding-bottom: 1em; }
   .epigone-blog .entry__content p {
-    line-height: 1.725em; }
+    line-height: 2.125em; }
   .epigone-blog .entry__content h1, .epigone-blog .entry__content h2, .epigone-blog .entry__content h3, .epigone-blog .entry__content h4, .epigone-blog .entry__content h5, .epigone-blog .entry__content h6 {
     font-family: "NotoSansCJKjp", sans-serif;
     font-weight: normal; }
@@ -11095,7 +11095,13 @@ body {
     padding: 0 1em 1em; }
 
 .entry__content a {
-  text-decoration: underline; }
+  text-decoration: underline;
+  white-space: nowrap;
+  word-break: break-all; }
+
+.entry__content pre code {
+  border: none;
+  line-height: 1.725em; }
 
 .edit-link {
   margin-bottom: 0; }
