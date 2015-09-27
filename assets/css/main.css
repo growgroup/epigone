@@ -10962,29 +10962,32 @@ body {
 
 /*------------------------------------*		$BLOCK
 \*------------------------------------*/
-.epigone-blog .header {
-  padding-top: 4em;
-  padding-bottom: 4em; }
-
-.epigone-blog .entry__meta {
-  text-align: center; }
-
-.epigone-blog .entry__title {
-  margin-top: 2em;
-  margin-bottom: 2em;
-  text-align: center;
-  font-weight: normal;
-  letter-spacing: 2px;
-  border-bottom: 1px solid #E8E8E8;
-  border-top: 1px solid #E8E8E8;
-  padding-top: 1em;
-  padding-bottom: 1em; }
-
-.epigone-blog .entry__content h1, .epigone-blog .entry__content h2, .epigone-blog .entry__content h3, .epigone-blog .entry__content h4, .epigone-blog .entry__content h5, .epigone-blog .entry__content h6 {
-  font-weight: normal; }
-
-.epigone-blog .l-main {
-  margin-bottom: 3em; }
+.epigone-blog {
+  font-family: "NotoSansCJKjp", sans-serif; }
+  .epigone-blog h1, .epigone-blog h2, .epigone-blog h3, .epigone-blog h4, .epigone-blog h5, .epigone-blog h6 {
+    font-family: "NotoSansCJKjp", sans-serif; }
+  .epigone-blog .header {
+    padding-top: 4em;
+    padding-bottom: 4em; }
+  .epigone-blog .entry__meta {
+    text-align: center; }
+  .epigone-blog .entry__title {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    text-align: center;
+    font-weight: normal;
+    letter-spacing: 2px;
+    border-bottom: 1px solid #E8E8E8;
+    border-top: 1px solid #E8E8E8;
+    padding-top: 1em;
+    padding-bottom: 1em; }
+  .epigone-blog .entry__content p {
+    line-height: 1.725em; }
+  .epigone-blog .entry__content h1, .epigone-blog .entry__content h2, .epigone-blog .entry__content h3, .epigone-blog .entry__content h4, .epigone-blog .entry__content h5, .epigone-blog .entry__content h6 {
+    font-family: "NotoSansCJKjp", sans-serif;
+    font-weight: normal; }
+  .epigone-blog .l-main {
+    margin-bottom: 3em; }
 
 /*------------------------------------*    $COMMENT
 \*------------------------------------*/

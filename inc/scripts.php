@@ -53,6 +53,12 @@ function epigone_scripts() {
 	wp_enqueue_script( 'epigone_plugins' );
 	wp_enqueue_script( 'epigone_scripts' );
 
+	if ( 'blog' ==  get_theme_mod( 'epigone_theme_style', 'normal' ) ){
+		wp_register_script( 'epigone_webfonts', get_stylesheet_directory_uri() . '/assets/js/webfont.js', array(), null, true );
+		wp_enqueue_script( 'epigone_webfonts' );
+		wp_localize_script( 'epigone_webfonts', 'epigone_font', array('fontcssurl' => get_template_directory_uri() . '/assets/css' ) );
+	}
+
 }
 
 /**

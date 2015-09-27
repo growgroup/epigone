@@ -37,7 +37,7 @@ gulp.task("zip", function () {
 				"home.php",
 				"index.php",
 				"page.php",
-				"page-company.php",
+				"page-category-tile.php",
 				"rtl.css",
 				"screenshot.png",
 				"search.php",
