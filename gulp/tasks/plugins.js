@@ -8,8 +8,18 @@ const $ = gulpLoadPlugin();
 const config = globalConfig.plugins;
 //
 gulp.task('plugins', function () {
-	var files = wiredep({devDependencies: true})['js'];
-	Array.prototype.push.apply(config.src, files)
+	var files = wiredep({
+		devDependencies: true,
+		exclude: [
+			'/jquery/',
+			'/jquery-placeholder/',
+			'/jquery.cookie/',
+			'/modernizr/',
+			'/fastclick/'
+		]
+	})['js'];
+
+	Array.prototype.push.apply(config.src, files);
 	return gulp.src(config.src)
 		.pipe($.plumber())
 		.pipe($.concat('plugins.js'))
