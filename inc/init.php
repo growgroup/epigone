@@ -28,7 +28,7 @@ $include_files = array(
 	array( 'classes/class-walker-nav.php' ),
 	array( 'classes/class-walker-comment.php' ),
 	array( 'classes/class-post-type.php' ),
-
+	array( 'classes/class-wp-logger.php' ),
 );
 
 

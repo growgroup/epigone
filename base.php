@@ -19,7 +19,6 @@ epigone_get_header(); ?>
 
 		<div class="large-12 columns main-visual">
 		 	<?php
-			// メインビジュアルサイドバー
 			epigone_dynamic_sidebar( 'main-visual' ); ?>
 		</div>
 

@@ -4,7 +4,9 @@
     "require": {
         "tgmpa/tgm-plugin-activation": "2.5.2",
         "mobiledetect/mobiledetectlib": "~2.8",
-        "1shiharat/epigone-theme-customizer": "~1.0.0"
+        "1shiharat/epigone-theme-customizer": "~1.0.0",
+        "monolog/monolog": "^1.17",
+        "symfony/var-dumper": "^3.0"
     },
     "license": "GPL v2 or later",
     "authors": [

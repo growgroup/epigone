@@ -57,6 +57,7 @@
   padding-top: 2em;
   padding-bottom: 2em;
   border-color: #e8e8e8;
+
   > * {
     line-height: 1.7em;
     font-size: 0.8rem;
@@ -69,9 +70,9 @@
   display: inline-block;
   margin-top: 1em;
   .page-numbers{
-    @include pagination();
+    //@include pagination();
     .current {
-      @include pagination-current-item();
+      //@include pagination-current-item();
       color: #fff;
     }
     span{

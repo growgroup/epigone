@@ -18,7 +18,6 @@
   "devDependencies": {
     "Slidebars": "slidebars#~0.10.3",
     "font-awesome": "~4.2.0",
-    "foundation": "~5.5.2",
-    "modernizer": "~2.8.2"
+    "foundation-sites": "~6.0.5"
   }
 }

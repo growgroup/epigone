@@ -22,7 +22,7 @@ function epigone_scripts() {
 	 * テーマのメインjsファイル
 	 * @since 1.0.0
 	 */
-	wp_register_script( 'epigone_scripts', get_stylesheet_directory_uri() . '/assets/js/scripts.min.js', array('jquery'), null, true );
+	wp_register_script( 'epigone_scripts', get_stylesheet_directory_uri() . '/assets/js/index.js', array('jquery'), null, true );
 
 	/**
 	 * jQueryプラグイン等のjsファイル

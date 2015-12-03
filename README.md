@@ -42,6 +42,10 @@ WordPress のテーマディレクトリにコマンドライン、もしくは 
 上記のコマンドで、npm install, bower install, gulp build の3つのコマンドが走ります。
 多少時間がかかりますが、我慢してください。
 
+    $ composer install 
+    
+composer コマンドで依存パッケージをインストールしてください。
+
 ### 3. Gulp の設定
 
 BrowserSyncの proxy_url を指定します。
