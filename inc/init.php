@@ -8,7 +8,6 @@
  * =====================================================''
  */
 
-
 /**
  * 読み込むファイルを配列として渡す
  */
@@ -28,10 +27,11 @@ $include_files = array(
 	array( 'classes/class-walker-nav.php' ),
 	array( 'classes/class-walker-comment.php' ),
 	array( 'classes/class-post-type.php' ),
-	array( 'classes/class-wp-logger.php' ),
 );
 
-
+$include_files[] = array( 'classes/class-wp-debugbar.php' );
+$include_files[] = array( 'classes/class-wp-logger.php' );
+$include_files[] = array( 'classes/class-php-debugbar.php' );
 
 /**
  * 読み込むファイルにフィルターを設ける

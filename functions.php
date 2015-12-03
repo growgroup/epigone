@@ -9,7 +9,9 @@
  * =====================================================
  */
 
+// デバッグ ON/OFF
+define( 'EPIGONE_DEBUG', true );
 
-require ( dirname( __FILE__ ) . '/vendor/autoload.php' );
+require( dirname( __FILE__ ) . '/vendor/autoload.php' );
 
 load_template( get_template_directory() . '/inc/init.php', true );

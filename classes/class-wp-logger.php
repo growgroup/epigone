@@ -2,6 +2,7 @@
 
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
+use Monolog\Formatter\LineFormatter;
 
 /**
  * Class WPLogger
@@ -22,10 +23,18 @@ class WPLogger {
 	 */
 	private function __construct() {
 
+		if ( ! defined( 'EPIGONE_DEBUG' ) ) {
+			return false;
+		}
+
 		static::$path   = get_template_directory() . '/logs/debug.log';
 		static::$logger = new Logger( 'wptheme' );
-		static::$logger->pushHandler( new StreamHandler( static::$path, Logger::INFO ) );
-		static::$logger->addDebug( "ishiara" );
+		$output         = "[%datetime%] %level_name%: %message% %context% %extra%\n";
+		$formatter      = new LineFormatter( $output );
+
+		$stream = new StreamHandler( static::$path, Logger::DEBUG );
+		$stream->setFormatter( $formatter );
+		static::$logger->pushHandler( $stream );
 
 	}
 
@@ -42,35 +51,17 @@ class WPLogger {
 	}
 
 	/**
-	 * デバッグ情報
-	 *
-	 * @param $data
+	 * 静的メソッドをコールした時の動作
+	 * @param $name
+	 * @param $args
 	 */
-	public static function debug( $data ) {
-		static::$logger->addDebug( var_export( $data, true ) );
-	}
+	static function __callStatic( $name, $args ) {
 
-	/**
-	 * デバッグ情報
-	 *
-	 * @param $data
-	 */
-	public static function warning( $data ) {
-
-		static::$logger->addWarning(var_export( $data, true ));
-
-	}
-
-	public static function error( $data ) {
-
-		static::$logger->addError( var_export( $data, true ) );
-
-	}
-
-	public static function info( $data ) {
-
-		static::$logger->addInfo( var_export( $data, true ) );
-
+		ob_start();
+		var_dump( $args[0] );
+		$content = ob_get_contents();
+		ob_clean();
+		static::$logger->$name( $content );
 	}
 
 }

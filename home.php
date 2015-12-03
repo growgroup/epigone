@@ -9,8 +9,6 @@
  * =====================================================
  */
 
-global $post;
-
 if ( have_posts() ) :
 	?>
 	<div class="clearfix">
@@ -30,3 +28,4 @@ if ( have_posts() ) :
 else :
 	get_template_part( 'templates/content', 'none' );
 endif;
+
