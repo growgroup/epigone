@@ -19,8 +19,8 @@ $include_files = array(
 	array( 'inc/scripts.php' ),
 	array( 'inc/sidebar.php' ),
 	array( 'inc/comment.php' ),
-	array( 'inc/tgmpa.php' ),
-	array( 'inc/modification.php' ),
+	// array( 'inc/tgmpa.php' ),
+	// array( 'inc/modification.php' ),
 	array( 'classes/class-theme-wrapper.php' ),
 	array( 'classes/class-related-post.php' ),
 	array( 'classes/class-breadcrumbs.php' ),
@@ -29,9 +29,9 @@ $include_files = array(
 	array( 'classes/class-post-type.php' ),
 );
 
-$include_files[] = array( 'classes/class-wp-debugbar.php' );
-$include_files[] = array( 'classes/class-wp-logger.php' );
-$include_files[] = array( 'classes/class-php-debugbar.php' );
+// $include_files[] = array( 'classes/class-wp-debugbar.php' );
+// $include_files[] = array( 'classes/class-wp-logger.php' );
+// $include_files[] = array( 'classes/class-php-debugbar.php' );
 
 /**
  * 読み込むファイルにフィルターを設ける
