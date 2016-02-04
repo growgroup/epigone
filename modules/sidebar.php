@@ -1,6 +1,6 @@
 <?php
 /**
- * Sidebar module
+ * サイドバーテンプレート
  * =====================================================
  * @package  epigone
  * @license  GPLv2 or later

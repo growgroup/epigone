@@ -1,4 +1,8 @@
 <?php
+/**
+ * カテゴリーのタイル
+ * @var [type]
+ */
 $categories = get_categories();
 $category_iterate = 0;
 foreach( $categories as $c ){
@@ -10,6 +14,7 @@ foreach( $categories as $c ){
 		'cat' => $c->term_id,
 		'post_per_page' => 4,
 	) );
+
 	if ( $query->have_posts() ){
 		while( $query->have_posts() ){
 			$query->the_post();
@@ -22,5 +27,3 @@ foreach( $categories as $c ){
 	wp_reset_query();
 	$category_iterate++;
 }
-
-?>

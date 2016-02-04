@@ -14,14 +14,14 @@ if ( have_posts() ) : ?>
 		<h1 class="page-header__title">
 			<?php the_archive_title(); ?>
 		</h1>
+
 		<?php
-		// タームの説明欄に記述がある場合、出力
 		$term_description = term_description();
 		if ( ! empty( $term_description ) ) :
 			printf( '<div class="taxonomy-description">%s</div>', $term_description );
 		endif;
 		?>
-	</header><!-- .page-header -->
+	</header>
 
 	<?php
 	/* ループをスタート */

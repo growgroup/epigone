@@ -1,14 +1,12 @@
 <?php
 /**
- * The template for displaying the footer.
- *
- * Contains the closing of the #content div and all content after
- *
- * @package epigone
+ * フッターテンプレート
+ * =====================================================
+ * @package  epigone
+ * @since 1.0.0
+ * =====================================================
  */
 ?>
-
-
 	<footer id="colophon" class="footer" role="contentinfo">
 
 		<div class="row">
